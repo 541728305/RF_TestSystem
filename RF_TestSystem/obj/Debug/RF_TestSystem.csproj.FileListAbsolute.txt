@@ -1,0 +1,13 @@
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.csprojAssemblyReference.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\Interop.BASICFORMATTEDIOLib.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.csproj.ResolveComReference.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.Properties.Resources.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.csproj.GenerateResource.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.csproj.CoreCompileInputs.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.RF_TestSystem.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Debug\RF_TestSystem.Login.resources

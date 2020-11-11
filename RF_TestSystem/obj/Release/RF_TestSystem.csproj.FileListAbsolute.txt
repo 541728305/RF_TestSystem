@@ -1,0 +1,12 @@
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Release\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Release\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Release\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.csprojAssemblyReference.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\Interop.BASICFORMATTEDIOLib.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.csproj.ResolveComReference.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.RF_TestSystem.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.Properties.Resources.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.csproj.GenerateResource.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.csproj.CoreCompileInputs.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\obj\Release\RF_TestSystem.pdb
