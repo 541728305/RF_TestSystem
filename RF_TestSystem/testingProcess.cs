@@ -11,22 +11,29 @@ namespace RF_TestSystem
 
     public delegate void ShowCurveHandler(int Curve, TracesInfo temp);   //显示曲线委托
 
-    struct TestInfo
+    public struct TestInfo
     {
-        string limit;
-        ModeInfo productionModel;
-        ModeInfo retestModel;
-        ModeInfo developerMode;
+        public string startTime;
+        public string stopTime;
+        public string failing;
+        public string overallResult;
+        public string currentModel;
+        public string productionModelString;
+        public string retestModelString;
+        public string developerModelString;
+        public ModeInfo productionModel;
+        public ModeInfo retestModel;
+        public ModeInfo developerModel;
     }
-    struct ModeInfo
+    public struct ModeInfo
     {
-        string modelTitle;
-
-        string testPassNumber;
-        string testFailNumber;
-        string testTotalNumber;
-
-        string scanTotalNumber;
+        public string modelTitle;
+        public string testPassNumber;
+        public string testFailNumber;
+        public string testTotalNumber;
+        public string scanTotalNumber;
+        public string testYield;
+        public string scanYield;
 
     }
     class testingProcess
@@ -46,10 +53,10 @@ namespace RF_TestSystem
             //temp.rawData = readData();//先把网分仪的缓存读一遍，以防里面有未读出来的数据导致写入命令出错 // <-- 感觉浪费时间？
             foreach (TracesInfo trace in traces)
             {
-                //myAnalyzer.setContinuousStatus("1", "OFF");
-                //if (trace.channel == "2")
-                //    myAnalyzer.setContinuousStatus("2", "OFF");
-                
+               Gloable. myAnalyzer.setContinuousStatus("1", "ON"); //防止被Hold住
+                if (trace.channel == "2")
+                    Gloable.myAnalyzer.setContinuousStatus("2", "ON");
+                Console.WriteLine("正在测试");
                 temp = trace;
                 if (trace.channel == "1")
                 {
@@ -84,18 +91,34 @@ namespace RF_TestSystem
                         Gloable.myAnalyzer.setContinuousStatus("2", "ON");
                     return rawAnalyzerData;
                 }
+
+                List<TracesInfo> transTrace = new List<TracesInfo>(); //分流函数底层没封装好，直接转成List格式
+                transTrace.Add(temp);
+
+                DataProcessing myOutPutStream = new DataProcessing();
+                transTrace = myOutPutStream.dataIntegration(transTrace);
+          
+                if (curveJudge(transTrace[0]) == "PASS")
+                    {
+                        temp = transTrace[0];
+                        temp.state = "PASS";
+                    }
+                   else
+                    {
+                        temp = transTrace[0];
+                        temp.state = "FAIL";
+                    }
+         
                 ShowCurve(currentCurve, temp);
                 currentCurve++;
                 rawAnalyzerData.Add(temp);
             }
-            //myAnalyzer.setContinuousStatus("1", "ON");
-            //if (trace.channel == "2")
-            //    myAnalyzer.setContinuousStatus("2", "ON");
             return rawAnalyzerData;
         }
-        public string doMeasurement()
+        public bool doMeasurement()
         {
-           
+            Console.WriteLine("开始测试");
+            bool successFlag = true;
             Gloable.myTraces = doMeasurement(Gloable.myTraces, "1");
             if (Gloable.myTraces.Last().rawData == "ReadString error")
             {
@@ -107,27 +130,40 @@ namespace RF_TestSystem
                     reMeasurement++;
                     if (reMeasurement > 3)
                     {
+                        successFlag = false;
                         MessageBox.Show("从网分获取数据失败，请重新测试或重启上位机");
-                        return Gloable.myTraces.Last().rawData;
+                        return successFlag;
                     }
                 }
              }
           
             Gloable.myTraces = myOutPutStream.dataIntegration(Gloable.myTraces);//将网分里获得的数据进行转化分流处理
-
-
-            string successFlag = myOutPutStream.saveTracesData(Gloable.dataFilePath, Gloable.myTraces, "realPart", false, "2048",Gloable.today);
-            if (successFlag == "true")
-            {
-                MessageBox.Show("保存成功");
-            }
-            else
-            {
-                MessageBox.Show(successFlag);
-            }
+            
+           
             return successFlag;
         }
 
+        public string curveJudge(TracesInfo temp)
+        {
+            String results = "PASS";
 
+            Console.WriteLine(temp.limit.tracesRealPartUpLimitDoubleType.Count);
+
+            Console.WriteLine(temp.tracesDataDoubleType.realPart.Max());
+            Console.WriteLine(temp.limit.tracesRealPartUpLimitDoubleType.Max());
+
+            if (temp.tracesDataDoubleType.realPart.Max()> temp.limit.tracesRealPartUpLimitDoubleType.Max() )
+            {
+                results = "FAIL";
+                return results;
+            }
+            if(temp.tracesDataDoubleType.realPart.Min() < temp.limit.tracesRealPartDownLimitDoubleType.Min())
+            {
+                results = "FAIL";
+                return results;
+            }    
+
+                return results;
+        }
     }
 }

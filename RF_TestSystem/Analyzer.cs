@@ -21,26 +21,51 @@ namespace RF_TestSystem
         public string smooth;
         public string smoothValue;
         public string dataPath;
+        public string limitPath;
         public string calFilePath;
         public string date;
     };
+
+    public struct LimitInfo
+    {
+        public string rawRealPartUpLimit;
+        public string rawRealPartDownLimit;
+
+        public List<string> tracesRealPartUpLimitStringType;
+        public List<double> tracesRealPartUpLimitDoubleType;
+        public List<string> tracesRealPartDownLimitStringType;
+        public List<double> tracesRealPartDownLimitDoubleType;
+
+        public string rawImaginaryPartUpLimit;
+        public string rawImaginaryPartDownLimit;
+
+        public List<string> tracesImaginaryPartUpLimitStringType;
+        public List<double> tracesImaginaryPartUpLimitDoubleType;
+        public List<string> tracesImaginaryPartDownLimitStringType;
+        public List<double> tracesImaginaryPartDownLimitDoubleType;
+
+    }
+    
     public struct TracesInfo
     {
-        public string path;
-        public string channel;
-        public string formate;
-        public string meas;
-        public string rawData;
-        public string frequency;
-        public string note;
-        public string testDate;
-        public string state;
-        public separationGeneric<string> tracesDataStringType;
-        public separationGeneric<List<double>> tracesDataDoubleType;
+            public LimitInfo limit;
+           
+            public string path;
+            public string channel;
+            public string formate;
+            public string meas;
+            public string rawData;       
+            public string sheetHead;
+            public string frequency;
+            public string note;
+            public string testDate;
+            public string state;
+            public separationGeneric<string> tracesDataStringType;
+            public separationGeneric<List<double>> tracesDataDoubleType;
+        
     }
     class Analyzer
-    {
-        
+    {        
         bool isConnect = false;//连接状态，true表示已连接
         ResourceManager con = new ResourceManager();
         FormattedIO488 ioobj = new FormattedIO488();
@@ -223,13 +248,16 @@ namespace RF_TestSystem
         private string transFromAllocateID(string allocateID)
         {
             string allocateNumber = "";
-            switch (allocateID)
+            
+            if(allocateID == "D1\n")
             {
-                
-
+               return allocateNumber = "1";
             }
-
-            return allocateNumber;
+            else
+            {
+                return allocateNumber = "2";
+            }
+           
         }
         public string ackAllocateChannelst()
         {
@@ -470,11 +498,139 @@ namespace RF_TestSystem
         }
         public void saveStateFile(string path)
         {
-            string saveStateFileCommand = ":MMEM:LOAD " + "\"" + path + "\"";
+            string saveStateFileCommand = ":MMEM:STOR " + "\"" + path + "\"";
             Console.WriteLine(saveStateFileCommand);
             sendCommand(saveStateFileCommand);
         }
 
+
+        public string ackECAL()
+        {
+            string ackECAL = "";
+            string ackECALCommad = "ECAL:SOLT4 1,2,3,4";
+
+            sendCommand(ackECALCommad);
+            ackECAL = readData();
+            return ackECAL;
+        }
+        public string ECAL()
+        {
+            string ECAL = "";
+            string ECALCommad = "ECAL:SOLT4 1,2,3,4";
+            sendCommand(ECALCommad);
+            ECAL = ackECAL();
+            return ECAL;
+        }
+
+        public AnalyzerConfig getBasisConfig()
+        {
+            AnalyzerConfig analyzerConfig = new AnalyzerConfig();
+
+            analyzerConfig.channelNumber = transFromAllocateID(ackAllocateChannelst());
+           
+            if(ackAllocateTraces("1") =="D1\n")
+
+            {
+                analyzerConfig.windows = "曲线单窗口显示";
+            }
+            else
+            {
+                analyzerConfig.windows = "曲线多窗口显示";
+            }
+
+            double startfrequency = double .Parse(ackFrequency("1", "START"));
+
+            if(startfrequency > (1000*1000*1000))
+            {
+                analyzerConfig.startFrequency =  (startfrequency / 1000 / 1000 /1000).ToString();
+                analyzerConfig.startFrequencyUnit = "GHz";
+
+               
+            }
+            else if (startfrequency > (1000 * 1000 ))
+            {
+                analyzerConfig.startFrequency = (startfrequency / 1000 / 1000).ToString();
+                analyzerConfig.startFrequencyUnit = "MHz";
+
+               
+            }
+            else  if (startfrequency > (1000))
+            {
+                analyzerConfig.startFrequency = (startfrequency / 1000 ).ToString();
+                analyzerConfig.startFrequencyUnit = "KHz";       
+            }
+
+            double stopfrequency = double.Parse(ackFrequency("1", "STOP"));
+
+            Console.WriteLine(ackFrequency("1", "STOP"));
+            Console.WriteLine(stopfrequency);
+            if (stopfrequency > (1000 * 1000 * 1000))
+            {              
+                analyzerConfig.stopFrequency = (stopfrequency / 1000 / 1000 / 1000).ToString();
+                analyzerConfig.stopFrequencyUnit = "GHz";
+            }
+            else if (stopfrequency > (1000 * 1000))
+            {
+              
+                analyzerConfig.stopFrequency = (stopfrequency / 1000 / 1000).ToString();
+                analyzerConfig.stopFrequencyUnit = "MHz";
+            }
+            else if (stopfrequency > (1000))
+            {             
+                analyzerConfig.stopFrequency = (stopfrequency / 1000).ToString();
+                analyzerConfig.stopFrequencyUnit = "KHz";
+            }
+
+            analyzerConfig.sweepPion = ackSweepPoint("1").Replace("+","");
+            analyzerConfig.sweepPion = analyzerConfig.sweepPion.Replace("\n", "");
+
+            for (int i =0;i< Convert.ToInt32(ackNumberOfTraces("1").Replace("\n",""));i++)
+            {
+                selectTrace("1", (i + 1).ToString());
+                if(Convert.ToInt32(ackSmooth("1"))==1)
+                {
+                    analyzerConfig.smooth = "ON";
+
+                    analyzerConfig.smoothValue = ((Convert.ToDouble(ackSmoothValue("1").Replace("\n","")))).ToString();
+                    break;
+                }
+                else
+                {
+                    analyzerConfig.smooth = "OFF";
+                    analyzerConfig.smoothValue = "0";
+                }
+            }
+            return analyzerConfig;
+        }
+        public List<TracesInfo> getTracesInfo()
+        {
+            List<TracesInfo> tracesInfos = new List<TracesInfo>();
+            TracesInfo traces = new TracesInfo();
+
+            for (int i = 0; i < Convert.ToInt32(ackNumberOfTraces("1").Replace("\n","")); i++)
+            {
+                selectTrace("1", (i + 1).ToString());
+                traces.channel = "1";
+                traces.meas = ackTracesMeas("1",(i+1).ToString()).Replace("\n","");
+                traces.formate = ackTracesFormat ("1", (i + 1).ToString()).Replace("\n","");
+                traces.note = "";
+                tracesInfos.Add(traces);
+            }
+
+           if( transFromAllocateID(ackAllocateChannelst()) == "2")
+            {
+                for (int i = 0; i < Convert.ToInt32(ackNumberOfTraces("2").Replace("\n","")); i++)
+                {
+                    selectTrace("2", (i + 1).ToString());
+                    traces.channel = "2";
+                    traces.meas = ackTracesMeas("2", (i + 1).ToString()).Replace("\n","");
+                    traces.formate = ackTracesFormat("2", (i + 1).ToString()).Replace("\n", ""); ;
+                    traces.note = "";
+                    tracesInfos.Add(traces);
+                }
+            }
+            return tracesInfos;
+        }
 
         
     }

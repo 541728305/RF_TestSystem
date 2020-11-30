@@ -51,6 +51,16 @@
             this.connectButton = new System.Windows.Forms.Button();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.chartView = new System.Windows.Forms.TabPage();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.flowLayoutPanel43 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.continuouTestTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel42 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.scanModelComboBox = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel41 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.barcodeTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel39 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel38 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel24 = new System.Windows.Forms.FlowLayoutPanel();
@@ -104,6 +114,21 @@
             this.TestYieldLabel = new System.Windows.Forms.Label();
             this.chartPanel = new System.Windows.Forms.Panel();
             this.startButton = new System.Windows.Forms.Button();
+            this.cameraSetting = new System.Windows.Forms.TabPage();
+            this.editRectangularButton = new System.Windows.Forms.Button();
+            this.saveCameraButon = new System.Windows.Forms.Button();
+            this.cameraSettingButton = new System.Windows.Forms.Button();
+            this.scanBox = new AForge.Controls.PictureBox();
+            this.findCameraButton = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.picbPreview = new AForge.Controls.PictureBox();
+            this.vispShoot = new AForge.Controls.VideoSourcePlayer();
+            this.btnPic = new System.Windows.Forms.Button();
+            this.btnCut = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.cboResolution = new System.Windows.Forms.ComboBox();
+            this.cboVideo = new System.Windows.Forms.ComboBox();
             this.tab1 = new System.Windows.Forms.TabPage();
             this.clearChartButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -115,10 +140,13 @@
             this.HoldButton = new System.Windows.Forms.Button();
             this.ContinueButton = new System.Windows.Forms.Button();
             this.TestSystemConfigTabPage = new System.Windows.Forms.TabPage();
+            this.eCalButton = new System.Windows.Forms.Button();
+            this.readConfigFromAnalyzerButton = new System.Windows.Forms.Button();
+            this.saveAndWriteIniButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel20 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.LimitPathTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.setLimitPathButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.calFileTextBox = new System.Windows.Forms.TextBox();
@@ -161,8 +189,11 @@
             this.dataGridViewRemoveButton = new System.Windows.Forms.Button();
             this.systemStartButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
+            this.systemStateLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel40 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label25 = new System.Windows.Forms.Label();
+            this.clearCountButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -170,6 +201,9 @@
             this.flowLayoutPanel3.SuspendLayout();
             this.mainTabControl.SuspendLayout();
             this.chartView.SuspendLayout();
+            this.flowLayoutPanel43.SuspendLayout();
+            this.flowLayoutPanel42.SuspendLayout();
+            this.flowLayoutPanel41.SuspendLayout();
             this.flowLayoutPanel39.SuspendLayout();
             this.flowLayoutPanel38.SuspendLayout();
             this.flowLayoutPanel24.SuspendLayout();
@@ -190,6 +224,9 @@
             this.flowLayoutPanel21.SuspendLayout();
             this.flowLayoutPanel22.SuspendLayout();
             this.flowLayoutPanel23.SuspendLayout();
+            this.cameraSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scanBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbPreview)).BeginInit();
             this.tab1.SuspendLayout();
             this.TestSystemConfigTabPage.SuspendLayout();
             this.flowLayoutPanel20.SuspendLayout();
@@ -207,6 +244,8 @@
             this.flowLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel8.SuspendLayout();
+            this.flowLayoutPanel40.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -412,7 +451,7 @@
             // connectButton
             // 
             this.connectButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.connectButton.Location = new System.Drawing.Point(1260, 12);
+            this.connectButton.Location = new System.Drawing.Point(1251, 12);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(130, 52);
             this.connectButton.TabIndex = 6;
@@ -425,6 +464,7 @@
             this.mainTabControl.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.mainTabControl.AllowDrop = true;
             this.mainTabControl.Controls.Add(this.chartView);
+            this.mainTabControl.Controls.Add(this.cameraSetting);
             this.mainTabControl.Controls.Add(this.tab1);
             this.mainTabControl.Controls.Add(this.TestSystemConfigTabPage);
             this.mainTabControl.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -440,6 +480,10 @@
             // 
             // chartView
             // 
+            this.chartView.Controls.Add(this.progressBar1);
+            this.chartView.Controls.Add(this.flowLayoutPanel43);
+            this.chartView.Controls.Add(this.flowLayoutPanel42);
+            this.chartView.Controls.Add(this.flowLayoutPanel41);
             this.chartView.Controls.Add(this.flowLayoutPanel39);
             this.chartView.Controls.Add(this.testInfoTextBox);
             this.chartView.Controls.Add(this.cameraPictureBox);
@@ -457,6 +501,108 @@
             this.chartView.TabIndex = 4;
             this.chartView.Text = "图表";
             this.chartView.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(353, 658);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(971, 23);
+            this.progressBar1.TabIndex = 107;
+            // 
+            // flowLayoutPanel43
+            // 
+            this.flowLayoutPanel43.AutoSize = true;
+            this.flowLayoutPanel43.Controls.Add(this.label30);
+            this.flowLayoutPanel43.Controls.Add(this.continuouTestTextBox);
+            this.flowLayoutPanel43.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel43.Location = new System.Drawing.Point(19, 520);
+            this.flowLayoutPanel43.Name = "flowLayoutPanel43";
+            this.flowLayoutPanel43.Size = new System.Drawing.Size(87, 39);
+            this.flowLayoutPanel43.TabIndex = 86;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(17, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(53, 12);
+            this.label30.TabIndex = 66;
+            this.label30.Text = "测试次数";
+            // 
+            // continuouTestTextBox
+            // 
+            this.continuouTestTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.continuouTestTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.continuouTestTextBox.Location = new System.Drawing.Point(3, 15);
+            this.continuouTestTextBox.Name = "continuouTestTextBox";
+            this.continuouTestTextBox.Size = new System.Drawing.Size(81, 21);
+            this.continuouTestTextBox.TabIndex = 65;
+            this.continuouTestTextBox.Text = "100";
+            this.continuouTestTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.continuouTestTextBox.TextChanged += new System.EventHandler(this.continuouTestTextBox_TextChanged);
+            // 
+            // flowLayoutPanel42
+            // 
+            this.flowLayoutPanel42.AutoSize = true;
+            this.flowLayoutPanel42.Controls.Add(this.label29);
+            this.flowLayoutPanel42.Controls.Add(this.scanModelComboBox);
+            this.flowLayoutPanel42.Location = new System.Drawing.Point(213, 355);
+            this.flowLayoutPanel42.Name = "flowLayoutPanel42";
+            this.flowLayoutPanel42.Size = new System.Drawing.Size(121, 26);
+            this.flowLayoutPanel42.TabIndex = 106;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(3, 7);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(29, 12);
+            this.label29.TabIndex = 91;
+            this.label29.Text = "模式";
+            // 
+            // scanModelComboBox
+            // 
+            this.scanModelComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.scanModelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.scanModelComboBox.FormattingEnabled = true;
+            this.scanModelComboBox.Location = new System.Drawing.Point(38, 3);
+            this.scanModelComboBox.Name = "scanModelComboBox";
+            this.scanModelComboBox.Size = new System.Drawing.Size(80, 20);
+            this.scanModelComboBox.TabIndex = 90;
+            this.scanModelComboBox.SelectedIndexChanged += new System.EventHandler(this.scanModelComboBox_SelectedIndexChanged);
+            // 
+            // flowLayoutPanel41
+            // 
+            this.flowLayoutPanel41.AutoSize = true;
+            this.flowLayoutPanel41.Controls.Add(this.label26);
+            this.flowLayoutPanel41.Controls.Add(this.barcodeTextBox);
+            this.flowLayoutPanel41.Location = new System.Drawing.Point(12, 354);
+            this.flowLayoutPanel41.Name = "flowLayoutPanel41";
+            this.flowLayoutPanel41.Size = new System.Drawing.Size(201, 27);
+            this.flowLayoutPanel41.TabIndex = 105;
+            // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(3, 7);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(29, 12);
+            this.label26.TabIndex = 66;
+            this.label26.Text = "条码";
+            // 
+            // barcodeTextBox
+            // 
+            this.barcodeTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.barcodeTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.barcodeTextBox.Location = new System.Drawing.Point(38, 3);
+            this.barcodeTextBox.Name = "barcodeTextBox";
+            this.barcodeTextBox.ReadOnly = true;
+            this.barcodeTextBox.Size = new System.Drawing.Size(160, 21);
+            this.barcodeTextBox.TabIndex = 65;
+            this.barcodeTextBox.Text = "abcdefghijklmnopqrst";
             // 
             // flowLayoutPanel39
             // 
@@ -511,7 +657,6 @@
             this.workOrderTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.workOrderTextBox.Location = new System.Drawing.Point(68, 3);
             this.workOrderTextBox.Name = "workOrderTextBox";
-            this.workOrderTextBox.ReadOnly = true;
             this.workOrderTextBox.Size = new System.Drawing.Size(166, 21);
             this.workOrderTextBox.TabIndex = 65;
             this.workOrderTextBox.Text = "FSPA123";
@@ -542,7 +687,6 @@
             this.jobNumberTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.jobNumberTextBox.Location = new System.Drawing.Point(68, 3);
             this.jobNumberTextBox.Name = "jobNumberTextBox";
-            this.jobNumberTextBox.ReadOnly = true;
             this.jobNumberTextBox.Size = new System.Drawing.Size(166, 21);
             this.jobNumberTextBox.TabIndex = 65;
             this.jobNumberTextBox.Text = "H123456";
@@ -573,7 +717,6 @@
             this.lineBodyTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lineBodyTextBox.Location = new System.Drawing.Point(68, 3);
             this.lineBodyTextBox.Name = "lineBodyTextBox";
-            this.lineBodyTextBox.ReadOnly = true;
             this.lineBodyTextBox.Size = new System.Drawing.Size(166, 21);
             this.lineBodyTextBox.TabIndex = 65;
             this.lineBodyTextBox.Text = "L2-10";
@@ -604,7 +747,6 @@
             this.partNumberTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.partNumberTextBox.Location = new System.Drawing.Point(68, 3);
             this.partNumberTextBox.Name = "partNumberTextBox";
-            this.partNumberTextBox.ReadOnly = true;
             this.partNumberTextBox.Size = new System.Drawing.Size(166, 21);
             this.partNumberTextBox.TabIndex = 65;
             this.partNumberTextBox.Text = "FSAPHV0";
@@ -635,7 +777,6 @@
             this.machineNameTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.machineNameTextBox.Location = new System.Drawing.Point(68, 3);
             this.machineNameTextBox.Name = "machineNameTextBox";
-            this.machineNameTextBox.ReadOnly = true;
             this.machineNameTextBox.Size = new System.Drawing.Size(166, 21);
             this.machineNameTextBox.TabIndex = 65;
             this.machineNameTextBox.Text = "HV0-1";
@@ -649,16 +790,18 @@
             this.setLoginInfobutton.TabIndex = 103;
             this.setLoginInfobutton.Text = "修改";
             this.setLoginInfobutton.UseVisualStyleBackColor = true;
+            this.setLoginInfobutton.Click += new System.EventHandler(this.setLoginInfobutton_Click);
             // 
             // testInfoTextBox
             // 
             this.testInfoTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.testInfoTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.testInfoTextBox.Location = new System.Drawing.Point(356, 687);
+            this.testInfoTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.testInfoTextBox.Location = new System.Drawing.Point(353, 687);
             this.testInfoTextBox.Multiline = true;
             this.testInfoTextBox.Name = "testInfoTextBox";
             this.testInfoTextBox.ReadOnly = true;
-            this.testInfoTextBox.Size = new System.Drawing.Size(968, 86);
+            this.testInfoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.testInfoTextBox.Size = new System.Drawing.Size(971, 86);
             this.testInfoTextBox.TabIndex = 102;
             this.testInfoTextBox.Text = "100";
             // 
@@ -667,7 +810,8 @@
             this.cameraPictureBox.BackColor = System.Drawing.Color.Silver;
             this.cameraPictureBox.Location = new System.Drawing.Point(14, 184);
             this.cameraPictureBox.Name = "cameraPictureBox";
-            this.cameraPictureBox.Size = new System.Drawing.Size(319, 191);
+            this.cameraPictureBox.Size = new System.Drawing.Size(319, 167);
+            this.cameraPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cameraPictureBox.TabIndex = 95;
             this.cameraPictureBox.TabStop = false;
             // 
@@ -754,7 +898,8 @@
             // 
             // setModelButton
             // 
-            this.setModelButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.setModelButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.setModelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.setModelButton.Font = new System.Drawing.Font("宋体", 45.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.setModelButton.Location = new System.Drawing.Point(3, 3);
             this.setModelButton.Name = "setModelButton";
@@ -762,6 +907,7 @@
             this.setModelButton.TabIndex = 105;
             this.setModelButton.Text = "生产模式";
             this.setModelButton.UseVisualStyleBackColor = false;
+            this.setModelButton.Click += new System.EventHandler(this.setModelButton_Click);
             // 
             // flowLayoutPanel35
             // 
@@ -802,6 +948,7 @@
             this.setCurrentLimitButton.TabIndex = 92;
             this.setCurrentLimitButton.Text = "修改";
             this.setCurrentLimitButton.UseVisualStyleBackColor = true;
+            this.setCurrentLimitButton.Click += new System.EventHandler(this.setCurrentLimitButton_Click);
             // 
             // flowLayoutPanel33
             // 
@@ -870,6 +1017,7 @@
             this.flowLayoutPanel27.AutoSize = true;
             this.flowLayoutPanel27.Controls.Add(this.flowLayoutPanel26);
             this.flowLayoutPanel27.Controls.Add(this.TestYieldLabel);
+            this.flowLayoutPanel27.Controls.Add(this.clearCountButton);
             this.flowLayoutPanel27.Location = new System.Drawing.Point(14, 76);
             this.flowLayoutPanel27.Name = "flowLayoutPanel27";
             this.flowLayoutPanel27.Size = new System.Drawing.Size(319, 105);
@@ -993,29 +1141,195 @@
             this.TestYieldLabel.Location = new System.Drawing.Point(156, 4);
             this.TestYieldLabel.Name = "TestYieldLabel";
             this.TestYieldLabel.Padding = new System.Windows.Forms.Padding(0, 16, 0, 16);
-            this.TestYieldLabel.Size = new System.Drawing.Size(160, 96);
+            this.TestYieldLabel.Size = new System.Drawing.Size(127, 96);
             this.TestYieldLabel.TabIndex = 81;
-            this.TestYieldLabel.Text = "100%";
+            this.TestYieldLabel.Text = "0  ";
             this.TestYieldLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // chartPanel
             // 
             this.chartPanel.AutoScroll = true;
-            this.chartPanel.Location = new System.Drawing.Point(356, 0);
+            this.chartPanel.Location = new System.Drawing.Point(353, 0);
             this.chartPanel.Name = "chartPanel";
-            this.chartPanel.Size = new System.Drawing.Size(968, 681);
+            this.chartPanel.Size = new System.Drawing.Size(971, 652);
             this.chartPanel.TabIndex = 78;
             // 
             // startButton
             // 
             this.startButton.Font = new System.Drawing.Font("宋体", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.startButton.Location = new System.Drawing.Point(70, 487);
+            this.startButton.Location = new System.Drawing.Point(127, 489);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(203, 96);
             this.startButton.TabIndex = 60;
             this.startButton.Text = "开始测试";
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // cameraSetting
+            // 
+            this.cameraSetting.Controls.Add(this.editRectangularButton);
+            this.cameraSetting.Controls.Add(this.saveCameraButon);
+            this.cameraSetting.Controls.Add(this.cameraSettingButton);
+            this.cameraSetting.Controls.Add(this.scanBox);
+            this.cameraSetting.Controls.Add(this.findCameraButton);
+            this.cameraSetting.Controls.Add(this.label18);
+            this.cameraSetting.Controls.Add(this.label25);
+            this.cameraSetting.Controls.Add(this.picbPreview);
+            this.cameraSetting.Controls.Add(this.vispShoot);
+            this.cameraSetting.Controls.Add(this.btnPic);
+            this.cameraSetting.Controls.Add(this.btnCut);
+            this.cameraSetting.Controls.Add(this.btnConnect);
+            this.cameraSetting.Controls.Add(this.cboResolution);
+            this.cameraSetting.Controls.Add(this.cboVideo);
+            this.cameraSetting.Location = new System.Drawing.Point(94, 4);
+            this.cameraSetting.Name = "cameraSetting";
+            this.cameraSetting.Padding = new System.Windows.Forms.Padding(3);
+            this.cameraSetting.Size = new System.Drawing.Size(1324, 793);
+            this.cameraSetting.TabIndex = 5;
+            this.cameraSetting.Text = "相机参数";
+            this.cameraSetting.UseVisualStyleBackColor = true;
+            // 
+            // editRectangularButton
+            // 
+            this.editRectangularButton.Location = new System.Drawing.Point(885, 21);
+            this.editRectangularButton.Name = "editRectangularButton";
+            this.editRectangularButton.Size = new System.Drawing.Size(181, 89);
+            this.editRectangularButton.TabIndex = 31;
+            this.editRectangularButton.Text = "编辑选区";
+            this.editRectangularButton.UseVisualStyleBackColor = true;
+            // 
+            // saveCameraButon
+            // 
+            this.saveCameraButon.Location = new System.Drawing.Point(1081, 686);
+            this.saveCameraButon.Name = "saveCameraButon";
+            this.saveCameraButon.Size = new System.Drawing.Size(181, 93);
+            this.saveCameraButon.TabIndex = 30;
+            this.saveCameraButon.Text = "保存相机";
+            this.saveCameraButon.UseVisualStyleBackColor = true;
+            this.saveCameraButon.Click += new System.EventHandler(this.saveCameraButon_Click);
+            // 
+            // cameraSettingButton
+            // 
+            this.cameraSettingButton.Location = new System.Drawing.Point(282, 21);
+            this.cameraSettingButton.Name = "cameraSettingButton";
+            this.cameraSettingButton.Size = new System.Drawing.Size(181, 46);
+            this.cameraSettingButton.TabIndex = 29;
+            this.cameraSettingButton.Text = "相机参数";
+            this.cameraSettingButton.UseVisualStyleBackColor = true;
+            this.cameraSettingButton.Click += new System.EventHandler(this.cameraSettingButton_Click);
+            // 
+            // scanBox
+            // 
+            this.scanBox.BackColor = System.Drawing.Color.DarkGray;
+            this.scanBox.Image = null;
+            this.scanBox.Location = new System.Drawing.Point(667, 135);
+            this.scanBox.Name = "scanBox";
+            this.scanBox.Size = new System.Drawing.Size(646, 532);
+            this.scanBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.scanBox.TabIndex = 28;
+            this.scanBox.TabStop = false;
+            // 
+            // findCameraButton
+            // 
+            this.findCameraButton.Location = new System.Drawing.Point(50, 21);
+            this.findCameraButton.Name = "findCameraButton";
+            this.findCameraButton.Size = new System.Drawing.Size(193, 46);
+            this.findCameraButton.TabIndex = 27;
+            this.findCameraButton.Text = "搜索摄像头";
+            this.findCameraButton.UseVisualStyleBackColor = true;
+            this.findCameraButton.Click += new System.EventHandler(this.findCamera_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(280, 92);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 12);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "像素：";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(48, 92);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(53, 12);
+            this.label25.TabIndex = 26;
+            this.label25.Text = "摄像头：";
+            // 
+            // picbPreview
+            // 
+            this.picbPreview.BackColor = System.Drawing.Color.DarkGray;
+            this.picbPreview.Image = null;
+            this.picbPreview.Location = new System.Drawing.Point(15, 135);
+            this.picbPreview.Name = "picbPreview";
+            this.picbPreview.Size = new System.Drawing.Size(646, 532);
+            this.picbPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picbPreview.TabIndex = 24;
+            this.picbPreview.TabStop = false;
+            this.picbPreview.Paint += new System.Windows.Forms.PaintEventHandler(this.picbPreview_Paint);
+            this.picbPreview.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picbPreview_MouseDown);
+            this.picbPreview.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picbPreview_MouseMove);
+            this.picbPreview.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picbPreview_MouseUp);
+            // 
+            // vispShoot
+            // 
+            this.vispShoot.Location = new System.Drawing.Point(1172, 21);
+            this.vispShoot.Name = "vispShoot";
+            this.vispShoot.Size = new System.Drawing.Size(141, 92);
+            this.vispShoot.TabIndex = 23;
+            this.vispShoot.Text = "videoSourcePlayer1";
+            this.vispShoot.VideoSource = null;
+            this.vispShoot.Visible = false;
+            // 
+            // btnPic
+            // 
+            this.btnPic.Location = new System.Drawing.Point(667, 21);
+            this.btnPic.Name = "btnPic";
+            this.btnPic.Size = new System.Drawing.Size(181, 89);
+            this.btnPic.TabIndex = 20;
+            this.btnPic.Text = "开启解码";
+            this.btnPic.UseVisualStyleBackColor = true;
+            this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
+            // 
+            // btnCut
+            // 
+            this.btnCut.Location = new System.Drawing.Point(503, 87);
+            this.btnCut.Name = "btnCut";
+            this.btnCut.Size = new System.Drawing.Size(105, 23);
+            this.btnCut.TabIndex = 21;
+            this.btnCut.Text = "断开";
+            this.btnCut.UseVisualStyleBackColor = true;
+            this.btnCut.Click += new System.EventHandler(this.btnCut_Click);
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(502, 21);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(105, 46);
+            this.btnConnect.TabIndex = 22;
+            this.btnConnect.Text = "连接";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // cboResolution
+            // 
+            this.cboResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboResolution.FormattingEnabled = true;
+            this.cboResolution.Location = new System.Drawing.Point(323, 88);
+            this.cboResolution.Name = "cboResolution";
+            this.cboResolution.Size = new System.Drawing.Size(140, 20);
+            this.cboResolution.TabIndex = 19;
+            // 
+            // cboVideo
+            // 
+            this.cboVideo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboVideo.FormattingEnabled = true;
+            this.cboVideo.Location = new System.Drawing.Point(103, 88);
+            this.cboVideo.Name = "cboVideo";
+            this.cboVideo.Size = new System.Drawing.Size(140, 20);
+            this.cboVideo.TabIndex = 18;
+            this.cboVideo.SelectedIndexChanged += new System.EventHandler(this.cboVideo_SelectedIndexChanged);
             // 
             // tab1
             // 
@@ -1046,7 +1360,6 @@
             this.clearChartButton.TabIndex = 62;
             this.clearChartButton.Text = "清除数据";
             this.clearChartButton.UseVisualStyleBackColor = true;
-            
             // 
             // button1
             // 
@@ -1121,6 +1434,9 @@
             // 
             // TestSystemConfigTabPage
             // 
+            this.TestSystemConfigTabPage.Controls.Add(this.eCalButton);
+            this.TestSystemConfigTabPage.Controls.Add(this.readConfigFromAnalyzerButton);
+            this.TestSystemConfigTabPage.Controls.Add(this.saveAndWriteIniButton);
             this.TestSystemConfigTabPage.Controls.Add(this.flowLayoutPanel20);
             this.TestSystemConfigTabPage.Controls.Add(this.flowLayoutPanel19);
             this.TestSystemConfigTabPage.Controls.Add(this.flowLayoutPanel18);
@@ -1134,13 +1450,43 @@
             this.TestSystemConfigTabPage.Text = "测试系统配置";
             this.TestSystemConfigTabPage.UseVisualStyleBackColor = true;
             // 
+            // eCalButton
+            // 
+            this.eCalButton.Location = new System.Drawing.Point(539, 479);
+            this.eCalButton.Name = "eCalButton";
+            this.eCalButton.Size = new System.Drawing.Size(135, 52);
+            this.eCalButton.TabIndex = 56;
+            this.eCalButton.Text = "校验";
+            this.eCalButton.UseVisualStyleBackColor = true;
+            this.eCalButton.Click += new System.EventHandler(this.eCalButton_Click);
+            // 
+            // readConfigFromAnalyzerButton
+            // 
+            this.readConfigFromAnalyzerButton.Location = new System.Drawing.Point(363, 479);
+            this.readConfigFromAnalyzerButton.Name = "readConfigFromAnalyzerButton";
+            this.readConfigFromAnalyzerButton.Size = new System.Drawing.Size(135, 52);
+            this.readConfigFromAnalyzerButton.TabIndex = 55;
+            this.readConfigFromAnalyzerButton.Text = "从网分仪读取配置";
+            this.readConfigFromAnalyzerButton.UseVisualStyleBackColor = true;
+            this.readConfigFromAnalyzerButton.Click += new System.EventHandler(this.readConfigFromAnalyzerButton_Click);
+            // 
+            // saveAndWriteIniButton
+            // 
+            this.saveAndWriteIniButton.Location = new System.Drawing.Point(891, 479);
+            this.saveAndWriteIniButton.Name = "saveAndWriteIniButton";
+            this.saveAndWriteIniButton.Size = new System.Drawing.Size(135, 52);
+            this.saveAndWriteIniButton.TabIndex = 54;
+            this.saveAndWriteIniButton.Text = "保存并写入网分仪";
+            this.saveAndWriteIniButton.UseVisualStyleBackColor = true;
+            this.saveAndWriteIniButton.Click += new System.EventHandler(this.saveAndWriteIniButton_Click);
+            // 
             // flowLayoutPanel20
             // 
             this.flowLayoutPanel20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel20.AutoSize = true;
             this.flowLayoutPanel20.Controls.Add(this.label8);
             this.flowLayoutPanel20.Controls.Add(this.LimitPathTextBox);
-            this.flowLayoutPanel20.Controls.Add(this.button2);
+            this.flowLayoutPanel20.Controls.Add(this.setLimitPathButton);
             this.flowLayoutPanel20.Location = new System.Drawing.Point(40, 457);
             this.flowLayoutPanel20.Name = "flowLayoutPanel20";
             this.flowLayoutPanel20.Size = new System.Drawing.Size(291, 29);
@@ -1164,14 +1510,15 @@
             this.LimitPathTextBox.Size = new System.Drawing.Size(121, 21);
             this.LimitPathTextBox.TabIndex = 48;
             // 
-            // button2
+            // setLimitPathButton
             // 
-            this.button2.Location = new System.Drawing.Point(213, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 52;
-            this.button2.Text = "选择路径";
-            this.button2.UseVisualStyleBackColor = true;
+            this.setLimitPathButton.Location = new System.Drawing.Point(213, 3);
+            this.setLimitPathButton.Name = "setLimitPathButton";
+            this.setLimitPathButton.Size = new System.Drawing.Size(75, 23);
+            this.setLimitPathButton.TabIndex = 52;
+            this.setLimitPathButton.Text = "选择路径";
+            this.setLimitPathButton.UseVisualStyleBackColor = true;
+            this.setLimitPathButton.Click += new System.EventHandler(this.setLimitPathButton_Click);
             // 
             // flowLayoutPanel19
             // 
@@ -1537,11 +1884,11 @@
             // 
             // saveInitButton
             // 
-            this.saveInitButton.Location = new System.Drawing.Point(857, 476);
+            this.saveInitButton.Location = new System.Drawing.Point(715, 479);
             this.saveInitButton.Name = "saveInitButton";
-            this.saveInitButton.Size = new System.Drawing.Size(97, 52);
+            this.saveInitButton.Size = new System.Drawing.Size(135, 52);
             this.saveInitButton.TabIndex = 6;
-            this.saveInitButton.Text = "保存并写入";
+            this.saveInitButton.Text = "保存";
             this.saveInitButton.UseVisualStyleBackColor = true;
             this.saveInitButton.Click += new System.EventHandler(this.saveInitButton_Click);
             // 
@@ -1609,7 +1956,7 @@
             // 
             // systemStartButton
             // 
-            this.systemStartButton.Location = new System.Drawing.Point(108, 12);
+            this.systemStartButton.Location = new System.Drawing.Point(97, 3);
             this.systemStartButton.Name = "systemStartButton";
             this.systemStartButton.Size = new System.Drawing.Size(130, 52);
             this.systemStartButton.TabIndex = 61;
@@ -1619,7 +1966,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(12, 12);
+            this.loginButton.Location = new System.Drawing.Point(3, 3);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(88, 52);
             this.loginButton.TabIndex = 20;
@@ -1627,16 +1974,48 @@
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // label25
+            // systemStateLabel
             // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.label25.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(611, 9);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(259, 64);
-            this.label25.TabIndex = 62;
-            this.label25.Text = "Running";
+            this.systemStateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.systemStateLabel.AutoSize = true;
+            this.systemStateLabel.BackColor = System.Drawing.Color.SkyBlue;
+            this.systemStateLabel.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.systemStateLabel.Location = new System.Drawing.Point(617, 6);
+            this.systemStateLabel.Name = "systemStateLabel";
+            this.systemStateLabel.Size = new System.Drawing.Size(259, 64);
+            this.systemStateLabel.TabIndex = 62;
+            this.systemStateLabel.Text = "running";
+            // 
+            // flowLayoutPanel40
+            // 
+            this.flowLayoutPanel40.AutoSize = true;
+            this.flowLayoutPanel40.Controls.Add(this.loginButton);
+            this.flowLayoutPanel40.Controls.Add(this.systemStartButton);
+            this.flowLayoutPanel40.Location = new System.Drawing.Point(12, 9);
+            this.flowLayoutPanel40.Name = "flowLayoutPanel40";
+            this.flowLayoutPanel40.Size = new System.Drawing.Size(230, 58);
+            this.flowLayoutPanel40.TabIndex = 63;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.flowLayoutPanel40);
+            this.panel1.Controls.Add(this.connectButton);
+            this.panel1.Controls.Add(this.systemStateLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1424, 74);
+            this.panel1.TabIndex = 64;
+            // 
+            // clearCountButton
+            // 
+            this.clearCountButton.Location = new System.Drawing.Point(289, 3);
+            this.clearCountButton.Name = "clearCountButton";
+            this.clearCountButton.Size = new System.Drawing.Size(27, 99);
+            this.clearCountButton.TabIndex = 82;
+            this.clearCountButton.Text = "清  除 ";
+            this.clearCountButton.UseVisualStyleBackColor = true;
+            this.clearCountButton.Click += new System.EventHandler(this.clearCountButton_Click);
             // 
             // RF_TestSystem
             // 
@@ -1644,13 +2023,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1424, 881);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.connectButton);
-            this.Controls.Add(this.systemStartButton);
-            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.mainTabControl);
+            this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RF_TestSystem";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -1664,6 +2043,12 @@
             this.mainTabControl.ResumeLayout(false);
             this.chartView.ResumeLayout(false);
             this.chartView.PerformLayout();
+            this.flowLayoutPanel43.ResumeLayout(false);
+            this.flowLayoutPanel43.PerformLayout();
+            this.flowLayoutPanel42.ResumeLayout(false);
+            this.flowLayoutPanel42.PerformLayout();
+            this.flowLayoutPanel41.ResumeLayout(false);
+            this.flowLayoutPanel41.PerformLayout();
             this.flowLayoutPanel39.ResumeLayout(false);
             this.flowLayoutPanel39.PerformLayout();
             this.flowLayoutPanel38.ResumeLayout(false);
@@ -1702,6 +2087,10 @@
             this.flowLayoutPanel22.PerformLayout();
             this.flowLayoutPanel23.ResumeLayout(false);
             this.flowLayoutPanel23.PerformLayout();
+            this.cameraSetting.ResumeLayout(false);
+            this.cameraSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scanBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbPreview)).EndInit();
             this.tab1.ResumeLayout(false);
             this.tab1.PerformLayout();
             this.TestSystemConfigTabPage.ResumeLayout(false);
@@ -1732,9 +2121,11 @@
             this.flowLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel40.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1832,7 +2223,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox LimitPathTextBox;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button setLimitPathButton;
         private System.Windows.Forms.Panel chartPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel27;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel26;
@@ -1847,7 +2238,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel31;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox runTimeTextBox;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label systemStateLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel36;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel35;
         private System.Windows.Forms.Label label27;
@@ -1874,6 +2265,37 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel39;
         private System.Windows.Forms.Button setLoginInfobutton;
         private System.Windows.Forms.Button setModelButton;
+        private System.Windows.Forms.Button saveAndWriteIniButton;
+        private System.Windows.Forms.Button readConfigFromAnalyzerButton;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel40;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabPage cameraSetting;
+        private System.Windows.Forms.Button saveCameraButon;
+        private System.Windows.Forms.Button cameraSettingButton;
+        private AForge.Controls.PictureBox scanBox;
+        private System.Windows.Forms.Button findCameraButton;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label25;
+        private AForge.Controls.PictureBox picbPreview;
+        private System.Windows.Forms.Button btnPic;
+        private System.Windows.Forms.Button btnCut;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.ComboBox cboResolution;
+        private System.Windows.Forms.ComboBox cboVideo;
+        private AForge.Controls.VideoSourcePlayer vispShoot;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel42;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox scanModelComboBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel41;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox barcodeTextBox;
+        private System.Windows.Forms.Button editRectangularButton;
+        private System.Windows.Forms.Button eCalButton;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel43;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox continuouTestTextBox;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button clearCountButton;
     }
 }
 
