@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace RF_TestSystem
 {
@@ -24,10 +19,29 @@ namespace RF_TestSystem
         public string development;
         public string currentUser;
     }
+
+
+
+
+   
+
+
+
     public delegate void FinishHandler();   //声明委托
     public partial class Login : Form
     {
-        
+        [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
+        public static extern Int32 GetWindowLong(IntPtr hwnd, int nIndex);
+        [DllImport("user32.dll", EntryPoint = "SetWindowLong")]
+        public static extern Int32 SetWindowLong(IntPtr hwnd, int nIndex, Int32 dwNewLong);
+        [DllImport("user32", EntryPoint = "SetLayeredWindowAttributes")]
+        public static extern int SetLayeredWindowAttributes(IntPtr Handle, int crKey, byte bAlpha, int dwFlags);
+        const int GWL_EXSTYLE = -20;
+        const int WS_EX_TRANSPARENT = 0x20;
+        const int WS_EX_LAYERED = 0x80000;
+        const int LWA_ALPHA = 2;
+
+
         UserPasswd passwd = new UserPasswd();
         string closeButoonState = "set";
         string saveUser = "";
@@ -43,6 +57,7 @@ namespace RF_TestSystem
             Gloable.user.production = "产线";
             Gloable.user.afterSales = "售后";
             Gloable.user.development = "开发";
+            this.pictureBox2.ImageLocation = @".\\Resources\\BACK.jpg";
         }
 
 
@@ -56,7 +71,7 @@ namespace RF_TestSystem
         }
 
         private void extiButton_Click(object sender, EventArgs e)
-        {         
+        {
             this.Close();
             if (closeButoonState == "set")
                 Process.GetCurrentProcess().Kill(); //终止程序
@@ -67,9 +82,9 @@ namespace RF_TestSystem
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if(this.accountComboBox.SelectedIndex==0)
+            if (this.accountComboBox.SelectedIndex == 0)
             {
-                if(this.passwdMaskedTextBox.Text == passwd.productionPasswd)
+                if (this.passwdMaskedTextBox.Text == passwd.productionPasswd)
                 {
                     Gloable.user.currentUser = Gloable.user.production;
                 }
@@ -104,6 +119,36 @@ namespace RF_TestSystem
                 }
             }
             this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            //SetWindowLong(this.Handle, GWL_EXSTYLE, GetWindowLong(Handle, GWL_EXSTYLE) | WS_EX_LAYERED);
+        }
+
+        private void Login_Shown(object sender, EventArgs e)
+        {
+            //Effect(true);
+        }
+
+        private void Effect(bool show = true)
+        {
+            for (byte i = 0; i < byte.MaxValue; i++)
+            {
+                SetLayeredWindowAttributes(this.Handle, 0, (byte)(show ? i : byte.MaxValue - i), LWA_ALPHA);
+                Thread.Sleep(2);
+                Application.DoEvents();
+            }
+        }
+
+        private void accountComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(this.accountComboBox.SelectedIndex == 0)
+                this.pictureBox1.ImageLocation = @".\\Resources\\multiple-11@4x.png";
+            if (this.accountComboBox.SelectedIndex == 1)
+                this.pictureBox1.ImageLocation = @".\\Resources\\single-01@4x.png";
+            if (this.accountComboBox.SelectedIndex == 2)
+                this.pictureBox1.ImageLocation = @".\\Resources\\skull-2@4x.png";
         }
     }
 }

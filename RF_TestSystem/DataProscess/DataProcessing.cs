@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -12,7 +10,7 @@ namespace RF_TestSystem
 {
 
     public struct separationGeneric<T> //泛型结构体，保存复数
-{
+    {
         public T realPart;
         public T ImaginaryPart;
     };
@@ -21,7 +19,7 @@ namespace RF_TestSystem
         public string getDataPath()
         {
             string path = System.Windows.Forms.Application.StartupPath;
-            
+
             FolderBrowserDialog savePathDialog = new FolderBrowserDialog();
             savePathDialog.Description = "选择保存路径";
             savePathDialog.ShowDialog();
@@ -29,7 +27,7 @@ namespace RF_TestSystem
 
             if (path == "")
             {
-                path = System.Windows.Forms.Application.StartupPath;
+                // path = System.Windows.Forms.Application.StartupPath;
                 return path;
             }
             return path;
@@ -196,19 +194,19 @@ namespace RF_TestSystem
                 List<string> freq = new List<string>();
                 copyData = myTraces[i];
 
-                freq = splitData(myTraces[i].frequency,',');
+                freq = splitData(myTraces[i].frequency, ',');
                 string frequency = "";
-                for (int f=0;f< freq.Count;f++)
+                for (int f = 0; f < freq.Count; f++)
                 {
                     double frequencyDouble = 0;
                     string unit = "";
-                    Console.WriteLine("频率");
-                    Console.WriteLine(freq[f]);
+                   // Console.WriteLine("频率");
+                   // Console.WriteLine(freq[f]);
                     try
                     {
                         frequencyDouble = Convert.ToDouble(freq[f]);
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         Console.WriteLine(e.ToString());
                         break;
@@ -229,7 +227,7 @@ namespace RF_TestSystem
                         unit = "GHz";
                     }
 
-                    freq[f] = myTraces[i].meas + ":" + myTraces[i].note + " Freq:" + freq[f] + unit+" "+ myTraces[i].formate;
+                    freq[f] = myTraces[i].meas + ":" + myTraces[i].note + " Freq:" + freq[f] + unit + " " + myTraces[i].formate;
                 }
                 frequency = joinData(freq, ",");
                 copyData.tracesDataDoubleType = formattedPluralData(myTraces[i].rawData);
@@ -260,8 +258,8 @@ namespace RF_TestSystem
             string MeasurementUnitString = "Measurement Unit----->,,,,,,";
 
             string barcode = ",";
-            if (Gloable.myBarcode.Count>0)
-                barcode = Gloable.myBarcode[0].Trim()+",";
+            if (Gloable.myBarcode.Count > 0)
+                barcode = Gloable.myBarcode[0].Trim() + ",";
 
             string TestStartTime = Gloable.testInfo.startTime + ",";
             string TestStopTime = Gloable.testInfo.stopTime + ",";
@@ -291,7 +289,7 @@ namespace RF_TestSystem
                     }
                     else
                     {
-                        File.Create(path + saveData.meas + "_" + saveData.note + saveData .formate + "_RealPart" + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
+                        File.Create(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
 
 
                         string Header = SerialNumberString + TestStartTimeString + TestStopTimeString + SubStationIDString + OverallResultString + FailingBandsString + saveData.frequency;
@@ -300,17 +298,17 @@ namespace RF_TestSystem
                         string upLimit = saveData.limit.rawRealPartUpLimit;
                         string downLimit = saveData.limit.rawRealPartDownLimit;
                         if (upLimit.Contains("\r"))
-                        {                        
+                        {
                             upLimit = upLimit.Replace("\r", "");
                         }
                         if (downLimit.Contains("\r"))
                         {
                             downLimit = downLimit.Replace("\r", "");
                         }
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", UpperLimitString+ upLimit, false);
+                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", UpperLimitString + upLimit, false);
                         successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", LowerLimitString + downLimit, false);
                         successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", MeasurementUnitString, false);
-                                    
+
                         successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", dataHead + saveData.tracesDataStringType.realPart, false);
                     }
                 }
@@ -368,11 +366,11 @@ namespace RF_TestSystem
                         successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", "", false);
                         string upLimit = saveData.limit.rawRealPartUpLimit;
                         string downLimit = saveData.limit.rawRealPartDownLimit;
-                        if(upLimit.Contains("\n"))
+                        if (upLimit.Contains("\n"))
                         {
-                            upLimit = upLimit.Replace("\n","");
+                            upLimit = upLimit.Replace("\n", "");
                         }
-                        if(downLimit.Contains("\n"))
+                        if (downLimit.Contains("\n"))
                         {
                             downLimit = downLimit.Replace("\n", "");
                         }
@@ -435,7 +433,7 @@ namespace RF_TestSystem
             {
                 rawLimitData = File.ReadAllText(fileName);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 rawLimitData = "fail\n";
                 MessageBox.Show("规格文件被占用！请关闭后重试！");
@@ -455,9 +453,9 @@ namespace RF_TestSystem
             {
                 Console.WriteLine("不存在文件夹 {0}", path);
                 Directory.CreateDirectory(path);//创建该文件夹
-                
+
             }
-           
+
             List<string> limitNameList = new List<string>();
             DirectoryInfo root = new DirectoryInfo(path);
             foreach (FileInfo fileName in root.GetFiles())
@@ -465,7 +463,7 @@ namespace RF_TestSystem
                 limitNameList.Add(fileName.Name);
 
             }
-            if(limitNameList.Count==0)
+            if (limitNameList.Count == 0)
             {
                 File.Create(path + "Limit_" + DateTime.Now.ToString("MM-dd") + ".csv").Close();
                 foreach (FileInfo fileName in root.GetFiles())
@@ -473,7 +471,7 @@ namespace RF_TestSystem
                     limitNameList.Add(fileName.Name);
                 }
             }
-            
+
             return limitNameList;
         }
     }

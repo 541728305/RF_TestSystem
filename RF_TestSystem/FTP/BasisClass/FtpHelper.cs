@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Net;
-using System.Windows.Forms;
 
 namespace winform_ftp
 {
@@ -23,9 +22,9 @@ namespace winform_ftp
         /// <param name="RemoteDir">FTP上的文件路径</param>
         /// <param name="RemoteFileName">完整文件名</param>
         /// <param name="LocalDir">下载到本地的路径</param>
-        public  bool Down(string RemoteDir, string RemoteFileName, string LocalDir)
+        public bool Down(string RemoteDir, string RemoteFileName, string LocalDir)
         {
-            
+
             try
             {
                 FileStream outputStream = new FileStream(LocalDir, FileMode.Create, FileAccess.Write);//新建本地文件(空文件)
@@ -37,7 +36,7 @@ namespace winform_ftp
                 return false;//新建本地文件失败
             }
         }
-        private  bool Download(string RemoteDir, string RemoteFileName, string LocalDir)
+        private bool Download(string RemoteDir, string RemoteFileName, string LocalDir)
         {
             FtpWebRequest reqFTP;
             try
@@ -78,22 +77,22 @@ namespace winform_ftp
         /// </summary>
         /// <param name="RemoteDir">FTP上文件路径</param>
         /// <returns></returns>
-        public  string CreateDirectory(string RemoteDir)
+        public string CreateDirectory(string RemoteDir)
         {
             FtpWebRequest request = SetFtpConfig(WebRequestMethods.Ftp.MakeDirectory, RemoteDir);
             FtpWebResponse response = (FtpWebResponse)request.GetResponse();
             return response.StatusDescription;
         }
-        private  FtpWebRequest SetFtpConfig(string method, string RemoteDir)
+        private FtpWebRequest SetFtpConfig(string method, string RemoteDir)
         {
             return SetFtpConfig(method, RemoteDir, "");
         }
-        private  FtpWebRequest SetFtpConfig(string method, string RemoteDir, string RemoteFileName)
+        private FtpWebRequest SetFtpConfig(string method, string RemoteDir, string RemoteFileName)
         {
             RemoteDir = string.IsNullOrEmpty(RemoteDir) ? "" : RemoteDir.Trim();
             return SetFtpConfig(FtpHost, FtpUser, FtpPassword, method, RemoteDir, RemoteFileName);
         }
-        private  FtpWebRequest SetFtpConfig(string host, string username, string password, string method, string RemoteDir, string RemoteFileName)
+        private FtpWebRequest SetFtpConfig(string host, string username, string password, string method, string RemoteDir, string RemoteFileName)
         {
             System.Net.ServicePointManager.DefaultConnectionLimit = 50;
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(host + RemoteDir + "/" + RemoteFileName);
@@ -111,7 +110,7 @@ namespace winform_ftp
         /// <param name="FtpUser">FTPID
         /// <param name="FtpPassword">FTP密码
         /// <returns></returns>
-        public  void setFTPLoginInfo(string host, string username, string password)
+        public void setFTPLoginInfo(string host, string username, string password)
         {
             FtpHost = "ftp://" + host + "//";
             FtpUser = username;
@@ -126,18 +125,18 @@ namespace winform_ftp
         /// <param name="localFileName">本地选择的文件名</param>
         /// <param name="falsegz"></param>
         /// <returns></returns>
-        public  bool Upload(string FileName, string localFileName)
+        public bool Upload(string FileName, string localFileName)
         {
-            
+
             return Upload(FileDir, FileName, localFileName);
         }
 
 
-         public event FTPProgressBarHandler ProgressBarUpdate; //上传进度更新事件
+        public event FTPProgressBarHandler ProgressBarUpdate; //上传进度更新事件
 
-        public  bool Upload(string FileDir, string FileName, string localFileName)
+        public bool Upload(string FileDir, string FileName, string localFileName)
         {
-            
+
 
 
             int i = 0;
@@ -150,10 +149,10 @@ namespace winform_ftp
                 int buffLength = 20480;//缓存大小，单位byte
                 byte[] buff = new byte[buffLength];//数据包
                 var contentLen = fs.Read(buff, 0, buffLength);//每次读文件流的kb  
-             
-                    //③将本地文件的内容，写入到FTP上空文件中去：
-                    Stream strm = request.GetRequestStream(); //把上传的文件写入本地文件的流
-             
+
+                //③将本地文件的内容，写入到FTP上空文件中去：
+                Stream strm = request.GetRequestStream(); //把上传的文件写入本地文件的流
+
 
                 while (contentLen != 0)//流内容没有结束，循环  
                 {
@@ -161,7 +160,7 @@ namespace winform_ftp
                     //FTPGloable.FTPbkWorker.ReportProgress(i);
                     //Console.WriteLine(i);
                     strm.Write(buff, 0, contentLen);// 把内容从file stream 写入upload stream  
-                    contentLen = fs.Read(buff, 0, buffLength);//读取流
+                    contentLen = fs.Read(buff, 0, buffLength);//读取流             
                 }
                 //④关闭IO
                 strm.Close();
@@ -170,7 +169,7 @@ namespace winform_ftp
             }
             catch (Exception ex)
             {
-               // MessageBox.Show(ex.ToString());
+                // MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -180,7 +179,7 @@ namespace winform_ftp
         /// <param name="FileDir">ftp文件路径(不包含文件名)</param>  
         /// <param name="FileName">文件名</param>  
         /// <returns>返回值</returns>  
-        public  bool Delete(string FileDir, string FileName)
+        public bool Delete(string FileDir, string FileName)
         {
             bool success = false;
             FtpWebRequest ftpWebRequest = null;

@@ -1,12 +1,8 @@
-﻿using HalconDotNet;
+﻿
+using HalconDotNet;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace RF_TestSystem
 {
@@ -19,7 +15,7 @@ namespace RF_TestSystem
         PublicTools pt = new PublicTools();
         HTuple hv_DataCodeHandle, hv_ResultHandles, hv_DecodedDataStrings;
         HObject symbolXLDs;
-     
+
         HTuple hv_coding, hv_timeOut, hv_count, hv_codemode;
         //private HWindowControl hWindowControl1;
 
@@ -28,12 +24,12 @@ namespace RF_TestSystem
         {
         }
 
-      public  halconDecoding(HWindowControl hWindowControl1)
+        public halconDecoding(HWindowControl hWindowControl1)
         {
             m_hwindow = hWindowControl1.HalconWindow;
-   
+
         }
-       
+
         /// <summary>
         /// 读取二维码图片
         /// </summary>
@@ -139,19 +135,17 @@ namespace RF_TestSystem
 
         public string halconDecode(Bitmap SrcImage)
         {
-
             readImage(SrcImage);
-
             if (SrcImage.Width < 20 || SrcImage.Height < 20)
                 return "";
             return decode();
-      
+
         }
 
         public void readImage(Bitmap SrcImage)
         {
-           Bitmap2HImageBpp24(SrcImage, out m_image);
-          
+            Bitmap2HImageBpp24(SrcImage, out m_image);
+
             HOperatorSet.GetImageSize(m_image, out width, out height);
             HOperatorSet.SetPart(m_hwindow, 0, 0, height - 1, width - 1);
             HOperatorSet.DispImage(m_image, m_hwindow);
@@ -161,26 +155,22 @@ namespace RF_TestSystem
         {
             string barcode = "";
             hv_timeOut = 2;
-            hv_count = 1;
+            hv_count = 2;
             string[] hv_codemode = { "Data Matrix ECC 200", "PDF417" , "QR Code", "Aztec Code" , "GS1 Aztec Code", "GS1 DataMatrix"
             ,"GS1 QR Code","Micro QR Code"};
-
-           
             HOperatorSet.Rgb1ToGray(m_image, out ho_GrayImage);
-
             HOperatorSet.CountSeconds(out hv_T1);
-            Console.WriteLine("开始解码");
+            // Console.WriteLine("开始解码");
             for (int i = 0; i < hv_codemode.Length; i++)
             {
-
                 HOperatorSet.CreateDataCode2dModel(hv_codemode[i], "default_parameters", "maximum_recognition", out hv_DataCodeHandle);
                 HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "timeout", 50);
                 //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "default_parameters", "maximum_recognition");
                 HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "polarity", "any");
 
-               // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(1)).TupleConcat(100));
+                // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(1)).TupleConcat(100));
                 //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "module_gap", "no");
-               // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(12)).TupleConcat(40));               
+                // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(12)).TupleConcat(40));               
                 try
                 {
                     HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "strict_quiet_zone", "yes");
@@ -189,12 +179,10 @@ namespace RF_TestSystem
                 {
                     continue;
                 }
-             
+
                 HOperatorSet.FindDataCode2d(m_image, out symbolXLDs, hv_DataCodeHandle, "stop_after_result_num", hv_count, out hv_ResultHandles,
                     out hv_DecodedDataStrings);
-                int a = hv_DecodedDataStrings.Length;
 
-                
                 if (hv_DecodedDataStrings.Length != 0)
                 {
                     HOperatorSet.SetLineWidth(m_hwindow, 3);
@@ -203,7 +191,11 @@ namespace RF_TestSystem
                     pt.disp_message(m_hwindow, "解码结果：" + hv_DecodedDataStrings, "image", 12, 12, "red", "true");
                     HOperatorSet.CountSeconds(out hv_T2);
                     double Time = hv_T2 - hv_T1;
-                   // pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
+
+                    barcode = hv_DecodedDataStrings;
+                    while (barcode.Contains("\""))
+                        barcode = barcode.Replace("\"", "");
+                    //pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
                     break;
                 }
                 else
@@ -213,14 +205,15 @@ namespace RF_TestSystem
                         pt.disp_message(m_hwindow, "二维码解码失败", "image", 12, 12, "red", "true");
                         HOperatorSet.CountSeconds(out hv_T2);
                         double Time = hv_T2 - hv_T1;
-                      //  pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
+                        //  pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
                         break;
                     }
                 }
                 hv_DataCodeHandle.Dispose();
             }
-            Console.WriteLine("解码完成");
-            barcode = hv_DecodedDataStrings.ToString();
+            // Console.WriteLine("解码完成");
+
+            Console.WriteLine("解码完成:{0}", hv_DecodedDataStrings.ToString());
             return barcode;
         }
 
@@ -229,7 +222,7 @@ namespace RF_TestSystem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-      private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             /* 
            hv_timeOut = 50;
@@ -291,7 +284,7 @@ namespace RF_TestSystem
         private void Form1_Load(object sender, EventArgs e)
         {
 
-           // m_hwindow = hWindowControl1.HalconWindow;
+            // m_hwindow = hWindowControl1.HalconWindow;
         }
     }
 }

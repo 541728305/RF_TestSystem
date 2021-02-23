@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HalconDotNet;
+﻿using HalconDotNet;
 
 namespace RF_TestSystem
 {
@@ -226,6 +221,10 @@ namespace RF_TestSystem
                 HOperatorSet.DispText(m_hwindow, hv_String, hv_CoordSystem_COPY_INP_TMP,
                     hv_Row_COPY_INP_TMP, hv_Column_COPY_INP_TMP, hv_Color_COPY_INP_TMP, hv_GenParamName,
                     hv_GenParamValue);
+
+                //HOperatorSet.SetColor(m_hwindow, "red");
+                //HOperatorSet.SetTposition(m_hwindow, hv_Row_COPY_INP_TMP, hv_Row_COPY_INP_TMP);
+                //HOperatorSet.WriteString(m_hwindow, hv_String);
 
 
                 hv_Color_COPY_INP_TMP.Dispose();
@@ -478,6 +477,6 @@ namespace RF_TestSystem
             }
         }
 
-       
+
     }
 }

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TCPHelper;
 using System.Net;
-using System.Net.Sockets;
+using TCPHelper;
 
 namespace RF_TestSystem
 {
@@ -17,15 +13,15 @@ namespace RF_TestSystem
         public event commandComingHandler commandComingEvent;
         public TCPClient()
         {
-            
+
 
 
             client.Completed += new Action<System.Net.Sockets.TcpClient, EnSocketAction>((c, enAction) =>
-            {                     
+            {
                 switch (enAction)
                 {
                     case EnSocketAction.Connect:
-                        {                     
+                        {
                             IPEndPoint iep = c.Client.RemoteEndPoint as IPEndPoint;
                             string key = string.Format("{0}:{1}", iep.Address.ToString(), iep.Port);
                             Console.WriteLine("已经与{0}建立连接", key);
@@ -37,10 +33,10 @@ namespace RF_TestSystem
                             IPEndPoint iep = c.Client.RemoteEndPoint as IPEndPoint;
                             string key = string.Format("{0}:{1}", iep.Address.ToString(), iep.Port);
                             Console.WriteLine("{0}：向{1}发送了一条消息", DateTime.Now, key);
-                            
+
                             break;
                         }
-                        
+
                     case EnSocketAction.Close:
                         Console.WriteLine("服务端连接关闭");
                         connectState = 3;
@@ -49,13 +45,13 @@ namespace RF_TestSystem
                         break;
                 }
             });
-            client.Received += new Action<string,string>((key,msg)=>
-            {
-                Console.WriteLine("{0}对我说：{1}",key,msg);
-                TcpProtocol tcpProtocol = new TcpProtocol();
-                commandComingEvent(msg);
-            });
-                 
+            client.Received += new Action<string, string>((key, msg) =>
+             {
+                 Console.WriteLine("{0}对我说：{1}", key, msg);
+                 TcpProtocol tcpProtocol = new TcpProtocol();
+                 commandComingEvent(msg);
+             });
+
         }
         public void clientSendMessge(string msg)
         {
@@ -67,7 +63,7 @@ namespace RF_TestSystem
         {
             connectState = 2;
         }
-        public bool clientConncet(string IP,int Port)
+        public bool clientConncet(string IP, int Port)
         {
             bool successful = false;
             System.Timers.Timer t = new System.Timers.Timer(2000);//实例化Timer类，设置间隔时间为10000毫秒；
@@ -76,9 +72,9 @@ namespace RF_TestSystem
             t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
             connectState = 0;
             client.ConnectAsync(IP, Port);
-            while(successful == false)
+            while (successful == false)
             {
-                if(connectState==1)
+                if (connectState == 1)
                 {
                     t.Enabled = false;
                     successful = true;
@@ -89,7 +85,7 @@ namespace RF_TestSystem
                     t.Enabled = false;
                     return successful;
                 }
-            }          
+            }
             return successful;
         }
         public void clientshutdowm()
@@ -101,5 +97,5 @@ namespace RF_TestSystem
             return client.isConnect();
         }
     }
-    
+
 }

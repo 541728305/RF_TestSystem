@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace RF_TestSystem
@@ -16,14 +15,24 @@ namespace RF_TestSystem
         public string startTime;
         public string stopTime;
         public string failing;
+        public string failingValue;
         public string overallResult;
         public string currentModel;
         public string productionModelString;
         public string retestModelString;
         public string developerModelString;
+        public string buyoffModelString;
+        public string ORTModelString;
+        public string FAModelString;
+        public string SortingModelString;
         public ModeInfo productionModel;
         public ModeInfo retestModel;
         public ModeInfo developerModel;
+        public ModeInfo buyoffModel;
+        public ModeInfo ORTModel;
+        public ModeInfo FAModel;
+        public ModeInfo SortingModel;
+        
     }
     public struct ModeInfo
     {
@@ -44,7 +53,7 @@ namespace RF_TestSystem
         public List<TracesInfo> doMeasurement(List<TracesInfo> traces, string delayMs)
         {
 
-             
+
             List<TracesInfo> rawAnalyzerData = new List<TracesInfo>(0);
             int ch1TraceCount = 0;
             int ch2TraceCount = 0;
@@ -54,37 +63,78 @@ namespace RF_TestSystem
             Gloable.myAnalyzer.displayUpdate("OFF");
             foreach (TracesInfo trace in traces)
             {
-               Gloable. myAnalyzer.setContinuousStatus("1", "ON"); //防止被Hold住
+                Gloable.myAnalyzer.setContinuousStatus("1", "ON"); //防止被Hold住
                 if (trace.channel == "2")
                     Gloable.myAnalyzer.setContinuousStatus("2", "ON");
-               // Console.WriteLine("正在测试");
+                // Console.WriteLine("正在测试");
                 temp = trace;
                 if (trace.channel == "1")
                 {
                     ch1TraceCount++;
-                    Gloable. myAnalyzer.selectTrace(trace.channel, ch1TraceCount.ToString());
+                    Gloable.myAnalyzer.selectTrace(trace.channel, ch1TraceCount.ToString());
                     Gloable.myAnalyzer.setTracesFormat(trace.channel, ch1TraceCount.ToString(), trace.formate);
                     Gloable.myAnalyzer.setTracesMeas(trace.channel, ch1TraceCount.ToString(), trace.meas);
-                    //Thread.Sleep(int.Parse(delayMs));
-                    Gloable.myAnalyzer.dataToMemory(trace.channel, ch1TraceCount.ToString());
+                    Thread.Sleep(int.Parse(delayMs));
+                    //Gloable.myAnalyzer.dataToMemory(trace.channel, ch1TraceCount.ToString());
+                    //temp.frequency = Gloable.myAnalyzer.getFrequency(trace.channel);
                     temp.frequency = Gloable.myAnalyzer.getFrequency(trace.channel);
-                    temp.rawData = Gloable.myAnalyzer.getMemoryTraceData(trace.channel, ch1TraceCount.ToString()); //读memory的数据
-                    //temp.rawData =  getActiveTraceData(trace.channel, traceCount.ToString());//直接读活跃的数据
-                }
+                    if (temp.frequency.Contains("ReadString error"))
+                    {
+                        temp.frequency = Gloable.myAnalyzer.readData();
+                        if (temp.frequency.Contains("ReadString error"))
+                            temp.frequency = Gloable.myAnalyzer.readData();
+                    }
+                    //temp.rawData = Gloable.myAnalyzer.getMemoryTraceData(trace.channel, ch1TraceCount.ToString()); //读memory的数据
+                    temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch1TraceCount.ToString());//直接读活跃的数据
+                    if (temp.rawData.Contains("ReadString error"))
+                    {
+                        temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch2TraceCount.ToString());//直接读活跃的数据
+                        //Gloable.myAnalyzer.selectTrace(trace.channel, ch1TraceCount.ToString());
+                        //Gloable.myAnalyzer.setTracesFormat(trace.channel, ch1TraceCount.ToString(), trace.formate);
+                        //Gloable.myAnalyzer.setTracesMeas(trace.channel, ch1TraceCount.ToString(), trace.meas);
+                        //Thread.Sleep(int.Parse(delayMs));
+                        //Gloable.myAnalyzer.dataToMemory(trace.channel, ch1TraceCount.ToString());
+                        //temp.frequency = Gloable.myAnalyzer.getFrequency(trace.channel);
+                        //Thread.Sleep(int.Parse(delayMs));
+                        //temp.rawData = Gloable.myAnalyzer.getMemoryTraceData(trace.channel, ch1TraceCount.ToString()); //读memory的数据
+                        if(temp.rawData.Contains("ReadString error"))
+                            temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch1TraceCount.ToString());//直接读活跃的数据
+                    }
+                    }
                 if (trace.channel == "2")
                 {
                     ch2TraceCount++;
                     Gloable.myAnalyzer.selectTrace(trace.channel, ch2TraceCount.ToString());
                     Console.WriteLine(Gloable.myAnalyzer.setTracesFormat(trace.channel, ch2TraceCount.ToString(), trace.formate));
                     Console.WriteLine(Gloable.myAnalyzer.setTracesMeas(trace.channel, ch2TraceCount.ToString(), trace.meas));
-                    //Thread.Sleep(int.Parse(delayMs));
-                    Console.WriteLine(Gloable.myAnalyzer.dataToMemory(trace.channel, ch2TraceCount.ToString()));
+                    Thread.Sleep(int.Parse(delayMs));
+                    //Console.WriteLine(Gloable.myAnalyzer.dataToMemory(trace.channel, ch2TraceCount.ToString()));
                     temp.frequency = Gloable.myAnalyzer.getFrequency(trace.channel);
-                    temp.rawData = Gloable.myAnalyzer.getMemoryTraceData(trace.channel, ch2TraceCount.ToString()); //读memory的数据
-                    //temp.rawData =  getActiveTraceData(trace.channel, traceCount.ToString());//直接读活跃的数据
-                }
+                    if(temp.frequency.Contains("ReadString error"))
+                    {
+                        temp.frequency = Gloable.myAnalyzer.readData();
+                        if (temp.frequency.Contains("ReadString error"))
+                            temp.frequency = Gloable.myAnalyzer.readData();
+                    }
+                    //temp.rawData = Gloable.myAnalyzer.getMemoryTraceData(trace.channel, ch2TraceCount.ToString()); //读memory的数据
+                    temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch2TraceCount.ToString());//直接读活跃的数据
+                    if (temp.rawData.Contains("ReadString error"))
+                    {
+                        temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch2TraceCount.ToString());//直接读活跃的数据
+                        //Gloable.myAnalyzer.selectTrace(trace.channel, ch2TraceCount.ToString());
+                        //Console.WriteLine(Gloable.myAnalyzer.setTracesFormat(trace.channel, ch2TraceCount.ToString(), trace.formate));
+                        //Console.WriteLine(Gloable.myAnalyzer.setTracesMeas(trace.channel, ch2TraceCount.ToString(), trace.meas));
+                        //Thread.Sleep(int.Parse(delayMs));
+                        ////Console.WriteLine(Gloable.myAnalyzer.dataToMemory(trace.channel, ch2TraceCount.ToString()));
+                        //temp.frequency = Gloable.myAnalyzer.getFrequency(trace.channel);
+                        //temp.rawData = Gloable.myAnalyzer.getMemoryTraceData(trace.channel, ch2TraceCount.ToString()); //读memory的数据
+                        if(temp.rawData.Contains("ReadString error"))
+                            temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch2TraceCount.ToString());//直接读活跃的数据
 
-                if (temp.rawData == "ReadString error")
+                    }
+                    }
+
+                if (temp.rawData.Contains("ReadString error"))
                 {
                     rawAnalyzerData.Add(temp);
                     Gloable.myAnalyzer.setContinuousStatus("1", "ON");
@@ -96,21 +146,27 @@ namespace RF_TestSystem
 
                 List<TracesInfo> transTrace = new List<TracesInfo>(); //分流函数底层没封装好，直接转成List格式
                 transTrace.Add(temp);
-
                 DataProcessing myOutPutStream = new DataProcessing();
                 transTrace = myOutPutStream.dataIntegration(transTrace);
-          
-                if (curveJudge(transTrace[0]) == "PASS")
+
+                string results = curveJudge(transTrace[0]);
+                if (results == "PASS")
+                {
+                    temp = transTrace[0];
+                    temp.state = "PASS";
+                }
+                else
+                {
+                    temp = transTrace[0];
+                    temp.state = "FAIL";
+
+                    temp.NG_Value = results.Replace("FAIL", "");
+
+                    if (temp.NG_Value.Length > 6)
                     {
-                        temp = transTrace[0];
-                        temp.state = "PASS";
+                        temp.NG_Value = temp.NG_Value.Remove(6);
                     }
-                   else
-                    {
-                        temp = transTrace[0];
-                        temp.state = "FAIL";
-                    }
-         
+                }
                 ShowCurve(currentCurve, temp);
                 currentCurve++;
                 rawAnalyzerData.Add(temp);
@@ -122,27 +178,31 @@ namespace RF_TestSystem
         {
             Console.WriteLine("开始测试");
             bool successFlag = true;
+            Gloable.tracesMutex.WaitOne();
+           
             Gloable.myTraces = doMeasurement(Gloable.myTraces, "1");
+            
             if (Gloable.myTraces.Last().rawData == "ReadString error")
             {
                 int reMeasurement = 0;
                 while (Gloable.myTraces.Last().rawData == "ReadString error")
                 {
-                    Gloable. myAnalyzer.readData();//把缓冲区读一下，大概率是由缓冲区引起的
+                    //Gloable.myAnalyzer.readData();//把缓冲区读一下，大概率是由缓冲区引起的
                     Gloable.myTraces = doMeasurement(Gloable.myTraces, "1");
                     reMeasurement++;
                     if (reMeasurement > 3)
                     {
                         successFlag = false;
                         MessageBox.Show("从网分获取数据失败，请重新测试或重启上位机");
+                 //       Gloable.tracesMutex.ReleaseMutex();
                         return successFlag;
                     }
                 }
-             }
-          
+            }
+        
             Gloable.myTraces = myOutPutStream.dataIntegration(Gloable.myTraces);//将网分里获得的数据进行转化分流处理
-            
-           
+            Gloable.tracesMutex.ReleaseMutex();
+
             return successFlag;
         }
 
@@ -155,18 +215,27 @@ namespace RF_TestSystem
             Console.WriteLine(temp.tracesDataDoubleType.realPart.Max());
             Console.WriteLine(temp.limit.tracesRealPartUpLimitDoubleType.Max());
 
-            if (temp.tracesDataDoubleType.realPart.Max()> temp.limit.tracesRealPartUpLimitDoubleType.Max() )
+            if (temp.tracesDataDoubleType.realPart.Count > temp.limit.tracesRealPartUpLimitDoubleType.Count)
             {
                 results = "FAIL";
                 return results;
             }
-            if(temp.tracesDataDoubleType.realPart.Min() < temp.limit.tracesRealPartDownLimitDoubleType.Min())
-            {
-                results = "FAIL";
-                return results;
-            }    
 
-                return results;
+            for (int i = 0; i < temp.tracesDataDoubleType.realPart.Count; i++)
+            {
+                if (temp.tracesDataDoubleType.realPart[i] > temp.limit.tracesRealPartUpLimitDoubleType[i])
+                {
+                    results = "FAIL" + temp.tracesDataDoubleType.realPart[i];
+                    return results;
+                }
+                if (temp.tracesDataDoubleType.realPart[i] < temp.limit.tracesRealPartDownLimitDoubleType[i])
+                {
+                    results = "FAIL" + temp.tracesDataDoubleType.realPart[i];
+                    return results;
+                }
+            }
+
+            return results;
         }
     }
 }

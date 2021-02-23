@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using winform_ftp;
 
 namespace RF_TestSystem
 {
 
-     public delegate void FTPProgressBarHandler();   //更新进度
+    public delegate void FTPProgressBarHandler();   //更新进度
     public delegate void FTPDataGridViewHandler();   //更新进度
     class FTP
     {
@@ -47,7 +45,7 @@ namespace RF_TestSystem
             if (File.Exists(Application.StartupPath + "\\db.txt"))
             {
 
-            }             
+            }
             else
             {
                 File.Create(Application.StartupPath + "\\db.txt").Close();//创建该文件，如果路径文件夹不存在，则报错
@@ -62,7 +60,7 @@ namespace RF_TestSystem
             var dt = JsonHelper.JsonToObject(jsonStr.Trim(), temp);
             if (dt != null)
             {
-               
+
 
                 //this.dataGridView1.DataSource = dt;
                 //dataGridView1.Columns["ID"].Width = 50;
@@ -219,7 +217,7 @@ namespace RF_TestSystem
                 FtpEntity entity = new FtpEntity();
                 if (dt != null)
                 {
-                    list=(List<FtpEntity>)dt;//object转List<T>
+                    list = (List<FtpEntity>)dt;//object转List<T>
                     if (list != null && list.Count > 0)
                     {
                         entity.ID = list[list.Count - 1].ID + 1;//新ID=原最大ID值+1
@@ -232,23 +230,23 @@ namespace RF_TestSystem
                 else
                 {
                     entity.ID = 1;
-                }                
-                    entity.FileFullName = FileFullName;
-                    entity.FileName = FileName;
-                    entity.FileType = FileType;
-                    entity.FileUrl = FileDir;
-                    entity.UploadTime = UploadTime;
+                }
+                entity.FileFullName = FileFullName;
+                entity.FileName = FileName;
+                entity.FileType = FileType;
+                entity.FileUrl = FileDir;
+                entity.UploadTime = UploadTime;
 
-                    list.Add(entity);//数据集合添加一条新数据
-              
-                    string json = JsonHelper.ObjectToJson(list);//list集合转json字符串
+                list.Add(entity);//数据集合添加一条新数据
 
-                    StreamWriter sw = new StreamWriter(Application.StartupPath + "\\db.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加                    
-                    sw.WriteLine(json);//写入文件
-                    sw.Close();
+                string json = JsonHelper.ObjectToJson(list);//list集合转json字符串
 
-                    sendDataGridViewUpdate();
-                
+                StreamWriter sw = new StreamWriter(Application.StartupPath + "\\db.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加                    
+                sw.WriteLine(json);//写入文件
+                sw.Close();
+
+                sendDataGridViewUpdate();
+
             }
             catch (Exception ex)
             {
@@ -275,12 +273,12 @@ namespace RF_TestSystem
             percentValue = fi.Length;
             percentValue = (long)Math.Ceiling((double)percentValue / 20480);
             //MessageBox.Show(percentValue.ToString());
-            if(percentValue ==0)
+            if (percentValue == 0)
             {
                 percentValue = 1;
             }
-            
-         //   this.progressBar1.Maximum = (int)percentValue;
+
+            //   this.progressBar1.Maximum = (int)percentValue;
             //准备上传
             FileName = Regex.Replace(fi.Name.Replace(fi.Extension, ""), "\\s+", "");
             FileName = FileName.Replace("#", "$");//文件名称(不含扩展名)(存数据库用于查询，如：文件名相同的，但类型不同的文件：文件1.txt、文件1.doc、文件1.jpg、文件1.pdf)
@@ -309,7 +307,7 @@ namespace RF_TestSystem
             }
             else
             {
-               // MessageBox.Show("上传失败!");
+                // MessageBox.Show("上传失败!");
             }
             // FTPGloable.FTPbkWorker.RunWorkerAsync();
         }
@@ -332,7 +330,7 @@ namespace RF_TestSystem
                 return;
             }
 
-           
+
 
         }
         //列表单选

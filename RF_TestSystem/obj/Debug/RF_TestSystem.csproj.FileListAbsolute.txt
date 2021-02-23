@@ -37,3 +37,37 @@ D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Debug\System.Memory.xml
 D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Debug\System.Numerics.Vectors.xml
 D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\VisualStudioProject\RF_TestSystem\RF_TestSystem\bin\Debug\halcondotnet.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\AForge.Controls.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\AForge.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\AForge.Imaging.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\AForge.Math.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\AForge.Video.DirectShow.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\AForge.Video.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\DVPCameraCS.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\halcondotnet.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\HZH_Controls.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\Newtonsoft.Json.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\System.Buffers.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\System.Memory.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\System.Numerics.Vectors.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\Debug\DVPCameraCS.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.csprojAssemblyReference.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\Interop.BASICFORMATTEDIOLib.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.csproj.ResolveComReference.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.Trigger.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.Login.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.LoginInformation.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.RF_TestSystem.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.Properties.Resources.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.SelectModel.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.csproj.GenerateResource.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.csproj.CoreCompileInputs.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.csproj.CopyComplete
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\Debug\RF_TestSystem.Credentials.resources

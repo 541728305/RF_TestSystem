@@ -1,0 +1,179 @@
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\AForge.Controls.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\AForge.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\AForge.Imaging.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\AForge.Math.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\AForge.Video.DirectShow.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\AForge.Video.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\DVPCameraCS.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\HZH_Controls.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\Newtonsoft.Json.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\System.Buffers.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\System.Memory.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\System.Numerics.Vectors.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\bin\x86\Debug\DVPCameraCS.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\Interop.BASICFORMATTEDIOLib.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.ResolveComReference.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Trigger.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Credentials.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Login.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.LoginInformation.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.RF_TestSystem.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Properties.Resources.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.SelectModel.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.GenerateResource.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CoreCompileInputs.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CopyComplete
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control)\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csprojAssemblyReference.cache
+D:\RF_System\RF_TestSystem.exe.config
+D:\RF_System\RF_TestSystem.exe
+D:\RF_System\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Controls.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Imaging.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Math.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.DirectShow.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\HZH_Controls.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Newtonsoft.Json.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.pdb
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\Interop.BASICFORMATTEDIOLib.dll
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.ResolveComReference.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.AnalyzerEXTension.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Trigger.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Credentials.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Login.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.LoginInformation.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.RF_TestSystem.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Properties.Resources.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.SelectModel.resources
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.GenerateResource.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CoreCompileInputs.cache
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CopyComplete
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.pdb
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csprojAssemblyReference.cache
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.ResolveComReference.cache
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.AnalyzerEXTension.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Trigger.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Credentials.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Login.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.LoginInformation.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.RF_TestSystem.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Properties.Resources.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.SelectModel.resources
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.GenerateResource.cache
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.pdb
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.config
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.pdb
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Controls.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Imaging.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Math.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.DirectShow.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\HZH_Controls.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.pdb
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\Interop.BASICFORMATTEDIOLib.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CopyComplete
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\halcondotnet.dll
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.manifest
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.application
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe.manifest
+C:\Users\User\Desktop\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.application
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.config
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.manifest
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.application
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Controls.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Imaging.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Math.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.DirectShow.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\halcondotnet.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\HZH_Controls.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Newtonsoft.Json.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.pdb
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csprojAssemblyReference.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\Interop.BASICFORMATTEDIOLib.dll
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.ResolveComReference.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.AnalyzerEXTension.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Trigger.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Credentials.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Login.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.LoginInformation.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.RF_TestSystem.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Properties.Resources.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.SelectModel.resources
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.GenerateResource.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CoreCompileInputs.cache
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe.manifest
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.application
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CopyComplete
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.pdb
+D:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Ivi.Visa.Interop.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.config
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe.manifest
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.application
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.pdb
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Controls.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Imaging.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Math.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.DirectShow.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AForge.Video.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\halcondotnet.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\HZH_Controls.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Newtonsoft.Json.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\DVPCameraCS.pdb
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Ivi.Visa.Interop.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csprojAssemblyReference.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\Interop.BASICFORMATTEDIOLib.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.ResolveComReference.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.AnalyzerEXTension.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Trigger.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Credentials.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Login.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.LoginInformation.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.RF_TestSystem.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Properties.Resources.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.SelectModel.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.GenerateResource.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CoreCompileInputs.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe.manifest
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.application
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.csproj.CopyComplete
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.exe
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.pdb
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\AvaryAPI_v2.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Oracle.ManagedDataAccess.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.Warning.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Resources\skull-2.png
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Resources\BACK.jpg
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Resources\pig.gif
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Resources\银河.gif
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Resources\multiple-11@4x.png
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Resources\single-01@4x.png
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Resources\skull-2@4x.png

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace RF_TestSystem
 {
@@ -54,14 +49,14 @@ namespace RF_TestSystem
             }
             com = com.Trim();
             commands.Add(com);
-           
+
             foreach (string commad in commands)
             {
-               // MessageBox.Show(com);
+                // MessageBox.Show(com);
                 if (commad.Contains(command.BARCODE))
                 {
                     string barcode = commad.Replace(command.BARCODE, "").Trim();
-                    if(barcode.Contains("\\r"))
+                    if (barcode.Contains("\\r"))
                     {
                         barcode = barcode.Replace("\\r", "");
                     }
@@ -73,16 +68,16 @@ namespace RF_TestSystem
                     barcodeComingEvent(barcode);
                 }
                 else if (commad.Contains(command.START_TEST))
-                {           
+                {
                     startTestCommandEvent();
 
                 }
-                else if(commad.Contains(command.START))//扫码命令
-                {               
-                    scanCommandEvent();                 
+                else if (commad.Contains(command.START))//扫码命令
+                {
+                    scanCommandEvent();
                 }
             }
-           
+
         }
 
 

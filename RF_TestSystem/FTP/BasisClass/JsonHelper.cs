@@ -13,7 +13,7 @@ namespace winform_ftp
         public static object JsonToObject(string jsonString, object obj)
         {
             return JsonConvert.DeserializeObject(jsonString, obj.GetType());
-        }  
+        }
     }
 }
 //测试用例：[{"ID": 1,"FileName":"文件1","FileType":".txt","FileFullName":"文件1.txt","FileUrl":"TXT文档\20180606","UploadTime":"2018-6-6 16:10:56"}]

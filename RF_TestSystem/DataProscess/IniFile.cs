@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RF_TestSystem
@@ -50,7 +47,7 @@ namespace RF_TestSystem
             {
                 Console.WriteLine("存在tracesInfoConifg文件");
                 string[] section = IniOP.INIGetAllSectionNames(tracesInfoConifgFilePath);
-                if(section.Length!=4)
+                if (section.Length != 4)
                 {
                     Console.WriteLine("tracesInfoConifg");
                     //配置缺省值       
@@ -252,17 +249,17 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "productionModel", "testTotalNumber", testInfo.productionModel.testTotalNumber);
             successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "productionModel", "scanTotalNumber", testInfo.productionModel.scanTotalNumber);
 
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "modelTitle", testInfo.productionModel.modelTitle);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "testPassNumber", testInfo.productionModel.testPassNumber);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "testFailNumber", testInfo.productionModel.testFailNumber);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "testTotalNumber", testInfo.productionModel.testTotalNumber);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "scanTotalNumber", testInfo.productionModel.scanTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "modelTitle", testInfo.retestModel.modelTitle);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "testPassNumber", testInfo.retestModel.testPassNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "testFailNumber", testInfo.retestModel.testFailNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "testTotalNumber", testInfo.retestModel.testTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "retestModel", "scanTotalNumber", testInfo.retestModel.scanTotalNumber);
 
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "modelTitle", testInfo.productionModel.modelTitle);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testPassNumber", testInfo.productionModel.testPassNumber);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testFailNumber", testInfo.productionModel.testFailNumber);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testTotalNumber", testInfo.productionModel.testTotalNumber);
-            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "scanTotalNumber", testInfo.productionModel.scanTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "modelTitle", testInfo.developerModel.modelTitle);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testPassNumber", testInfo.developerModel.testPassNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testFailNumber", testInfo.developerModel.testFailNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testTotalNumber", testInfo.developerModel.testTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "scanTotalNumber", testInfo.developerModel.scanTotalNumber);
             return successful;
         }
         public TestInfo readTestInfoFromInitFile()
@@ -293,7 +290,7 @@ namespace RF_TestSystem
 
 
                 Console.WriteLine(key1.Length);
-                if ((key1.Length == key2.Length) && (key2.Length == key3.Length)  && section.Length > 0)
+                if ((key1.Length == key2.Length) && (key2.Length == key3.Length) && section.Length > 0)
                 {
                     testInfo.currentModel = IniOP.INIGetStringValue(testInfoConifgFilePath, "currentModel", "currentModel", "productionModel");
 
@@ -326,7 +323,7 @@ namespace RF_TestSystem
                     configTrans.testFailNumber = "0";
                     configTrans.testTotalNumber = "0";
                     configTrans.scanTotalNumber = "0";
-                    configTrans.modelTitle = "productionModel";            
+                    configTrans.modelTitle = "productionModel";
                     testInfo.productionModel = configTrans;
                     configTrans.modelTitle = "retestModel";
                     testInfo.retestModel = configTrans;
@@ -372,6 +369,7 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "partNumber", loginInfo.partNumber);
             successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "machineName", loginInfo.machineName);
             successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "barcodeFormat", loginInfo.barcodeFormat);
+            successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "version", loginInfo.version);
 
             return successful;
         }
@@ -402,6 +400,7 @@ namespace RF_TestSystem
                     loginInfo.partNumber = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "partNumber", "FSAPHV0");
                     loginInfo.machineName = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "machineName", "HV0-1");
                     loginInfo.barcodeFormat = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "barcodeFormat", "******");
+                    loginInfo.version = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "version", "");
                 }
                 else
                 {
@@ -412,6 +411,7 @@ namespace RF_TestSystem
                     loginInfo.partNumber = "FSAPHV0";
                     loginInfo.machineName = "HV0-1";
                     loginInfo.barcodeFormat = "******";
+                    loginInfo.version = "";
                     writeLoginInfoToInitFile(loginInfo, loginInfoConifgFilePath);
                     MessageBox.Show("Login.ini文件损坏，Login.ini已恢复缺省值");
                 }
@@ -428,6 +428,7 @@ namespace RF_TestSystem
                 loginInfo.partNumber = "FSAPHV0";
                 loginInfo.machineName = "HV0-1";
                 loginInfo.barcodeFormat = "******";
+                loginInfo.version = "";
 
                 writeLoginInfoToInitFile(loginInfo, loginInfoConifgFilePath);
                 MessageBox.Show("Login.ini文件丢失，Login.ini已被重新创建成缺省值");
@@ -486,14 +487,14 @@ namespace RF_TestSystem
                     cameraInfo.cameraNmae = IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "cameraNmae", "");
                     cameraInfo.cameraResolution = IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "cameraResolution", "");
                     cameraInfo.cameraModel = IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "cameraModel", cameraInfo.cameraModel);
-                    cameraInfo.ptStart.X = Convert.ToInt32( IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "ptStart.X", "0"));
+                    cameraInfo.ptStart.X = Convert.ToInt32(IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "ptStart.X", "0"));
                     cameraInfo.ptStart.Y = Convert.ToInt32(IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "ptStart.Y", "0"));
                     cameraInfo.ptEnd.X = Convert.ToInt32(IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "ptEnd.X", "0"));
                     cameraInfo.ptEnd.Y = Convert.ToInt32(IniOP.INIGetStringValue(cameraInfoConifgFilePath, "cameraInfo", "ptEnd.Y", "0"));
                 }
                 else
                 {
-                   writeCameraInfoToInitFile(cameraInfo, cameraInfoConifgFilePath);
+                    writeCameraInfoToInitFile(cameraInfo, cameraInfoConifgFilePath);
                     MessageBox.Show("camera.ini文件损坏，camera.ini已恢复缺省值");
                 }
             }
@@ -501,7 +502,7 @@ namespace RF_TestSystem
             {
                 Console.WriteLine("不存cameraInfoConifg在文件");
                 File.Create(cameraInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
-                Console.WriteLine("cameraInfoConifg");                                                              
+                Console.WriteLine("cameraInfoConifg");
                 writeCameraInfoToInitFile(cameraInfo, cameraInfoConifgFilePath);
                 MessageBox.Show("camera.ini文件丢失，camera.ini已被重新创建成缺省值");
 
@@ -526,6 +527,13 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "fixtureIP", uploadInfo.fixtureIP);
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "fixturePort", uploadInfo.fixturePort);
 
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
+            ;
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "ftpUpload", uploadInfo.ftpUpload);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleUpload", uploadInfo.oracleUpload);
+
             return successful;
         }
         public UpLoadInfo readUpLoadInfoFromInitFile()
@@ -541,7 +549,13 @@ namespace RF_TestSystem
             uploadInfo.ftpUploadTime = DateTime.Now.ToLocalTime().AddHours(2).ToString();
 
             uploadInfo.fixtureIP = "100.1.1.240";
-            uploadInfo.fixturePort= "8233";
+            uploadInfo.fixturePort = "8233";
+            uploadInfo.oracleDB = "TDB_RF_TES";
+            uploadInfo.oracleID = "ictdata";
+            uploadInfo.oraclePW = "ict*1";
+
+            uploadInfo.ftpUpload = "false";
+            uploadInfo.oracleUpload = "false";
             string uploadInfoConifgFilePath = Gloable.configPath + Gloable.upLoadInfoConifgFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -568,6 +582,12 @@ namespace RF_TestSystem
                     uploadInfo.fixtureIP = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixtureIP", "100.1.1.240");
                     uploadInfo.fixturePort = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixturePort", "8233");
 
+                    uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
+                    uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
+                    uploadInfo.oraclePW = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
+
+                    uploadInfo.ftpUpload = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "ftpUpload", uploadInfo.ftpUpload);
+                    uploadInfo.oracleUpload = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleUpload", uploadInfo.oracleUpload);
                 }
                 else
                 {

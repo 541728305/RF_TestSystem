@@ -16,6 +16,6 @@ namespace winform_ftp
         public string FileUrl { get; set; }
         //完整文件名
         public string FileFullName { get; set; }
-            
+
     }
 }
