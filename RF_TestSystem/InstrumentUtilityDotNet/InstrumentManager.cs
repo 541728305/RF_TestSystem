@@ -134,6 +134,7 @@ namespace InstrumentUtilityDotNet
             }
             catch (System.IO.IOException error)  //掉线
             {
+                Console.WriteLine(error.Message);
                 return false;
             }
             catch (Exception ex)

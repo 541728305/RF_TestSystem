@@ -18,6 +18,7 @@ namespace RF_TestSystem
         public string failingValue;
         public string overallResult;
         public string currentModel;
+        public string defaultModel;
         public string productionModelString;
         public string retestModelString;
         public string developerModelString;

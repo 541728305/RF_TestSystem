@@ -8,11 +8,14 @@ namespace RF_TestSystem
     public class OraDb
     {
         //字段
+        [System.Obsolete]
         private OracleConnection Connection;
         private string connectionString;
+        [System.Obsolete]
         public OracleCommand command;
 
         //构造函数
+        [System.Obsolete]
         public OraDb(string newConnectionString)
         {
             connectionString = newConnectionString;
@@ -31,6 +34,7 @@ namespace RF_TestSystem
             }
         }
 
+        [System.Obsolete]
         public OracleConnection connection
         {
             get
@@ -44,11 +48,13 @@ namespace RF_TestSystem
         }
 
         //方法
+        [System.Obsolete]
         public OracleConnection GetConnection()
         {
             return Connection;
         }
 
+        [System.Obsolete]
         public OracleDataReader RunQuery(string sqlQuery)
         {
             OracleDataReader result = null;
@@ -64,6 +70,7 @@ namespace RF_TestSystem
             return result;
         }
 
+        [System.Obsolete]
         public int RunNonQuery(string sqlNonQuery)
         {
             int result = -1;
@@ -78,6 +85,7 @@ namespace RF_TestSystem
             return result;
         }
 
+        [System.Obsolete]
         public DataSet RunQuery(string sqlQuery, string tableName)
         {
             DataSet ds = new DataSet();
@@ -94,6 +102,7 @@ namespace RF_TestSystem
             return ds;
         }
 
+        [System.Obsolete]
         public void RunQuery(string sqlQuery, DataSet dataSet, string tableName)
         {
             if (Connection.State == ConnectionState.Closed)
@@ -108,6 +117,7 @@ namespace RF_TestSystem
             Connection.Close();
         }
 
+        [System.Obsolete]
         public void ExeFunc(OracleCommand myCmd)
         {
             //int result = -1;
@@ -124,6 +134,7 @@ namespace RF_TestSystem
         }
 
         // 将查询到的数据填充为DataTable，并返回
+        [System.Obsolete]
         public DataTable FillTable(string sqlQuery)
         {
             DataTable dt = new DataTable();
@@ -140,6 +151,7 @@ namespace RF_TestSystem
             return dt;
         }
 
+        [System.Obsolete]
         public void FillSchema(string sqlQuery, DataSet dataSet, string tableName)
         {
             if (Connection.State == ConnectionState.Closed)
@@ -154,6 +166,7 @@ namespace RF_TestSystem
             Connection.Close();
         }
 
+        [System.Obsolete]
         public int Fill(DataTable dt, string sqlQuery)
         {
             int result;
@@ -170,6 +183,7 @@ namespace RF_TestSystem
             return result;
         }
 
+        [System.Obsolete]
         public void CloseConnection()
         {
             Connection.Close();

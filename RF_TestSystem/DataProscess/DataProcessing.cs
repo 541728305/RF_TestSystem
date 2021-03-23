@@ -208,6 +208,7 @@ namespace RF_TestSystem
                     }
                     catch (Exception e)
                     {
+                        Console.WriteLine(freq[f]);
                         Console.WriteLine(e.ToString());
                         break;
                     }
@@ -436,7 +437,7 @@ namespace RF_TestSystem
             catch (Exception e)
             {
                 rawLimitData = "fail\n";
-                MessageBox.Show("规格文件被占用！请关闭后重试！");
+                MessageBox.Show("规格文件被占用！请关闭后重试！\r\n "+ e.ToString());
                 //MessageBox.Show(e.ToString());
             }
             limitString = Gloable.myOutPutStream.splitData(rawLimitData, '\n');
@@ -461,7 +462,6 @@ namespace RF_TestSystem
             foreach (FileInfo fileName in root.GetFiles())
             {
                 limitNameList.Add(fileName.Name);
-
             }
             if (limitNameList.Count == 0)
             {
@@ -470,9 +470,22 @@ namespace RF_TestSystem
                 {
                     limitNameList.Add(fileName.Name);
                 }
+            }else
+            {
+                bool currentLimit = false;
+                foreach (FileInfo fileName in root.GetFiles())
+                {
+                   if(fileName.Name == Gloable.currentLimitName)
+                    {
+                        currentLimit = true;
+                        break;
+                    }
+                }
+                if(currentLimit == false)
+                    Gloable.currentLimitName = limitNameList.First();
             }
-
-            return limitNameList;
+            
+                return limitNameList;
         }
     }
 }

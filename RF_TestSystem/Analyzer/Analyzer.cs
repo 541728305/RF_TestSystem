@@ -191,15 +191,13 @@ namespace RF_TestSystem
         }
         public string transFromAllocateID(string allocateID)
         {
-            string allocateNumber = "";
-
             if (allocateID == "D1\n")
             {
-                return allocateNumber = "1";
+                return "1";
             }
             else
             {
-                return allocateNumber = "2";
+                return "2";
             }
 
         }
@@ -620,12 +618,15 @@ namespace RF_TestSystem
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 try
                 {
                     startfrequency = double.Parse(ackFrequency("1", "START"));
                 }
                 catch (Exception e2)
-                { }
+                {
+                    Console.WriteLine(e2.Message);
+                }
             }
 
 
@@ -656,12 +657,13 @@ namespace RF_TestSystem
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 try
                 {
                     stopfrequency = double.Parse(ackFrequency("1", "STOP"));
                 }
                 catch (Exception e2)
-                { }
+                { Console.WriteLine(e2.Message); }
             }
 
             Console.WriteLine(ackFrequency("1", "STOP"));
@@ -694,15 +696,17 @@ namespace RF_TestSystem
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 try
                 {
                     tracesNumber = Convert.ToInt32(ackNumberOfTraces("1").Replace("\n", ""));
 
                 }
                 catch (Exception e2)
-                { }
+                {
+                    Console.WriteLine(e2.Message);
+                }
             }
-
             for (int i = 0; i < tracesNumber; i++)
             {
                 selectTrace("1", (i + 1).ToString());
@@ -714,6 +718,7 @@ namespace RF_TestSystem
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine(e.Message);
                     smoothON = Convert.ToInt32(ackSmooth("1"));
                 }
                 if (smoothON == 1)
@@ -728,13 +733,14 @@ namespace RF_TestSystem
                     }
                     catch (Exception e)
                     {
+                        Console.WriteLine(e.Message);
                         try
                         {
                             smoothValue = ((Convert.ToDouble(ackSmoothValue("1").Replace("\n", "")))).ToString();
 
                         }
                         catch (Exception e1)
-                        { }
+                        { Console.WriteLine(e1.Message); }
                     }
 
                     analyzerConfig.smoothValue = smoothValue;
@@ -747,6 +753,7 @@ namespace RF_TestSystem
                 }
             }
             return analyzerConfig;
+            
         }
         public List<TracesInfo> getTracesInfo()
         {
@@ -781,35 +788,39 @@ namespace RF_TestSystem
                 traces.note = "";
                 tracesInfos.Add(traces);
             }
-            string taces2 = ackNumberOfTraces("1");
-            int Taces2 = 0;
-            try
+            if(transFromAllocateID(ackAllocateChannelst()) == "2")
             {
-                Taces2 = Convert.ToInt32(taces2);
-
-            }
-            catch
-            {
-                taces2 = ackNumberOfTraces("1");
+                string taces2 = ackNumberOfTraces("2");
+                int Taces2 = 0;
                 try
                 {
                     Taces2 = Convert.ToInt32(taces2);
+
                 }
                 catch
-                { }
-            }
-            if (taces2 == "2")
-            {
-                for (int i = 0; i < Taces2; i++)
                 {
-                    selectTrace("2", (i + 1).ToString());
-                    traces.channel = "2";
-                    traces.meas = ackTracesMeas("2", (i + 1).ToString()).Replace("\n", "");
-                    traces.formate = ackTracesFormat("2", (i + 1).ToString()).Replace("\n", ""); ;
-                    traces.note = "";
-                    tracesInfos.Add(traces);
+                    taces2 = ackNumberOfTraces("2");
+                    try
+                    {
+                        Taces2 = Convert.ToInt32(taces2);
+                    }
+                    catch
+                    { }
+                }
+                
+                {
+                    for (int i = 0; i < Taces2; i++)
+                    {
+                        selectTrace("2", (i + 1).ToString());
+                        traces.channel = "2";
+                        traces.meas = ackTracesMeas("2", (i + 1).ToString()).Replace("\n", "");
+                        traces.formate = ackTracesFormat("2", (i + 1).ToString()).Replace("\n", ""); ;
+                        traces.note = "";
+                        tracesInfos.Add(traces);
+                    }
                 }
             }
+           
             return tracesInfos;
         }
 

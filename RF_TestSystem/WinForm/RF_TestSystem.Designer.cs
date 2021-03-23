@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RF_TestSystem));
             this.connectButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.flowLayoutPanel43 = new System.Windows.Forms.FlowLayoutPanel();
@@ -252,7 +253,7 @@
             this.fixtruePortTextBox = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label44 = new System.Windows.Forms.Label();
-            this.barcodeRepeatucSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.ABBSwitch = new HZH_Controls.Controls.UCSwitch();
             this.label41 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.OracleucSwitch = new HZH_Controls.Controls.UCSwitch();
@@ -1311,13 +1312,12 @@
             // 
             // systemStartButton
             // 
-            this.systemStartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.systemStartButton.ImageIndex = 3;
             this.systemStartButton.Location = new System.Drawing.Point(97, 3);
             this.systemStartButton.Name = "systemStartButton";
             this.systemStartButton.Size = new System.Drawing.Size(130, 52);
             this.systemStartButton.TabIndex = 61;
-            this.systemStartButton.Text = "  部署测试系统";
+            this.systemStartButton.Text = "部署测试系统";
             this.systemStartButton.UseVisualStyleBackColor = true;
             this.systemStartButton.Click += new System.EventHandler(this.systemStartButton_Click);
             // 
@@ -1396,7 +1396,7 @@
             // debugButton
             // 
             this.debugButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.debugButton.Location = new System.Drawing.Point(304, 35);
+            this.debugButton.Location = new System.Drawing.Point(165, 31);
             this.debugButton.Name = "debugButton";
             this.debugButton.Size = new System.Drawing.Size(130, 52);
             this.debugButton.TabIndex = 7;
@@ -2744,7 +2744,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.label44);
-            this.tabPage1.Controls.Add(this.barcodeRepeatucSwitch);
+            this.tabPage1.Controls.Add(this.ABBSwitch);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.label41);
             this.tabPage1.Controls.Add(this.label14);
@@ -2761,26 +2761,26 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label44.Location = new System.Drawing.Point(53, 176);
+            this.label44.Location = new System.Drawing.Point(89, 176);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(97, 14);
+            this.label44.Size = new System.Drawing.Size(61, 14);
             this.label44.TabIndex = 5;
-            this.label44.Text = "条码重复检测";
+            this.label44.Text = "ABB管控";
             // 
-            // barcodeRepeatucSwitch
+            // ABBSwitch
             // 
-            this.barcodeRepeatucSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.barcodeRepeatucSwitch.Checked = false;
-            this.barcodeRepeatucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.barcodeRepeatucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.barcodeRepeatucSwitch.Location = new System.Drawing.Point(169, 176);
-            this.barcodeRepeatucSwitch.Name = "barcodeRepeatucSwitch";
-            this.barcodeRepeatucSwitch.Size = new System.Drawing.Size(50, 16);
-            this.barcodeRepeatucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.barcodeRepeatucSwitch.TabIndex = 4;
-            this.barcodeRepeatucSwitch.Texts = null;
-            this.barcodeRepeatucSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.barcodeRepeatucSwitch.TrueTextColr = System.Drawing.Color.White;
+            this.ABBSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.ABBSwitch.Checked = false;
+            this.ABBSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ABBSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.ABBSwitch.Location = new System.Drawing.Point(169, 176);
+            this.ABBSwitch.Name = "ABBSwitch";
+            this.ABBSwitch.Size = new System.Drawing.Size(50, 16);
+            this.ABBSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.ABBSwitch.TabIndex = 4;
+            this.ABBSwitch.Texts = null;
+            this.ABBSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ABBSwitch.TrueTextColr = System.Drawing.Color.White;
             // 
             // label41
             // 
@@ -3034,6 +3034,7 @@
             this.ClientSize = new System.Drawing.Size(1344, 830);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.topPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -3371,7 +3372,7 @@
         private HZH_Controls.Controls.UCSwitch OracleucSwitch;
         private HZH_Controls.Controls.UCSwitch FTPucSwitch;
         private System.Windows.Forms.Label label44;
-        private HZH_Controls.Controls.UCSwitch barcodeRepeatucSwitch;
+        private HZH_Controls.Controls.UCSwitch ABBSwitch;
         private System.Windows.Forms.Button openInquireCameraButton;
         private System.Windows.Forms.Button inquireBarcodeButton;
         private System.Windows.Forms.DataGridView inquireDataGridView;

@@ -307,12 +307,12 @@
             this.machineClassComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.machineClassComboBox.BackColor = System.Drawing.Color.White;
             this.machineClassComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.machineClassComboBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.machineClassComboBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.machineClassComboBox.FormattingEnabled = true;
             this.machineClassComboBox.Location = new System.Drawing.Point(144, 6);
             this.machineClassComboBox.Name = "machineClassComboBox";
             this.machineClassComboBox.Size = new System.Drawing.Size(374, 41);
-            this.machineClassComboBox.TabIndex = 105;
+            this.machineClassComboBox.TabIndex = 105;         
             // 
             // panel2
             // 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RF_TestSystem
@@ -18,6 +19,27 @@ namespace RF_TestSystem
 
             this.panel1.Parent = this.pictureBox1;
             this.pictureBox1.ImageLocation = @".\\Resources\\银河.gif";
+
+
+            
+            if (Gloable.loginInfo.machineClass == Gloable.machineClassString.InlineMachine)
+            {             
+                this.ORTModelButton.Enabled = false;
+                this.ORTModelButton.Text = "";
+                this.ORTModelButton.BackColor = Color.DarkGray;
+                this.retestModelButton.Enabled = false;
+                this.retestModelButton.Text = "";
+                this.retestModelButton.BackColor = Color.DarkGray;
+            }
+            else if (Gloable.loginInfo.machineClass == Gloable.machineClassString.RetestMachine)
+            {               
+                this.productionModeButton.Enabled = false;
+                this.productionModeButton.Text = "";
+                this.productionModeButton.BackColor = Color.DarkGray;
+                this.ORTModelButton.Enabled = false;
+                this.ORTModelButton.Text = "";
+                this.ORTModelButton.BackColor = Color.DarkGray;
+            }
         }
 
         private void productionModeButton_Click(object sender, EventArgs e)

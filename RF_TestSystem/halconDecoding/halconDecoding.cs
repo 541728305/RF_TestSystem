@@ -95,6 +95,7 @@ namespace RF_TestSystem
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 image = null;
             }
         }
@@ -111,6 +112,7 @@ namespace RF_TestSystem
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 image = null;
             }
         }
@@ -127,6 +129,7 @@ namespace RF_TestSystem
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 image = null;
             }
         }
@@ -155,7 +158,7 @@ namespace RF_TestSystem
         {
             string barcode = "";
             hv_timeOut = 2;
-            hv_count = 2;
+            hv_count = 1;
             string[] hv_codemode = { "Data Matrix ECC 200", "PDF417" , "QR Code", "Aztec Code" , "GS1 Aztec Code", "GS1 DataMatrix"
             ,"GS1 QR Code","Micro QR Code"};
             HOperatorSet.Rgb1ToGray(m_image, out ho_GrayImage);
@@ -173,43 +176,46 @@ namespace RF_TestSystem
                 // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(12)).TupleConcat(40));               
                 try
                 {
-                    HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "strict_quiet_zone", "yes");
+                    //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "strict_quiet_zone", "yes");
+                    HOperatorSet.FindDataCode2d(m_image, out symbolXLDs, hv_DataCodeHandle, "stop_after_result_num", hv_count, out hv_ResultHandles,
+                   out hv_DecodedDataStrings);
+
+                    if (hv_DecodedDataStrings.Length != 0)
+                    {
+                        HOperatorSet.SetLineWidth(m_hwindow, 3);
+                        HOperatorSet.SetColor(m_hwindow, "green");
+                        HOperatorSet.DispObj(symbolXLDs, m_hwindow);
+                        pt.disp_message(m_hwindow, "解码结果：" + hv_DecodedDataStrings, "image", 12, 12, "red", "true");
+                        HOperatorSet.CountSeconds(out hv_T2);
+                        double Time = hv_T2 - hv_T1;
+
+                        barcode = hv_DecodedDataStrings;
+                        while (barcode.Contains("\""))
+                            barcode = barcode.Replace("\"", "");
+                        //pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
+                        break;
+                    }
+                    else
+                    {
+                        if (i == hv_codemode.Length - 1)
+                        {
+                            pt.disp_message(m_hwindow, "二维码解码失败", "image", 12, 12, "red", "true");
+                            HOperatorSet.CountSeconds(out hv_T2);
+                            double Time = hv_T2 - hv_T1;
+                            //  pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
+                            break;
+                        }
+                    }
+                    hv_DataCodeHandle.Dispose();
                 }
                 catch (Exception ex)
                 {
+                    hv_DataCodeHandle.Dispose();
+                    Console.WriteLine(ex.Message);
                     continue;
                 }
 
-                HOperatorSet.FindDataCode2d(m_image, out symbolXLDs, hv_DataCodeHandle, "stop_after_result_num", hv_count, out hv_ResultHandles,
-                    out hv_DecodedDataStrings);
-
-                if (hv_DecodedDataStrings.Length != 0)
-                {
-                    HOperatorSet.SetLineWidth(m_hwindow, 3);
-                    HOperatorSet.SetColor(m_hwindow, "green");
-                    HOperatorSet.DispObj(symbolXLDs, m_hwindow);
-                    pt.disp_message(m_hwindow, "解码结果：" + hv_DecodedDataStrings, "image", 12, 12, "red", "true");
-                    HOperatorSet.CountSeconds(out hv_T2);
-                    double Time = hv_T2 - hv_T1;
-
-                    barcode = hv_DecodedDataStrings;
-                    while (barcode.Contains("\""))
-                        barcode = barcode.Replace("\"", "");
-                    //pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
-                    break;
-                }
-                else
-                {
-                    if (i == hv_codemode.Length - 1)
-                    {
-                        pt.disp_message(m_hwindow, "二维码解码失败", "image", 12, 12, "red", "true");
-                        HOperatorSet.CountSeconds(out hv_T2);
-                        double Time = hv_T2 - hv_T1;
-                        //  pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
-                        break;
-                    }
-                }
-                hv_DataCodeHandle.Dispose();
+               
             }
             // Console.WriteLine("解码完成");
 

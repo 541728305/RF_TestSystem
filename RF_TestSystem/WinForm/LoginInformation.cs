@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace RF_TestSystem
 {
+  
+
     public partial class LoginInformation : Form
     {
         public LoginInformation()
@@ -31,6 +34,12 @@ namespace RF_TestSystem
             }
             this.currentLimitComboBox.SelectedIndex = 0;
 
+            this.machineClassComboBox.Items.Add("inline机台");
+            this.machineClassComboBox.Items.Add("复测机台");
+            this.machineClassComboBox.Items.Add("OQC机台");
+
+         
+
         }
 
         private void okButton_Click(object sender, EventArgs e)
@@ -46,11 +55,17 @@ namespace RF_TestSystem
             this.partNumberTextBox.Text = Gloable.loginInfo.partNumber;
             this.machineNameTextBox.Text = Gloable.loginInfo.machineName;
             this.barcodeFormatTextBox.Text = Gloable.loginInfo.barcodeFormat;
-            this.versionTextBox.Text = Gloable.loginInfo.version;
+            this.versionTextBox.Text = Gloable.loginInfo.version;           
         }
         private bool saveInfo()
         {
             bool successful = true;
+           
+            if(this.machineClassComboBox.SelectedIndex <0)
+            {
+                MessageBox.Show("请选择机台类别");
+                successful = false;
+            }
             Gloable.currentLimitName = this.currentLimitComboBox.SelectedItem.ToString();
             List<string> rawLimit = Gloable.myOutPutStream.getlimitStringFromFile(Gloable.limitFilePath + Gloable.currentLimitName);
             if (rawLimit[0] == "fail")
@@ -58,6 +73,19 @@ namespace RF_TestSystem
                 successful = false;
                 return successful;
             }
+            if(this.machineClassComboBox.SelectedIndex == 0)
+            {
+                Gloable.loginInfo.machineClass = Gloable.machineClassString.InlineMachine;
+            }
+            else if(this.machineClassComboBox.SelectedIndex ==1)
+            {
+                Gloable.loginInfo.machineClass = Gloable.machineClassString.RetestMachine;
+            }
+            else if (this.machineClassComboBox.SelectedIndex == 2)
+            {
+                Gloable.loginInfo.machineClass = Gloable.machineClassString.OQCMechine;
+            }
+            
             IniFile myIniFile = new IniFile();
             Gloable.loginInfo.workOrder = this.workOrderTextBox.Text.Trim();
             Gloable.loginInfo.jobNumber = this.jobNumberTextBox.Text.Trim();
@@ -66,7 +94,7 @@ namespace RF_TestSystem
             Gloable.loginInfo.machineName = this.machineNameTextBox.Text.Trim();
             Gloable.loginInfo.barcodeFormat = this.barcodeFormatTextBox.Text.Trim();
             Gloable.loginInfo.version = this.versionTextBox.Text.Trim();
-            myIniFile.writeLoginInfoToInitFile(Gloable.loginInfo, Gloable.configPath + Gloable.loginInfoConifgFileName);
+            myIniFile.writeLoginInfoToInitFile(Gloable.loginInfo, Gloable.configPath + Gloable.loginInfoConifgFileName);            
             return successful;
         }
 
@@ -113,5 +141,6 @@ namespace RF_TestSystem
             }
         }
 
+       
     }
 }

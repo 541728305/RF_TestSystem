@@ -362,7 +362,7 @@ namespace RF_TestSystem
         {
             bool successful = true;
             successful = IniOP.INIDeleteSection(loginInfoConifgFilePath, "loginInfo");
-
+            successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "machineClass", loginInfo.machineClass);
             successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "workOrder", loginInfo.workOrder);
             successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "jobNumber", loginInfo.jobNumber);
             successful = IniOP.INIWriteValue(loginInfoConifgFilePath, "loginInfo", "lineBody", loginInfo.lineBody);
@@ -394,6 +394,7 @@ namespace RF_TestSystem
                 string[] section = IniOP.INIGetAllSectionNames(loginInfoConifgFilePath);
                 if (section.Length > 0)
                 {
+                    loginInfo.machineClass = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "machineClass", "InlimeMachine");
                     loginInfo.workOrder = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "workOrder", "FSPA123");
                     loginInfo.jobNumber = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "jobNumber", "H123456");
                     loginInfo.lineBody = IniOP.INIGetStringValue(loginInfoConifgFilePath, "loginInfo", "lineBody", "L2-10");
@@ -404,7 +405,8 @@ namespace RF_TestSystem
                 }
                 else
                 {
-                    //配置缺省值      
+                    //配置缺省值
+                    loginInfo.machineClass = "InlimeMachine";
                     loginInfo.workOrder = "FSPA123";
                     loginInfo.jobNumber = "H123456";
                     loginInfo.lineBody = "L2-10";
@@ -421,7 +423,8 @@ namespace RF_TestSystem
                 Console.WriteLine("不存LoginInfoConifg在文件");
                 File.Create(loginInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
                 Console.WriteLine("LoginInfoConifg");
-                //配置缺省值                                                    
+                //配置缺省值
+                loginInfo.machineClass = "InlimeMachine";
                 loginInfo.workOrder = "FSPA123";
                 loginInfo.jobNumber = "H123456";
                 loginInfo.lineBody = "L2-10";

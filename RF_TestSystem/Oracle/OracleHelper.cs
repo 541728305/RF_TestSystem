@@ -7,7 +7,7 @@ namespace RF_TestSystem
     {
 
         private OraDb oraData;
-        private string strTB;
+        private  string strTB;
 
         public OracleHelper()
         {
@@ -16,6 +16,7 @@ namespace RF_TestSystem
 
 
         // login
+        [System.Obsolete]
         public bool loginOracle(string strDB, string strUsername, string strPassword)
         {
             bool bOpened = false;
@@ -54,6 +55,7 @@ namespace RF_TestSystem
         }
 
         //断开数据库
+        [System.Obsolete]
         public void CloseOracleConnection()
         {
             if (oraData != null)
@@ -63,6 +65,7 @@ namespace RF_TestSystem
                 }
         }
 
+        [System.Obsolete]
         public void createTable(string tableName, string table)
         {
             string strstatus = "创建数据库表失败";
@@ -81,6 +84,7 @@ namespace RF_TestSystem
 
         //INSERT INTO table_name (column1,column2,column3,...) VALUES(value1, value2, value3,...);
 
+        [System.Obsolete]
         public void insertData(string tableName, string column, string values)
         {
             string strstatus = "插入数据失败";
@@ -96,6 +100,8 @@ namespace RF_TestSystem
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        [System.Obsolete]
         public bool insertData(string tableName, string values)
         {
             bool successful = false;
@@ -116,6 +122,8 @@ namespace RF_TestSystem
 
             return successful;
         }
+
+        [System.Obsolete]
         public DataTable queryData(string tableName, string column, string values)
         {
             string strstatus = "查询显示失败";
@@ -135,6 +143,7 @@ namespace RF_TestSystem
 
         }
 
+        [System.Obsolete]
         public void delData(string tableName, string column, string values)
         {
             string strstatus = "删除失败";
@@ -151,6 +160,7 @@ namespace RF_TestSystem
             strstatus = "删除成功";
         }
 
+        [System.Obsolete]
         public void delTable(string tableName)
         {
             string strstatus = "删除失败";
@@ -167,6 +177,7 @@ namespace RF_TestSystem
 
         }
 
+        [System.Obsolete]
         public void updateTable(string tableName, string column, string oldValues, string newValues)
         {
             string strstatus = "更新失败";

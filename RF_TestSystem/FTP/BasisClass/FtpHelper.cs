@@ -170,6 +170,7 @@ namespace winform_ftp
             catch (Exception ex)
             {
                 // MessageBox.Show(ex.ToString());
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }
