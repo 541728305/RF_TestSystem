@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RF_TestSystem));
             this.connectButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -128,10 +128,8 @@
             this.machineClassTextBox = new System.Windows.Forms.TextBox();
             this.systemStateTextBox = new System.Windows.Forms.TextBox();
             this.debugButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label50 = new System.Windows.Forms.Label();
             this.shieldMCUucSwitch = new HZH_Controls.Controls.UCSwitch();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.mainTabControl = new HZH_Controls.Controls.TabControlExt();
             this.testTabPage = new System.Windows.Forms.TabPage();
             this.testPanel = new System.Windows.Forms.Panel();
@@ -143,121 +141,128 @@
             this.infoPanel = new System.Windows.Forms.Panel();
             this.textPanel = new System.Windows.Forms.Panel();
             this.cameraTabPage = new System.Windows.Forms.TabPage();
+            this.cameraSetingPermissionsPanel = new System.Windows.Forms.Panel();
             this.hWindowControl1 = new HalconDotNet.HWindowControl();
+            this.cameraPermissionLabel = new System.Windows.Forms.Label();
+            this.cameraPanel = new System.Windows.Forms.Panel();
             this.uploadTabPage = new System.Windows.Forms.TabPage();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.inquireHWindowControl = new HalconDotNet.HWindowControl();
-            this.inquireBarcodeButton = new System.Windows.Forms.Button();
-            this.openInquireCameraButton = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.checkBarcodePanel = new System.Windows.Forms.Panel();
+            this.inquireDataGridView = new System.Windows.Forms.DataGridView();
             this.label48 = new System.Windows.Forms.Label();
             this.inquireBarcodeTextBox = new System.Windows.Forms.TextBox();
             this.inquireOracleButton = new System.Windows.Forms.Button();
-            this.inquireDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.checkCameraPanel = new System.Windows.Forms.Panel();
+            this.inquireHWindowControl = new HalconDotNet.HWindowControl();
+            this.inquireBarcodeButton = new System.Windows.Forms.Button();
+            this.openInquireCameraButton = new System.Windows.Forms.Button();
+            this.ftpManualPanel = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.oracleUploadRecordsPanel = new System.Windows.Forms.Panel();
             this.label46 = new System.Windows.Forms.Label();
             this.OracleDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.ftpUploadRecordsPanel = new System.Windows.Forms.Panel();
             this.label47 = new System.Windows.Forms.Label();
+            this.lPanel = new System.Windows.Forms.Panel();
             this.simpleManageTabPage = new System.Windows.Forms.TabPage();
-            this.delSimpleButton = new System.Windows.Forms.Button();
-            this.addSimpleButton = new System.Windows.Forms.Button();
-            this.label49 = new System.Windows.Forms.Label();
+            this.samplePermissionsPanel = new System.Windows.Forms.Panel();
+            this.samplePanel = new System.Windows.Forms.Panel();
             this.simplePartNumTextBox = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.addSimpleButton = new System.Windows.Forms.Button();
+            this.delSimpleButton = new System.Windows.Forms.Button();
             this.simpleDataGridView = new System.Windows.Forms.DataGridView();
+            this.label51 = new System.Windows.Forms.Label();
             this.settingTabPage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.saveInitButton = new System.Windows.Forms.Button();
-            this.saveAndWriteIniButton = new System.Windows.Forms.Button();
             this.tabControlExt1 = new HZH_Controls.Controls.TabControlExt();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.测试稳定性延时 = new System.Windows.Forms.Label();
+            this.testDelaytextBox = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.dataGridViewRemoveButton = new System.Windows.Forms.Button();
-            this.dataGridViewAddRowButton = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.OracleucSwitch = new HZH_Controls.Controls.UCSwitch();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.eCalButton = new System.Windows.Forms.Button();
-            this.AnalyzerEXTensionButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.channelNumberComboBox = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.analyzerWindowComboBox = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.ABBSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.FTPucSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.startFreqTextBox = new System.Windows.Forms.TextBox();
-            this.startFreqUnitComboBox = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.channelNumberComboBox = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.smoothComboBox = new System.Windows.Forms.ComboBox();
+            this.analyzerWindowComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.smoothValueTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
+            this.sweepPointTextBox = new System.Windows.Forms.TextBox();
+            this.startFreqUnitComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.stopFreqTextBox = new System.Windows.Forms.TextBox();
             this.stopFreqUnitComboBox = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.sweepPointTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.smoothComboBox = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.smoothValueTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel18 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataPathTextBox = new System.Windows.Forms.TextBox();
-            this.setDataPathButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AnalyzerEXTensionButton = new System.Windows.Forms.Button();
             this.readConfigFromAnalyzerButton = new System.Windows.Forms.Button();
-            this.flowLayoutPanel20 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.LimitPathTextBox = new System.Windows.Forms.TextBox();
-            this.setLimitPathButton = new System.Windows.Forms.Button();
-            this.testConfigLeftPanel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
+            this.eCalButton = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.calFileTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.loadAnalyzerButton = new System.Windows.Forms.Button();
+            this.LimitPathTextBox = new System.Windows.Forms.TextBox();
+            this.dataPathTextBox = new System.Windows.Forms.TextBox();
+            this.setLimitPathButton = new System.Windows.Forms.Button();
+            this.setDataPathButton = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.dataGridViewAddRowButton = new System.Windows.Forms.Button();
+            this.dataGridViewRemoveButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.testConfigLeftPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel46 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.FTPIPTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel49 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.FTPPWTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AnalyzerIPTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel47 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.FTPIDTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel51 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.fixtruePortTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel48 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.FTPPathTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel45 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.fixtrueIPTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel55 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label43 = new System.Windows.Forms.Label();
+            this.OracleDBTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel52 = new System.Windows.Forms.FlowLayoutPanel();
             this.label40 = new System.Windows.Forms.Label();
             this.OraclePWTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel54 = new System.Windows.Forms.FlowLayoutPanel();
             this.label42 = new System.Windows.Forms.Label();
             this.OracleIDTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel55 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label43 = new System.Windows.Forms.Label();
-            this.OracleDBTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel49 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label36 = new System.Windows.Forms.Label();
-            this.FTPPWTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel48 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label35 = new System.Windows.Forms.Label();
-            this.FTPPathTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel46 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label33 = new System.Windows.Forms.Label();
-            this.FTPIPTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel47 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label34 = new System.Windows.Forms.Label();
-            this.FTPIDTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.AnalyzerIPTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel45 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.fixtrueIPTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel51 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label38 = new System.Windows.Forms.Label();
-            this.fixtruePortTextBox = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label44 = new System.Windows.Forms.Label();
-            this.ABBSwitch = new HZH_Controls.Controls.UCSwitch();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.OracleucSwitch = new HZH_Controls.Controls.UCSwitch();
-            this.FTPucSwitch = new HZH_Controls.Controls.UCSwitch();
             this.DebugTabPage = new System.Windows.Forms.TabPage();
             this.deBugConnButton = new System.Windows.Forms.Button();
             this.deBugSendComm6Button = new System.Windows.Forms.Button();
@@ -275,8 +280,9 @@
             this.deBugSendComm1Button = new System.Windows.Forms.Button();
             this.deBugSendComm1textBox = new System.Windows.Forms.TextBox();
             this.deBugtextBox = new System.Windows.Forms.TextBox();
+            this.saveInitButton = new System.Windows.Forms.Button();
+            this.saveAndWriteIniButton = new System.Windows.Forms.Button();
             this.aboutTabPage = new System.Windows.Forms.TabPage();
-            this.tabImageList = new System.Windows.Forms.ImageList(this.components);
             this.flowLayoutPanel43.SuspendLayout();
             this.flowLayoutPanel42.SuspendLayout();
             this.flowLayoutPanel41.SuspendLayout();
@@ -302,13 +308,10 @@
             this.flowLayoutPanel28.SuspendLayout();
             this.flowLayoutPanel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbPreview)).BeginInit();
-            this.flowLayoutPanel50.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FTPDataGridView)).BeginInit();
             this.flowLayoutPanel40.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.mainTabControl.SuspendLayout();
             this.testTabPage.SuspendLayout();
             this.testPanel.SuspendLayout();
@@ -319,55 +322,53 @@
             this.infoPanel.SuspendLayout();
             this.textPanel.SuspendLayout();
             this.cameraTabPage.SuspendLayout();
+            this.cameraSetingPermissionsPanel.SuspendLayout();
             this.uploadTabPage.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.checkBarcodePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inquireDataGridView)).BeginInit();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.checkCameraPanel.SuspendLayout();
+            this.ftpManualPanel.SuspendLayout();
+            this.oracleUploadRecordsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OracleDataGridView)).BeginInit();
-            this.panel7.SuspendLayout();
+            this.ftpUploadRecordsPanel.SuspendLayout();
+            this.lPanel.SuspendLayout();
             this.simpleManageTabPage.SuspendLayout();
+            this.samplePermissionsPanel.SuspendLayout();
+            this.samplePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.simpleDataGridView)).BeginInit();
             this.settingTabPage.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tabControlExt1.SuspendLayout();
-            this.tabPage7.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.flowLayoutPanel15.SuspendLayout();
-            this.flowLayoutPanel9.SuspendLayout();
-            this.flowLayoutPanel17.SuspendLayout();
-            this.flowLayoutPanel10.SuspendLayout();
-            this.flowLayoutPanel16.SuspendLayout();
-            this.flowLayoutPanel13.SuspendLayout();
-            this.flowLayoutPanel12.SuspendLayout();
-            this.flowLayoutPanel11.SuspendLayout();
-            this.flowLayoutPanel18.SuspendLayout();
-            this.flowLayoutPanel20.SuspendLayout();
-            this.flowLayoutPanel19.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage6.SuspendLayout();
+            this.flowLayoutPanel46.SuspendLayout();
+            this.flowLayoutPanel49.SuspendLayout();
+            this.flowLayoutPanel14.SuspendLayout();
+            this.flowLayoutPanel47.SuspendLayout();
+            this.flowLayoutPanel51.SuspendLayout();
+            this.flowLayoutPanel48.SuspendLayout();
+            this.flowLayoutPanel45.SuspendLayout();
+            this.flowLayoutPanel55.SuspendLayout();
             this.flowLayoutPanel52.SuspendLayout();
             this.flowLayoutPanel54.SuspendLayout();
-            this.flowLayoutPanel55.SuspendLayout();
-            this.flowLayoutPanel49.SuspendLayout();
-            this.flowLayoutPanel48.SuspendLayout();
-            this.flowLayoutPanel46.SuspendLayout();
-            this.flowLayoutPanel47.SuspendLayout();
-            this.flowLayoutPanel14.SuspendLayout();
-            this.flowLayoutPanel45.SuspendLayout();
-            this.flowLayoutPanel51.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.DebugTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
             // 
-            this.connectButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.connectButton.Location = new System.Drawing.Point(1201, 10);
+            this.connectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.connectButton.Location = new System.Drawing.Point(1202, 22);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(130, 52);
             this.connectButton.TabIndex = 6;
@@ -1102,17 +1103,18 @@
             // 
             // saveCameraButon
             // 
-            this.saveCameraButon.Location = new System.Drawing.Point(1013, 595);
+            this.saveCameraButon.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.saveCameraButon.Location = new System.Drawing.Point(656, 21);
             this.saveCameraButon.Name = "saveCameraButon";
-            this.saveCameraButon.Size = new System.Drawing.Size(181, 93);
+            this.saveCameraButon.Size = new System.Drawing.Size(140, 83);
             this.saveCameraButon.TabIndex = 30;
-            this.saveCameraButon.Text = "保存相机";
+            this.saveCameraButon.Text = "保存参数";
             this.saveCameraButon.UseVisualStyleBackColor = true;
             this.saveCameraButon.Click += new System.EventHandler(this.saveCameraButon_Click);
             // 
             // cameraSettingButton
             // 
-            this.cameraSettingButton.Location = new System.Drawing.Point(291, 19);
+            this.cameraSettingButton.Location = new System.Drawing.Point(300, 22);
             this.cameraSettingButton.Name = "cameraSettingButton";
             this.cameraSettingButton.Size = new System.Drawing.Size(181, 46);
             this.cameraSettingButton.TabIndex = 29;
@@ -1122,7 +1124,7 @@
             // 
             // findCameraButton
             // 
-            this.findCameraButton.Location = new System.Drawing.Point(59, 19);
+            this.findCameraButton.Location = new System.Drawing.Point(68, 22);
             this.findCameraButton.Name = "findCameraButton";
             this.findCameraButton.Size = new System.Drawing.Size(193, 46);
             this.findCameraButton.TabIndex = 27;
@@ -1133,7 +1135,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(286, 84);
+            this.label18.Location = new System.Drawing.Point(295, 87);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(41, 12);
             this.label18.TabIndex = 25;
@@ -1142,7 +1144,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(57, 85);
+            this.label25.Location = new System.Drawing.Point(66, 88);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(53, 12);
             this.label25.TabIndex = 26;
@@ -1152,7 +1154,7 @@
             // 
             this.picbPreview.BackColor = System.Drawing.Color.DarkGray;
             this.picbPreview.Image = null;
-            this.picbPreview.Location = new System.Drawing.Point(25, 127);
+            this.picbPreview.Location = new System.Drawing.Point(4, 138);
             this.picbPreview.Name = "picbPreview";
             this.picbPreview.Size = new System.Drawing.Size(600, 450);
             this.picbPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1165,7 +1167,7 @@
             // 
             // vispShoot
             // 
-            this.vispShoot.Location = new System.Drawing.Point(873, 79);
+            this.vispShoot.Location = new System.Drawing.Point(882, 82);
             this.vispShoot.Name = "vispShoot";
             this.vispShoot.Size = new System.Drawing.Size(53, 29);
             this.vispShoot.TabIndex = 23;
@@ -1175,17 +1177,18 @@
             // 
             // btnPic
             // 
-            this.btnPic.Location = new System.Drawing.Point(676, 19);
+            this.btnPic.Location = new System.Drawing.Point(952, 84);
             this.btnPic.Name = "btnPic";
-            this.btnPic.Size = new System.Drawing.Size(181, 89);
+            this.btnPic.Size = new System.Drawing.Size(64, 27);
             this.btnPic.TabIndex = 20;
             this.btnPic.Text = "开启解码";
             this.btnPic.UseVisualStyleBackColor = true;
+            this.btnPic.Visible = false;
             this.btnPic.Click += new System.EventHandler(this.btnPic_Click);
             // 
             // btnCut
             // 
-            this.btnCut.Location = new System.Drawing.Point(512, 79);
+            this.btnCut.Location = new System.Drawing.Point(521, 82);
             this.btnCut.Name = "btnCut";
             this.btnCut.Size = new System.Drawing.Size(105, 23);
             this.btnCut.TabIndex = 21;
@@ -1195,7 +1198,7 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(512, 19);
+            this.btnConnect.Location = new System.Drawing.Point(521, 22);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(105, 46);
             this.btnConnect.TabIndex = 22;
@@ -1207,7 +1210,7 @@
             // 
             this.cboResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboResolution.FormattingEnabled = true;
-            this.cboResolution.Location = new System.Drawing.Point(329, 80);
+            this.cboResolution.Location = new System.Drawing.Point(338, 83);
             this.cboResolution.Name = "cboResolution";
             this.cboResolution.Size = new System.Drawing.Size(140, 20);
             this.cboResolution.TabIndex = 19;
@@ -1216,7 +1219,7 @@
             // 
             this.cboVideo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboVideo.FormattingEnabled = true;
-            this.cboVideo.Location = new System.Drawing.Point(112, 81);
+            this.cboVideo.Location = new System.Drawing.Point(121, 84);
             this.cboVideo.Name = "cboVideo";
             this.cboVideo.Size = new System.Drawing.Size(140, 20);
             this.cboVideo.TabIndex = 18;
@@ -1224,21 +1227,20 @@
             // 
             // flowLayoutPanel50
             // 
+            this.flowLayoutPanel50.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel50.AutoSize = true;
-            this.flowLayoutPanel50.Controls.Add(this.label37);
-            this.flowLayoutPanel50.Controls.Add(this.FTPUploadTimeTextBox);
-            this.flowLayoutPanel50.Controls.Add(this.label39);
-            this.flowLayoutPanel50.Controls.Add(this.FTPUpLoadButton);
-            this.flowLayoutPanel50.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel50.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel50.Location = new System.Drawing.Point(54, 16);
             this.flowLayoutPanel50.Name = "flowLayoutPanel50";
-            this.flowLayoutPanel50.Size = new System.Drawing.Size(395, 29);
+            this.flowLayoutPanel50.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel50.TabIndex = 15;
             // 
             // label37
             // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(3, 8);
+            this.label37.Location = new System.Drawing.Point(3, 13);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(53, 12);
             this.label37.TabIndex = 8;
@@ -1247,27 +1249,32 @@
             // 
             // FTPUploadTimeTextBox
             // 
-            this.FTPUploadTimeTextBox.Location = new System.Drawing.Point(62, 3);
+            this.FTPUploadTimeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FTPUploadTimeTextBox.Location = new System.Drawing.Point(62, 8);
             this.FTPUploadTimeTextBox.Name = "FTPUploadTimeTextBox";
-            this.FTPUploadTimeTextBox.Size = new System.Drawing.Size(162, 21);
+            this.FTPUploadTimeTextBox.ReadOnly = true;
+            this.FTPUploadTimeTextBox.Size = new System.Drawing.Size(246, 21);
             this.FTPUploadTimeTextBox.TabIndex = 5;
+            this.FTPUploadTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label39
             // 
-            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(230, 8);
+            this.label39.Location = new System.Drawing.Point(317, 13);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(65, 12);
+            this.label39.Size = new System.Drawing.Size(53, 12);
             this.label39.TabIndex = 9;
-            this.label39.Text = "后自动上传";
+            this.label39.Text = "自动上传";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FTPUpLoadButton
             // 
-            this.FTPUpLoadButton.Location = new System.Drawing.Point(301, 3);
+            this.FTPUpLoadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FTPUpLoadButton.Location = new System.Drawing.Point(376, 5);
             this.FTPUpLoadButton.Name = "FTPUpLoadButton";
-            this.FTPUpLoadButton.Size = new System.Drawing.Size(91, 23);
+            this.FTPUpLoadButton.Size = new System.Drawing.Size(101, 26);
             this.FTPUpLoadButton.TabIndex = 4;
             this.FTPUpLoadButton.Text = "手动上传";
             this.FTPUpLoadButton.UseVisualStyleBackColor = true;
@@ -1275,7 +1282,7 @@
             // 
             // FTPUpLoadFiletextBox
             // 
-            this.FTPUpLoadFiletextBox.Location = new System.Drawing.Point(8, 38);
+            this.FTPUpLoadFiletextBox.Location = new System.Drawing.Point(3, 3);
             this.FTPUpLoadFiletextBox.Name = "FTPUpLoadFiletextBox";
             this.FTPUpLoadFiletextBox.Size = new System.Drawing.Size(300, 21);
             this.FTPUpLoadFiletextBox.TabIndex = 3;
@@ -1283,27 +1290,32 @@
             // 
             // FTPDataGridView
             // 
+            this.FTPDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FTPDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FTPDataGridView.Location = new System.Drawing.Point(3, 41);
+            this.FTPDataGridView.Location = new System.Drawing.Point(0, 29);
             this.FTPDataGridView.Name = "FTPDataGridView";
             this.FTPDataGridView.ReadOnly = true;
             this.FTPDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.FTPDataGridView.RowTemplate.Height = 23;
-            this.FTPDataGridView.Size = new System.Drawing.Size(474, 250);
+            this.FTPDataGridView.Size = new System.Drawing.Size(480, 271);
             this.FTPDataGridView.TabIndex = 2;
             // 
             // FTPUploadProgressBar
             // 
-            this.FTPUploadProgressBar.Location = new System.Drawing.Point(3, 64);
+            this.FTPUploadProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FTPUploadProgressBar.Location = new System.Drawing.Point(5, 37);
             this.FTPUploadProgressBar.Name = "FTPUploadProgressBar";
-            this.FTPUploadProgressBar.Size = new System.Drawing.Size(474, 23);
+            this.FTPUploadProgressBar.Size = new System.Drawing.Size(472, 25);
             this.FTPUploadProgressBar.TabIndex = 1;
             // 
             // FTPSelectFileButton
             // 
-            this.FTPSelectFileButton.Location = new System.Drawing.Point(314, 38);
+            this.FTPSelectFileButton.Location = new System.Drawing.Point(306, 5);
             this.FTPSelectFileButton.Name = "FTPSelectFileButton";
-            this.FTPSelectFileButton.Size = new System.Drawing.Size(75, 23);
+            this.FTPSelectFileButton.Size = new System.Drawing.Size(69, 19);
             this.FTPSelectFileButton.TabIndex = 0;
             this.FTPSelectFileButton.Text = "选择文件";
             this.FTPSelectFileButton.UseVisualStyleBackColor = true;
@@ -1312,13 +1324,16 @@
             // 
             // systemStartButton
             // 
+            this.systemStartButton.BackColor = System.Drawing.Color.Transparent;
+            this.systemStartButton.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.systemStartButton.ForeColor = System.Drawing.Color.Red;
             this.systemStartButton.ImageIndex = 3;
             this.systemStartButton.Location = new System.Drawing.Point(97, 3);
             this.systemStartButton.Name = "systemStartButton";
             this.systemStartButton.Size = new System.Drawing.Size(130, 52);
             this.systemStartButton.TabIndex = 61;
             this.systemStartButton.Text = "部署测试系统";
-            this.systemStartButton.UseVisualStyleBackColor = true;
+            this.systemStartButton.UseVisualStyleBackColor = false;
             this.systemStartButton.Click += new System.EventHandler(this.systemStartButton_Click);
             // 
             // loginButton
@@ -1343,23 +1358,23 @@
             // 
             // topPanel
             // 
+            this.topPanel.AutoSize = true;
             this.topPanel.BackColor = System.Drawing.Color.Transparent;
+            this.topPanel.Controls.Add(this.connectButton);
             this.topPanel.Controls.Add(this.panel16);
             this.topPanel.Controls.Add(this.systemStateTextBox);
-            this.topPanel.Controls.Add(this.connectButton);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1344, 74);
+            this.topPanel.Size = new System.Drawing.Size(1344, 83);
             this.topPanel.TabIndex = 64;
-            this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
             // panel16
             // 
             this.panel16.AutoSize = true;
             this.panel16.Controls.Add(this.flowLayoutPanel40);
             this.panel16.Controls.Add(this.machineClassTextBox);
-            this.panel16.Location = new System.Drawing.Point(12, 4);
+            this.panel16.Location = new System.Drawing.Point(13, 16);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(411, 64);
             this.panel16.TabIndex = 88;
@@ -1381,11 +1396,11 @@
             // 
             // systemStateTextBox
             // 
-            this.systemStateTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.systemStateTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.systemStateTextBox.BackColor = System.Drawing.Color.DarkGray;
             this.systemStateTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.systemStateTextBox.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.systemStateTextBox.Location = new System.Drawing.Point(665, 8);
+            this.systemStateTextBox.Location = new System.Drawing.Point(671, 13);
             this.systemStateTextBox.Name = "systemStateTextBox";
             this.systemStateTextBox.ReadOnly = true;
             this.systemStateTextBox.Size = new System.Drawing.Size(284, 56);
@@ -1396,7 +1411,7 @@
             // debugButton
             // 
             this.debugButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.debugButton.Location = new System.Drawing.Point(165, 31);
+            this.debugButton.Location = new System.Drawing.Point(165, 43);
             this.debugButton.Name = "debugButton";
             this.debugButton.Size = new System.Drawing.Size(130, 52);
             this.debugButton.TabIndex = 7;
@@ -1404,24 +1419,13 @@
             this.debugButton.UseVisualStyleBackColor = true;
             this.debugButton.Click += new System.EventHandler(this.debugButton_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.label50);
-            this.panel2.Controls.Add(this.shieldMCUucSwitch);
-            this.panel2.Location = new System.Drawing.Point(63, 217);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(156, 26);
-            this.panel2.TabIndex = 85;
-            // 
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label50.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label50.Location = new System.Drawing.Point(3, 3);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(93, 16);
+            this.label50.Size = new System.Drawing.Size(65, 12);
             this.label50.TabIndex = 84;
             this.label50.Text = "屏蔽下位机";
             // 
@@ -1431,9 +1435,9 @@
             this.shieldMCUucSwitch.Checked = false;
             this.shieldMCUucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.shieldMCUucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.shieldMCUucSwitch.Location = new System.Drawing.Point(102, -1);
+            this.shieldMCUucSwitch.Location = new System.Drawing.Point(73, 3);
             this.shieldMCUucSwitch.Name = "shieldMCUucSwitch";
-            this.shieldMCUucSwitch.Size = new System.Drawing.Size(51, 24);
+            this.shieldMCUucSwitch.Size = new System.Drawing.Size(50, 16);
             this.shieldMCUucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
             this.shieldMCUucSwitch.TabIndex = 83;
             this.shieldMCUucSwitch.Texts = null;
@@ -1456,17 +1460,16 @@
             this.mainTabControl.HotTrack = true;
             this.mainTabControl.IsShowCloseBtn = false;
             this.mainTabControl.ItemSize = new System.Drawing.Size(0, 80);
-            this.mainTabControl.Location = new System.Drawing.Point(0, 74);
+            this.mainTabControl.Location = new System.Drawing.Point(0, 83);
             this.mainTabControl.Multiline = true;
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(1344, 756);
+            this.mainTabControl.Size = new System.Drawing.Size(1344, 747);
             this.mainTabControl.TabIndex = 65;
             this.mainTabControl.UncloseTabIndexs = null;
-            this.mainTabControl.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.mainTabControl_Selecting);
+            this.mainTabControl.SelectedIndexChanged += new System.EventHandler(this.mainTabControl_SelectedIndexChanged);
             this.mainTabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.mainTabControl_Selected);
-            this.mainTabControl.TabIndexChanged += new System.EventHandler(this.mainTabControl_TabIndexChanged);
             // 
             // testTabPage
             // 
@@ -1474,7 +1477,7 @@
             this.testTabPage.Location = new System.Drawing.Point(84, 4);
             this.testTabPage.Name = "testTabPage";
             this.testTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.testTabPage.Size = new System.Drawing.Size(1256, 748);
+            this.testTabPage.Size = new System.Drawing.Size(1256, 739);
             this.testTabPage.TabIndex = 0;
             this.testTabPage.Text = "测试界面";
             this.testTabPage.UseVisualStyleBackColor = true;
@@ -1486,7 +1489,7 @@
             this.testPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.testPanel.Location = new System.Drawing.Point(3, 3);
             this.testPanel.Name = "testPanel";
-            this.testPanel.Size = new System.Drawing.Size(1250, 742);
+            this.testPanel.Size = new System.Drawing.Size(1250, 733);
             this.testPanel.TabIndex = 85;
             // 
             // funcPanel
@@ -1501,7 +1504,7 @@
             this.funcPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.funcPanel.Location = new System.Drawing.Point(0, 0);
             this.funcPanel.Name = "funcPanel";
-            this.funcPanel.Size = new System.Drawing.Size(349, 742);
+            this.funcPanel.Size = new System.Drawing.Size(349, 733);
             this.funcPanel.TabIndex = 0;
             // 
             // panel5
@@ -1556,7 +1559,7 @@
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.infoPanel.Location = new System.Drawing.Point(348, 0);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(902, 742);
+            this.infoPanel.Size = new System.Drawing.Size(902, 733);
             this.infoPanel.TabIndex = 0;
             // 
             // textPanel
@@ -1565,95 +1568,190 @@
             this.textPanel.Controls.Add(this.progressBar1);
             this.textPanel.Controls.Add(this.testInfoTextBox);
             this.textPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textPanel.Location = new System.Drawing.Point(0, 619);
+            this.textPanel.Location = new System.Drawing.Point(0, 610);
             this.textPanel.Name = "textPanel";
             this.textPanel.Size = new System.Drawing.Size(902, 123);
             this.textPanel.TabIndex = 0;
             // 
             // cameraTabPage
             // 
-            this.cameraTabPage.Controls.Add(this.hWindowControl1);
-            this.cameraTabPage.Controls.Add(this.saveCameraButon);
-            this.cameraTabPage.Controls.Add(this.findCameraButton);
-            this.cameraTabPage.Controls.Add(this.vispShoot);
-            this.cameraTabPage.Controls.Add(this.cboVideo);
-            this.cameraTabPage.Controls.Add(this.cboResolution);
-            this.cameraTabPage.Controls.Add(this.cameraSettingButton);
-            this.cameraTabPage.Controls.Add(this.btnConnect);
-            this.cameraTabPage.Controls.Add(this.btnCut);
-            this.cameraTabPage.Controls.Add(this.label18);
-            this.cameraTabPage.Controls.Add(this.btnPic);
-            this.cameraTabPage.Controls.Add(this.label25);
-            this.cameraTabPage.Controls.Add(this.picbPreview);
+            this.cameraTabPage.Controls.Add(this.cameraSetingPermissionsPanel);
             this.cameraTabPage.Location = new System.Drawing.Point(84, 4);
             this.cameraTabPage.Name = "cameraTabPage";
             this.cameraTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.cameraTabPage.Size = new System.Drawing.Size(1256, 748);
+            this.cameraTabPage.Size = new System.Drawing.Size(1256, 739);
             this.cameraTabPage.TabIndex = 1;
             this.cameraTabPage.Text = "相机调式";
             this.cameraTabPage.UseVisualStyleBackColor = true;
+            // 
+            // cameraSetingPermissionsPanel
+            // 
+            this.cameraSetingPermissionsPanel.Controls.Add(this.hWindowControl1);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.picbPreview);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.cameraPermissionLabel);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.cameraPanel);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.saveCameraButon);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.findCameraButton);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.label25);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.vispShoot);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.btnPic);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.cboVideo);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.label18);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.cboResolution);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.btnCut);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.cameraSettingButton);
+            this.cameraSetingPermissionsPanel.Controls.Add(this.btnConnect);
+            this.cameraSetingPermissionsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cameraSetingPermissionsPanel.Location = new System.Drawing.Point(3, 3);
+            this.cameraSetingPermissionsPanel.Name = "cameraSetingPermissionsPanel";
+            this.cameraSetingPermissionsPanel.Size = new System.Drawing.Size(1250, 733);
+            this.cameraSetingPermissionsPanel.TabIndex = 69;
             // 
             // hWindowControl1
             // 
             this.hWindowControl1.BackColor = System.Drawing.Color.Black;
             this.hWindowControl1.BorderColor = System.Drawing.Color.Black;
             this.hWindowControl1.ImagePart = new System.Drawing.Rectangle(0, 0, 640, 480);
-            this.hWindowControl1.Location = new System.Drawing.Point(631, 127);
+            this.hWindowControl1.Location = new System.Drawing.Point(610, 138);
             this.hWindowControl1.Name = "hWindowControl1";
             this.hWindowControl1.Size = new System.Drawing.Size(600, 450);
             this.hWindowControl1.TabIndex = 67;
             this.hWindowControl1.WindowSize = new System.Drawing.Size(600, 450);
             // 
+            // cameraPermissionLabel
+            // 
+            this.cameraPermissionLabel.AutoSize = true;
+            this.cameraPermissionLabel.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cameraPermissionLabel.ForeColor = System.Drawing.Color.Red;
+            this.cameraPermissionLabel.Location = new System.Drawing.Point(218, 340);
+            this.cameraPermissionLabel.Name = "cameraPermissionLabel";
+            this.cameraPermissionLabel.Size = new System.Drawing.Size(815, 64);
+            this.cameraPermissionLabel.TabIndex = 69;
+            this.cameraPermissionLabel.Text = "无操作权限 No permission";
+            // 
+            // cameraPanel
+            // 
+            this.cameraPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cameraPanel.AutoSize = true;
+            this.cameraPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cameraPanel.Location = new System.Drawing.Point(46, 138);
+            this.cameraPanel.Name = "cameraPanel";
+            this.cameraPanel.Size = new System.Drawing.Size(0, 0);
+            this.cameraPanel.TabIndex = 68;
+            // 
             // uploadTabPage
             // 
+            this.uploadTabPage.Controls.Add(this.checkBarcodePanel);
+            this.uploadTabPage.Controls.Add(this.checkCameraPanel);
+            this.uploadTabPage.Controls.Add(this.ftpManualPanel);
+            this.uploadTabPage.Controls.Add(this.flowLayoutPanel50);
             this.uploadTabPage.Controls.Add(this.panel12);
-            this.uploadTabPage.Controls.Add(this.panel9);
-            this.uploadTabPage.Controls.Add(this.panel8);
-            this.uploadTabPage.Controls.Add(this.panel7);
+            this.uploadTabPage.Controls.Add(this.oracleUploadRecordsPanel);
+            this.uploadTabPage.Controls.Add(this.ftpUploadRecordsPanel);
+            this.uploadTabPage.Controls.Add(this.lPanel);
             this.uploadTabPage.ImageIndex = 2;
             this.uploadTabPage.Location = new System.Drawing.Point(84, 4);
             this.uploadTabPage.Name = "uploadTabPage";
-            this.uploadTabPage.Size = new System.Drawing.Size(1256, 748);
+            this.uploadTabPage.Size = new System.Drawing.Size(1256, 739);
             this.uploadTabPage.TabIndex = 2;
             this.uploadTabPage.Text = "数据上传";
             this.uploadTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel12
+            // checkBarcodePanel
             // 
-            this.panel12.AutoSize = true;
-            this.panel12.Controls.Add(this.panel10);
-            this.panel12.Controls.Add(this.panel11);
-            this.panel12.Controls.Add(this.inquireDataGridView);
-            this.panel12.Location = new System.Drawing.Point(628, 23);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(620, 706);
-            this.panel12.TabIndex = 124;
+            this.checkBarcodePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.checkBarcodePanel.Controls.Add(this.inquireDataGridView);
+            this.checkBarcodePanel.Controls.Add(this.label48);
+            this.checkBarcodePanel.Controls.Add(this.inquireBarcodeTextBox);
+            this.checkBarcodePanel.Controls.Add(this.inquireOracleButton);
+            this.checkBarcodePanel.Location = new System.Drawing.Point(655, 344);
+            this.checkBarcodePanel.Name = "checkBarcodePanel";
+            this.checkBarcodePanel.Size = new System.Drawing.Size(524, 385);
+            this.checkBarcodePanel.TabIndex = 123;
             // 
-            // panel10
+            // inquireDataGridView
             // 
-            this.panel10.AutoSize = true;
-            this.panel10.Controls.Add(this.inquireHWindowControl);
-            this.panel10.Controls.Add(this.inquireBarcodeButton);
-            this.panel10.Controls.Add(this.openInquireCameraButton);
-            this.panel10.Location = new System.Drawing.Point(42, 16);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(475, 174);
-            this.panel10.TabIndex = 122;
+            this.inquireDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inquireDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inquireDataGridView.Location = new System.Drawing.Point(3, 69);
+            this.inquireDataGridView.Name = "inquireDataGridView";
+            this.inquireDataGridView.ReadOnly = true;
+            this.inquireDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.inquireDataGridView.RowTemplate.Height = 23;
+            this.inquireDataGridView.Size = new System.Drawing.Size(518, 313);
+            this.inquireDataGridView.TabIndex = 16;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.BackColor = System.Drawing.Color.Gainsboro;
+            this.label48.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label48.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label48.Location = new System.Drawing.Point(0, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(309, 22);
+            this.label48.TabIndex = 117;
+            this.label48.Text = "使用相机扫码或手动输入条码";
+            // 
+            // inquireBarcodeTextBox
+            // 
+            this.inquireBarcodeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inquireBarcodeTextBox.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.inquireBarcodeTextBox.Location = new System.Drawing.Point(3, 25);
+            this.inquireBarcodeTextBox.Name = "inquireBarcodeTextBox";
+            this.inquireBarcodeTextBox.Size = new System.Drawing.Size(382, 38);
+            this.inquireBarcodeTextBox.TabIndex = 112;
+            // 
+            // inquireOracleButton
+            // 
+            this.inquireOracleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.inquireOracleButton.Location = new System.Drawing.Point(391, 25);
+            this.inquireOracleButton.Name = "inquireOracleButton";
+            this.inquireOracleButton.Size = new System.Drawing.Size(130, 38);
+            this.inquireOracleButton.TabIndex = 113;
+            this.inquireOracleButton.Text = "查询";
+            this.inquireOracleButton.UseVisualStyleBackColor = true;
+            this.inquireOracleButton.Click += new System.EventHandler(this.inquireOracleButton_Click);
+            // 
+            // checkCameraPanel
+            // 
+            this.checkCameraPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkCameraPanel.AutoSize = true;
+            this.checkCameraPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.checkCameraPanel.Controls.Add(this.inquireHWindowControl);
+            this.checkCameraPanel.Controls.Add(this.inquireBarcodeButton);
+            this.checkCameraPanel.Controls.Add(this.openInquireCameraButton);
+            this.checkCameraPanel.Location = new System.Drawing.Point(652, 53);
+            this.checkCameraPanel.Name = "checkCameraPanel";
+            this.checkCameraPanel.Size = new System.Drawing.Size(524, 247);
+            this.checkCameraPanel.TabIndex = 122;
             // 
             // inquireHWindowControl
             // 
+            this.inquireHWindowControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inquireHWindowControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.inquireHWindowControl.BackColor = System.Drawing.Color.Black;
             this.inquireHWindowControl.BorderColor = System.Drawing.Color.Black;
             this.inquireHWindowControl.ImagePart = new System.Drawing.Rectangle(0, 0, 640, 480);
             this.inquireHWindowControl.Location = new System.Drawing.Point(3, 5);
             this.inquireHWindowControl.Name = "inquireHWindowControl";
-            this.inquireHWindowControl.Size = new System.Drawing.Size(324, 166);
+            this.inquireHWindowControl.Size = new System.Drawing.Size(382, 239);
             this.inquireHWindowControl.TabIndex = 118;
-            this.inquireHWindowControl.WindowSize = new System.Drawing.Size(324, 166);
+            this.inquireHWindowControl.WindowSize = new System.Drawing.Size(382, 239);
             // 
             // inquireBarcodeButton
             // 
-            this.inquireBarcodeButton.Location = new System.Drawing.Point(342, 116);
+            this.inquireBarcodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.inquireBarcodeButton.Location = new System.Drawing.Point(391, 192);
             this.inquireBarcodeButton.Name = "inquireBarcodeButton";
             this.inquireBarcodeButton.Size = new System.Drawing.Size(130, 52);
             this.inquireBarcodeButton.TabIndex = 110;
@@ -1663,7 +1761,8 @@
             // 
             // openInquireCameraButton
             // 
-            this.openInquireCameraButton.Location = new System.Drawing.Point(342, 33);
+            this.openInquireCameraButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.openInquireCameraButton.Location = new System.Drawing.Point(391, 114);
             this.openInquireCameraButton.Name = "openInquireCameraButton";
             this.openInquireCameraButton.Size = new System.Drawing.Size(130, 52);
             this.openInquireCameraButton.TabIndex = 111;
@@ -1671,84 +1770,45 @@
             this.openInquireCameraButton.UseVisualStyleBackColor = true;
             this.openInquireCameraButton.Click += new System.EventHandler(this.openInquireCameraButton_Click);
             // 
-            // panel11
+            // ftpManualPanel
             // 
-            this.panel11.AutoSize = true;
-            this.panel11.Controls.Add(this.label48);
-            this.panel11.Controls.Add(this.inquireBarcodeTextBox);
-            this.panel11.Controls.Add(this.inquireOracleButton);
-            this.panel11.Location = new System.Drawing.Point(42, 216);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(480, 104);
-            this.panel11.TabIndex = 123;
+            this.ftpManualPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ftpManualPanel.Controls.Add(this.FTPUpLoadButton);
+            this.ftpManualPanel.Controls.Add(this.FTPUploadProgressBar);
+            this.ftpManualPanel.Controls.Add(this.label37);
+            this.ftpManualPanel.Controls.Add(this.label39);
+            this.ftpManualPanel.Controls.Add(this.FTPUploadTimeTextBox);
+            this.ftpManualPanel.Location = new System.Drawing.Point(81, 16);
+            this.ftpManualPanel.Name = "ftpManualPanel";
+            this.ftpManualPanel.Size = new System.Drawing.Size(480, 70);
+            this.ftpManualPanel.TabIndex = 125;
             // 
-            // label48
+            // panel12
             // 
-            this.label48.AutoSize = true;
-            this.label48.BackColor = System.Drawing.Color.Gainsboro;
-            this.label48.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label48.Location = new System.Drawing.Point(3, 24);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(309, 22);
-            this.label48.TabIndex = 117;
-            this.label48.Text = "使用相机扫码或手动输入条码";
+            this.panel12.AutoSize = true;
+            this.panel12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel12.Location = new System.Drawing.Point(100, 100);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(0, 0);
+            this.panel12.TabIndex = 124;
             // 
-            // inquireBarcodeTextBox
+            // oracleUploadRecordsPanel
             // 
-            this.inquireBarcodeTextBox.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.inquireBarcodeTextBox.Location = new System.Drawing.Point(1, 49);
-            this.inquireBarcodeTextBox.Name = "inquireBarcodeTextBox";
-            this.inquireBarcodeTextBox.Size = new System.Drawing.Size(327, 38);
-            this.inquireBarcodeTextBox.TabIndex = 112;
-            // 
-            // inquireOracleButton
-            // 
-            this.inquireOracleButton.Location = new System.Drawing.Point(347, 49);
-            this.inquireOracleButton.Name = "inquireOracleButton";
-            this.inquireOracleButton.Size = new System.Drawing.Size(130, 38);
-            this.inquireOracleButton.TabIndex = 113;
-            this.inquireOracleButton.Text = "查询";
-            this.inquireOracleButton.UseVisualStyleBackColor = true;
-            this.inquireOracleButton.Click += new System.EventHandler(this.inquireOracleButton_Click);
-            // 
-            // inquireDataGridView
-            // 
-            this.inquireDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inquireDataGridView.Location = new System.Drawing.Point(42, 326);
-            this.inquireDataGridView.Name = "inquireDataGridView";
-            this.inquireDataGridView.ReadOnly = true;
-            this.inquireDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.inquireDataGridView.RowTemplate.Height = 23;
-            this.inquireDataGridView.Size = new System.Drawing.Size(534, 377);
-            this.inquireDataGridView.TabIndex = 16;
-            // 
-            // panel9
-            // 
-            this.panel9.AutoSize = true;
-            this.panel9.Controls.Add(this.flowLayoutPanel50);
-            this.panel9.Controls.Add(this.FTPUpLoadFiletextBox);
-            this.panel9.Controls.Add(this.FTPUploadProgressBar);
-            this.panel9.Controls.Add(this.FTPSelectFileButton);
-            this.panel9.Location = new System.Drawing.Point(25, 39);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(480, 90);
-            this.panel9.TabIndex = 121;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label46);
-            this.panel8.Controls.Add(this.OracleDataGridView);
-            this.panel8.Location = new System.Drawing.Point(25, 432);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(480, 294);
-            this.panel8.TabIndex = 120;
+            this.oracleUploadRecordsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.oracleUploadRecordsPanel.Controls.Add(this.label46);
+            this.oracleUploadRecordsPanel.Controls.Add(this.OracleDataGridView);
+            this.oracleUploadRecordsPanel.Location = new System.Drawing.Point(78, 429);
+            this.oracleUploadRecordsPanel.Name = "oracleUploadRecordsPanel";
+            this.oracleUploadRecordsPanel.Size = new System.Drawing.Size(480, 300);
+            this.oracleUploadRecordsPanel.TabIndex = 120;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.BackColor = System.Drawing.Color.Gainsboro;
+            this.label46.Dock = System.Windows.Forms.DockStyle.Top;
             this.label46.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label46.Location = new System.Drawing.Point(153, 19);
+            this.label46.Location = new System.Drawing.Point(0, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(174, 22);
             this.label46.TabIndex = 115;
@@ -1756,65 +1816,121 @@
             // 
             // OracleDataGridView
             // 
+            this.OracleDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.OracleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.OracleDataGridView.Location = new System.Drawing.Point(3, 44);
+            this.OracleDataGridView.Location = new System.Drawing.Point(0, 28);
             this.OracleDataGridView.Name = "OracleDataGridView";
             this.OracleDataGridView.ReadOnly = true;
             this.OracleDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.OracleDataGridView.RowTemplate.Height = 23;
-            this.OracleDataGridView.Size = new System.Drawing.Size(474, 250);
+            this.OracleDataGridView.Size = new System.Drawing.Size(480, 272);
             this.OracleDataGridView.TabIndex = 114;
             // 
-            // panel7
+            // ftpUploadRecordsPanel
             // 
-            this.panel7.AutoSize = true;
-            this.panel7.Controls.Add(this.FTPDataGridView);
-            this.panel7.Controls.Add(this.label47);
-            this.panel7.Location = new System.Drawing.Point(25, 132);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(480, 294);
-            this.panel7.TabIndex = 119;
+            this.ftpUploadRecordsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ftpUploadRecordsPanel.Controls.Add(this.label47);
+            this.ftpUploadRecordsPanel.Controls.Add(this.FTPDataGridView);
+            this.ftpUploadRecordsPanel.Location = new System.Drawing.Point(78, 110);
+            this.ftpUploadRecordsPanel.Name = "ftpUploadRecordsPanel";
+            this.ftpUploadRecordsPanel.Size = new System.Drawing.Size(480, 300);
+            this.ftpUploadRecordsPanel.TabIndex = 119;
             // 
             // label47
             // 
             this.label47.AutoSize = true;
             this.label47.BackColor = System.Drawing.Color.Gainsboro;
+            this.label47.Dock = System.Windows.Forms.DockStyle.Top;
             this.label47.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label47.Location = new System.Drawing.Point(162, 16);
+            this.label47.Location = new System.Drawing.Point(0, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(138, 22);
             this.label47.TabIndex = 116;
             this.label47.Text = "FTP上传记录";
             // 
+            // lPanel
+            // 
+            this.lPanel.AutoSize = true;
+            this.lPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.lPanel.Controls.Add(this.FTPUpLoadFiletextBox);
+            this.lPanel.Controls.Add(this.FTPSelectFileButton);
+            this.lPanel.Location = new System.Drawing.Point(713, 16);
+            this.lPanel.Name = "lPanel";
+            this.lPanel.Size = new System.Drawing.Size(378, 27);
+            this.lPanel.TabIndex = 121;
+            // 
             // simpleManageTabPage
             // 
-            this.simpleManageTabPage.Controls.Add(this.delSimpleButton);
-            this.simpleManageTabPage.Controls.Add(this.addSimpleButton);
-            this.simpleManageTabPage.Controls.Add(this.label49);
-            this.simpleManageTabPage.Controls.Add(this.simplePartNumTextBox);
-            this.simpleManageTabPage.Controls.Add(this.simpleDataGridView);
+            this.simpleManageTabPage.Controls.Add(this.samplePermissionsPanel);
             this.simpleManageTabPage.ImageIndex = 1;
             this.simpleManageTabPage.Location = new System.Drawing.Point(84, 4);
             this.simpleManageTabPage.Name = "simpleManageTabPage";
-            this.simpleManageTabPage.Size = new System.Drawing.Size(1256, 748);
+            this.simpleManageTabPage.Size = new System.Drawing.Size(1256, 739);
             this.simpleManageTabPage.TabIndex = 5;
             this.simpleManageTabPage.Text = "样本管理";
             this.simpleManageTabPage.UseVisualStyleBackColor = true;
             // 
-            // delSimpleButton
+            // samplePermissionsPanel
             // 
-            this.delSimpleButton.BackColor = System.Drawing.Color.White;
-            this.delSimpleButton.ForeColor = System.Drawing.Color.Red;
-            this.delSimpleButton.Location = new System.Drawing.Point(793, 571);
-            this.delSimpleButton.Name = "delSimpleButton";
-            this.delSimpleButton.Size = new System.Drawing.Size(130, 52);
-            this.delSimpleButton.TabIndex = 63;
-            this.delSimpleButton.Text = "删除样本";
-            this.delSimpleButton.UseVisualStyleBackColor = false;
+            this.samplePermissionsPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.samplePermissionsPanel.Controls.Add(this.samplePanel);
+            this.samplePermissionsPanel.Controls.Add(this.label51);
+            this.samplePermissionsPanel.Location = new System.Drawing.Point(0, 0);
+            this.samplePermissionsPanel.Name = "samplePermissionsPanel";
+            this.samplePermissionsPanel.Size = new System.Drawing.Size(1256, 751);
+            this.samplePermissionsPanel.TabIndex = 72;
+            // 
+            // samplePanel
+            // 
+            this.samplePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.samplePanel.Controls.Add(this.simplePartNumTextBox);
+            this.samplePanel.Controls.Add(this.textBox2);
+            this.samplePanel.Controls.Add(this.addSimpleButton);
+            this.samplePanel.Controls.Add(this.delSimpleButton);
+            this.samplePanel.Controls.Add(this.simpleDataGridView);
+            this.samplePanel.Location = new System.Drawing.Point(148, 75);
+            this.samplePanel.Name = "samplePanel";
+            this.samplePanel.Size = new System.Drawing.Size(960, 600);
+            this.samplePanel.TabIndex = 71;
+            // 
+            // simplePartNumTextBox
+            // 
+            this.simplePartNumTextBox.BackColor = System.Drawing.Color.RosyBrown;
+            this.simplePartNumTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.simplePartNumTextBox.Enabled = false;
+            this.simplePartNumTextBox.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simplePartNumTextBox.Location = new System.Drawing.Point(3, 3);
+            this.simplePartNumTextBox.Name = "simplePartNumTextBox";
+            this.simplePartNumTextBox.ReadOnly = true;
+            this.simplePartNumTextBox.Size = new System.Drawing.Size(256, 31);
+            this.simplePartNumTextBox.TabIndex = 87;
+            this.simplePartNumTextBox.Text = "FSAPHV0123";
+            this.simplePartNumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.RosyBrown;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(265, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(195, 31);
+            this.textBox2.TabIndex = 87;
+            this.textBox2.Text = "料号中的样本";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // addSimpleButton
             // 
-            this.addSimpleButton.Location = new System.Drawing.Point(589, 571);
+            this.addSimpleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addSimpleButton.Location = new System.Drawing.Point(654, 542);
             this.addSimpleButton.Name = "addSimpleButton";
             this.addSimpleButton.Size = new System.Drawing.Size(130, 52);
             this.addSimpleButton.TabIndex = 62;
@@ -1822,559 +1938,740 @@
             this.addSimpleButton.UseVisualStyleBackColor = true;
             this.addSimpleButton.Click += new System.EventHandler(this.addSimpleButton_Click);
             // 
-            // label49
+            // delSimpleButton
             // 
-            this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.Color.DarkGray;
-            this.label49.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label49.Location = new System.Drawing.Point(286, 66);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(180, 27);
-            this.label49.TabIndex = 5;
-            this.label49.Text = "料号中的样本";
-            // 
-            // simplePartNumTextBox
-            // 
-            this.simplePartNumTextBox.BackColor = System.Drawing.Color.DarkGray;
-            this.simplePartNumTextBox.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.simplePartNumTextBox.Location = new System.Drawing.Point(95, 63);
-            this.simplePartNumTextBox.Name = "simplePartNumTextBox";
-            this.simplePartNumTextBox.ReadOnly = true;
-            this.simplePartNumTextBox.Size = new System.Drawing.Size(185, 32);
-            this.simplePartNumTextBox.TabIndex = 4;
-            this.simplePartNumTextBox.Text = "FSAPHV0123";
-            this.simplePartNumTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.delSimpleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.delSimpleButton.BackColor = System.Drawing.Color.White;
+            this.delSimpleButton.ForeColor = System.Drawing.Color.Red;
+            this.delSimpleButton.Location = new System.Drawing.Point(827, 542);
+            this.delSimpleButton.Name = "delSimpleButton";
+            this.delSimpleButton.Size = new System.Drawing.Size(130, 52);
+            this.delSimpleButton.TabIndex = 63;
+            this.delSimpleButton.Text = "删除样本";
+            this.delSimpleButton.UseVisualStyleBackColor = false;
             // 
             // simpleDataGridView
             // 
+            this.simpleDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.simpleDataGridView.Location = new System.Drawing.Point(95, 125);
+            this.simpleDataGridView.Location = new System.Drawing.Point(-3, 41);
             this.simpleDataGridView.Name = "simpleDataGridView";
             this.simpleDataGridView.ReadOnly = true;
             this.simpleDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.simpleDataGridView.RowTemplate.Height = 23;
-            this.simpleDataGridView.Size = new System.Drawing.Size(828, 423);
+            this.simpleDataGridView.Size = new System.Drawing.Size(960, 498);
             this.simpleDataGridView.TabIndex = 3;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label51.ForeColor = System.Drawing.Color.Red;
+            this.label51.Location = new System.Drawing.Point(221, 343);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(815, 64);
+            this.label51.TabIndex = 70;
+            this.label51.Text = "无操作权限 No permission";
             // 
             // settingTabPage
             // 
-            this.settingTabPage.Controls.Add(this.panel1);
             this.settingTabPage.Controls.Add(this.tabControlExt1);
+            this.settingTabPage.Controls.Add(this.saveInitButton);
+            this.settingTabPage.Controls.Add(this.saveAndWriteIniButton);
             this.settingTabPage.ImageIndex = 0;
             this.settingTabPage.Location = new System.Drawing.Point(84, 4);
             this.settingTabPage.Name = "settingTabPage";
             this.settingTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.settingTabPage.Size = new System.Drawing.Size(1256, 748);
+            this.settingTabPage.Size = new System.Drawing.Size(1256, 739);
             this.settingTabPage.TabIndex = 4;
             this.settingTabPage.Text = "系统设置";
             this.settingTabPage.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.saveInitButton);
-            this.panel1.Controls.Add(this.saveAndWriteIniButton);
-            this.panel1.Location = new System.Drawing.Point(0, 605);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1180, 77);
-            this.panel1.TabIndex = 64;
-            // 
-            // saveInitButton
-            // 
-            this.saveInitButton.AutoSize = true;
-            this.saveInitButton.Location = new System.Drawing.Point(705, 3);
-            this.saveInitButton.Name = "saveInitButton";
-            this.saveInitButton.Size = new System.Drawing.Size(135, 52);
-            this.saveInitButton.TabIndex = 58;
-            this.saveInitButton.Text = "仅保存至配置文件";
-            this.saveInitButton.UseVisualStyleBackColor = true;
-            this.saveInitButton.Click += new System.EventHandler(this.saveInitButton_Click);
-            // 
-            // saveAndWriteIniButton
-            // 
-            this.saveAndWriteIniButton.AutoSize = true;
-            this.saveAndWriteIniButton.Location = new System.Drawing.Point(894, 3);
-            this.saveAndWriteIniButton.Name = "saveAndWriteIniButton";
-            this.saveAndWriteIniButton.Size = new System.Drawing.Size(135, 52);
-            this.saveAndWriteIniButton.TabIndex = 63;
-            this.saveAndWriteIniButton.Text = "保存配置文件和网分仪";
-            this.saveAndWriteIniButton.UseVisualStyleBackColor = true;
-            this.saveAndWriteIniButton.Click += new System.EventHandler(this.saveAndWriteIniButton_Click);
             // 
             // tabControlExt1
             // 
             this.tabControlExt1.BackColor = System.Drawing.Color.Transparent;
             this.tabControlExt1.CloseBtnColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(51)))));
+            this.tabControlExt1.Controls.Add(this.tabPage1);
             this.tabControlExt1.Controls.Add(this.tabPage7);
             this.tabControlExt1.Controls.Add(this.tabPage6);
-            this.tabControlExt1.Controls.Add(this.tabPage1);
             this.tabControlExt1.Controls.Add(this.DebugTabPage);
-            this.tabControlExt1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControlExt1.IsShowCloseBtn = false;
             this.tabControlExt1.ItemSize = new System.Drawing.Size(0, 50);
-            this.tabControlExt1.Location = new System.Drawing.Point(3, 3);
+            this.tabControlExt1.Location = new System.Drawing.Point(3, 6);
             this.tabControlExt1.Name = "tabControlExt1";
             this.tabControlExt1.SelectedIndex = 0;
-            this.tabControlExt1.Size = new System.Drawing.Size(1250, 599);
+            this.tabControlExt1.Size = new System.Drawing.Size(1250, 622);
             this.tabControlExt1.TabIndex = 0;
             this.tabControlExt1.UncloseTabIndexs = null;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel15);
+            this.tabPage1.Controls.Add(this.panel13);
+            this.tabPage1.Controls.Add(this.panel14);
+            this.tabPage1.Controls.Add(this.panel11);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 54);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1242, 564);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "模式设定";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.测试稳定性延时);
+            this.panel15.Controls.Add(this.testDelaytextBox);
+            this.panel15.Controls.Add(this.label49);
+            this.panel15.Location = new System.Drawing.Point(43, 165);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(206, 35);
+            this.panel15.TabIndex = 90;
+            // 
+            // 测试稳定性延时
+            // 
+            this.测试稳定性延时.AutoSize = true;
+            this.测试稳定性延时.Location = new System.Drawing.Point(3, 10);
+            this.测试稳定性延时.Name = "测试稳定性延时";
+            this.测试稳定性延时.Size = new System.Drawing.Size(89, 12);
+            this.测试稳定性延时.TabIndex = 87;
+            this.测试稳定性延时.Text = "测试稳定性延时";
+            // 
+            // testDelaytextBox
+            // 
+            this.testDelaytextBox.Location = new System.Drawing.Point(98, 7);
+            this.testDelaytextBox.Name = "testDelaytextBox";
+            this.testDelaytextBox.Size = new System.Drawing.Size(80, 21);
+            this.testDelaytextBox.TabIndex = 86;
+            this.testDelaytextBox.Text = "150";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(184, 10);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(17, 12);
+            this.label49.TabIndex = 87;
+            this.label49.Text = "ms";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label41);
+            this.panel13.Controls.Add(this.OracleucSwitch);
+            this.panel13.Location = new System.Drawing.Point(43, 81);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(126, 20);
+            this.panel13.TabIndex = 89;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label41.Location = new System.Drawing.Point(3, 4);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(65, 12);
+            this.label41.TabIndex = 3;
+            this.label41.Text = "Oracle上传";
+            // 
+            // OracleucSwitch
+            // 
+            this.OracleucSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.OracleucSwitch.Checked = false;
+            this.OracleucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.OracleucSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.OracleucSwitch.Location = new System.Drawing.Point(73, 1);
+            this.OracleucSwitch.Name = "OracleucSwitch";
+            this.OracleucSwitch.Size = new System.Drawing.Size(50, 16);
+            this.OracleucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.OracleucSwitch.TabIndex = 1;
+            this.OracleucSwitch.Texts = null;
+            this.OracleucSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.OracleucSwitch.TrueTextColr = System.Drawing.Color.White;
+            this.OracleucSwitch.CheckedChanged += new System.EventHandler(this.OracleucSwitch_CheckedChanged);
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label44);
+            this.panel14.Controls.Add(this.ABBSwitch);
+            this.panel14.Location = new System.Drawing.Point(43, 109);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(126, 20);
+            this.panel14.TabIndex = 89;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label44.Location = new System.Drawing.Point(3, 2);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(47, 12);
+            this.label44.TabIndex = 5;
+            this.label44.Text = "ABB管控";
+            // 
+            // ABBSwitch
+            // 
+            this.ABBSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.ABBSwitch.Checked = false;
+            this.ABBSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.ABBSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.ABBSwitch.Location = new System.Drawing.Point(73, 3);
+            this.ABBSwitch.Name = "ABBSwitch";
+            this.ABBSwitch.Size = new System.Drawing.Size(50, 16);
+            this.ABBSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.ABBSwitch.TabIndex = 4;
+            this.ABBSwitch.Texts = null;
+            this.ABBSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ABBSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label14);
+            this.panel11.Controls.Add(this.FTPucSwitch);
+            this.panel11.Location = new System.Drawing.Point(43, 52);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(126, 20);
+            this.panel11.TabIndex = 89;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(3, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "FTP上传";
+            // 
+            // FTPucSwitch
+            // 
+            this.FTPucSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.FTPucSwitch.Checked = false;
+            this.FTPucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.FTPucSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.FTPucSwitch.Location = new System.Drawing.Point(74, 1);
+            this.FTPucSwitch.Name = "FTPucSwitch";
+            this.FTPucSwitch.Size = new System.Drawing.Size(50, 16);
+            this.FTPucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.FTPucSwitch.TabIndex = 0;
+            this.FTPucSwitch.Texts = null;
+            this.FTPucSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.FTPucSwitch.TrueTextColr = System.Drawing.Color.White;
+            this.FTPucSwitch.CheckedChanged += new System.EventHandler(this.FTPucSwitch_CheckedChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.label50);
+            this.panel2.Controls.Add(this.shieldMCUucSwitch);
+            this.panel2.Location = new System.Drawing.Point(43, 137);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(126, 22);
+            this.panel2.TabIndex = 88;
             // 
             // tabPage7
             // 
             this.tabPage7.AutoScroll = true;
-            this.tabPage7.Controls.Add(this.panel15);
-            this.tabPage7.Controls.Add(this.panel13);
-            this.tabPage7.Controls.Add(this.panel14);
-            this.tabPage7.Controls.Add(this.flowLayoutPanel15);
-            this.tabPage7.Controls.Add(this.flowLayoutPanel18);
-            this.tabPage7.Controls.Add(this.readConfigFromAnalyzerButton);
-            this.tabPage7.Controls.Add(this.flowLayoutPanel20);
+            this.tabPage7.Controls.Add(this.panel1);
+            this.tabPage7.Controls.Add(this.panel9);
             this.tabPage7.Controls.Add(this.testConfigLeftPanel);
-            this.tabPage7.Controls.Add(this.flowLayoutPanel19);
             this.tabPage7.Controls.Add(this.panel6);
             this.tabPage7.ImageIndex = 0;
             this.tabPage7.Location = new System.Drawing.Point(4, 54);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1242, 541);
+            this.tabPage7.Size = new System.Drawing.Size(1242, 564);
             this.tabPage7.TabIndex = 1;
-            this.tabPage7.Text = "测试配置";
+            this.tabPage7.Text = "网分配置";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // panel15
+            // panel1
             // 
-            this.panel15.AutoSize = true;
-            this.panel15.Controls.Add(this.dataGridView1);
-            this.panel15.Location = new System.Drawing.Point(544, 22);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(546, 326);
-            this.panel15.TabIndex = 70;
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Location = new System.Drawing.Point(22, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(330, 455);
+            this.panel1.TabIndex = 74;
             // 
-            // dataGridView1
+            // panel7
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.MinimumSize = new System.Drawing.Size(540, 320);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 320);
-            this.dataGridView1.StandardTab = true;
-            this.dataGridView1.TabIndex = 0;
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.AutoScroll = true;
+            this.panel7.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel7.Controls.Add(this.panel10);
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.AnalyzerEXTensionButton);
+            this.panel7.Controls.Add(this.readConfigFromAnalyzerButton);
+            this.panel7.Controls.Add(this.eCalButton);
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.MaximumSize = new System.Drawing.Size(385, 0);
+            this.panel7.MinimumSize = new System.Drawing.Size(322, 258);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(322, 258);
+            this.panel7.TabIndex = 71;
             // 
-            // panel13
+            // panel10
             // 
-            this.panel13.AutoSize = true;
-            this.panel13.Controls.Add(this.dataGridViewRemoveButton);
-            this.panel13.Controls.Add(this.dataGridViewAddRowButton);
-            this.panel13.Location = new System.Drawing.Point(544, 371);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(395, 58);
-            this.panel13.TabIndex = 69;
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.Controls.Add(this.startFreqTextBox);
+            this.panel10.Controls.Add(this.label9);
+            this.panel10.Controls.Add(this.channelNumberComboBox);
+            this.panel10.Controls.Add(this.label12);
+            this.panel10.Controls.Add(this.label4);
+            this.panel10.Controls.Add(this.smoothComboBox);
+            this.panel10.Controls.Add(this.analyzerWindowComboBox);
+            this.panel10.Controls.Add(this.label5);
+            this.panel10.Controls.Add(this.smoothValueTextBox);
+            this.panel10.Controls.Add(this.label3);
+            this.panel10.Controls.Add(this.label13);
+            this.panel10.Controls.Add(this.flowLayoutPanel15);
+            this.panel10.Controls.Add(this.sweepPointTextBox);
+            this.panel10.Controls.Add(this.startFreqUnitComboBox);
+            this.panel10.Controls.Add(this.label1);
+            this.panel10.Controls.Add(this.stopFreqTextBox);
+            this.panel10.Controls.Add(this.stopFreqUnitComboBox);
+            this.panel10.Location = new System.Drawing.Point(12, 56);
+            this.panel10.MinimumSize = new System.Drawing.Size(175, 189);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(175, 189);
+            this.panel10.TabIndex = 74;
             // 
-            // dataGridViewRemoveButton
+            // startFreqTextBox
             // 
-            this.dataGridViewRemoveButton.Location = new System.Drawing.Point(257, 5);
-            this.dataGridViewRemoveButton.Name = "dataGridViewRemoveButton";
-            this.dataGridViewRemoveButton.Size = new System.Drawing.Size(125, 50);
-            this.dataGridViewRemoveButton.TabIndex = 2;
-            this.dataGridViewRemoveButton.Text = "删除行";
-            this.dataGridViewRemoveButton.UseVisualStyleBackColor = true;
-            this.dataGridViewRemoveButton.Click += new System.EventHandler(this.dataGridViewRemoveButton_Click);
+            this.startFreqTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.startFreqTextBox.Location = new System.Drawing.Point(62, 57);
+            this.startFreqTextBox.MinimumSize = new System.Drawing.Size(35, 4);
+            this.startFreqTextBox.Name = "startFreqTextBox";
+            this.startFreqTextBox.Size = new System.Drawing.Size(37, 21);
+            this.startFreqTextBox.TabIndex = 30;
             // 
-            // dataGridViewAddRowButton
+            // label9
             // 
-            this.dataGridViewAddRowButton.Location = new System.Drawing.Point(3, 5);
-            this.dataGridViewAddRowButton.Name = "dataGridViewAddRowButton";
-            this.dataGridViewAddRowButton.Size = new System.Drawing.Size(125, 50);
-            this.dataGridViewAddRowButton.TabIndex = 3;
-            this.dataGridViewAddRowButton.Text = "新增行";
-            this.dataGridViewAddRowButton.UseVisualStyleBackColor = true;
-            this.dataGridViewAddRowButton.Click += new System.EventHandler(this.dataGridViewAddRowButton_Click);
-            // 
-            // panel14
-            // 
-            this.panel14.AutoSize = true;
-            this.panel14.Controls.Add(this.eCalButton);
-            this.panel14.Controls.Add(this.AnalyzerEXTensionButton);
-            this.panel14.Location = new System.Drawing.Point(698, 451);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(346, 58);
-            this.panel14.TabIndex = 69;
-            // 
-            // eCalButton
-            // 
-            this.eCalButton.Location = new System.Drawing.Point(3, 3);
-            this.eCalButton.Name = "eCalButton";
-            this.eCalButton.Size = new System.Drawing.Size(135, 52);
-            this.eCalButton.TabIndex = 65;
-            this.eCalButton.Text = "校验";
-            this.eCalButton.UseVisualStyleBackColor = true;
-            this.eCalButton.Click += new System.EventHandler(this.eCalButton_Click);
-            // 
-            // AnalyzerEXTensionButton
-            // 
-            this.AnalyzerEXTensionButton.Location = new System.Drawing.Point(208, 3);
-            this.AnalyzerEXTensionButton.Name = "AnalyzerEXTensionButton";
-            this.AnalyzerEXTensionButton.Size = new System.Drawing.Size(135, 52);
-            this.AnalyzerEXTensionButton.TabIndex = 66;
-            this.AnalyzerEXTensionButton.Text = "端口延伸";
-            this.AnalyzerEXTensionButton.UseVisualStyleBackColor = true;
-            this.AnalyzerEXTensionButton.Click += new System.EventHandler(this.AnalyzerEXTensionButton_Click);
-            // 
-            // flowLayoutPanel15
-            // 
-            this.flowLayoutPanel15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel15.AutoSize = true;
-            this.flowLayoutPanel15.Controls.Add(this.flowLayoutPanel9);
-            this.flowLayoutPanel15.Controls.Add(this.flowLayoutPanel17);
-            this.flowLayoutPanel15.Controls.Add(this.flowLayoutPanel10);
-            this.flowLayoutPanel15.Controls.Add(this.flowLayoutPanel16);
-            this.flowLayoutPanel15.Controls.Add(this.flowLayoutPanel13);
-            this.flowLayoutPanel15.Controls.Add(this.flowLayoutPanel12);
-            this.flowLayoutPanel15.Controls.Add(this.flowLayoutPanel11);
-            this.flowLayoutPanel15.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel15.Location = new System.Drawing.Point(216, 27);
-            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(192, 229);
-            this.flowLayoutPanel15.TabIndex = 59;
-            // 
-            // flowLayoutPanel9
-            // 
-            this.flowLayoutPanel9.AutoSize = true;
-            this.flowLayoutPanel9.Controls.Add(this.label4);
-            this.flowLayoutPanel9.Controls.Add(this.channelNumberComboBox);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(186, 26);
-            this.flowLayoutPanel9.TabIndex = 44;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.Location = new System.Drawing.Point(3, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "通道数量";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(2, 171);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "曲线平滑";
             // 
             // channelNumberComboBox
             // 
-            this.channelNumberComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.channelNumberComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.channelNumberComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.channelNumberComboBox.FormattingEnabled = true;
             this.channelNumberComboBox.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.channelNumberComboBox.Location = new System.Drawing.Point(62, 3);
-            this.channelNumberComboBox.MinimumSize = new System.Drawing.Size(120, 0);
+            this.channelNumberComboBox.Location = new System.Drawing.Point(62, 5);
             this.channelNumberComboBox.Name = "channelNumberComboBox";
-            this.channelNumberComboBox.Size = new System.Drawing.Size(121, 20);
+            this.channelNumberComboBox.Size = new System.Drawing.Size(105, 20);
             this.channelNumberComboBox.TabIndex = 33;
             // 
-            // flowLayoutPanel17
+            // label12
             // 
-            this.flowLayoutPanel17.AutoSize = true;
-            this.flowLayoutPanel17.Controls.Add(this.label3);
-            this.flowLayoutPanel17.Controls.Add(this.analyzerWindowComboBox);
-            this.flowLayoutPanel17.Location = new System.Drawing.Point(3, 35);
-            this.flowLayoutPanel17.Name = "flowLayoutPanel17";
-            this.flowLayoutPanel17.Size = new System.Drawing.Size(186, 26);
-            this.flowLayoutPanel17.TabIndex = 49;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(2, 144);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "平滑程度";
             // 
-            // label3
+            // label4
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Location = new System.Drawing.Point(3, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "网分窗口";
+            this.label4.Location = new System.Drawing.Point(2, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "通道数量";
+            // 
+            // smoothComboBox
+            // 
+            this.smoothComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.smoothComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.smoothComboBox.FormattingEnabled = true;
+            this.smoothComboBox.Items.AddRange(new object[] {
+            "OFF",
+            "ON"});
+            this.smoothComboBox.Location = new System.Drawing.Point(61, 165);
+            this.smoothComboBox.Name = "smoothComboBox";
+            this.smoothComboBox.Size = new System.Drawing.Size(105, 20);
+            this.smoothComboBox.TabIndex = 40;
             // 
             // analyzerWindowComboBox
             // 
-            this.analyzerWindowComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.analyzerWindowComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.analyzerWindowComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.analyzerWindowComboBox.FormattingEnabled = true;
             this.analyzerWindowComboBox.Items.AddRange(new object[] {
             "曲线单窗口显示",
             "曲线多窗口显示"});
-            this.analyzerWindowComboBox.Location = new System.Drawing.Point(62, 3);
-            this.analyzerWindowComboBox.MinimumSize = new System.Drawing.Size(120, 0);
+            this.analyzerWindowComboBox.Location = new System.Drawing.Point(62, 31);
             this.analyzerWindowComboBox.Name = "analyzerWindowComboBox";
-            this.analyzerWindowComboBox.Size = new System.Drawing.Size(121, 20);
+            this.analyzerWindowComboBox.Size = new System.Drawing.Size(105, 20);
             this.analyzerWindowComboBox.TabIndex = 33;
             // 
-            // flowLayoutPanel10
+            // label5
             // 
-            this.flowLayoutPanel10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel10.AutoSize = true;
-            this.flowLayoutPanel10.Controls.Add(this.label1);
-            this.flowLayoutPanel10.Controls.Add(this.startFreqTextBox);
-            this.flowLayoutPanel10.Controls.Add(this.startFreqUnitComboBox);
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(3, 67);
-            this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(186, 27);
-            this.flowLayoutPanel10.TabIndex = 45;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(2, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "扫描点数";
             // 
-            // label1
+            // smoothValueTextBox
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "起始频率";
+            this.smoothValueTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.smoothValueTextBox.Location = new System.Drawing.Point(62, 138);
+            this.smoothValueTextBox.Name = "smoothValueTextBox";
+            this.smoothValueTextBox.Size = new System.Drawing.Size(106, 21);
+            this.smoothValueTextBox.TabIndex = 48;
             // 
-            // startFreqTextBox
+            // label3
             // 
-            this.startFreqTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startFreqTextBox.Location = new System.Drawing.Point(62, 3);
-            this.startFreqTextBox.Name = "startFreqTextBox";
-            this.startFreqTextBox.Size = new System.Drawing.Size(56, 21);
-            this.startFreqTextBox.TabIndex = 30;
+            this.label3.Location = new System.Drawing.Point(2, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "网分窗口";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(2, 90);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "结束频率";
+            // 
+            // flowLayoutPanel15
+            // 
+            this.flowLayoutPanel15.AutoSize = true;
+            this.flowLayoutPanel15.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel15.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel15.Location = new System.Drawing.Point(14, 76);
+            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel15.TabIndex = 59;
+            // 
+            // sweepPointTextBox
+            // 
+            this.sweepPointTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sweepPointTextBox.Location = new System.Drawing.Point(62, 111);
+            this.sweepPointTextBox.Name = "sweepPointTextBox";
+            this.sweepPointTextBox.Size = new System.Drawing.Size(105, 21);
+            this.sweepPointTextBox.TabIndex = 37;
             // 
             // startFreqUnitComboBox
             // 
-            this.startFreqUnitComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.startFreqUnitComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.startFreqUnitComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.startFreqUnitComboBox.FormattingEnabled = true;
             this.startFreqUnitComboBox.Items.AddRange(new object[] {
             "KHz",
             "MHz",
             "GHz"});
-            this.startFreqUnitComboBox.Location = new System.Drawing.Point(124, 3);
+            this.startFreqUnitComboBox.Location = new System.Drawing.Point(105, 57);
             this.startFreqUnitComboBox.Name = "startFreqUnitComboBox";
-            this.startFreqUnitComboBox.Size = new System.Drawing.Size(59, 20);
+            this.startFreqUnitComboBox.Size = new System.Drawing.Size(62, 20);
             this.startFreqUnitComboBox.TabIndex = 32;
             // 
-            // flowLayoutPanel16
+            // label1
             // 
-            this.flowLayoutPanel16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel16.AutoSize = true;
-            this.flowLayoutPanel16.Controls.Add(this.label13);
-            this.flowLayoutPanel16.Controls.Add(this.stopFreqTextBox);
-            this.flowLayoutPanel16.Controls.Add(this.stopFreqUnitComboBox);
-            this.flowLayoutPanel16.Location = new System.Drawing.Point(3, 100);
-            this.flowLayoutPanel16.Name = "flowLayoutPanel16";
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(186, 27);
-            this.flowLayoutPanel16.TabIndex = 48;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 7);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 12);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "结束频率";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "起始频率";
             // 
             // stopFreqTextBox
             // 
-            this.stopFreqTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.stopFreqTextBox.Location = new System.Drawing.Point(62, 3);
+            this.stopFreqTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stopFreqTextBox.Location = new System.Drawing.Point(62, 84);
+            this.stopFreqTextBox.MinimumSize = new System.Drawing.Size(35, 4);
             this.stopFreqTextBox.Name = "stopFreqTextBox";
-            this.stopFreqTextBox.Size = new System.Drawing.Size(56, 21);
+            this.stopFreqTextBox.Size = new System.Drawing.Size(37, 21);
             this.stopFreqTextBox.TabIndex = 30;
             // 
             // stopFreqUnitComboBox
             // 
-            this.stopFreqUnitComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.stopFreqUnitComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.stopFreqUnitComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stopFreqUnitComboBox.FormattingEnabled = true;
             this.stopFreqUnitComboBox.Items.AddRange(new object[] {
             "KHz",
             "MHz",
             "GHz"});
-            this.stopFreqUnitComboBox.Location = new System.Drawing.Point(124, 3);
+            this.stopFreqUnitComboBox.Location = new System.Drawing.Point(106, 84);
             this.stopFreqUnitComboBox.Name = "stopFreqUnitComboBox";
-            this.stopFreqUnitComboBox.Size = new System.Drawing.Size(59, 20);
+            this.stopFreqUnitComboBox.Size = new System.Drawing.Size(62, 20);
             this.stopFreqUnitComboBox.TabIndex = 32;
             // 
-            // flowLayoutPanel13
+            // textBox1
             // 
-            this.flowLayoutPanel13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel13.AutoSize = true;
-            this.flowLayoutPanel13.Controls.Add(this.label5);
-            this.flowLayoutPanel13.Controls.Add(this.sweepPointTextBox);
-            this.flowLayoutPanel13.Location = new System.Drawing.Point(3, 133);
-            this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(186, 27);
-            this.flowLayoutPanel13.TabIndex = 46;
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.SlateGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(322, 37);
+            this.textBox1.TabIndex = 87;
+            this.textBox1.Text = "基础配置";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label5
+            // AnalyzerEXTensionButton
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "扫描点数";
-            // 
-            // sweepPointTextBox
-            // 
-            this.sweepPointTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sweepPointTextBox.Location = new System.Drawing.Point(62, 3);
-            this.sweepPointTextBox.Name = "sweepPointTextBox";
-            this.sweepPointTextBox.Size = new System.Drawing.Size(121, 21);
-            this.sweepPointTextBox.TabIndex = 37;
-            // 
-            // flowLayoutPanel12
-            // 
-            this.flowLayoutPanel12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel12.AutoSize = true;
-            this.flowLayoutPanel12.Controls.Add(this.label9);
-            this.flowLayoutPanel12.Controls.Add(this.smoothComboBox);
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(3, 166);
-            this.flowLayoutPanel12.Name = "flowLayoutPanel12";
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(186, 26);
-            this.flowLayoutPanel12.TabIndex = 46;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "曲线平滑";
-            // 
-            // smoothComboBox
-            // 
-            this.smoothComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.smoothComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.smoothComboBox.FormattingEnabled = true;
-            this.smoothComboBox.Items.AddRange(new object[] {
-            "OFF",
-            "ON"});
-            this.smoothComboBox.Location = new System.Drawing.Point(62, 3);
-            this.smoothComboBox.Name = "smoothComboBox";
-            this.smoothComboBox.Size = new System.Drawing.Size(121, 20);
-            this.smoothComboBox.TabIndex = 40;
-            // 
-            // flowLayoutPanel11
-            // 
-            this.flowLayoutPanel11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel11.AutoSize = true;
-            this.flowLayoutPanel11.Controls.Add(this.label12);
-            this.flowLayoutPanel11.Controls.Add(this.smoothValueTextBox);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(3, 198);
-            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(186, 27);
-            this.flowLayoutPanel11.TabIndex = 46;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 7);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "平滑程度";
-            // 
-            // smoothValueTextBox
-            // 
-            this.smoothValueTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.smoothValueTextBox.Location = new System.Drawing.Point(62, 3);
-            this.smoothValueTextBox.Name = "smoothValueTextBox";
-            this.smoothValueTextBox.Size = new System.Drawing.Size(121, 21);
-            this.smoothValueTextBox.TabIndex = 48;
-            // 
-            // flowLayoutPanel18
-            // 
-            this.flowLayoutPanel18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel18.AutoSize = true;
-            this.flowLayoutPanel18.Controls.Add(this.label7);
-            this.flowLayoutPanel18.Controls.Add(this.dataPathTextBox);
-            this.flowLayoutPanel18.Controls.Add(this.setDataPathButton);
-            this.flowLayoutPanel18.Location = new System.Drawing.Point(120, 361);
-            this.flowLayoutPanel18.Name = "flowLayoutPanel18";
-            this.flowLayoutPanel18.Size = new System.Drawing.Size(291, 29);
-            this.flowLayoutPanel18.TabIndex = 60;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 8);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 12);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "数据保存路径";
-            // 
-            // dataPathTextBox
-            // 
-            this.dataPathTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataPathTextBox.Location = new System.Drawing.Point(86, 4);
-            this.dataPathTextBox.Name = "dataPathTextBox";
-            this.dataPathTextBox.Size = new System.Drawing.Size(121, 21);
-            this.dataPathTextBox.TabIndex = 48;
-            // 
-            // setDataPathButton
-            // 
-            this.setDataPathButton.Location = new System.Drawing.Point(213, 3);
-            this.setDataPathButton.Name = "setDataPathButton";
-            this.setDataPathButton.Size = new System.Drawing.Size(75, 23);
-            this.setDataPathButton.TabIndex = 52;
-            this.setDataPathButton.Text = "选择路径";
-            this.setDataPathButton.UseVisualStyleBackColor = true;
-            this.setDataPathButton.Click += new System.EventHandler(this.setDataPathButton_Click);
+            this.AnalyzerEXTensionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnalyzerEXTensionButton.Location = new System.Drawing.Point(187, 196);
+            this.AnalyzerEXTensionButton.Name = "AnalyzerEXTensionButton";
+            this.AnalyzerEXTensionButton.Size = new System.Drawing.Size(124, 45);
+            this.AnalyzerEXTensionButton.TabIndex = 66;
+            this.AnalyzerEXTensionButton.Text = "端口延伸";
+            this.AnalyzerEXTensionButton.UseVisualStyleBackColor = true;
+            this.AnalyzerEXTensionButton.Click += new System.EventHandler(this.AnalyzerEXTensionButton_Click);
             // 
             // readConfigFromAnalyzerButton
             // 
-            this.readConfigFromAnalyzerButton.Location = new System.Drawing.Point(246, 271);
+            this.readConfigFromAnalyzerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.readConfigFromAnalyzerButton.Location = new System.Drawing.Point(187, 61);
             this.readConfigFromAnalyzerButton.Name = "readConfigFromAnalyzerButton";
-            this.readConfigFromAnalyzerButton.Size = new System.Drawing.Size(135, 52);
+            this.readConfigFromAnalyzerButton.Size = new System.Drawing.Size(124, 45);
             this.readConfigFromAnalyzerButton.TabIndex = 64;
             this.readConfigFromAnalyzerButton.Text = "从网分仪读取配置";
             this.readConfigFromAnalyzerButton.UseVisualStyleBackColor = true;
             this.readConfigFromAnalyzerButton.Click += new System.EventHandler(this.readConfigFromAnalyzerButton_Click);
             // 
-            // flowLayoutPanel20
+            // eCalButton
             // 
-            this.flowLayoutPanel20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel20.AutoSize = true;
-            this.flowLayoutPanel20.Controls.Add(this.label8);
-            this.flowLayoutPanel20.Controls.Add(this.LimitPathTextBox);
-            this.flowLayoutPanel20.Controls.Add(this.setLimitPathButton);
-            this.flowLayoutPanel20.Location = new System.Drawing.Point(120, 400);
-            this.flowLayoutPanel20.Name = "flowLayoutPanel20";
-            this.flowLayoutPanel20.Size = new System.Drawing.Size(291, 29);
-            this.flowLayoutPanel20.TabIndex = 62;
+            this.eCalButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.eCalButton.Location = new System.Drawing.Point(187, 128);
+            this.eCalButton.Name = "eCalButton";
+            this.eCalButton.Size = new System.Drawing.Size(124, 45);
+            this.eCalButton.TabIndex = 65;
+            this.eCalButton.Text = "校验";
+            this.eCalButton.UseVisualStyleBackColor = true;
+            this.eCalButton.Click += new System.EventHandler(this.eCalButton_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.AutoScroll = true;
+            this.panel8.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel8.Controls.Add(this.label6);
+            this.panel8.Controls.Add(this.label8);
+            this.panel8.Controls.Add(this.calFileTextBox);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.loadAnalyzerButton);
+            this.panel8.Controls.Add(this.LimitPathTextBox);
+            this.panel8.Controls.Add(this.dataPathTextBox);
+            this.panel8.Controls.Add(this.setLimitPathButton);
+            this.panel8.Controls.Add(this.setDataPathButton);
+            this.panel8.Controls.Add(this.textBox3);
+            this.panel8.Location = new System.Drawing.Point(3, 320);
+            this.panel8.MaximumSize = new System.Drawing.Size(388, 0);
+            this.panel8.MinimumSize = new System.Drawing.Size(322, 132);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(322, 132);
+            this.panel8.TabIndex = 72;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 12);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "校验文件路径";
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 8);
+            this.label8.Location = new System.Drawing.Point(6, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 12);
             this.label8.TabIndex = 41;
             this.label8.Text = "规格保存路径";
             // 
+            // calFileTextBox
+            // 
+            this.calFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.calFileTextBox.Location = new System.Drawing.Point(89, 101);
+            this.calFileTextBox.Name = "calFileTextBox";
+            this.calFileTextBox.Size = new System.Drawing.Size(131, 21);
+            this.calFileTextBox.TabIndex = 48;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 12);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "数据保存路径";
+            // 
+            // loadAnalyzerButton
+            // 
+            this.loadAnalyzerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loadAnalyzerButton.Location = new System.Drawing.Point(226, 100);
+            this.loadAnalyzerButton.Name = "loadAnalyzerButton";
+            this.loadAnalyzerButton.Size = new System.Drawing.Size(92, 23);
+            this.loadAnalyzerButton.TabIndex = 66;
+            this.loadAnalyzerButton.Text = "调用规格文件";
+            this.loadAnalyzerButton.UseVisualStyleBackColor = true;
+            this.loadAnalyzerButton.Click += new System.EventHandler(this.loadAnalyzerButton_Click);
+            // 
             // LimitPathTextBox
             // 
-            this.LimitPathTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LimitPathTextBox.Location = new System.Drawing.Point(86, 4);
+            this.LimitPathTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LimitPathTextBox.Location = new System.Drawing.Point(89, 76);
             this.LimitPathTextBox.Name = "LimitPathTextBox";
-            this.LimitPathTextBox.Size = new System.Drawing.Size(121, 21);
+            this.LimitPathTextBox.Size = new System.Drawing.Size(131, 21);
             this.LimitPathTextBox.TabIndex = 48;
+            // 
+            // dataPathTextBox
+            // 
+            this.dataPathTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataPathTextBox.Location = new System.Drawing.Point(89, 52);
+            this.dataPathTextBox.Name = "dataPathTextBox";
+            this.dataPathTextBox.Size = new System.Drawing.Size(131, 21);
+            this.dataPathTextBox.TabIndex = 48;
             // 
             // setLimitPathButton
             // 
-            this.setLimitPathButton.Location = new System.Drawing.Point(213, 3);
+            this.setLimitPathButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.setLimitPathButton.Location = new System.Drawing.Point(226, 75);
             this.setLimitPathButton.Name = "setLimitPathButton";
-            this.setLimitPathButton.Size = new System.Drawing.Size(75, 23);
+            this.setLimitPathButton.Size = new System.Drawing.Size(92, 23);
             this.setLimitPathButton.TabIndex = 52;
-            this.setLimitPathButton.Text = "选择路径";
+            this.setLimitPathButton.Text = "修改规格路径";
             this.setLimitPathButton.UseVisualStyleBackColor = true;
             this.setLimitPathButton.Click += new System.EventHandler(this.setLimitPathButton_Click);
+            // 
+            // setDataPathButton
+            // 
+            this.setDataPathButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.setDataPathButton.Location = new System.Drawing.Point(226, 50);
+            this.setDataPathButton.Name = "setDataPathButton";
+            this.setDataPathButton.Size = new System.Drawing.Size(92, 23);
+            this.setDataPathButton.TabIndex = 52;
+            this.setDataPathButton.Text = "修改数据路径";
+            this.setDataPathButton.UseVisualStyleBackColor = true;
+            this.setDataPathButton.Click += new System.EventHandler(this.setDataPathButton_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.SlateGray;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(0, 0);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(322, 37);
+            this.textBox3.TabIndex = 88;
+            this.textBox3.Text = "高级配置";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel9.Controls.Add(this.dataGridViewAddRowButton);
+            this.panel9.Controls.Add(this.dataGridViewRemoveButton);
+            this.panel9.Controls.Add(this.dataGridView1);
+            this.panel9.Controls.Add(this.textBox4);
+            this.panel9.Location = new System.Drawing.Point(452, 25);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(741, 455);
+            this.panel9.TabIndex = 73;
+            // 
+            // dataGridViewAddRowButton
+            // 
+            this.dataGridViewAddRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewAddRowButton.Location = new System.Drawing.Point(476, 392);
+            this.dataGridViewAddRowButton.Name = "dataGridViewAddRowButton";
+            this.dataGridViewAddRowButton.Size = new System.Drawing.Size(125, 50);
+            this.dataGridViewAddRowButton.TabIndex = 3;
+            this.dataGridViewAddRowButton.Text = "新增测试曲线";
+            this.dataGridViewAddRowButton.UseVisualStyleBackColor = true;
+            this.dataGridViewAddRowButton.Click += new System.EventHandler(this.dataGridViewAddRowButton_Click);
+            // 
+            // dataGridViewRemoveButton
+            // 
+            this.dataGridViewRemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewRemoveButton.ForeColor = System.Drawing.Color.Red;
+            this.dataGridViewRemoveButton.Location = new System.Drawing.Point(607, 392);
+            this.dataGridViewRemoveButton.Name = "dataGridViewRemoveButton";
+            this.dataGridViewRemoveButton.Size = new System.Drawing.Size(125, 50);
+            this.dataGridViewRemoveButton.TabIndex = 2;
+            this.dataGridViewRemoveButton.Text = "删除测试曲线";
+            this.dataGridViewRemoveButton.UseVisualStyleBackColor = true;
+            this.dataGridViewRemoveButton.Click += new System.EventHandler(this.dataGridViewRemoveButton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 60);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(735, 326);
+            this.dataGridView1.StandardTab = true;
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.SlateGray;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox4.Enabled = false;
+            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(0, 0);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(741, 37);
+            this.textBox4.TabIndex = 88;
+            this.textBox4.Text = "开发人员配置";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // testConfigLeftPanel
             // 
@@ -2383,48 +2680,8 @@
             this.testConfigLeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.testConfigLeftPanel.Location = new System.Drawing.Point(3, 3);
             this.testConfigLeftPanel.Name = "testConfigLeftPanel";
-            this.testConfigLeftPanel.Size = new System.Drawing.Size(0, 535);
+            this.testConfigLeftPanel.Size = new System.Drawing.Size(0, 558);
             this.testConfigLeftPanel.TabIndex = 67;
-            // 
-            // flowLayoutPanel19
-            // 
-            this.flowLayoutPanel19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel19.AutoSize = true;
-            this.flowLayoutPanel19.Controls.Add(this.label6);
-            this.flowLayoutPanel19.Controls.Add(this.calFileTextBox);
-            this.flowLayoutPanel19.Controls.Add(this.loadAnalyzerButton);
-            this.flowLayoutPanel19.Location = new System.Drawing.Point(120, 435);
-            this.flowLayoutPanel19.Name = "flowLayoutPanel19";
-            this.flowLayoutPanel19.Size = new System.Drawing.Size(291, 29);
-            this.flowLayoutPanel19.TabIndex = 61;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 12);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "校验文件路径";
-            // 
-            // calFileTextBox
-            // 
-            this.calFileTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.calFileTextBox.Location = new System.Drawing.Point(86, 4);
-            this.calFileTextBox.Name = "calFileTextBox";
-            this.calFileTextBox.Size = new System.Drawing.Size(121, 21);
-            this.calFileTextBox.TabIndex = 48;
-            // 
-            // loadAnalyzerButton
-            // 
-            this.loadAnalyzerButton.Location = new System.Drawing.Point(213, 3);
-            this.loadAnalyzerButton.Name = "loadAnalyzerButton";
-            this.loadAnalyzerButton.Size = new System.Drawing.Size(75, 23);
-            this.loadAnalyzerButton.TabIndex = 66;
-            this.loadAnalyzerButton.Text = "调用文件";
-            this.loadAnalyzerButton.UseVisualStyleBackColor = true;
-            this.loadAnalyzerButton.Click += new System.EventHandler(this.loadAnalyzerButton_Click);
             // 
             // panel6
             // 
@@ -2433,177 +2690,37 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(1239, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(0, 535);
+            this.panel6.Size = new System.Drawing.Size(0, 558);
             this.panel6.TabIndex = 68;
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.flowLayoutPanel46);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel49);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel14);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel47);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel51);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel48);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel45);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel55);
             this.tabPage6.Controls.Add(this.flowLayoutPanel52);
             this.tabPage6.Controls.Add(this.flowLayoutPanel54);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel55);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel49);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel48);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel46);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel47);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel14);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel45);
-            this.tabPage6.Controls.Add(this.flowLayoutPanel51);
             this.tabPage6.Location = new System.Drawing.Point(4, 54);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1242, 541);
+            this.tabPage6.Size = new System.Drawing.Size(1242, 564);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "连接设置";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel52
-            // 
-            this.flowLayoutPanel52.AutoSize = true;
-            this.flowLayoutPanel52.Controls.Add(this.label40);
-            this.flowLayoutPanel52.Controls.Add(this.OraclePWTextBox);
-            this.flowLayoutPanel52.Location = new System.Drawing.Point(124, 248);
-            this.flowLayoutPanel52.Name = "flowLayoutPanel52";
-            this.flowLayoutPanel52.Size = new System.Drawing.Size(278, 27);
-            this.flowLayoutPanel52.TabIndex = 67;
-            // 
-            // label40
-            // 
-            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(3, 7);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(71, 12);
-            this.label40.TabIndex = 8;
-            this.label40.Text = "Oracle_PW  ";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OraclePWTextBox
-            // 
-            this.OraclePWTextBox.Location = new System.Drawing.Point(80, 3);
-            this.OraclePWTextBox.Name = "OraclePWTextBox";
-            this.OraclePWTextBox.Size = new System.Drawing.Size(195, 21);
-            this.OraclePWTextBox.TabIndex = 5;
-            // 
-            // flowLayoutPanel54
-            // 
-            this.flowLayoutPanel54.AutoSize = true;
-            this.flowLayoutPanel54.Controls.Add(this.label42);
-            this.flowLayoutPanel54.Controls.Add(this.OracleIDTextBox);
-            this.flowLayoutPanel54.Location = new System.Drawing.Point(124, 215);
-            this.flowLayoutPanel54.Name = "flowLayoutPanel54";
-            this.flowLayoutPanel54.Size = new System.Drawing.Size(278, 27);
-            this.flowLayoutPanel54.TabIndex = 66;
-            // 
-            // label42
-            // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(3, 7);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(71, 12);
-            this.label42.TabIndex = 8;
-            this.label42.Text = "Oracle_ID  ";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OracleIDTextBox
-            // 
-            this.OracleIDTextBox.Location = new System.Drawing.Point(80, 3);
-            this.OracleIDTextBox.Name = "OracleIDTextBox";
-            this.OracleIDTextBox.Size = new System.Drawing.Size(195, 21);
-            this.OracleIDTextBox.TabIndex = 5;
-            // 
-            // flowLayoutPanel55
-            // 
-            this.flowLayoutPanel55.AutoSize = true;
-            this.flowLayoutPanel55.Controls.Add(this.label43);
-            this.flowLayoutPanel55.Controls.Add(this.OracleDBTextBox);
-            this.flowLayoutPanel55.Location = new System.Drawing.Point(124, 182);
-            this.flowLayoutPanel55.Name = "flowLayoutPanel55";
-            this.flowLayoutPanel55.Size = new System.Drawing.Size(278, 27);
-            this.flowLayoutPanel55.TabIndex = 65;
-            // 
-            // label43
-            // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(3, 7);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(71, 12);
-            this.label43.TabIndex = 8;
-            this.label43.Text = "Oracle_DB  ";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // OracleDBTextBox
-            // 
-            this.OracleDBTextBox.Location = new System.Drawing.Point(80, 3);
-            this.OracleDBTextBox.Name = "OracleDBTextBox";
-            this.OracleDBTextBox.Size = new System.Drawing.Size(195, 21);
-            this.OracleDBTextBox.TabIndex = 5;
-            // 
-            // flowLayoutPanel49
-            // 
-            this.flowLayoutPanel49.AutoSize = true;
-            this.flowLayoutPanel49.Controls.Add(this.label36);
-            this.flowLayoutPanel49.Controls.Add(this.FTPPWTextBox);
-            this.flowLayoutPanel49.Location = new System.Drawing.Point(124, 349);
-            this.flowLayoutPanel49.Name = "flowLayoutPanel49";
-            this.flowLayoutPanel49.Size = new System.Drawing.Size(260, 27);
-            this.flowLayoutPanel49.TabIndex = 64;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(3, 7);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(53, 12);
-            this.label36.TabIndex = 8;
-            this.label36.Text = "FTP_PW  ";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FTPPWTextBox
-            // 
-            this.FTPPWTextBox.Location = new System.Drawing.Point(62, 3);
-            this.FTPPWTextBox.Name = "FTPPWTextBox";
-            this.FTPPWTextBox.Size = new System.Drawing.Size(195, 21);
-            this.FTPPWTextBox.TabIndex = 5;
-            // 
-            // flowLayoutPanel48
-            // 
-            this.flowLayoutPanel48.AutoSize = true;
-            this.flowLayoutPanel48.Controls.Add(this.label35);
-            this.flowLayoutPanel48.Controls.Add(this.FTPPathTextBox);
-            this.flowLayoutPanel48.Location = new System.Drawing.Point(124, 382);
-            this.flowLayoutPanel48.Name = "flowLayoutPanel48";
-            this.flowLayoutPanel48.Size = new System.Drawing.Size(260, 27);
-            this.flowLayoutPanel48.TabIndex = 63;
-            // 
-            // label35
-            // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(3, 7);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(53, 12);
-            this.label35.TabIndex = 8;
-            this.label35.Text = "FTP_Path";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FTPPathTextBox
-            // 
-            this.FTPPathTextBox.Location = new System.Drawing.Point(62, 3);
-            this.FTPPathTextBox.Name = "FTPPathTextBox";
-            this.FTPPathTextBox.Size = new System.Drawing.Size(195, 21);
-            this.FTPPathTextBox.TabIndex = 5;
             // 
             // flowLayoutPanel46
             // 
             this.flowLayoutPanel46.AutoSize = true;
             this.flowLayoutPanel46.Controls.Add(this.label33);
             this.flowLayoutPanel46.Controls.Add(this.FTPIPTextBox);
-            this.flowLayoutPanel46.Location = new System.Drawing.Point(124, 283);
+            this.flowLayoutPanel46.Location = new System.Drawing.Point(22, 125);
             this.flowLayoutPanel46.Name = "flowLayoutPanel46";
-            this.flowLayoutPanel46.Size = new System.Drawing.Size(260, 27);
+            this.flowLayoutPanel46.Size = new System.Drawing.Size(186, 27);
             this.flowLayoutPanel46.TabIndex = 61;
             // 
             // label33
@@ -2621,44 +2738,43 @@
             // 
             this.FTPIPTextBox.Location = new System.Drawing.Point(62, 3);
             this.FTPIPTextBox.Name = "FTPIPTextBox";
-            this.FTPIPTextBox.Size = new System.Drawing.Size(195, 21);
+            this.FTPIPTextBox.Size = new System.Drawing.Size(121, 21);
             this.FTPIPTextBox.TabIndex = 5;
             // 
-            // flowLayoutPanel47
+            // flowLayoutPanel49
             // 
-            this.flowLayoutPanel47.AutoSize = true;
-            this.flowLayoutPanel47.Controls.Add(this.label34);
-            this.flowLayoutPanel47.Controls.Add(this.FTPIDTextBox);
-            this.flowLayoutPanel47.Location = new System.Drawing.Point(124, 316);
-            this.flowLayoutPanel47.Name = "flowLayoutPanel47";
-            this.flowLayoutPanel47.Size = new System.Drawing.Size(260, 27);
-            this.flowLayoutPanel47.TabIndex = 62;
+            this.flowLayoutPanel49.AutoSize = true;
+            this.flowLayoutPanel49.Controls.Add(this.label36);
+            this.flowLayoutPanel49.Controls.Add(this.FTPPWTextBox);
+            this.flowLayoutPanel49.Location = new System.Drawing.Point(22, 191);
+            this.flowLayoutPanel49.Name = "flowLayoutPanel49";
+            this.flowLayoutPanel49.Size = new System.Drawing.Size(186, 27);
+            this.flowLayoutPanel49.TabIndex = 64;
             // 
-            // label34
+            // label36
             // 
-            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(3, 7);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(53, 12);
-            this.label34.TabIndex = 8;
-            this.label34.Text = "FTP_ID  ";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(3, 7);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(53, 12);
+            this.label36.TabIndex = 8;
+            this.label36.Text = "FTP_PW  ";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FTPIDTextBox
+            // FTPPWTextBox
             // 
-            this.FTPIDTextBox.Location = new System.Drawing.Point(62, 3);
-            this.FTPIDTextBox.Name = "FTPIDTextBox";
-            this.FTPIDTextBox.Size = new System.Drawing.Size(195, 21);
-            this.FTPIDTextBox.TabIndex = 5;
+            this.FTPPWTextBox.Location = new System.Drawing.Point(62, 3);
+            this.FTPPWTextBox.Name = "FTPPWTextBox";
+            this.FTPPWTextBox.Size = new System.Drawing.Size(121, 21);
+            this.FTPPWTextBox.TabIndex = 5;
             // 
             // flowLayoutPanel14
             // 
-            this.flowLayoutPanel14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel14.AutoSize = true;
             this.flowLayoutPanel14.Controls.Add(this.label2);
             this.flowLayoutPanel14.Controls.Add(this.AnalyzerIPTextBox);
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(124, 81);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(22, 45);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Size = new System.Drawing.Size(186, 27);
             this.flowLayoutPanel14.TabIndex = 58;
@@ -2681,43 +2797,40 @@
             this.AnalyzerIPTextBox.Size = new System.Drawing.Size(121, 21);
             this.AnalyzerIPTextBox.TabIndex = 37;
             // 
-            // flowLayoutPanel45
+            // flowLayoutPanel47
             // 
-            this.flowLayoutPanel45.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanel45.AutoSize = true;
-            this.flowLayoutPanel45.Controls.Add(this.label32);
-            this.flowLayoutPanel45.Controls.Add(this.fixtrueIPTextBox);
-            this.flowLayoutPanel45.Location = new System.Drawing.Point(124, 114);
-            this.flowLayoutPanel45.Name = "flowLayoutPanel45";
-            this.flowLayoutPanel45.Size = new System.Drawing.Size(186, 27);
-            this.flowLayoutPanel45.TabIndex = 59;
+            this.flowLayoutPanel47.AutoSize = true;
+            this.flowLayoutPanel47.Controls.Add(this.label34);
+            this.flowLayoutPanel47.Controls.Add(this.FTPIDTextBox);
+            this.flowLayoutPanel47.Location = new System.Drawing.Point(22, 158);
+            this.flowLayoutPanel47.Name = "flowLayoutPanel47";
+            this.flowLayoutPanel47.Size = new System.Drawing.Size(186, 27);
+            this.flowLayoutPanel47.TabIndex = 62;
             // 
-            // label32
+            // label34
             // 
-            this.label32.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(3, 7);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(53, 12);
-            this.label32.TabIndex = 38;
-            this.label32.Text = "治具地址";
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(3, 7);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(53, 12);
+            this.label34.TabIndex = 8;
+            this.label34.Text = "FTP_ID  ";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // fixtrueIPTextBox
+            // FTPIDTextBox
             // 
-            this.fixtrueIPTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.fixtrueIPTextBox.Location = new System.Drawing.Point(62, 3);
-            this.fixtrueIPTextBox.Name = "fixtrueIPTextBox";
-            this.fixtrueIPTextBox.Size = new System.Drawing.Size(121, 21);
-            this.fixtrueIPTextBox.TabIndex = 37;
-            this.fixtrueIPTextBox.Text = "100.1.1.205";
+            this.FTPIDTextBox.Location = new System.Drawing.Point(62, 3);
+            this.FTPIDTextBox.Name = "FTPIDTextBox";
+            this.FTPIDTextBox.Size = new System.Drawing.Size(121, 21);
+            this.FTPIDTextBox.TabIndex = 5;
             // 
             // flowLayoutPanel51
             // 
-            this.flowLayoutPanel51.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanel51.AutoSize = true;
             this.flowLayoutPanel51.Controls.Add(this.label38);
             this.flowLayoutPanel51.Controls.Add(this.fixtruePortTextBox);
-            this.flowLayoutPanel51.Location = new System.Drawing.Point(124, 147);
+            this.flowLayoutPanel51.Location = new System.Drawing.Point(22, 78);
             this.flowLayoutPanel51.Name = "flowLayoutPanel51";
             this.flowLayoutPanel51.Size = new System.Drawing.Size(186, 27);
             this.flowLayoutPanel51.TabIndex = 60;
@@ -2741,98 +2854,144 @@
             this.fixtruePortTextBox.TabIndex = 37;
             this.fixtruePortTextBox.Text = "55555";
             // 
-            // tabPage1
+            // flowLayoutPanel48
             // 
-            this.tabPage1.Controls.Add(this.label44);
-            this.tabPage1.Controls.Add(this.ABBSwitch);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.label41);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.OracleucSwitch);
-            this.tabPage1.Controls.Add(this.FTPucSwitch);
-            this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1242, 541);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "模式设定";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel48.AutoSize = true;
+            this.flowLayoutPanel48.Controls.Add(this.label35);
+            this.flowLayoutPanel48.Controls.Add(this.FTPPathTextBox);
+            this.flowLayoutPanel48.Location = new System.Drawing.Point(22, 224);
+            this.flowLayoutPanel48.Name = "flowLayoutPanel48";
+            this.flowLayoutPanel48.Size = new System.Drawing.Size(186, 27);
+            this.flowLayoutPanel48.TabIndex = 63;
             // 
-            // label44
+            // label35
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label44.Location = new System.Drawing.Point(89, 176);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(61, 14);
-            this.label44.TabIndex = 5;
-            this.label44.Text = "ABB管控";
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 7);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(53, 12);
+            this.label35.TabIndex = 8;
+            this.label35.Text = "FTP_Path";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ABBSwitch
+            // FTPPathTextBox
             // 
-            this.ABBSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.ABBSwitch.Checked = false;
-            this.ABBSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ABBSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.ABBSwitch.Location = new System.Drawing.Point(169, 176);
-            this.ABBSwitch.Name = "ABBSwitch";
-            this.ABBSwitch.Size = new System.Drawing.Size(50, 16);
-            this.ABBSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.ABBSwitch.TabIndex = 4;
-            this.ABBSwitch.Texts = null;
-            this.ABBSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ABBSwitch.TrueTextColr = System.Drawing.Color.White;
+            this.FTPPathTextBox.Location = new System.Drawing.Point(62, 3);
+            this.FTPPathTextBox.Name = "FTPPathTextBox";
+            this.FTPPathTextBox.Size = new System.Drawing.Size(121, 21);
+            this.FTPPathTextBox.TabIndex = 5;
             // 
-            // label41
+            // flowLayoutPanel45
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label41.Location = new System.Drawing.Point(95, 122);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(55, 14);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "Oracle";
+            this.flowLayoutPanel45.AutoSize = true;
+            this.flowLayoutPanel45.Controls.Add(this.label32);
+            this.flowLayoutPanel45.Controls.Add(this.fixtrueIPTextBox);
+            this.flowLayoutPanel45.Location = new System.Drawing.Point(22, 15);
+            this.flowLayoutPanel45.Name = "flowLayoutPanel45";
+            this.flowLayoutPanel45.Size = new System.Drawing.Size(186, 27);
+            this.flowLayoutPanel45.TabIndex = 59;
             // 
-            // label14
+            // label32
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(95, 66);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(35, 16);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "FTP";
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(3, 7);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(53, 12);
+            this.label32.TabIndex = 38;
+            this.label32.Text = "治具地址";
             // 
-            // OracleucSwitch
+            // fixtrueIPTextBox
             // 
-            this.OracleucSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.OracleucSwitch.Checked = false;
-            this.OracleucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.OracleucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.OracleucSwitch.Location = new System.Drawing.Point(169, 122);
-            this.OracleucSwitch.Name = "OracleucSwitch";
-            this.OracleucSwitch.Size = new System.Drawing.Size(50, 16);
-            this.OracleucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.OracleucSwitch.TabIndex = 1;
-            this.OracleucSwitch.Texts = null;
-            this.OracleucSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.OracleucSwitch.TrueTextColr = System.Drawing.Color.White;
-            this.OracleucSwitch.CheckedChanged += new System.EventHandler(this.OracleucSwitch_CheckedChanged);
+            this.fixtrueIPTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fixtrueIPTextBox.Location = new System.Drawing.Point(62, 3);
+            this.fixtrueIPTextBox.Name = "fixtrueIPTextBox";
+            this.fixtrueIPTextBox.Size = new System.Drawing.Size(121, 21);
+            this.fixtrueIPTextBox.TabIndex = 37;
+            this.fixtrueIPTextBox.Text = "100.1.1.205";
             // 
-            // FTPucSwitch
+            // flowLayoutPanel55
             // 
-            this.FTPucSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.FTPucSwitch.Checked = false;
-            this.FTPucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.FTPucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.FTPucSwitch.Location = new System.Drawing.Point(169, 66);
-            this.FTPucSwitch.Name = "FTPucSwitch";
-            this.FTPucSwitch.Size = new System.Drawing.Size(50, 16);
-            this.FTPucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.FTPucSwitch.TabIndex = 0;
-            this.FTPucSwitch.Texts = null;
-            this.FTPucSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.FTPucSwitch.TrueTextColr = System.Drawing.Color.White;
-            this.FTPucSwitch.CheckedChanged += new System.EventHandler(this.FTPucSwitch_CheckedChanged);
+            this.flowLayoutPanel55.Controls.Add(this.label43);
+            this.flowLayoutPanel55.Controls.Add(this.OracleDBTextBox);
+            this.flowLayoutPanel55.Location = new System.Drawing.Point(235, 15);
+            this.flowLayoutPanel55.Name = "flowLayoutPanel55";
+            this.flowLayoutPanel55.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel55.TabIndex = 65;
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(3, 7);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(71, 12);
+            this.label43.TabIndex = 8;
+            this.label43.Text = "Oracle_DB  ";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OracleDBTextBox
+            // 
+            this.OracleDBTextBox.Location = new System.Drawing.Point(80, 3);
+            this.OracleDBTextBox.Name = "OracleDBTextBox";
+            this.OracleDBTextBox.Size = new System.Drawing.Size(121, 21);
+            this.OracleDBTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel52
+            // 
+            this.flowLayoutPanel52.Controls.Add(this.label40);
+            this.flowLayoutPanel52.Controls.Add(this.OraclePWTextBox);
+            this.flowLayoutPanel52.Location = new System.Drawing.Point(235, 81);
+            this.flowLayoutPanel52.Name = "flowLayoutPanel52";
+            this.flowLayoutPanel52.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel52.TabIndex = 67;
+            // 
+            // label40
+            // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(3, 7);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(71, 12);
+            this.label40.TabIndex = 8;
+            this.label40.Text = "Oracle_PW  ";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OraclePWTextBox
+            // 
+            this.OraclePWTextBox.Location = new System.Drawing.Point(80, 3);
+            this.OraclePWTextBox.Name = "OraclePWTextBox";
+            this.OraclePWTextBox.Size = new System.Drawing.Size(121, 21);
+            this.OraclePWTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel54
+            // 
+            this.flowLayoutPanel54.AutoSize = true;
+            this.flowLayoutPanel54.Controls.Add(this.label42);
+            this.flowLayoutPanel54.Controls.Add(this.OracleIDTextBox);
+            this.flowLayoutPanel54.Location = new System.Drawing.Point(235, 48);
+            this.flowLayoutPanel54.Name = "flowLayoutPanel54";
+            this.flowLayoutPanel54.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel54.TabIndex = 66;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(3, 7);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(71, 12);
+            this.label42.TabIndex = 8;
+            this.label42.Text = "Oracle_ID  ";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OracleIDTextBox
+            // 
+            this.OracleIDTextBox.Location = new System.Drawing.Point(80, 3);
+            this.OracleIDTextBox.Name = "OracleIDTextBox";
+            this.OracleIDTextBox.Size = new System.Drawing.Size(121, 21);
+            this.OracleIDTextBox.TabIndex = 5;
             // 
             // DebugTabPage
             // 
@@ -2855,7 +3014,7 @@
             this.DebugTabPage.Controls.Add(this.deBugtextBox);
             this.DebugTabPage.Location = new System.Drawing.Point(4, 54);
             this.DebugTabPage.Name = "DebugTabPage";
-            this.DebugTabPage.Size = new System.Drawing.Size(1242, 541);
+            this.DebugTabPage.Size = new System.Drawing.Size(1242, 564);
             this.DebugTabPage.TabIndex = 3;
             this.DebugTabPage.Text = "DebugModel";
             this.DebugTabPage.UseVisualStyleBackColor = true;
@@ -2863,7 +3022,7 @@
             // deBugConnButton
             // 
             this.deBugConnButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugConnButton.Location = new System.Drawing.Point(952, 35);
+            this.deBugConnButton.Location = new System.Drawing.Point(952, 34);
             this.deBugConnButton.Name = "deBugConnButton";
             this.deBugConnButton.Size = new System.Drawing.Size(130, 46);
             this.deBugConnButton.TabIndex = 21;
@@ -2874,7 +3033,7 @@
             // deBugSendComm6Button
             // 
             this.deBugSendComm6Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm6Button.Location = new System.Drawing.Point(862, 170);
+            this.deBugSendComm6Button.Location = new System.Drawing.Point(862, 169);
             this.deBugSendComm6Button.Name = "deBugSendComm6Button";
             this.deBugSendComm6Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm6Button.TabIndex = 20;
@@ -2892,7 +3051,7 @@
             // deBugSendComm5Button
             // 
             this.deBugSendComm5Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm5Button.Location = new System.Drawing.Point(862, 143);
+            this.deBugSendComm5Button.Location = new System.Drawing.Point(862, 142);
             this.deBugSendComm5Button.Name = "deBugSendComm5Button";
             this.deBugSendComm5Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm5Button.TabIndex = 18;
@@ -2910,7 +3069,7 @@
             // deBugSendComm4Button
             // 
             this.deBugSendComm4Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm4Button.Location = new System.Drawing.Point(862, 116);
+            this.deBugSendComm4Button.Location = new System.Drawing.Point(862, 115);
             this.deBugSendComm4Button.Name = "deBugSendComm4Button";
             this.deBugSendComm4Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm4Button.TabIndex = 16;
@@ -2928,7 +3087,7 @@
             // deBugSendComm3Button
             // 
             this.deBugSendComm3Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm3Button.Location = new System.Drawing.Point(862, 89);
+            this.deBugSendComm3Button.Location = new System.Drawing.Point(862, 88);
             this.deBugSendComm3Button.Name = "deBugSendComm3Button";
             this.deBugSendComm3Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm3Button.TabIndex = 14;
@@ -2946,7 +3105,7 @@
             // deBugSendCommALLButton
             // 
             this.deBugSendCommALLButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendCommALLButton.Location = new System.Drawing.Point(952, 87);
+            this.deBugSendCommALLButton.Location = new System.Drawing.Point(952, 86);
             this.deBugSendCommALLButton.Name = "deBugSendCommALLButton";
             this.deBugSendCommALLButton.Size = new System.Drawing.Size(130, 48);
             this.deBugSendCommALLButton.TabIndex = 12;
@@ -2957,7 +3116,7 @@
             // deBugReadCommButton
             // 
             this.deBugReadCommButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugReadCommButton.Location = new System.Drawing.Point(952, 141);
+            this.deBugReadCommButton.Location = new System.Drawing.Point(952, 140);
             this.deBugReadCommButton.Name = "deBugReadCommButton";
             this.deBugReadCommButton.Size = new System.Drawing.Size(130, 47);
             this.deBugReadCommButton.TabIndex = 11;
@@ -2968,7 +3127,7 @@
             // deBugSendComm2Button
             // 
             this.deBugSendComm2Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm2Button.Location = new System.Drawing.Point(862, 62);
+            this.deBugSendComm2Button.Location = new System.Drawing.Point(862, 61);
             this.deBugSendComm2Button.Name = "deBugSendComm2Button";
             this.deBugSendComm2Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm2Button.TabIndex = 10;
@@ -2986,7 +3145,7 @@
             // deBugSendComm1Button
             // 
             this.deBugSendComm1Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm1Button.Location = new System.Drawing.Point(862, 35);
+            this.deBugSendComm1Button.Location = new System.Drawing.Point(862, 34);
             this.deBugSendComm1Button.Name = "deBugSendComm1Button";
             this.deBugSendComm1Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm1Button.TabIndex = 8;
@@ -3010,20 +3169,41 @@
             this.deBugtextBox.Size = new System.Drawing.Size(523, 308);
             this.deBugtextBox.TabIndex = 0;
             // 
+            // saveInitButton
+            // 
+            this.saveInitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveInitButton.Enabled = false;
+            this.saveInitButton.Location = new System.Drawing.Point(829, 651);
+            this.saveInitButton.MaximumSize = new System.Drawing.Size(135, 52);
+            this.saveInitButton.Name = "saveInitButton";
+            this.saveInitButton.Size = new System.Drawing.Size(135, 52);
+            this.saveInitButton.TabIndex = 58;
+            this.saveInitButton.Text = "仅保存至配置文件";
+            this.saveInitButton.UseVisualStyleBackColor = true;
+            this.saveInitButton.Visible = false;
+            this.saveInitButton.Click += new System.EventHandler(this.saveInitButton_Click);
+            // 
+            // saveAndWriteIniButton
+            // 
+            this.saveAndWriteIniButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveAndWriteIniButton.AutoSize = true;
+            this.saveAndWriteIniButton.Location = new System.Drawing.Point(1020, 651);
+            this.saveAndWriteIniButton.MaximumSize = new System.Drawing.Size(135, 52);
+            this.saveAndWriteIniButton.Name = "saveAndWriteIniButton";
+            this.saveAndWriteIniButton.Size = new System.Drawing.Size(135, 52);
+            this.saveAndWriteIniButton.TabIndex = 63;
+            this.saveAndWriteIniButton.Text = "保存配置文件和网分仪";
+            this.saveAndWriteIniButton.UseVisualStyleBackColor = true;
+            this.saveAndWriteIniButton.Click += new System.EventHandler(this.saveAndWriteIniButton_Click);
+            // 
             // aboutTabPage
             // 
             this.aboutTabPage.Location = new System.Drawing.Point(84, 4);
             this.aboutTabPage.Name = "aboutTabPage";
-            this.aboutTabPage.Size = new System.Drawing.Size(1256, 748);
+            this.aboutTabPage.Size = new System.Drawing.Size(1256, 739);
             this.aboutTabPage.TabIndex = 3;
             this.aboutTabPage.Text = "关于我们";
             this.aboutTabPage.UseVisualStyleBackColor = true;
-            // 
-            // tabImageList
-            // 
-            this.tabImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.tabImageList.ImageSize = new System.Drawing.Size(36, 36);
-            this.tabImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // RF_TestSystem
             // 
@@ -3041,7 +3221,6 @@
             this.Text = "RF_TestSystem";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.Load += new System.EventHandler(this.RF_TestSystem_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.RF_TestSystem_Paint);
             this.Layout += new System.Windows.Forms.LayoutEventHandler(this.RF_TestSystem_Layout);
             this.Resize += new System.EventHandler(this.RF_TestSystem_Resize);
             this.flowLayoutPanel43.ResumeLayout(false);
@@ -3093,17 +3272,12 @@
             this.flowLayoutPanel25.ResumeLayout(false);
             this.flowLayoutPanel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbPreview)).EndInit();
-            this.flowLayoutPanel50.ResumeLayout(false);
-            this.flowLayoutPanel50.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FTPDataGridView)).EndInit();
             this.flowLayoutPanel40.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.mainTabControl.ResumeLayout(false);
             this.testTabPage.ResumeLayout(false);
             this.testPanel.ResumeLayout(false);
@@ -3121,89 +3295,87 @@
             this.textPanel.ResumeLayout(false);
             this.textPanel.PerformLayout();
             this.cameraTabPage.ResumeLayout(false);
-            this.cameraTabPage.PerformLayout();
+            this.cameraSetingPermissionsPanel.ResumeLayout(false);
+            this.cameraSetingPermissionsPanel.PerformLayout();
             this.uploadTabPage.ResumeLayout(false);
             this.uploadTabPage.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.checkBarcodePanel.ResumeLayout(false);
+            this.checkBarcodePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inquireDataGridView)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            this.checkCameraPanel.ResumeLayout(false);
+            this.ftpManualPanel.ResumeLayout(false);
+            this.ftpManualPanel.PerformLayout();
+            this.oracleUploadRecordsPanel.ResumeLayout(false);
+            this.oracleUploadRecordsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OracleDataGridView)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.ftpUploadRecordsPanel.ResumeLayout(false);
+            this.ftpUploadRecordsPanel.PerformLayout();
+            this.lPanel.ResumeLayout(false);
+            this.lPanel.PerformLayout();
             this.simpleManageTabPage.ResumeLayout(false);
-            this.simpleManageTabPage.PerformLayout();
+            this.samplePermissionsPanel.ResumeLayout(false);
+            this.samplePermissionsPanel.PerformLayout();
+            this.samplePanel.ResumeLayout(false);
+            this.samplePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.simpleDataGridView)).EndInit();
             this.settingTabPage.ResumeLayout(false);
             this.settingTabPage.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tabControlExt1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            this.panel15.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.flowLayoutPanel15.ResumeLayout(false);
-            this.flowLayoutPanel15.PerformLayout();
-            this.flowLayoutPanel9.ResumeLayout(false);
-            this.flowLayoutPanel17.ResumeLayout(false);
-            this.flowLayoutPanel10.ResumeLayout(false);
-            this.flowLayoutPanel10.PerformLayout();
-            this.flowLayoutPanel16.ResumeLayout(false);
-            this.flowLayoutPanel16.PerformLayout();
-            this.flowLayoutPanel13.ResumeLayout(false);
-            this.flowLayoutPanel13.PerformLayout();
-            this.flowLayoutPanel12.ResumeLayout(false);
-            this.flowLayoutPanel12.PerformLayout();
-            this.flowLayoutPanel11.ResumeLayout(false);
-            this.flowLayoutPanel11.PerformLayout();
-            this.flowLayoutPanel18.ResumeLayout(false);
-            this.flowLayoutPanel18.PerformLayout();
-            this.flowLayoutPanel20.ResumeLayout(false);
-            this.flowLayoutPanel20.PerformLayout();
-            this.flowLayoutPanel19.ResumeLayout(false);
-            this.flowLayoutPanel19.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.flowLayoutPanel46.ResumeLayout(false);
+            this.flowLayoutPanel46.PerformLayout();
+            this.flowLayoutPanel49.ResumeLayout(false);
+            this.flowLayoutPanel49.PerformLayout();
+            this.flowLayoutPanel14.ResumeLayout(false);
+            this.flowLayoutPanel14.PerformLayout();
+            this.flowLayoutPanel47.ResumeLayout(false);
+            this.flowLayoutPanel47.PerformLayout();
+            this.flowLayoutPanel51.ResumeLayout(false);
+            this.flowLayoutPanel51.PerformLayout();
+            this.flowLayoutPanel48.ResumeLayout(false);
+            this.flowLayoutPanel48.PerformLayout();
+            this.flowLayoutPanel45.ResumeLayout(false);
+            this.flowLayoutPanel45.PerformLayout();
+            this.flowLayoutPanel55.ResumeLayout(false);
+            this.flowLayoutPanel55.PerformLayout();
             this.flowLayoutPanel52.ResumeLayout(false);
             this.flowLayoutPanel52.PerformLayout();
             this.flowLayoutPanel54.ResumeLayout(false);
             this.flowLayoutPanel54.PerformLayout();
-            this.flowLayoutPanel55.ResumeLayout(false);
-            this.flowLayoutPanel55.PerformLayout();
-            this.flowLayoutPanel49.ResumeLayout(false);
-            this.flowLayoutPanel49.PerformLayout();
-            this.flowLayoutPanel48.ResumeLayout(false);
-            this.flowLayoutPanel48.PerformLayout();
-            this.flowLayoutPanel46.ResumeLayout(false);
-            this.flowLayoutPanel46.PerformLayout();
-            this.flowLayoutPanel47.ResumeLayout(false);
-            this.flowLayoutPanel47.PerformLayout();
-            this.flowLayoutPanel14.ResumeLayout(false);
-            this.flowLayoutPanel14.PerformLayout();
-            this.flowLayoutPanel45.ResumeLayout(false);
-            this.flowLayoutPanel45.PerformLayout();
-            this.flowLayoutPanel51.ResumeLayout(false);
-            this.flowLayoutPanel51.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.DebugTabPage.ResumeLayout(false);
             this.DebugTabPage.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button connectButton;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button systemStartButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel23;
@@ -3324,39 +3496,29 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox fixtruePortTextBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel15;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox channelNumberComboBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel17;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox analyzerWindowComboBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox startFreqTextBox;
         private System.Windows.Forms.ComboBox startFreqUnitComboBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel16;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox stopFreqTextBox;
         private System.Windows.Forms.ComboBox stopFreqUnitComboBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel13;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox sweepPointTextBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox smoothComboBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox smoothValueTextBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel18;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox dataPathTextBox;
         private System.Windows.Forms.Button setDataPathButton;
         private System.Windows.Forms.Button readConfigFromAnalyzerButton;
         private System.Windows.Forms.Button eCalButton;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox calFileTextBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox LimitPathTextBox;
         private System.Windows.Forms.Button setLimitPathButton;
@@ -3392,8 +3554,6 @@
         private HalconDotNet.HWindowControl hWindowControl2;
         private HalconDotNet.HWindowControl hWindowControl1;
         private HalconDotNet.HWindowControl inquireHWindowControl;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox simplePartNumTextBox;
         private System.Windows.Forms.DataGridView simpleDataGridView;
         private System.Windows.Forms.Button delSimpleButton;
         private System.Windows.Forms.Button addSimpleButton;
@@ -3409,19 +3569,14 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel infoPanel;
         private System.Windows.Forms.Panel testPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel testConfigLeftPanel;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel checkCameraPanel;
+        private System.Windows.Forms.Panel checkBarcodePanel;
+        private System.Windows.Forms.Panel lPanel;
+        private System.Windows.Forms.Panel oracleUploadRecordsPanel;
+        private System.Windows.Forms.Panel ftpUploadRecordsPanel;
         private System.Windows.Forms.Button deBugSendComm2Button;
         private System.Windows.Forms.TextBox deBugSendComm2textBox;
         private System.Windows.Forms.Button deBugSendComm1Button;
@@ -3448,7 +3603,31 @@
         private System.Windows.Forms.TextBox machineClassTextBox;
         private System.Windows.Forms.TextBox systemStateTextBox;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.ImageList tabImageList;
+        private System.Windows.Forms.Panel cameraPanel;
+        private System.Windows.Forms.Panel cameraSetingPermissionsPanel;
+        private System.Windows.Forms.Label cameraPermissionLabel;
+        private System.Windows.Forms.Panel samplePermissionsPanel;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Panel ftpManualPanel;
+        private System.Windows.Forms.Panel samplePanel;
+        private System.Windows.Forms.TextBox simplePartNumTextBox;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label 测试稳定性延时;
+        private System.Windows.Forms.TextBox testDelaytextBox;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

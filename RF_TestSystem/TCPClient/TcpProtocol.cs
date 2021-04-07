@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RF_TestSystem
 {
@@ -74,6 +75,7 @@ namespace RF_TestSystem
                 }
                 else if (commad.Contains(command.START))//扫码命令
                 {
+                    Console.WriteLine(commad);
                     scanCommandEvent();
                 }
             }

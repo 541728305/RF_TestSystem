@@ -352,6 +352,7 @@
     <Content Include="Resources\银河.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\阿丽塔战斗天使的剧照4k壁纸_彼岸图网.jpg" />
     <Content Include="射频%28RF%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

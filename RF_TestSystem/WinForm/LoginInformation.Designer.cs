@@ -312,7 +312,7 @@
             this.machineClassComboBox.Location = new System.Drawing.Point(144, 6);
             this.machineClassComboBox.Name = "machineClassComboBox";
             this.machineClassComboBox.Size = new System.Drawing.Size(374, 41);
-            this.machineClassComboBox.TabIndex = 105;         
+            this.machineClassComboBox.TabIndex = 105;
             // 
             // panel2
             // 
@@ -345,6 +345,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::RF_TestSystem.Properties.Resources.阿丽塔战斗天使的剧照4k壁纸_彼岸图网;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(723, 555);

@@ -180,8 +180,8 @@ namespace RF_TestSystem
             Console.WriteLine("开始测试");
             bool successFlag = true;
             Gloable.tracesMutex.WaitOne();
-           
-            Gloable.myTraces = doMeasurement(Gloable.myTraces, "1");
+            string delayMs = Gloable.modelSetting.testDelay;
+            Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs);
             
             if (Gloable.myTraces.Last().rawData == "ReadString error")
             {
@@ -189,12 +189,12 @@ namespace RF_TestSystem
                 while (Gloable.myTraces.Last().rawData == "ReadString error")
                 {
                     //Gloable.myAnalyzer.readData();//把缓冲区读一下，大概率是由缓冲区引起的
-                    Gloable.myTraces = doMeasurement(Gloable.myTraces, "1");
+                    Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs);
                     reMeasurement++;
                     if (reMeasurement > 3)
                     {
                         successFlag = false;
-                        MessageBox.Show("从网分获取数据失败，请重新测试或重启上位机");
+                        MessageBox.Show("网络连接不稳定，从网分获取数据失败！");
                  //       Gloable.tracesMutex.ReleaseMutex();
                         return successFlag;
                     }

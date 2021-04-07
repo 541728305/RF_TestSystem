@@ -42,6 +42,7 @@ namespace RF_TestSystem
                         connectState = 3;
                         break;
                     default:
+                        connectState = 2;
                         break;
                 }
             });

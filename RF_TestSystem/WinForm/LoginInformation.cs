@@ -25,7 +25,7 @@ namespace RF_TestSystem
 
             this.panel2.Parent = this.pictureBox1;
           
-            this.pictureBox1.ImageLocation = @".\\Resources\\银河.gif";
+           // this.pictureBox1.ImageLocation = @".\\Resources\\银河.gif";
            
             setInfoToTabel();
             foreach (string name in Gloable.limitNameList)
@@ -34,9 +34,9 @@ namespace RF_TestSystem
             }
             this.currentLimitComboBox.SelectedIndex = 0;
 
-            this.machineClassComboBox.Items.Add("inline机台");
-            this.machineClassComboBox.Items.Add("复测机台");
-            this.machineClassComboBox.Items.Add("OQC机台");
+            this.machineClassComboBox.Items.Add("      inline机台");
+            this.machineClassComboBox.Items.Add("       复测机台");
+            this.machineClassComboBox.Items.Add("       OQC机台");
 
          
 

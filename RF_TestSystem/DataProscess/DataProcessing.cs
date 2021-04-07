@@ -444,7 +444,7 @@ namespace RF_TestSystem
             return limitString;
         }
 
-        public List<string> getlimitList(string path)
+        public List<string> getlimitList(ref string path)
         {
             if (Directory.Exists(path))//如果不存在就创建file文件夹
             {
@@ -453,13 +453,24 @@ namespace RF_TestSystem
             else
             {
                 Console.WriteLine("不存在文件夹 {0}", path);
-                Directory.CreateDirectory(path);//创建该文件夹
+                try
+                {
+                    Directory.CreateDirectory(path);//创建该文件夹
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    throw;
+                    //path = Application.StartupPath;
+                    //Gloable.limitFilePath = path;
+                }
 
             }
 
             List<string> limitNameList = new List<string>();
             DirectoryInfo root = new DirectoryInfo(path);
-            foreach (FileInfo fileName in root.GetFiles())
+            
+            foreach (FileInfo fileName in root.GetFiles("*.csv", SearchOption.TopDirectoryOnly))
             {
                 limitNameList.Add(fileName.Name);
             }
@@ -470,10 +481,11 @@ namespace RF_TestSystem
                 {
                     limitNameList.Add(fileName.Name);
                 }
-            }else
+            }
+            else
             {
                 bool currentLimit = false;
-                foreach (FileInfo fileName in root.GetFiles())
+                foreach (FileInfo fileName in root.GetFiles("*.csv", SearchOption.TopDirectoryOnly))
                 {
                    if(fileName.Name == Gloable.currentLimitName)
                     {

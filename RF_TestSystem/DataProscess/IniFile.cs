@@ -461,7 +461,7 @@ namespace RF_TestSystem
 
             //配置缺省值      
             cameraInfo.cameraAutoModelString = "相机解码";
-            cameraInfo.cameramManualModelString = "手动解码";
+            cameraInfo.cameramManualModelString = "治具解码";
             cameraInfo.cameramOffModelString = "关闭解码";
             cameraInfo.cameraNmae = "";
             cameraInfo.cameraResolution = "";
@@ -533,9 +533,6 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
-            ;
-            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "ftpUpload", uploadInfo.ftpUpload);
-            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleUpload", uploadInfo.oracleUpload);
 
             return successful;
         }
@@ -556,9 +553,6 @@ namespace RF_TestSystem
             uploadInfo.oracleDB = "TDB_RF_TES";
             uploadInfo.oracleID = "ictdata";
             uploadInfo.oraclePW = "ict*1";
-
-            uploadInfo.ftpUpload = "false";
-            uploadInfo.oracleUpload = "false";
             string uploadInfoConifgFilePath = Gloable.configPath + Gloable.upLoadInfoConifgFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -588,9 +582,6 @@ namespace RF_TestSystem
                     uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
                     uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
                     uploadInfo.oraclePW = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
-
-                    uploadInfo.ftpUpload = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "ftpUpload", uploadInfo.ftpUpload);
-                    uploadInfo.oracleUpload = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleUpload", uploadInfo.oracleUpload);
                 }
                 else
                 {
@@ -609,6 +600,75 @@ namespace RF_TestSystem
             }
             return uploadInfo;
         }
+
+
+
+        public bool writeModelSettingInfoToInitFile(ModelSetting modelSetting, String modelSettingConifgFilePath)
+        {
+            bool successful = true;
+            successful = IniOP.INIDeleteSection(modelSettingConifgFilePath, "modelSetting");
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "FtpUpload", modelSetting.FtpUpload);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "OracleUpload", modelSetting.OracleUpload);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBCheck", modelSetting.ABBCheck);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "testDelay", modelSetting.testDelay);
+            return successful;
+        }
+        public ModelSetting readModelSettingFromInitFile()
+        {
+
+            ModelSetting modelSetting = new ModelSetting();
+
+            //配置缺省值
+            modelSetting.ABBCheck = false.ToString();
+            modelSetting.FtpUpload = false.ToString();
+            modelSetting.OracleUpload = false.ToString();
+            modelSetting.testDelay = "150";
+            string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
+
+            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            {
+                Console.WriteLine("存在文件夹");
+            }
+            else
+            {
+                Console.WriteLine("不存在文件夹");
+                Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
+            }
+            if (File.Exists(modelSettingConifgFilePath))
+            {
+
+                string[] section = IniOP.INIGetAllSectionNames(modelSettingConifgFilePath);
+                if (section.Length > 0)
+                {
+                    modelSetting.ABBCheck = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "ABBCheck", false.ToString());
+                    modelSetting.FtpUpload = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "FtpUpload", false.ToString());
+                    modelSetting.OracleUpload = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "OracleUpload", false.ToString());
+                    modelSetting.testDelay = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "testDelay", "150");
+
+                }
+                else
+                {
+                    writeModelSettingInfoToInitFile(modelSetting, modelSettingConifgFilePath);
+                    MessageBox.Show("modelSetting.ini文件损坏，modelSetting.ini已恢复缺省值");
+                }
+            }
+            else
+            {
+                Console.WriteLine("不存modelSettingConifg在文件");
+                File.Create(modelSettingConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
+                Console.WriteLine("modelSettingConifg");
+                writeModelSettingInfoToInitFile(modelSetting, modelSettingConifgFilePath);
+                MessageBox.Show("modelSetting.ini文件丢失，modelSetting.ini已被重新创建成缺省值");
+
+            }
+            return modelSetting;
+        }
+
+
+
+
+
+
 
 
     }

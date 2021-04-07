@@ -59,5 +59,15 @@ namespace RF_TestSystem.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 阿丽塔战斗天使的剧照4k壁纸_彼岸图网 {
+            get {
+                object obj = ResourceManager.GetObject("阿丽塔战斗天使的剧照4k壁纸_彼岸图网", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
