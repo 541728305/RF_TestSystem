@@ -26,6 +26,8 @@ namespace RF_TestSystem
         public string ORTModelString;
         public string FAModelString;
         public string SortingModelString;
+        public string sampleEntryModelString;
+  
         public ModeInfo productionModel;
         public ModeInfo retestModel;
         public ModeInfo developerModel;
@@ -33,7 +35,8 @@ namespace RF_TestSystem
         public ModeInfo ORTModel;
         public ModeInfo FAModel;
         public ModeInfo SortingModel;
-        
+        public ModeInfo sampleEntryModel;
+
     }
     public struct ModeInfo
     {
@@ -44,17 +47,40 @@ namespace RF_TestSystem
         public string scanTotalNumber;
         public string testYield;
         public string scanYield;
+        
+        public List<HistoryTraces> modelHistoryTraces;
 
     }
+    public class HistoryTraces
+    {
+        public List<List<double>> seriesTypePass = new List<List<double>>();
+        public List<List<double>> seriesTypeFail = new List<List<double>>();
+        public int failStatistical = 0;
+
+        public void addSeriesTypePass(List<double> separationGenerics)
+        {
+            
+            seriesTypePass.Add(separationGenerics);
+        }
+        public void addSeriesTypeFail(List<double> separationGenerics)
+        {
+            seriesTypeFail.Add(separationGenerics);
+        }
+        public void addFailStatistical()
+        {
+            failStatistical++;
+
+
+        }
+    }
+
     class testingProcess
     {
         DataProcessing myOutPutStream = new DataProcessing();
 
         public event ShowCurveHandler ShowCurve; //显示曲线事件
-        public List<TracesInfo> doMeasurement(List<TracesInfo> traces, string delayMs)
+        public List<TracesInfo> doMeasurement(List<TracesInfo> traces, string delayMs,string pcbEnable)
         {
-
-
             List<TracesInfo> rawAnalyzerData = new List<TracesInfo>(0);
             int ch1TraceCount = 0;
             int ch2TraceCount = 0;
@@ -101,7 +127,7 @@ namespace RF_TestSystem
                         if(temp.rawData.Contains("ReadString error"))
                             temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch1TraceCount.ToString());//直接读活跃的数据
                     }
-                    }
+                }
                 if (trace.channel == "2")
                 {
                     ch2TraceCount++;
@@ -133,7 +159,7 @@ namespace RF_TestSystem
                             temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch2TraceCount.ToString());//直接读活跃的数据
 
                     }
-                    }
+                }
 
                 if (temp.rawData.Contains("ReadString error"))
                 {
@@ -150,6 +176,23 @@ namespace RF_TestSystem
                 DataProcessing myOutPutStream = new DataProcessing();
                 transTrace = myOutPutStream.dataIntegration(transTrace);
 
+                if(pcbEnable.Contains(true.ToString()))
+                {
+                    for (int i = 0; i < transTrace[0].tracesDataDoubleType.realPart.Count; i++)
+                    {
+                        if (i >= transTrace[0].limit.tracesRealPartPcbEnableDoubleType.Count)
+                        {
+                            break;
+                        }
+                        transTrace[0].tracesDataDoubleType.realPart[i] =
+                            transTrace[0].tracesDataDoubleType.realPart[i] - transTrace[0].limit.tracesRealPartPcbEnableDoubleType[i];
+                    }
+                    TracesInfo tracesInfo = new TracesInfo();
+                    tracesInfo = transTrace[0];
+                    tracesInfo.tracesDataStringType.realPart = myOutPutStream.joinData( myOutPutStream.doubleToString(transTrace[0].tracesDataDoubleType.realPart),",");
+                    transTrace[0] = tracesInfo;
+                }
+                             
                 string results = curveJudge(transTrace[0]);
                 if (results == "PASS")
                 {
@@ -181,7 +224,8 @@ namespace RF_TestSystem
             bool successFlag = true;
             Gloable.tracesMutex.WaitOne();
             string delayMs = Gloable.modelSetting.testDelay;
-            Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs);
+            string pcbEnable = Gloable.modelSetting.pcbEnable;
+            Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs, pcbEnable);
             
             if (Gloable.myTraces.Last().rawData == "ReadString error")
             {
@@ -189,7 +233,7 @@ namespace RF_TestSystem
                 while (Gloable.myTraces.Last().rawData == "ReadString error")
                 {
                     //Gloable.myAnalyzer.readData();//把缓冲区读一下，大概率是由缓冲区引起的
-                    Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs);
+                    Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs, pcbEnable);
                     reMeasurement++;
                     if (reMeasurement > 3)
                     {

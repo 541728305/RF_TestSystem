@@ -36,7 +36,6 @@ namespace RF_TestSystem
                 if (oraData.connection.State == ConnectionState.Closed)
                 {
                     oraData.connection.Open();
-
                 }
 
                 if (oraData.connection.State == ConnectionState.Open)
@@ -44,8 +43,6 @@ namespace RF_TestSystem
                     bOpened = true;
                     strstatus = "用户" + strUsername + "已连接" + strDB + "数据库";
                 }
-
-
             }
             catch (System.Exception ex)
             {

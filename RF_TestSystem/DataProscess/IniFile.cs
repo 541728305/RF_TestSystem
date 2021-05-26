@@ -242,6 +242,10 @@ namespace RF_TestSystem
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "productionModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "retestModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "developerModel");
+            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "buyoffModel"); 
+            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "FAModel");
+            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "ORTModel");
+            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "SortingModel");
 
             successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "productionModel", "modelTitle", testInfo.productionModel.modelTitle);
             successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "productionModel", "testPassNumber", testInfo.productionModel.testPassNumber);
@@ -260,6 +264,30 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testFailNumber", testInfo.developerModel.testFailNumber);
             successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "testTotalNumber", testInfo.developerModel.testTotalNumber);
             successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "developerModel", "scanTotalNumber", testInfo.developerModel.scanTotalNumber);
+
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "buyoffModel", "modelTitle", testInfo.buyoffModel.modelTitle);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "buyoffModel", "testPassNumber", testInfo.buyoffModel.testPassNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "buyoffModel", "testFailNumber", testInfo.buyoffModel.testFailNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "buyoffModel", "testTotalNumber", testInfo.buyoffModel.testTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "buyoffModel", "scanTotalNumber", testInfo.buyoffModel.scanTotalNumber);
+
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "FAModel", "modelTitle", testInfo.FAModel.modelTitle);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "FAModel", "testPassNumber", testInfo.FAModel.testPassNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "FAModel", "testFailNumber", testInfo.FAModel.testFailNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "FAModel", "testTotalNumber", testInfo.FAModel.testTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "FAModel", "scanTotalNumber", testInfo.FAModel.scanTotalNumber);
+
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "ORTModel", "modelTitle", testInfo.ORTModel.modelTitle);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "ORTModel", "testPassNumber", testInfo.ORTModel.testPassNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "ORTModel", "testFailNumber", testInfo.ORTModel.testFailNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "ORTModel", "testTotalNumber", testInfo.ORTModel.testTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "ORTModel", "scanTotalNumber", testInfo.ORTModel.scanTotalNumber);
+
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "SortingModel", "modelTitle", testInfo.SortingModel.modelTitle);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "SortingModel", "testPassNumber", testInfo.SortingModel.testPassNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "SortingModel", "testFailNumber", testInfo.SortingModel.testFailNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "SortingModel", "testTotalNumber", testInfo.SortingModel.testTotalNumber);
+            successful = IniOP.INIWriteValue(tracesInfoConifgFilePath, "SortingModel", "scanTotalNumber", testInfo.SortingModel.scanTotalNumber);
             return successful;
         }
         public TestInfo readTestInfoFromInitFile()
@@ -281,20 +309,17 @@ namespace RF_TestSystem
             }
             if (File.Exists(testInfoConifgFilePath))
             {
-
                 string[] section = IniOP.INIGetAllSectionNames(testInfoConifgFilePath);
                 string[] key1 = IniOP.INIGetAllItemKeys(testInfoConifgFilePath, "channel");
                 string[] key2 = IniOP.INIGetAllItemKeys(testInfoConifgFilePath, "channel");
                 string[] key3 = IniOP.INIGetAllItemKeys(testInfoConifgFilePath, "channel");
 
-
-
                 Console.WriteLine(key1.Length);
                 if ((key1.Length == key2.Length) && (key2.Length == key3.Length) && section.Length > 0)
                 {
-                    testInfo.currentModel = IniOP.INIGetStringValue(testInfoConifgFilePath, "currentModel", "currentModel", "productionModel");
+                    testInfo.currentModel = IniOP.INIGetStringValue(testInfoConifgFilePath, "currentModel", "currentModel", "inlineModel");
 
-                    configTrans.modelTitle = IniOP.INIGetStringValue(testInfoConifgFilePath, "productionModel", "modelTitle", "productionModel");
+                    configTrans.modelTitle = IniOP.INIGetStringValue(testInfoConifgFilePath, "productionModel", "modelTitle", "inlineModel");
                     configTrans.testPassNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "productionModel", "testPassNumber", "0");
                     configTrans.testFailNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "productionModel", "testFailNumber", "0");
                     configTrans.testTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "productionModel", "testTotalNumber", "0");
@@ -314,21 +339,57 @@ namespace RF_TestSystem
                     configTrans.testTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "developerModel", "testTotalNumber", "0");
                     configTrans.scanTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "developerModel", "scanTotalNumber", "0");
                     testInfo.developerModel = configTrans;
+
+                    configTrans.modelTitle = IniOP.INIGetStringValue(testInfoConifgFilePath, "buyoffModel", "modelTitle", "buyoffModel");
+                    configTrans.testPassNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "buyoffModel", "testPassNumber", "0");
+                    configTrans.testFailNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "buyoffModel", "testFailNumber", "0");
+                    configTrans.testTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "buyoffModel", "testTotalNumber", "0");
+                    configTrans.scanTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "buyoffModel", "scanTotalNumber", "0");
+                    testInfo.buyoffModel = configTrans;
+
+                    configTrans.modelTitle = IniOP.INIGetStringValue(testInfoConifgFilePath, "FAModel", "modelTitle", "FAModel");
+                    configTrans.testPassNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "FAModel", "testPassNumber", "0");
+                    configTrans.testFailNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "FAModel", "testFailNumber", "0");
+                    configTrans.testTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "FAModel", "testTotalNumber", "0");
+                    configTrans.scanTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "FAModel", "scanTotalNumber", "0");
+                    testInfo.FAModel = configTrans;
+
+                    configTrans.modelTitle = IniOP.INIGetStringValue(testInfoConifgFilePath, "ORTModel", "modelTitle", "ORTModel");
+                    configTrans.testPassNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "ORTModel", "testPassNumber", "0");
+                    configTrans.testFailNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "ORTModel", "testFailNumber", "0");
+                    configTrans.testTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "ORTModel", "testTotalNumber", "0");
+                    configTrans.scanTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "ORTModel", "scanTotalNumber", "0");
+                    testInfo.ORTModel = configTrans;
+
+                    configTrans.modelTitle = IniOP.INIGetStringValue(testInfoConifgFilePath, "SortingModel", "modelTitle", "SortingModel");
+                    configTrans.testPassNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "SortingModel", "testPassNumber", "0");
+                    configTrans.testFailNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "SortingModel", "testFailNumber", "0");
+                    configTrans.testTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "SortingModel", "testTotalNumber", "0");
+                    configTrans.scanTotalNumber = IniOP.INIGetStringValue(testInfoConifgFilePath, "SortingModel", "scanTotalNumber", "0");
+                    testInfo.SortingModel = configTrans;
                 }
                 else
                 {
                     //配置缺省值      
-                    testInfo.currentModel = "productionModel";
+                    testInfo.currentModel = "inlineModel";
                     configTrans.testPassNumber = "0";
                     configTrans.testFailNumber = "0";
                     configTrans.testTotalNumber = "0";
                     configTrans.scanTotalNumber = "0";
-                    configTrans.modelTitle = "productionModel";
+                    configTrans.modelTitle = "inlineModel";
                     testInfo.productionModel = configTrans;
                     configTrans.modelTitle = "retestModel";
                     testInfo.retestModel = configTrans;
                     configTrans.modelTitle = "developerModel";
                     testInfo.developerModel = configTrans;
+                    configTrans.modelTitle = "buyoffModel";
+                    testInfo.buyoffModel = configTrans;
+                    configTrans.modelTitle = "FAModel";
+                    testInfo.FAModel = configTrans;
+                    configTrans.modelTitle = "ORTModel";
+                    testInfo.ORTModel = configTrans;
+                    configTrans.modelTitle = "SortingModel";
+                    testInfo.SortingModel = configTrans;
                     writeTestInfoToInitFile(testInfo, testInfoConifgFilePath);
                     MessageBox.Show("Test.ini文件损坏，Test.ini已恢复缺省值");
                 }
@@ -339,25 +400,31 @@ namespace RF_TestSystem
                 File.Create(testInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
                 Console.WriteLine("tracesInfoConifg");
                 //配置缺省值   
-                testInfo.currentModel = "productionModel";
+                testInfo.currentModel = "inlineModel";
                 configTrans.testPassNumber = "0";
                 configTrans.testFailNumber = "0";
                 configTrans.testTotalNumber = "0";
                 configTrans.scanTotalNumber = "0";
-                configTrans.modelTitle = "productionModel";
+                configTrans.modelTitle = "inlineModel";
                 testInfo.productionModel = configTrans;
                 configTrans.modelTitle = "retestModel";
                 testInfo.retestModel = configTrans;
                 configTrans.modelTitle = "developerModel";
                 testInfo.developerModel = configTrans;
+                configTrans.modelTitle = "buyoffModel";
+                testInfo.buyoffModel = configTrans;
+                configTrans.modelTitle = "FAModel";
+                testInfo.FAModel = configTrans;
+                configTrans.modelTitle = "ORTModel";
+                testInfo.ORTModel = configTrans;
+                configTrans.modelTitle = "SortingModel";
+                testInfo.SortingModel = configTrans;
                 writeTestInfoToInitFile(testInfo, testInfoConifgFilePath);
                 MessageBox.Show("Test.ini文件丢失，Test.ini已被重新创建成缺省值");
 
             }
             return testInfo;
         }
-
-
         public bool writeLoginInfoToInitFile(LoginInfo loginInfo, String loginInfoConifgFilePath)
         {
             bool successful = true;
@@ -530,9 +597,17 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "fixtureIP", uploadInfo.fixtureIP);
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "fixturePort", uploadInfo.fixturePort);
 
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleIP", uploadInfo.oracleIP);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleTB", uploadInfo.oracleTB);
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
             successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
+
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "sampleIP", uploadInfo.sampleIP);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "sampleTB", uploadInfo.sampleTB);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "sampleDB", uploadInfo.sampleDB);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "sampleID", uploadInfo.sampleID);
+            successful = IniOP.INIWriteValue(uploadInfoConifgFilePath, "uploadInfo", "samplePW", uploadInfo.samplePW);
 
             return successful;
         }
@@ -550,9 +625,19 @@ namespace RF_TestSystem
 
             uploadInfo.fixtureIP = "100.1.1.240";
             uploadInfo.fixturePort = "8233";
-            uploadInfo.oracleDB = "TDB_RF_TES";
+
+            uploadInfo.oracleIP = "192.168.0.114";
+            uploadInfo.oracleDB = "ZDTDB";
+            uploadInfo.oracleTB = "TED_RF_DATA";
             uploadInfo.oracleID = "ictdata";
             uploadInfo.oraclePW = "ict*1";
+
+            uploadInfo.sampleIP = "192.168.0.114";
+            uploadInfo.sampleDB = "ZDTDB";
+            uploadInfo.sampleTB = "BARSAMREC";
+            uploadInfo.sampleID = "ictdata";
+            uploadInfo.samplePW = "ict*1";
+
             string uploadInfoConifgFilePath = Gloable.configPath + Gloable.upLoadInfoConifgFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -579,9 +664,17 @@ namespace RF_TestSystem
                     uploadInfo.fixtureIP = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixtureIP", "100.1.1.240");
                     uploadInfo.fixturePort = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixturePort", "8233");
 
+                    uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleIP", uploadInfo.oracleIP);
+                    uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleTB", uploadInfo.oracleTB);
                     uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
                     uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
                     uploadInfo.oraclePW = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
+
+                    uploadInfo.sampleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleIP", uploadInfo.sampleIP);
+                    uploadInfo.sampleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleTB", uploadInfo.sampleTB);
+                    uploadInfo.sampleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleDB", uploadInfo.sampleDB);
+                    uploadInfo.sampleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleID", uploadInfo.sampleID);
+                    uploadInfo.samplePW = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "samplePW", uploadInfo.samplePW);
                 }
                 else
                 {
@@ -609,8 +702,18 @@ namespace RF_TestSystem
             successful = IniOP.INIDeleteSection(modelSettingConifgFilePath, "modelSetting");
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "FtpUpload", modelSetting.FtpUpload);
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "OracleUpload", modelSetting.OracleUpload);
-            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBCheck", modelSetting.ABBCheck);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "PCB Enable", modelSetting.pcbEnable);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "MandatorySample", modelSetting.mandatorySample);
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "testDelay", modelSetting.testDelay);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "sampleTestTime", modelSetting.sampleTestTime);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "sampleIntervalTime", modelSetting.sampleIntervalTime);
+
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "enableABBCheck", modelSetting.enableABBCheck);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "enableCPPCheck", modelSetting.enableCPPCheck);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBOnly3Test", modelSetting.ABBOnly3Test);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBNotGoOnTest", modelSetting.ABBNotGoOnTest);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBLastStation", modelSetting.ABBLastStation);
+           
             return successful;
         }
         public ModelSetting readModelSettingFromInitFile()
@@ -619,10 +722,18 @@ namespace RF_TestSystem
             ModelSetting modelSetting = new ModelSetting();
 
             //配置缺省值
-            modelSetting.ABBCheck = false.ToString();
+            modelSetting.enableABBCheck = false.ToString();
+            modelSetting.enableCPPCheck = false.ToString();
+            modelSetting.ABBOnly3Test = false.ToString();
+            modelSetting.ABBNotGoOnTest = false.ToString();
+            modelSetting.ABBLastStation = "TEDFCT";
             modelSetting.FtpUpload = false.ToString();
             modelSetting.OracleUpload = false.ToString();
             modelSetting.testDelay = "150";
+            modelSetting.pcbEnable = false.ToString();
+            modelSetting.mandatorySample = false.ToString();
+            modelSetting.sampleTestTime = DateTime.Now.ToString();
+            modelSetting.sampleIntervalTime = "6";
             string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -640,11 +751,20 @@ namespace RF_TestSystem
                 string[] section = IniOP.INIGetAllSectionNames(modelSettingConifgFilePath);
                 if (section.Length > 0)
                 {
-                    modelSetting.ABBCheck = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "ABBCheck", false.ToString());
+                    modelSetting.enableABBCheck = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "enableABBCheck", false.ToString());
+                    modelSetting.enableCPPCheck = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "enableCPPCheck", false.ToString());
+                    modelSetting.ABBOnly3Test = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "ABBOnly3Test", false.ToString());
+                    modelSetting.ABBNotGoOnTest = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "ABBNotGoOnTest", false.ToString());
+                    modelSetting.ABBLastStation = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "ABBLastStation", modelSetting.ABBLastStation);
+
                     modelSetting.FtpUpload = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "FtpUpload", false.ToString());
                     modelSetting.OracleUpload = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "OracleUpload", false.ToString());
+                    modelSetting.pcbEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "PCB Enable", false.ToString());
+                    modelSetting.mandatorySample = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "MandatorySample", false.ToString());
                     modelSetting.testDelay = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "testDelay", "150");
-
+                    modelSetting.sampleTestTime= IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleTestTime", modelSetting.sampleTestTime);
+                    modelSetting.sampleIntervalTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleIntervalTime", modelSetting.sampleIntervalTime);
+                    
                 }
                 else
                 {

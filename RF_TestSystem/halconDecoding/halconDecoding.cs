@@ -165,20 +165,20 @@ namespace RF_TestSystem
             HOperatorSet.CountSeconds(out hv_T1);
             // Console.WriteLine("开始解码");
             for (int i = 0; i < hv_codemode.Length; i++)
-            {
-                HOperatorSet.CreateDataCode2dModel(hv_codemode[i], "default_parameters", "maximum_recognition", out hv_DataCodeHandle);
-                HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "timeout", 50);
-                //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "default_parameters", "maximum_recognition");
-                HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "polarity", "any");
-
-                // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(1)).TupleConcat(100));
-                //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "module_gap", "no");
-                // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(12)).TupleConcat(40));               
+            {                          
                 try
                 {
+                    HOperatorSet.CreateDataCode2dModel(hv_codemode[i], "default_parameters", "maximum_recognition", out hv_DataCodeHandle);
+                    HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "timeout", 50);
+                    //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "default_parameters", "maximum_recognition");
+                    HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "polarity", "any");
+
+                    // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(1)).TupleConcat(100));
+                    //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "module_gap", "no");
+                    // HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, (new HTuple("module_size_min")).TupleConcat("module_size_max"), (new HTuple(12)).TupleConcat(40));   
                     //HOperatorSet.SetDataCode2dParam(hv_DataCodeHandle, "strict_quiet_zone", "yes");
                     HOperatorSet.FindDataCode2d(m_image, out symbolXLDs, hv_DataCodeHandle, "stop_after_result_num", hv_count, out hv_ResultHandles,
-                   out hv_DecodedDataStrings);
+                                                out hv_DecodedDataStrings);
 
                     if (hv_DecodedDataStrings.Length != 0)
                     {
@@ -186,10 +186,12 @@ namespace RF_TestSystem
                         HOperatorSet.SetColor(m_hwindow, "green");
                         HOperatorSet.DispObj(symbolXLDs, m_hwindow);
                         pt.disp_message(m_hwindow, "解码结果：" + hv_DecodedDataStrings, "image", 12, 12, "red", "true");
+                        Console.WriteLine(hv_DecodedDataStrings.ToString());
                         HOperatorSet.CountSeconds(out hv_T2);
                         double Time = hv_T2 - hv_T1;
 
                         barcode = hv_DecodedDataStrings;
+                        
                         while (barcode.Contains("\""))
                             barcode = barcode.Replace("\"", "");
                         //pt.disp_message(m_hwindow, "耗时：" + Time, "image", 92, 12, "red", "true");
@@ -217,8 +219,6 @@ namespace RF_TestSystem
 
                
             }
-            // Console.WriteLine("解码完成");
-
             Console.WriteLine("解码完成:{0}", hv_DecodedDataStrings.ToString());
             return barcode;
         }

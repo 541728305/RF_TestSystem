@@ -19,8 +19,6 @@ namespace RF_TestSystem
 
             this.panel1.Parent = this.pictureBox1;
             this.pictureBox1.ImageLocation = @".\\Resources\\银河.gif";
-
-
             
             if (Gloable.loginInfo.machineClass == Gloable.machineClassString.InlineMachine)
             {             
@@ -77,7 +75,11 @@ namespace RF_TestSystem
             Gloable.testInfo.currentModel = Gloable.testInfo.FAModelString;
             this.Close();
         }
-
+        private void sampleEntryButton_Click(object sender, EventArgs e)
+        {
+            Gloable.testInfo.currentModel = Gloable.testInfo.sampleEntryModelString;
+            this.Close();
+        }
         private void sortingModelButton_Click(object sender, EventArgs e)
         {
             Gloable.testInfo.currentModel = Gloable.testInfo.SortingModelString;
@@ -121,5 +123,7 @@ namespace RF_TestSystem
                     return false;
             }
         }
+
+        
     }
 }

@@ -81,6 +81,7 @@ namespace winform_ftp
         {
             FtpWebRequest request = SetFtpConfig(WebRequestMethods.Ftp.MakeDirectory, RemoteDir);
             FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+          
             return response.StatusDescription;
         }
         private FtpWebRequest SetFtpConfig(string method, string RemoteDir)

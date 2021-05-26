@@ -23,6 +23,13 @@ namespace TCPHelper
         private ManualResetEvent doReceive = new ManualResetEvent(false);
         //标识客户端是否关闭
         private bool isClose = false;
+
+        /// <summary>
+        /// 意外断开
+        /// </summary>
+
+
+        
         public ClientAsync()
         {
             client = new TcpClient();
@@ -68,8 +75,14 @@ namespace TCPHelper
             }
             Shutdown();
             client = new TcpClient();
-            client.BeginConnect(ipAddress, port, ConnectCallBack, client);
-
+            IAsyncResult asyncResult = client.BeginConnect(ipAddress, port, ConnectCallBack, client);
+            
+            Console.WriteLine(client.Connected);
+            Console.WriteLine(asyncResult.AsyncState.ToString());
+        }
+        public bool getConneted()
+        {
+            return client.Connected;
         }
         /// <summary>
         /// 异步连接，连接ip地址为127.0.0.1
@@ -97,8 +110,17 @@ namespace TCPHelper
         /// <param name="msg"></param>
         public void SendAsync(string msg)
         {
-            byte[] listData = Encoding.UTF8.GetBytes(msg);
-            client.Client.BeginSend(listData, 0, listData.Length, SocketFlags.None, SendCallBack, client);
+            try
+            {
+                byte[] listData = Encoding.UTF8.GetBytes(msg);
+                client.Client.BeginSend(listData, 0, listData.Length, SocketFlags.None, SendCallBack, client);
+            }
+            catch(Exception sendErr)
+            {
+                Console.WriteLine(sendErr.Message);
+                
+            }
+               
         }
         /// <summary>
         /// 异步连接的回调函数

@@ -228,7 +228,7 @@ namespace RF_TestSystem
                         unit = "GHz";
                     }
 
-                    freq[f] = myTraces[i].meas + ":" + myTraces[i].note + " Freq:" + freq[f] + unit + " " + myTraces[i].formate;
+                    freq[f] = myTraces[i].meas + ":" + myTraces[i].note + " Band:b1 Freq:" + freq[f] + unit + " " + myTraces[i].formate;
                 }
                 frequency = joinData(freq, ",");
                 copyData.tracesDataDoubleType = formattedPluralData(myTraces[i].rawData);
@@ -254,6 +254,7 @@ namespace RF_TestSystem
             string SubStationIDString = " SubStation ID,";
             string OverallResultString = " Overall Result,";
             string FailingBandsString = " FailingBands,";
+            string SorftWare = "SWVersion:1.0";
             string UpperLimitString = "Upper Limits----->,,,,,,";
             string LowerLimitString = "Lower Limits----->,,,,,,";
             string MeasurementUnitString = "Measurement Unit----->,,,,,,";
@@ -284,18 +285,18 @@ namespace RF_TestSystem
             {
                 foreach (TracesInfo saveData in myTraces)
                 {
-                    if (File.Exists(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv"))
+                    if (File.Exists(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note +" "+ saveData.formate + ".csv"))
                     {
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", dataHead + saveData.tracesDataStringType.realPart, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_"  + saveData.meas + "_" + saveData.note + " " + saveData.formate + ".csv", dataHead + saveData.tracesDataStringType.realPart, false);
                     }
                     else
                     {
-                        File.Create(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
+                        File.Create(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
 
-
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + ".csv", SorftWare, false);
                         string Header = SerialNumberString + TestStartTimeString + TestStopTimeString + SubStationIDString + OverallResultString + FailingBandsString + saveData.frequency;
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", Header, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", "", false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_"  + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", Header, false);
+                        //successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + saveData.formate  + ".csv", "", false);
                         string upLimit = saveData.limit.rawRealPartUpLimit;
                         string downLimit = saveData.limit.rawRealPartDownLimit;
                         if (upLimit.Contains("\r"))
@@ -306,11 +307,12 @@ namespace RF_TestSystem
                         {
                             downLimit = downLimit.Replace("\r", "");
                         }
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", UpperLimitString + upLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", LowerLimitString + downLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", MeasurementUnitString, false);
+                      
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", UpperLimitString + upLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate +  ".csv", LowerLimitString + downLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate +  ".csv", MeasurementUnitString, false);
 
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", dataHead + saveData.tracesDataStringType.realPart, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + ".csv", dataHead + saveData.tracesDataStringType.realPart, false);
                     }
                 }
             }
@@ -319,17 +321,17 @@ namespace RF_TestSystem
                 foreach (TracesInfo saveData in myTraces)
                 {
 
-                    if (File.Exists(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv"))
+                    if (File.Exists(path + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv"))
                     {
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
                     }
                     else
                     {
                         File.Create(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
-
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", SorftWare, false);
                         string Header = SerialNumberString + TestStartTimeString + TestStopTimeString + SubStationIDString + OverallResultString + FailingBandsString + saveData.frequency;
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", Header, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", "", false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", Header, false);
+                        //successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", "", false);
                         string upLimit = saveData.limit.rawImaginaryPartUpLimit;
                         string downLimit = saveData.limit.rawImaginaryPartDownLimit;
                         if (upLimit.Contains("\n"))
@@ -340,11 +342,12 @@ namespace RF_TestSystem
                         {
                             downLimit = downLimit.Replace("\n", "");
                         }
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", UpperLimitString + upLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", LowerLimitString + downLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", MeasurementUnitString, false);
+                        
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", UpperLimitString + upLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", LowerLimitString + downLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", MeasurementUnitString, false);
 
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
                     }
                 }
 
@@ -355,16 +358,17 @@ namespace RF_TestSystem
                 foreach (TracesInfo saveData in myTraces)
                 {
 
-                    if (File.Exists(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv"))
+                    if (File.Exists(path + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv"))
                     {
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", saveData.tracesDataStringType.realPart, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", saveData.tracesDataStringType.realPart, false);
                     }
                     else
                     {
-                        File.Create(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
+                        File.Create(path + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + ".csv", SorftWare, false);
                         string Header = SerialNumberString + TestStartTimeString + TestStopTimeString + SubStationIDString + OverallResultString + FailingBandsString + saveData.frequency;
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", Header, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", "", false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", Header, false);
+                        //successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + saveData.formate  + ".csv", "", false);
                         string upLimit = saveData.limit.rawRealPartUpLimit;
                         string downLimit = saveData.limit.rawRealPartDownLimit;
                         if (upLimit.Contains("\n"))
@@ -375,21 +379,22 @@ namespace RF_TestSystem
                         {
                             downLimit = downLimit.Replace("\n", "");
                         }
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", UpperLimitString + upLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", LowerLimitString + downLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", MeasurementUnitString, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_RealPart" + ".csv", saveData.tracesDataStringType.realPart, false);
+                        
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", UpperLimitString + upLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", LowerLimitString + downLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", MeasurementUnitString, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate  + ".csv", saveData.tracesDataStringType.realPart, false);
                     }
-                    if (File.Exists(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv"))
+                    if (File.Exists(path + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv"))
                     {
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
                     }
                     else
                     {
-                        File.Create(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
+                        File.Create(path + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv").Close();//创建该文件，如果路径文件夹不存在，则报错
                         string Header = SerialNumberString + TestStartTimeString + TestStopTimeString + SubStationIDString + OverallResultString + FailingBandsString + saveData.frequency;
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", Header, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", "", false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", Header, false);
+                        //successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", "", false);
                         string upLimit = saveData.limit.rawImaginaryPartUpLimit;
                         string downLimit = saveData.limit.rawImaginaryPartDownLimit;
                         if (upLimit.Contains("\n"))
@@ -400,11 +405,12 @@ namespace RF_TestSystem
                         {
                             downLimit = downLimit.Replace("\n", "");
                         }
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", UpperLimitString + upLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", LowerLimitString + downLimit, false);
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", MeasurementUnitString, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", SorftWare, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", UpperLimitString + upLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", LowerLimitString + downLimit, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", MeasurementUnitString, false);
 
-                        successFlag = saveToCsv(path + saveData.meas + "_" + saveData.note + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
+                        successFlag = saveToCsv(path + Gloable.loginInfo.partNumber + "_" + saveData.meas + "_" + saveData.note + " " + saveData.formate + "_ImaginaryPart" + ".csv", saveData.tracesDataStringType.ImaginaryPart, false);
                     }
                 }
             }

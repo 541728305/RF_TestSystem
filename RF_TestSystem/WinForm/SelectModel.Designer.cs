@@ -36,6 +36,7 @@
             this.FAModelButton = new System.Windows.Forms.Button();
             this.sortingModelButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sampleEntryButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +73,7 @@
             this.developerModeButton.BackColor = System.Drawing.Color.DarkGray;
             this.developerModeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.developerModeButton.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.developerModeButton.Location = new System.Drawing.Point(3, 441);
+            this.developerModeButton.Location = new System.Drawing.Point(3, 514);
             this.developerModeButton.Name = "developerModeButton";
             this.developerModeButton.Size = new System.Drawing.Size(313, 67);
             this.developerModeButton.TabIndex = 108;
@@ -136,6 +137,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.sampleEntryButton);
             this.panel1.Controls.Add(this.productionModeButton);
             this.panel1.Controls.Add(this.sortingModelButton);
             this.panel1.Controls.Add(this.retestModelButton);
@@ -145,14 +147,27 @@
             this.panel1.Controls.Add(this.buyoffModelButton);
             this.panel1.Location = new System.Drawing.Point(112, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(319, 511);
+            this.panel1.Size = new System.Drawing.Size(322, 588);
             this.panel1.TabIndex = 113;
+            // 
+            // sampleEntryButton
+            // 
+            this.sampleEntryButton.BackColor = System.Drawing.Color.Firebrick;
+            this.sampleEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sampleEntryButton.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.sampleEntryButton.Location = new System.Drawing.Point(3, 441);
+            this.sampleEntryButton.Name = "sampleEntryButton";
+            this.sampleEntryButton.Size = new System.Drawing.Size(313, 67);
+            this.sampleEntryButton.TabIndex = 115;
+            this.sampleEntryButton.Text = "样本录入";
+            this.sampleEntryButton.UseVisualStyleBackColor = false;
+            this.sampleEntryButton.Click += new System.EventHandler(this.sampleEntryButton_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(-3, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(544, 537);
+            this.pictureBox1.Size = new System.Drawing.Size(544, 610);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 114;
             this.pictureBox1.TabStop = false;
@@ -162,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(542, 532);
+            this.ClientSize = new System.Drawing.Size(542, 606);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
@@ -187,5 +202,6 @@
         private System.Windows.Forms.Button sortingModelButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button sampleEntryButton;
     }
 }

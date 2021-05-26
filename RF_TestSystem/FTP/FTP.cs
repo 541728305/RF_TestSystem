@@ -285,17 +285,28 @@ namespace RF_TestSystem
             FileType = fi.Extension.ToLower().Trim();//文件扩展名(存数据库，用于分类)
             FileFullName = FileName + fi.Extension.Trim();//文件完整名称(含扩展名，用于下载，重要！必须！)
             UploadTime = DateTime.Now;//上传时间(存数据库，用于查询)
-            FileDir = UpLoadPath + "/" + UploadTime.ToString("yyyy-MM-dd");//路径(文件夹+日期，重要！必须！)
-            try
+            //FileDir = UpLoadPath + "/" + UploadTime.ToString("yyyy-MM-dd");//路径(文件夹+日期，重要！必须！)
+            FileDir = UpLoadPath + "/" ;//路径(文件夹+日期，重要！必须！)
+
+
+            string mkdir = ""; 
+            foreach(string dir in FileDir.Split('/'))
             {
-                ftpHelper.CreateDirectory(UpLoadPath);//创建根文件夹(可自定义)
+                mkdir = mkdir + "/" +dir;
+                try
+                {
+                    ftpHelper.CreateDirectory(mkdir);//创建根文件夹(可自定义)
+
+                }
+                catch (Exception CreateDirectory)
+                {
+                    Console.WriteLine("FTP创建路径{1}失败:{0}", CreateDirectory.Message, mkdir);
+                }   //如果文件夹已存在，就跳过!
             }
-            catch { }   //如果文件夹已存在，就跳过!
-            try
-            {
-                ftpHelper.CreateDirectory(FileDir);//创建子文件夹(年月日期)
-            }
-            catch { }   //如果文件夹已存在，就跳过!
+           
+           
+
+
 
             FtpHelper.FileDir = FileDir;//上传路径
             ftpHelper.setFTPLoginInfo(host, username, password);

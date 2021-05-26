@@ -5,17 +5,16 @@ using TCPHelper;
 namespace RF_TestSystem
 {
     public delegate void commandComingHandler(string comm);
+    public delegate void TcpClientDisconnectHandle();
     class TCPClient
     {
         ClientAsync client = new ClientAsync();
         int connectState = 0;
 
         public event commandComingHandler commandComingEvent;
+        public event TcpClientDisconnectHandle TcpClientDisconnectEven;
         public TCPClient()
         {
-
-
-
             client.Completed += new Action<System.Net.Sockets.TcpClient, EnSocketAction>((c, enAction) =>
             {
                 switch (enAction)
@@ -39,6 +38,7 @@ namespace RF_TestSystem
 
                     case EnSocketAction.Close:
                         Console.WriteLine("服务端连接关闭");
+                        TcpClientDisconnectEven();
                         connectState = 3;
                         break;
                     default:
@@ -62,7 +62,16 @@ namespace RF_TestSystem
         double testTimer = 0;
         public void theout(object source, System.Timers.ElapsedEventArgs e)
         {
-            connectState = 2;
+            if (client.getConneted() == true)
+            {
+                connectState = 1;
+            }
+            else
+            {
+               
+                connectState = 2;
+            }
+            
         }
         public bool clientConncet(string IP, int Port)
         {
@@ -73,18 +82,31 @@ namespace RF_TestSystem
             t.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
             connectState = 0;
             client.ConnectAsync(IP, Port);
+            t.Start();
             while (successful == false)
             {
                 if (connectState == 1)
                 {
+                    t.Stop();
                     t.Enabled = false;
                     successful = true;
                     return successful;
                 }
-                else if (connectState == 2)
+                else if (connectState == 2 )
                 {
+                    t.Stop();
                     t.Enabled = false;
                     return successful;
+                }
+                else
+                {
+                    if (client.getConneted() == true)
+                    {
+                        t.Stop();
+                        t.Enabled = false;
+                        successful = true;
+                        return successful;
+                    }                
                 }
             }
             return successful;

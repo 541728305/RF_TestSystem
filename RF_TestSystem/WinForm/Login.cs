@@ -19,14 +19,6 @@ namespace RF_TestSystem
         public string development;
         public string currentUser;
     }
-
-
-
-
-   
-
-
-
     public delegate void FinishHandler();   //声明委托
     public partial class Login : Form
     {
@@ -45,11 +37,26 @@ namespace RF_TestSystem
         UserPasswd passwd = new UserPasswd();
         string closeButoonState = "set";
         string saveUser = "";
-        public event FinishHandler FinishEvent;          //声明事件
+        public event FinishHandler loginFinishEvent;          //声明事件
         public Login()
         {
             InitializeComponent();
-            this.accountComboBox.SelectedIndex = 0;
+            if(Gloable.user.currentUser != null)
+            {
+                if (this.accountComboBox.Items.Contains(Gloable.user.currentUser))
+                {
+                    this.accountComboBox.SelectedItem = Gloable.user.currentUser;
+                }
+                else
+                {
+                    this.accountComboBox.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                this.accountComboBox.SelectedIndex = 0;
+            }
+                       
             passwd.productionPasswd = "123";
             passwd.afterSalesPasswd = "456";
             passwd.developmentPasswd = "789";
@@ -87,6 +94,7 @@ namespace RF_TestSystem
                 if (this.passwdMaskedTextBox.Text == passwd.productionPasswd)
                 {
                     Gloable.user.currentUser = Gloable.user.production;
+                    loginFinishEvent();
                 }
                 else
                 {
@@ -99,6 +107,7 @@ namespace RF_TestSystem
                 if (this.passwdMaskedTextBox.Text == passwd.afterSalesPasswd)
                 {
                     Gloable.user.currentUser = Gloable.user.afterSales;
+                    loginFinishEvent();
                 }
                 else
                 {
@@ -111,6 +120,7 @@ namespace RF_TestSystem
                 if (this.passwdMaskedTextBox.Text == passwd.developmentPasswd)
                 {
                     Gloable.user.currentUser = Gloable.user.development;
+                    loginFinishEvent();
                 }
                 else
                 {

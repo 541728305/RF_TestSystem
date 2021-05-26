@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RF_TestSystem));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.connectButton = new System.Windows.Forms.Button();
+            this.connImageList = new System.Windows.Forms.ImageList(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.flowLayoutPanel43 = new System.Windows.Forms.FlowLayoutPanel();
             this.label30 = new System.Windows.Forms.Label();
@@ -91,13 +99,6 @@
             this.clearCountButton = new System.Windows.Forms.Button();
             this.TestYieldTextBox = new System.Windows.Forms.TextBox();
             this.chartPanel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel29 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel28 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.scanTotalTextBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel25 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.scanYieldTextBox = new System.Windows.Forms.TextBox();
             this.startButton = new System.Windows.Forms.Button();
             this.saveCameraButon = new System.Windows.Forms.Button();
             this.cameraSettingButton = new System.Windows.Forms.Button();
@@ -121,7 +122,9 @@
             this.FTPUploadProgressBar = new System.Windows.Forms.ProgressBar();
             this.FTPSelectFileButton = new System.Windows.Forms.Button();
             this.systemStartButton = new System.Windows.Forms.Button();
+            this.startImageList = new System.Windows.Forms.ImageList(this.components);
             this.loginButton = new System.Windows.Forms.Button();
+            this.loginImageList = new System.Windows.Forms.ImageList(this.components);
             this.flowLayoutPanel40 = new System.Windows.Forms.FlowLayoutPanel();
             this.topPanel = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -139,11 +142,31 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.hWindowControl2 = new HalconDotNet.HWindowControl();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.chartTabControl = new System.Windows.Forms.TabControl();
+            this.testTabPage2 = new System.Windows.Forms.TabPage();
+            this.analysisTabPage = new System.Windows.Forms.TabPage();
+            this.historySeriesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label66 = new System.Windows.Forms.Label();
+            this.analysisSeriesComboBox = new System.Windows.Forms.ComboBox();
+            this.failTop3ModelFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label65 = new System.Windows.Forms.Label();
+            this.analysisModelComboBox = new System.Windows.Forms.ComboBox();
+            this.historyDataFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label64 = new System.Windows.Forms.Label();
+            this.analysisDataComboBox = new System.Windows.Forms.ComboBox();
+            this.testHistorychart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.failTop3Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.flowLayoutPanel29 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel28 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.scanTotalTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel25 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.scanYieldTextBox = new System.Windows.Forms.TextBox();
             this.textPanel = new System.Windows.Forms.Panel();
             this.cameraTabPage = new System.Windows.Forms.TabPage();
             this.cameraSetingPermissionsPanel = new System.Windows.Forms.Panel();
             this.hWindowControl1 = new HalconDotNet.HWindowControl();
-            this.cameraPermissionLabel = new System.Windows.Forms.Label();
             this.cameraPanel = new System.Windows.Forms.Panel();
             this.uploadTabPage = new System.Windows.Forms.TabPage();
             this.checkBarcodePanel = new System.Windows.Forms.Panel();
@@ -171,24 +194,45 @@
             this.addSimpleButton = new System.Windows.Forms.Button();
             this.delSimpleButton = new System.Windows.Forms.Button();
             this.simpleDataGridView = new System.Windows.Forms.DataGridView();
-            this.label51 = new System.Windows.Forms.Label();
             this.settingTabPage = new System.Windows.Forms.TabPage();
             this.tabControlExt1 = new HZH_Controls.Controls.TabControlExt();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.testModelSettingPanel = new System.Windows.Forms.Panel();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.测试稳定性延时 = new System.Windows.Forms.Label();
             this.testDelaytextBox = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label41 = new System.Windows.Forms.Label();
-            this.OracleucSwitch = new HZH_Controls.Controls.UCSwitch();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label44 = new System.Windows.Forms.Label();
-            this.ABBSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.label52 = new System.Windows.Forms.Label();
+            this.pcbEnablrSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label59 = new System.Windows.Forms.Label();
+            this.sampleIntervalTimeTextBox = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label61 = new System.Windows.Forms.Label();
+            this.lastSampleTimeTextBox = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label58 = new System.Windows.Forms.Label();
+            this.sampleSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.uploadModelSettingPanel = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.FTPucSwitch = new HZH_Controls.Controls.UCSwitch();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label41 = new System.Windows.Forms.Label();
+            this.OracleucSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.ABBSettingPanel = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.enableABBCheckBox = new System.Windows.Forms.CheckBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.ABBOnly3TestsCheckBox = new System.Windows.Forms.CheckBox();
+            this.ABBLastStationComboBox = new System.Windows.Forms.ComboBox();
+            this.enableCPPCheckBox = new System.Windows.Forms.CheckBox();
+            this.ABBNotGoOnTestCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -214,7 +258,7 @@
             this.AnalyzerEXTensionButton = new System.Windows.Forms.Button();
             this.readConfigFromAnalyzerButton = new System.Windows.Forms.Button();
             this.eCalButton = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.AnalyzerPathConfigPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.calFileTextBox = new System.Windows.Forms.TextBox();
@@ -225,7 +269,7 @@
             this.setLimitPathButton = new System.Windows.Forms.Button();
             this.setDataPathButton = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.tracesConfigPanel = new System.Windows.Forms.Panel();
             this.dataGridViewAddRowButton = new System.Windows.Forms.Button();
             this.dataGridViewRemoveButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -233,6 +277,27 @@
             this.testConfigLeftPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label63 = new System.Windows.Forms.Label();
+            this.sampleTBTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label62 = new System.Windows.Forms.Label();
+            this.OracleTBTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label54 = new System.Windows.Forms.Label();
+            this.sampleIPTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label55 = new System.Windows.Forms.Label();
+            this.sampleDBTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label56 = new System.Windows.Forms.Label();
+            this.samplePWTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label57 = new System.Windows.Forms.Label();
+            this.sampleIDTextBox = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label53 = new System.Windows.Forms.Label();
+            this.OracleIPTextBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel46 = new System.Windows.Forms.FlowLayoutPanel();
             this.label33 = new System.Windows.Forms.Label();
             this.FTPIPTextBox = new System.Windows.Forms.TextBox();
@@ -303,10 +368,6 @@
             this.flowLayoutPanel22.SuspendLayout();
             this.flowLayoutPanel21.SuspendLayout();
             this.flowLayoutPanel23.SuspendLayout();
-            this.chartPanel.SuspendLayout();
-            this.flowLayoutPanel29.SuspendLayout();
-            this.flowLayoutPanel28.SuspendLayout();
-            this.flowLayoutPanel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FTPDataGridView)).BeginInit();
             this.flowLayoutPanel40.SuspendLayout();
@@ -320,6 +381,17 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.infoPanel.SuspendLayout();
+            this.chartTabControl.SuspendLayout();
+            this.testTabPage2.SuspendLayout();
+            this.analysisTabPage.SuspendLayout();
+            this.historySeriesFlowLayoutPanel.SuspendLayout();
+            this.failTop3ModelFlowLayoutPanel.SuspendLayout();
+            this.historyDataFlowLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.testHistorychart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.failTop3Chart)).BeginInit();
+            this.flowLayoutPanel29.SuspendLayout();
+            this.flowLayoutPanel28.SuspendLayout();
+            this.flowLayoutPanel25.SuspendLayout();
             this.textPanel.SuspendLayout();
             this.cameraTabPage.SuspendLayout();
             this.cameraSetingPermissionsPanel.SuspendLayout();
@@ -339,19 +411,32 @@
             this.settingTabPage.SuspendLayout();
             this.tabControlExt1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.testModelSettingPanel.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.uploadModelSettingPanel.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.ABBSettingPanel.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.AnalyzerPathConfigPanel.SuspendLayout();
+            this.tracesConfigPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage6.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel46.SuspendLayout();
             this.flowLayoutPanel49.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
@@ -368,13 +453,24 @@
             // connectButton
             // 
             this.connectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.connectButton.Location = new System.Drawing.Point(1202, 22);
+            this.connectButton.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.connectButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.connectButton.ImageIndex = 0;
+            this.connectButton.ImageList = this.connImageList;
+            this.connectButton.Location = new System.Drawing.Point(1230, 22);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(130, 52);
+            this.connectButton.Size = new System.Drawing.Size(100, 52);
             this.connectButton.TabIndex = 6;
-            this.connectButton.Text = "连接";
+            this.connectButton.Text = "   连接";
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
+            // 
+            // connImageList
+            // 
+            this.connImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("connImageList.ImageStream")));
+            this.connImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.connImageList.Images.SetKeyName(0, "connect1.png");
+            this.connImageList.Images.SetKeyName(1, "disConnect.png");
             // 
             // progressBar1
             // 
@@ -535,6 +631,7 @@
             this.machineNameTextBox.Size = new System.Drawing.Size(166, 21);
             this.machineNameTextBox.TabIndex = 65;
             this.machineNameTextBox.Text = "HV0-1";
+            this.machineNameTextBox.TextChanged += new System.EventHandler(this.machineNameTextBox_TextChanged);
             // 
             // flowLayoutPanel37
             // 
@@ -743,7 +840,7 @@
             // setModelButton
             // 
             this.setModelButton.AutoSize = true;
-            this.setModelButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.setModelButton.BackColor = System.Drawing.Color.LightSeaGreen;
             this.setModelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.setModelButton.Font = new System.Drawing.Font("宋体", 45.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.setModelButton.Location = new System.Drawing.Point(3, 3);
@@ -1009,85 +1106,11 @@
             // chartPanel
             // 
             this.chartPanel.AutoScroll = true;
-            this.chartPanel.Controls.Add(this.flowLayoutPanel29);
-            this.chartPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chartPanel.Location = new System.Drawing.Point(0, 0);
+            this.chartPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartPanel.Location = new System.Drawing.Point(3, 3);
             this.chartPanel.Name = "chartPanel";
-            this.chartPanel.Size = new System.Drawing.Size(902, 613);
+            this.chartPanel.Size = new System.Drawing.Size(888, 572);
             this.chartPanel.TabIndex = 78;
-            // 
-            // flowLayoutPanel29
-            // 
-            this.flowLayoutPanel29.AutoSize = true;
-            this.flowLayoutPanel29.Controls.Add(this.flowLayoutPanel28);
-            this.flowLayoutPanel29.Controls.Add(this.flowLayoutPanel25);
-            this.flowLayoutPanel29.Location = new System.Drawing.Point(7, 3);
-            this.flowLayoutPanel29.Name = "flowLayoutPanel29";
-            this.flowLayoutPanel29.Size = new System.Drawing.Size(328, 33);
-            this.flowLayoutPanel29.TabIndex = 82;
-            this.flowLayoutPanel29.Visible = false;
-            // 
-            // flowLayoutPanel28
-            // 
-            this.flowLayoutPanel28.AutoSize = true;
-            this.flowLayoutPanel28.Controls.Add(this.label19);
-            this.flowLayoutPanel28.Controls.Add(this.scanTotalTextBox);
-            this.flowLayoutPanel28.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel28.Name = "flowLayoutPanel28";
-            this.flowLayoutPanel28.Size = new System.Drawing.Size(156, 27);
-            this.flowLayoutPanel28.TabIndex = 81;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(3, 7);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(65, 12);
-            this.label19.TabIndex = 66;
-            this.label19.Text = "SCAN TOTAL";
-            // 
-            // scanTotalTextBox
-            // 
-            this.scanTotalTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.scanTotalTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.scanTotalTextBox.Location = new System.Drawing.Point(74, 3);
-            this.scanTotalTextBox.Name = "scanTotalTextBox";
-            this.scanTotalTextBox.ReadOnly = true;
-            this.scanTotalTextBox.Size = new System.Drawing.Size(79, 21);
-            this.scanTotalTextBox.TabIndex = 65;
-            this.scanTotalTextBox.Text = "100";
-            // 
-            // flowLayoutPanel25
-            // 
-            this.flowLayoutPanel25.AutoSize = true;
-            this.flowLayoutPanel25.Controls.Add(this.label17);
-            this.flowLayoutPanel25.Controls.Add(this.scanYieldTextBox);
-            this.flowLayoutPanel25.Location = new System.Drawing.Point(165, 3);
-            this.flowLayoutPanel25.Name = "flowLayoutPanel25";
-            this.flowLayoutPanel25.Size = new System.Drawing.Size(160, 27);
-            this.flowLayoutPanel25.TabIndex = 76;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 7);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 12);
-            this.label17.TabIndex = 74;
-            this.label17.Text = "SCAN YIELD";
-            // 
-            // scanYieldTextBox
-            // 
-            this.scanYieldTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.scanYieldTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.scanYieldTextBox.Location = new System.Drawing.Point(74, 3);
-            this.scanYieldTextBox.Name = "scanYieldTextBox";
-            this.scanYieldTextBox.ReadOnly = true;
-            this.scanYieldTextBox.Size = new System.Drawing.Size(83, 21);
-            this.scanYieldTextBox.TabIndex = 73;
-            this.scanYieldTextBox.Text = "0";
             // 
             // startButton
             // 
@@ -1325,26 +1348,49 @@
             // systemStartButton
             // 
             this.systemStartButton.BackColor = System.Drawing.Color.Transparent;
-            this.systemStartButton.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.systemStartButton.ForeColor = System.Drawing.Color.Red;
-            this.systemStartButton.ImageIndex = 3;
+            this.systemStartButton.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.systemStartButton.ForeColor = System.Drawing.Color.Black;
+            this.systemStartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.systemStartButton.ImageIndex = 0;
+            this.systemStartButton.ImageList = this.startImageList;
             this.systemStartButton.Location = new System.Drawing.Point(97, 3);
             this.systemStartButton.Name = "systemStartButton";
             this.systemStartButton.Size = new System.Drawing.Size(130, 52);
             this.systemStartButton.TabIndex = 61;
             this.systemStartButton.Text = "部署测试系统";
+            this.systemStartButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.systemStartButton.UseVisualStyleBackColor = false;
             this.systemStartButton.Click += new System.EventHandler(this.systemStartButton_Click);
             // 
+            // startImageList
+            // 
+            this.startImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("startImageList.ImageStream")));
+            this.startImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.startImageList.Images.SetKeyName(0, "start1.png");
+            this.startImageList.Images.SetKeyName(1, "stop1.png");
+            // 
             // loginButton
             // 
+            this.loginButton.BackColor = System.Drawing.Color.Transparent;
+            this.loginButton.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.loginButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.loginButton.ImageIndex = 0;
+            this.loginButton.ImageList = this.loginImageList;
             this.loginButton.Location = new System.Drawing.Point(3, 3);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(88, 52);
             this.loginButton.TabIndex = 20;
-            this.loginButton.Text = "登录";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Text = "    产线";
+            this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // loginImageList
+            // 
+            this.loginImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("loginImageList.ImageStream")));
+            this.loginImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.loginImageList.Images.SetKeyName(0, "multiple-11@4x.png");
+            this.loginImageList.Images.SetKeyName(1, "single-01@4x.png");
+            this.loginImageList.Images.SetKeyName(2, "skull-2@4x.png");
             // 
             // flowLayoutPanel40
             // 
@@ -1400,7 +1446,7 @@
             this.systemStateTextBox.BackColor = System.Drawing.Color.DarkGray;
             this.systemStateTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.systemStateTextBox.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.systemStateTextBox.Location = new System.Drawing.Point(671, 13);
+            this.systemStateTextBox.Location = new System.Drawing.Point(674, 18);
             this.systemStateTextBox.Name = "systemStateTextBox";
             this.systemStateTextBox.ReadOnly = true;
             this.systemStateTextBox.Size = new System.Drawing.Size(284, 56);
@@ -1469,7 +1515,6 @@
             this.mainTabControl.TabIndex = 65;
             this.mainTabControl.UncloseTabIndexs = null;
             this.mainTabControl.SelectedIndexChanged += new System.EventHandler(this.mainTabControl_SelectedIndexChanged);
-            this.mainTabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.mainTabControl_Selected);
             // 
             // testTabPage
             // 
@@ -1554,13 +1599,269 @@
             // 
             // infoPanel
             // 
-            this.infoPanel.Controls.Add(this.chartPanel);
+            this.infoPanel.Controls.Add(this.chartTabControl);
             this.infoPanel.Controls.Add(this.textPanel);
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.infoPanel.Location = new System.Drawing.Point(348, 0);
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.Size = new System.Drawing.Size(902, 733);
             this.infoPanel.TabIndex = 0;
+            // 
+            // chartTabControl
+            // 
+            this.chartTabControl.Controls.Add(this.testTabPage2);
+            this.chartTabControl.Controls.Add(this.analysisTabPage);
+            this.chartTabControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chartTabControl.Location = new System.Drawing.Point(0, 0);
+            this.chartTabControl.Name = "chartTabControl";
+            this.chartTabControl.SelectedIndex = 0;
+            this.chartTabControl.Size = new System.Drawing.Size(902, 604);
+            this.chartTabControl.TabIndex = 79;
+            // 
+            // testTabPage2
+            // 
+            this.testTabPage2.Controls.Add(this.chartPanel);
+            this.testTabPage2.Location = new System.Drawing.Point(4, 22);
+            this.testTabPage2.Name = "testTabPage2";
+            this.testTabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.testTabPage2.Size = new System.Drawing.Size(894, 578);
+            this.testTabPage2.TabIndex = 0;
+            this.testTabPage2.Text = "测试图表";
+            this.testTabPage2.UseVisualStyleBackColor = true;
+            // 
+            // analysisTabPage
+            // 
+            this.analysisTabPage.AutoScroll = true;
+            this.analysisTabPage.Controls.Add(this.historySeriesFlowLayoutPanel);
+            this.analysisTabPage.Controls.Add(this.failTop3ModelFlowLayoutPanel);
+            this.analysisTabPage.Controls.Add(this.historyDataFlowLayoutPanel);
+            this.analysisTabPage.Controls.Add(this.testHistorychart);
+            this.analysisTabPage.Controls.Add(this.failTop3Chart);
+            this.analysisTabPage.Controls.Add(this.flowLayoutPanel29);
+            this.analysisTabPage.Location = new System.Drawing.Point(4, 22);
+            this.analysisTabPage.Name = "analysisTabPage";
+            this.analysisTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.analysisTabPage.Size = new System.Drawing.Size(894, 578);
+            this.analysisTabPage.TabIndex = 1;
+            this.analysisTabPage.Text = "分析图表";
+            this.analysisTabPage.UseVisualStyleBackColor = true;
+            // 
+            // historySeriesFlowLayoutPanel
+            // 
+            this.historySeriesFlowLayoutPanel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.historySeriesFlowLayoutPanel.AutoSize = true;
+            this.historySeriesFlowLayoutPanel.Controls.Add(this.label66);
+            this.historySeriesFlowLayoutPanel.Controls.Add(this.analysisSeriesComboBox);
+            this.historySeriesFlowLayoutPanel.Location = new System.Drawing.Point(741, 401);
+            this.historySeriesFlowLayoutPanel.Name = "historySeriesFlowLayoutPanel";
+            this.historySeriesFlowLayoutPanel.Size = new System.Drawing.Size(147, 26);
+            this.historySeriesFlowLayoutPanel.TabIndex = 110;
+            // 
+            // label66
+            // 
+            this.label66.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(3, 7);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(53, 12);
+            this.label66.TabIndex = 91;
+            this.label66.Text = "测试曲线";
+            // 
+            // analysisSeriesComboBox
+            // 
+            this.analysisSeriesComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.analysisSeriesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.analysisSeriesComboBox.FormattingEnabled = true;
+            this.analysisSeriesComboBox.Location = new System.Drawing.Point(62, 3);
+            this.analysisSeriesComboBox.Name = "analysisSeriesComboBox";
+            this.analysisSeriesComboBox.Size = new System.Drawing.Size(82, 20);
+            this.analysisSeriesComboBox.TabIndex = 90;
+            this.analysisSeriesComboBox.SelectedIndexChanged += new System.EventHandler(this.analysisSeriesComboBox_SelectedIndexChanged);
+            // 
+            // failTop3ModelFlowLayoutPanel
+            // 
+            this.failTop3ModelFlowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.failTop3ModelFlowLayoutPanel.AutoSize = true;
+            this.failTop3ModelFlowLayoutPanel.Controls.Add(this.label65);
+            this.failTop3ModelFlowLayoutPanel.Controls.Add(this.analysisModelComboBox);
+            this.failTop3ModelFlowLayoutPanel.Location = new System.Drawing.Point(741, 58);
+            this.failTop3ModelFlowLayoutPanel.Name = "failTop3ModelFlowLayoutPanel";
+            this.failTop3ModelFlowLayoutPanel.Size = new System.Drawing.Size(147, 26);
+            this.failTop3ModelFlowLayoutPanel.TabIndex = 109;
+            // 
+            // label65
+            // 
+            this.label65.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(3, 7);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(53, 12);
+            this.label65.TabIndex = 91;
+            this.label65.Text = "测试模式";
+            // 
+            // analysisModelComboBox
+            // 
+            this.analysisModelComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.analysisModelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.analysisModelComboBox.FormattingEnabled = true;
+            this.analysisModelComboBox.Location = new System.Drawing.Point(62, 3);
+            this.analysisModelComboBox.Name = "analysisModelComboBox";
+            this.analysisModelComboBox.Size = new System.Drawing.Size(82, 20);
+            this.analysisModelComboBox.TabIndex = 90;
+            this.analysisModelComboBox.SelectedIndexChanged += new System.EventHandler(this.analysisModelComboBox_SelectedIndexChanged);
+            // 
+            // historyDataFlowLayoutPanel
+            // 
+            this.historyDataFlowLayoutPanel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.historyDataFlowLayoutPanel.AutoSize = true;
+            this.historyDataFlowLayoutPanel.Controls.Add(this.label64);
+            this.historyDataFlowLayoutPanel.Controls.Add(this.analysisDataComboBox);
+            this.historyDataFlowLayoutPanel.Location = new System.Drawing.Point(741, 446);
+            this.historyDataFlowLayoutPanel.Name = "historyDataFlowLayoutPanel";
+            this.historyDataFlowLayoutPanel.Size = new System.Drawing.Size(147, 26);
+            this.historyDataFlowLayoutPanel.TabIndex = 108;
+            // 
+            // label64
+            // 
+            this.label64.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(3, 7);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(53, 12);
+            this.label64.TabIndex = 91;
+            this.label64.Text = "数据筛选";
+            // 
+            // analysisDataComboBox
+            // 
+            this.analysisDataComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.analysisDataComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.analysisDataComboBox.FormattingEnabled = true;
+            this.analysisDataComboBox.Location = new System.Drawing.Point(62, 3);
+            this.analysisDataComboBox.Name = "analysisDataComboBox";
+            this.analysisDataComboBox.Size = new System.Drawing.Size(82, 20);
+            this.analysisDataComboBox.TabIndex = 90;
+            this.analysisDataComboBox.SelectedIndexChanged += new System.EventHandler(this.analysisDataComboBox_SelectedIndexChanged);
+            // 
+            // testHistorychart
+            // 
+            this.testHistorychart.BackColor = System.Drawing.Color.DarkGray;
+            this.testHistorychart.BorderlineColor = System.Drawing.Color.Transparent;
+            this.testHistorychart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.testHistorychart.BorderlineWidth = 3;
+            chartArea1.Name = "ChartArea1";
+            this.testHistorychart.ChartAreas.Add(chartArea1);
+            this.testHistorychart.Location = new System.Drawing.Point(6, 301);
+            this.testHistorychart.Name = "testHistorychart";
+            this.testHistorychart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.testHistorychart.Series.Add(series1);
+            this.testHistorychart.Size = new System.Drawing.Size(732, 272);
+            this.testHistorychart.TabIndex = 85;
+            this.testHistorychart.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title1.ForeColor = System.Drawing.Color.DarkRed;
+            title1.Name = "Title1";
+            title1.Text = "测试历史";
+            this.testHistorychart.Titles.Add(title1);
+            // 
+            // failTop3Chart
+            // 
+            this.failTop3Chart.BackColor = System.Drawing.Color.DarkGray;
+            this.failTop3Chart.BorderlineColor = System.Drawing.Color.Transparent;
+            this.failTop3Chart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.failTop3Chart.BorderlineWidth = 3;
+            chartArea2.Name = "ChartArea1";
+            this.failTop3Chart.ChartAreas.Add(chartArea2);
+            this.failTop3Chart.Location = new System.Drawing.Point(6, 7);
+            this.failTop3Chart.Name = "failTop3Chart";
+            this.failTop3Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series2.ChartArea = "ChartArea1";
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
+            series2.Name = "Series1";
+            this.failTop3Chart.Series.Add(series2);
+            this.failTop3Chart.Size = new System.Drawing.Size(732, 272);
+            this.failTop3Chart.TabIndex = 84;
+            this.failTop3Chart.Text = "failTop3Chart";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title2.ForeColor = System.Drawing.Color.DarkRed;
+            title2.Name = "Title1";
+            title2.Text = "不良项 Top3";
+            this.failTop3Chart.Titles.Add(title2);
+            // 
+            // flowLayoutPanel29
+            // 
+            this.flowLayoutPanel29.AutoSize = true;
+            this.flowLayoutPanel29.Controls.Add(this.flowLayoutPanel28);
+            this.flowLayoutPanel29.Controls.Add(this.flowLayoutPanel25);
+            this.flowLayoutPanel29.Location = new System.Drawing.Point(6, 542);
+            this.flowLayoutPanel29.Name = "flowLayoutPanel29";
+            this.flowLayoutPanel29.Size = new System.Drawing.Size(328, 33);
+            this.flowLayoutPanel29.TabIndex = 83;
+            this.flowLayoutPanel29.Visible = false;
+            // 
+            // flowLayoutPanel28
+            // 
+            this.flowLayoutPanel28.AutoSize = true;
+            this.flowLayoutPanel28.Controls.Add(this.label19);
+            this.flowLayoutPanel28.Controls.Add(this.scanTotalTextBox);
+            this.flowLayoutPanel28.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel28.Name = "flowLayoutPanel28";
+            this.flowLayoutPanel28.Size = new System.Drawing.Size(156, 27);
+            this.flowLayoutPanel28.TabIndex = 81;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(3, 7);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(65, 12);
+            this.label19.TabIndex = 66;
+            this.label19.Text = "SCAN TOTAL";
+            // 
+            // scanTotalTextBox
+            // 
+            this.scanTotalTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.scanTotalTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.scanTotalTextBox.Location = new System.Drawing.Point(74, 3);
+            this.scanTotalTextBox.Name = "scanTotalTextBox";
+            this.scanTotalTextBox.ReadOnly = true;
+            this.scanTotalTextBox.Size = new System.Drawing.Size(79, 21);
+            this.scanTotalTextBox.TabIndex = 65;
+            this.scanTotalTextBox.Text = "100";
+            // 
+            // flowLayoutPanel25
+            // 
+            this.flowLayoutPanel25.AutoSize = true;
+            this.flowLayoutPanel25.Controls.Add(this.label17);
+            this.flowLayoutPanel25.Controls.Add(this.scanYieldTextBox);
+            this.flowLayoutPanel25.Location = new System.Drawing.Point(165, 3);
+            this.flowLayoutPanel25.Name = "flowLayoutPanel25";
+            this.flowLayoutPanel25.Size = new System.Drawing.Size(160, 27);
+            this.flowLayoutPanel25.TabIndex = 76;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 7);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 12);
+            this.label17.TabIndex = 74;
+            this.label17.Text = "SCAN YIELD";
+            // 
+            // scanYieldTextBox
+            // 
+            this.scanYieldTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.scanYieldTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.scanYieldTextBox.Location = new System.Drawing.Point(74, 3);
+            this.scanYieldTextBox.Name = "scanYieldTextBox";
+            this.scanYieldTextBox.ReadOnly = true;
+            this.scanYieldTextBox.Size = new System.Drawing.Size(83, 21);
+            this.scanYieldTextBox.TabIndex = 73;
+            this.scanYieldTextBox.Text = "0";
             // 
             // textPanel
             // 
@@ -1588,7 +1889,6 @@
             // 
             this.cameraSetingPermissionsPanel.Controls.Add(this.hWindowControl1);
             this.cameraSetingPermissionsPanel.Controls.Add(this.picbPreview);
-            this.cameraSetingPermissionsPanel.Controls.Add(this.cameraPermissionLabel);
             this.cameraSetingPermissionsPanel.Controls.Add(this.cameraPanel);
             this.cameraSetingPermissionsPanel.Controls.Add(this.saveCameraButon);
             this.cameraSetingPermissionsPanel.Controls.Add(this.findCameraButton);
@@ -1617,17 +1917,6 @@
             this.hWindowControl1.Size = new System.Drawing.Size(600, 450);
             this.hWindowControl1.TabIndex = 67;
             this.hWindowControl1.WindowSize = new System.Drawing.Size(600, 450);
-            // 
-            // cameraPermissionLabel
-            // 
-            this.cameraPermissionLabel.AutoSize = true;
-            this.cameraPermissionLabel.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cameraPermissionLabel.ForeColor = System.Drawing.Color.Red;
-            this.cameraPermissionLabel.Location = new System.Drawing.Point(218, 340);
-            this.cameraPermissionLabel.Name = "cameraPermissionLabel";
-            this.cameraPermissionLabel.Size = new System.Drawing.Size(815, 64);
-            this.cameraPermissionLabel.TabIndex = 69;
-            this.cameraPermissionLabel.Text = "无操作权限 No permission";
             // 
             // cameraPanel
             // 
@@ -1878,7 +2167,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.samplePermissionsPanel.Controls.Add(this.samplePanel);
-            this.samplePermissionsPanel.Controls.Add(this.label51);
             this.samplePermissionsPanel.Location = new System.Drawing.Point(0, 0);
             this.samplePermissionsPanel.Name = "samplePermissionsPanel";
             this.samplePermissionsPanel.Size = new System.Drawing.Size(1256, 751);
@@ -1896,7 +2184,7 @@
             this.samplePanel.Controls.Add(this.simpleDataGridView);
             this.samplePanel.Location = new System.Drawing.Point(148, 75);
             this.samplePanel.Name = "samplePanel";
-            this.samplePanel.Size = new System.Drawing.Size(960, 600);
+            this.samplePanel.Size = new System.Drawing.Size(921, 595);
             this.samplePanel.TabIndex = 71;
             // 
             // simplePartNumTextBox
@@ -1930,12 +2218,13 @@
             // addSimpleButton
             // 
             this.addSimpleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addSimpleButton.Location = new System.Drawing.Point(654, 542);
+            this.addSimpleButton.Location = new System.Drawing.Point(615, 537);
             this.addSimpleButton.Name = "addSimpleButton";
             this.addSimpleButton.Size = new System.Drawing.Size(130, 52);
             this.addSimpleButton.TabIndex = 62;
             this.addSimpleButton.Text = "添加样本";
             this.addSimpleButton.UseVisualStyleBackColor = true;
+            this.addSimpleButton.Visible = false;
             this.addSimpleButton.Click += new System.EventHandler(this.addSimpleButton_Click);
             // 
             // delSimpleButton
@@ -1943,12 +2232,13 @@
             this.delSimpleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.delSimpleButton.BackColor = System.Drawing.Color.White;
             this.delSimpleButton.ForeColor = System.Drawing.Color.Red;
-            this.delSimpleButton.Location = new System.Drawing.Point(827, 542);
+            this.delSimpleButton.Location = new System.Drawing.Point(788, 537);
             this.delSimpleButton.Name = "delSimpleButton";
             this.delSimpleButton.Size = new System.Drawing.Size(130, 52);
             this.delSimpleButton.TabIndex = 63;
             this.delSimpleButton.Text = "删除样本";
             this.delSimpleButton.UseVisualStyleBackColor = false;
+            this.delSimpleButton.Visible = false;
             // 
             // simpleDataGridView
             // 
@@ -1961,19 +2251,8 @@
             this.simpleDataGridView.ReadOnly = true;
             this.simpleDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.simpleDataGridView.RowTemplate.Height = 23;
-            this.simpleDataGridView.Size = new System.Drawing.Size(960, 498);
+            this.simpleDataGridView.Size = new System.Drawing.Size(921, 493);
             this.simpleDataGridView.TabIndex = 3;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label51.ForeColor = System.Drawing.Color.Red;
-            this.label51.Location = new System.Drawing.Point(221, 343);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(815, 64);
-            this.label51.TabIndex = 70;
-            this.label51.Text = "无操作权限 No permission";
             // 
             // settingTabPage
             // 
@@ -2008,11 +2287,10 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel15);
-            this.tabPage1.Controls.Add(this.panel13);
-            this.tabPage1.Controls.Add(this.panel14);
-            this.tabPage1.Controls.Add(this.panel11);
-            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.testModelSettingPanel);
+            this.tabPage1.Controls.Add(this.uploadModelSettingPanel);
+            this.tabPage1.Controls.Add(this.ABBSettingPanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(1242, 564);
@@ -2020,116 +2298,240 @@
             this.tabPage1.Text = "模式设定";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // testModelSettingPanel
+            // 
+            this.testModelSettingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.testModelSettingPanel.Controls.Add(this.textBox7);
+            this.testModelSettingPanel.Controls.Add(this.panel15);
+            this.testModelSettingPanel.Controls.Add(this.panel17);
+            this.testModelSettingPanel.Controls.Add(this.panel19);
+            this.testModelSettingPanel.Controls.Add(this.panel20);
+            this.testModelSettingPanel.Controls.Add(this.panel2);
+            this.testModelSettingPanel.Controls.Add(this.panel18);
+            this.testModelSettingPanel.Location = new System.Drawing.Point(22, 134);
+            this.testModelSettingPanel.Name = "testModelSettingPanel";
+            this.testModelSettingPanel.Size = new System.Drawing.Size(295, 156);
+            this.testModelSettingPanel.TabIndex = 103;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox7.Location = new System.Drawing.Point(0, 0);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(293, 21);
+            this.textBox7.TabIndex = 103;
+            this.textBox7.Text = "测试设定";
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel15
             // 
             this.panel15.Controls.Add(this.测试稳定性延时);
             this.panel15.Controls.Add(this.testDelaytextBox);
             this.panel15.Controls.Add(this.label49);
-            this.panel15.Location = new System.Drawing.Point(43, 165);
+            this.panel15.Location = new System.Drawing.Point(3, 39);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(206, 35);
+            this.panel15.Size = new System.Drawing.Size(126, 28);
             this.panel15.TabIndex = 90;
             // 
             // 测试稳定性延时
             // 
             this.测试稳定性延时.AutoSize = true;
-            this.测试稳定性延时.Location = new System.Drawing.Point(3, 10);
+            this.测试稳定性延时.Location = new System.Drawing.Point(3, 7);
             this.测试稳定性延时.Name = "测试稳定性延时";
-            this.测试稳定性延时.Size = new System.Drawing.Size(89, 12);
+            this.测试稳定性延时.Size = new System.Drawing.Size(53, 12);
             this.测试稳定性延时.TabIndex = 87;
-            this.测试稳定性延时.Text = "测试稳定性延时";
+            this.测试稳定性延时.Text = "测试延时";
             // 
             // testDelaytextBox
             // 
-            this.testDelaytextBox.Location = new System.Drawing.Point(98, 7);
+            this.testDelaytextBox.Location = new System.Drawing.Point(62, 4);
             this.testDelaytextBox.Name = "testDelaytextBox";
-            this.testDelaytextBox.Size = new System.Drawing.Size(80, 21);
+            this.testDelaytextBox.Size = new System.Drawing.Size(41, 21);
             this.testDelaytextBox.TabIndex = 86;
             this.testDelaytextBox.Text = "150";
+            this.testDelaytextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(184, 10);
+            this.label49.Location = new System.Drawing.Point(109, 7);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(17, 12);
             this.label49.TabIndex = 87;
             this.label49.Text = "ms";
             // 
-            // panel13
+            // panel17
             // 
-            this.panel13.Controls.Add(this.label41);
-            this.panel13.Controls.Add(this.OracleucSwitch);
-            this.panel13.Location = new System.Drawing.Point(43, 81);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(126, 20);
-            this.panel13.TabIndex = 89;
+            this.panel17.Controls.Add(this.label52);
+            this.panel17.Controls.Add(this.pcbEnablrSwitch);
+            this.panel17.Location = new System.Drawing.Point(3, 83);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(126, 20);
+            this.panel17.TabIndex = 91;
             // 
-            // label41
+            // label52
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label41.Location = new System.Drawing.Point(3, 4);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(65, 12);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "Oracle上传";
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label52.Location = new System.Drawing.Point(3, 5);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(65, 12);
+            this.label52.TabIndex = 2;
+            this.label52.Text = "PCB Enable";
             // 
-            // OracleucSwitch
+            // pcbEnablrSwitch
             // 
-            this.OracleucSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.OracleucSwitch.Checked = false;
-            this.OracleucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.OracleucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.OracleucSwitch.Location = new System.Drawing.Point(73, 1);
-            this.OracleucSwitch.Name = "OracleucSwitch";
-            this.OracleucSwitch.Size = new System.Drawing.Size(50, 16);
-            this.OracleucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.OracleucSwitch.TabIndex = 1;
-            this.OracleucSwitch.Texts = null;
-            this.OracleucSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.OracleucSwitch.TrueTextColr = System.Drawing.Color.White;
-            this.OracleucSwitch.CheckedChanged += new System.EventHandler(this.OracleucSwitch_CheckedChanged);
+            this.pcbEnablrSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.pcbEnablrSwitch.Checked = false;
+            this.pcbEnablrSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.pcbEnablrSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.pcbEnablrSwitch.Location = new System.Drawing.Point(74, 1);
+            this.pcbEnablrSwitch.Name = "pcbEnablrSwitch";
+            this.pcbEnablrSwitch.Size = new System.Drawing.Size(50, 16);
+            this.pcbEnablrSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.pcbEnablrSwitch.TabIndex = 0;
+            this.pcbEnablrSwitch.Texts = null;
+            this.pcbEnablrSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.pcbEnablrSwitch.TrueTextColr = System.Drawing.Color.White;
             // 
-            // panel14
+            // panel19
             // 
-            this.panel14.Controls.Add(this.label44);
-            this.panel14.Controls.Add(this.ABBSwitch);
-            this.panel14.Location = new System.Drawing.Point(43, 109);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(126, 20);
-            this.panel14.TabIndex = 89;
+            this.panel19.Controls.Add(this.label59);
+            this.panel19.Controls.Add(this.sampleIntervalTimeTextBox);
+            this.panel19.Controls.Add(this.label60);
+            this.panel19.Location = new System.Drawing.Point(165, 76);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(126, 35);
+            this.panel19.TabIndex = 93;
             // 
-            // label44
+            // label59
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label44.Location = new System.Drawing.Point(3, 2);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(47, 12);
-            this.label44.TabIndex = 5;
-            this.label44.Text = "ABB管控";
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(3, 10);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(53, 12);
+            this.label59.TabIndex = 87;
+            this.label59.Text = "样本间隔";
             // 
-            // ABBSwitch
+            // sampleIntervalTimeTextBox
             // 
-            this.ABBSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.ABBSwitch.Checked = false;
-            this.ABBSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.ABBSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.ABBSwitch.Location = new System.Drawing.Point(73, 3);
-            this.ABBSwitch.Name = "ABBSwitch";
-            this.ABBSwitch.Size = new System.Drawing.Size(50, 16);
-            this.ABBSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.ABBSwitch.TabIndex = 4;
-            this.ABBSwitch.Texts = null;
-            this.ABBSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.ABBSwitch.TrueTextColr = System.Drawing.Color.White;
+            this.sampleIntervalTimeTextBox.Location = new System.Drawing.Point(62, 7);
+            this.sampleIntervalTimeTextBox.Name = "sampleIntervalTimeTextBox";
+            this.sampleIntervalTimeTextBox.Size = new System.Drawing.Size(40, 21);
+            this.sampleIntervalTimeTextBox.TabIndex = 86;
+            this.sampleIntervalTimeTextBox.Text = "6";
+            this.sampleIntervalTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(108, 10);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(11, 12);
+            this.label60.TabIndex = 87;
+            this.label60.Text = "h";
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.label61);
+            this.panel20.Controls.Add(this.lastSampleTimeTextBox);
+            this.panel20.Location = new System.Drawing.Point(164, 113);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(126, 33);
+            this.panel20.TabIndex = 94;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(3, 9);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(53, 12);
+            this.label61.TabIndex = 87;
+            this.label61.Text = "上次样本";
+            // 
+            // lastSampleTimeTextBox
+            // 
+            this.lastSampleTimeTextBox.Location = new System.Drawing.Point(62, 6);
+            this.lastSampleTimeTextBox.Name = "lastSampleTimeTextBox";
+            this.lastSampleTimeTextBox.Size = new System.Drawing.Size(57, 21);
+            this.lastSampleTimeTextBox.TabIndex = 86;
+            this.lastSampleTimeTextBox.Text = "17点28分";
+            this.lastSampleTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.label50);
+            this.panel2.Controls.Add(this.shieldMCUucSwitch);
+            this.panel2.Location = new System.Drawing.Point(3, 118);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(126, 22);
+            this.panel2.TabIndex = 88;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.label58);
+            this.panel18.Controls.Add(this.sampleSwitch);
+            this.panel18.Location = new System.Drawing.Point(166, 43);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(126, 20);
+            this.panel18.TabIndex = 92;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label58.Location = new System.Drawing.Point(3, 5);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(53, 12);
+            this.label58.TabIndex = 2;
+            this.label58.Text = "强制样本";
+            // 
+            // sampleSwitch
+            // 
+            this.sampleSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.sampleSwitch.Checked = false;
+            this.sampleSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.sampleSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.sampleSwitch.Location = new System.Drawing.Point(74, 1);
+            this.sampleSwitch.Name = "sampleSwitch";
+            this.sampleSwitch.Size = new System.Drawing.Size(50, 16);
+            this.sampleSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.sampleSwitch.TabIndex = 0;
+            this.sampleSwitch.Texts = null;
+            this.sampleSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.sampleSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // uploadModelSettingPanel
+            // 
+            this.uploadModelSettingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uploadModelSettingPanel.Controls.Add(this.textBox6);
+            this.uploadModelSettingPanel.Controls.Add(this.panel11);
+            this.uploadModelSettingPanel.Controls.Add(this.panel13);
+            this.uploadModelSettingPanel.Location = new System.Drawing.Point(22, 296);
+            this.uploadModelSettingPanel.Name = "uploadModelSettingPanel";
+            this.uploadModelSettingPanel.Size = new System.Drawing.Size(295, 77);
+            this.uploadModelSettingPanel.TabIndex = 102;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox6.Location = new System.Drawing.Point(0, 0);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(293, 21);
+            this.textBox6.TabIndex = 102;
+            this.textBox6.Text = "上传设定";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.label14);
             this.panel11.Controls.Add(this.FTPucSwitch);
-            this.panel11.Location = new System.Drawing.Point(43, 52);
+            this.panel11.Location = new System.Drawing.Point(166, 38);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(126, 20);
             this.panel11.TabIndex = 89;
@@ -2138,7 +2540,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(3, 5);
+            this.label14.Location = new System.Drawing.Point(3, 4);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 12);
             this.label14.TabIndex = 2;
@@ -2150,7 +2552,7 @@
             this.FTPucSwitch.Checked = false;
             this.FTPucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.FTPucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.FTPucSwitch.Location = new System.Drawing.Point(74, 1);
+            this.FTPucSwitch.Location = new System.Drawing.Point(74, 2);
             this.FTPucSwitch.Name = "FTPucSwitch";
             this.FTPucSwitch.Size = new System.Drawing.Size(50, 16);
             this.FTPucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
@@ -2160,21 +2562,134 @@
             this.FTPucSwitch.TrueTextColr = System.Drawing.Color.White;
             this.FTPucSwitch.CheckedChanged += new System.EventHandler(this.FTPucSwitch_CheckedChanged);
             // 
-            // panel2
+            // panel13
             // 
-            this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.label50);
-            this.panel2.Controls.Add(this.shieldMCUucSwitch);
-            this.panel2.Location = new System.Drawing.Point(43, 137);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(126, 22);
-            this.panel2.TabIndex = 88;
+            this.panel13.Controls.Add(this.label41);
+            this.panel13.Controls.Add(this.OracleucSwitch);
+            this.panel13.Location = new System.Drawing.Point(3, 38);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(126, 20);
+            this.panel13.TabIndex = 89;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label41.Location = new System.Drawing.Point(0, 4);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(65, 12);
+            this.label41.TabIndex = 3;
+            this.label41.Text = "Oracle上传";
+            // 
+            // OracleucSwitch
+            // 
+            this.OracleucSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.OracleucSwitch.Checked = false;
+            this.OracleucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.OracleucSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.OracleucSwitch.Location = new System.Drawing.Point(73, 2);
+            this.OracleucSwitch.Name = "OracleucSwitch";
+            this.OracleucSwitch.Size = new System.Drawing.Size(50, 16);
+            this.OracleucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.OracleucSwitch.TabIndex = 1;
+            this.OracleucSwitch.Texts = null;
+            this.OracleucSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.OracleucSwitch.TrueTextColr = System.Drawing.Color.White;
+            this.OracleucSwitch.CheckedChanged += new System.EventHandler(this.OracleucSwitch_CheckedChanged);
+            // 
+            // ABBSettingPanel
+            // 
+            this.ABBSettingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ABBSettingPanel.Controls.Add(this.textBox5);
+            this.ABBSettingPanel.Controls.Add(this.enableABBCheckBox);
+            this.ABBSettingPanel.Controls.Add(this.label51);
+            this.ABBSettingPanel.Controls.Add(this.ABBOnly3TestsCheckBox);
+            this.ABBSettingPanel.Controls.Add(this.ABBLastStationComboBox);
+            this.ABBSettingPanel.Controls.Add(this.enableCPPCheckBox);
+            this.ABBSettingPanel.Controls.Add(this.ABBNotGoOnTestCheckBox);
+            this.ABBSettingPanel.Location = new System.Drawing.Point(22, 25);
+            this.ABBSettingPanel.Name = "ABBSettingPanel";
+            this.ABBSettingPanel.Size = new System.Drawing.Size(420, 103);
+            this.ABBSettingPanel.TabIndex = 101;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox5.Location = new System.Drawing.Point(0, 0);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(418, 21);
+            this.textBox5.TabIndex = 101;
+            this.textBox5.Text = "ABB设定";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // enableABBCheckBox
+            // 
+            this.enableABBCheckBox.AutoSize = true;
+            this.enableABBCheckBox.Location = new System.Drawing.Point(3, 43);
+            this.enableABBCheckBox.Name = "enableABBCheckBox";
+            this.enableABBCheckBox.Size = new System.Drawing.Size(90, 16);
+            this.enableABBCheckBox.TabIndex = 95;
+            this.enableABBCheckBox.Text = "启用ABB卡关";
+            this.enableABBCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(245, 43);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(41, 12);
+            this.label51.TabIndex = 100;
+            this.label51.Text = "前工站";
+            // 
+            // ABBOnly3TestsCheckBox
+            // 
+            this.ABBOnly3TestsCheckBox.AutoSize = true;
+            this.ABBOnly3TestsCheckBox.Location = new System.Drawing.Point(3, 68);
+            this.ABBOnly3TestsCheckBox.Name = "ABBOnly3TestsCheckBox";
+            this.ABBOnly3TestsCheckBox.Size = new System.Drawing.Size(90, 16);
+            this.ABBOnly3TestsCheckBox.TabIndex = 96;
+            this.ABBOnly3TestsCheckBox.Text = "只允许测3次";
+            this.ABBOnly3TestsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ABBLastStationComboBox
+            // 
+            this.ABBLastStationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ABBLastStationComboBox.FormattingEnabled = true;
+            this.ABBLastStationComboBox.Items.AddRange(new object[] {
+            "TEDFCT",
+            "ZP"});
+            this.ABBLastStationComboBox.Location = new System.Drawing.Point(292, 40);
+            this.ABBLastStationComboBox.Name = "ABBLastStationComboBox";
+            this.ABBLastStationComboBox.Size = new System.Drawing.Size(121, 20);
+            this.ABBLastStationComboBox.TabIndex = 99;
+            // 
+            // enableCPPCheckBox
+            // 
+            this.enableCPPCheckBox.AutoSize = true;
+            this.enableCPPCheckBox.Location = new System.Drawing.Point(127, 44);
+            this.enableCPPCheckBox.Name = "enableCPPCheckBox";
+            this.enableCPPCheckBox.Size = new System.Drawing.Size(90, 16);
+            this.enableCPPCheckBox.TabIndex = 97;
+            this.enableCPPCheckBox.Text = "启用CPP卡关";
+            this.enableCPPCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ABBNotGoOnTestCheckBox
+            // 
+            this.ABBNotGoOnTestCheckBox.AutoSize = true;
+            this.ABBNotGoOnTestCheckBox.Location = new System.Drawing.Point(127, 68);
+            this.ABBNotGoOnTestCheckBox.Name = "ABBNotGoOnTestCheckBox";
+            this.ABBNotGoOnTestCheckBox.Size = new System.Drawing.Size(108, 16);
+            this.ABBNotGoOnTestCheckBox.TabIndex = 98;
+            this.ABBNotGoOnTestCheckBox.Text = "不允许继续测试";
+            this.ABBNotGoOnTestCheckBox.UseVisualStyleBackColor = true;
             // 
             // tabPage7
             // 
             this.tabPage7.AutoScroll = true;
             this.tabPage7.Controls.Add(this.panel1);
-            this.tabPage7.Controls.Add(this.panel9);
+            this.tabPage7.Controls.Add(this.tracesConfigPanel);
             this.tabPage7.Controls.Add(this.testConfigLeftPanel);
             this.tabPage7.Controls.Add(this.panel6);
             this.tabPage7.ImageIndex = 0;
@@ -2190,7 +2705,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.AnalyzerPathConfigPanel);
             this.panel1.Location = new System.Drawing.Point(22, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(330, 455);
@@ -2472,29 +2987,29 @@
             this.eCalButton.UseVisualStyleBackColor = true;
             this.eCalButton.Click += new System.EventHandler(this.eCalButton_Click);
             // 
-            // panel8
+            // AnalyzerPathConfigPanel
             // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.AnalyzerPathConfigPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.AutoScroll = true;
-            this.panel8.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Controls.Add(this.calFileTextBox);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.loadAnalyzerButton);
-            this.panel8.Controls.Add(this.LimitPathTextBox);
-            this.panel8.Controls.Add(this.dataPathTextBox);
-            this.panel8.Controls.Add(this.setLimitPathButton);
-            this.panel8.Controls.Add(this.setDataPathButton);
-            this.panel8.Controls.Add(this.textBox3);
-            this.panel8.Location = new System.Drawing.Point(3, 320);
-            this.panel8.MaximumSize = new System.Drawing.Size(388, 0);
-            this.panel8.MinimumSize = new System.Drawing.Size(322, 132);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(322, 132);
-            this.panel8.TabIndex = 72;
+            this.AnalyzerPathConfigPanel.AutoScroll = true;
+            this.AnalyzerPathConfigPanel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.AnalyzerPathConfigPanel.Controls.Add(this.label6);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.label8);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.calFileTextBox);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.label7);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.loadAnalyzerButton);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.LimitPathTextBox);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.dataPathTextBox);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.setLimitPathButton);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.setDataPathButton);
+            this.AnalyzerPathConfigPanel.Controls.Add(this.textBox3);
+            this.AnalyzerPathConfigPanel.Location = new System.Drawing.Point(3, 320);
+            this.AnalyzerPathConfigPanel.MaximumSize = new System.Drawing.Size(388, 0);
+            this.AnalyzerPathConfigPanel.MinimumSize = new System.Drawing.Size(322, 132);
+            this.AnalyzerPathConfigPanel.Name = "AnalyzerPathConfigPanel";
+            this.AnalyzerPathConfigPanel.Size = new System.Drawing.Size(322, 132);
+            this.AnalyzerPathConfigPanel.TabIndex = 72;
             // 
             // label6
             // 
@@ -2601,17 +3116,17 @@
             this.textBox3.Text = "高级配置";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel9
+            // tracesConfigPanel
             // 
-            this.panel9.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel9.Controls.Add(this.dataGridViewAddRowButton);
-            this.panel9.Controls.Add(this.dataGridViewRemoveButton);
-            this.panel9.Controls.Add(this.dataGridView1);
-            this.panel9.Controls.Add(this.textBox4);
-            this.panel9.Location = new System.Drawing.Point(452, 25);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(741, 455);
-            this.panel9.TabIndex = 73;
+            this.tracesConfigPanel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tracesConfigPanel.Controls.Add(this.dataGridViewAddRowButton);
+            this.tracesConfigPanel.Controls.Add(this.dataGridViewRemoveButton);
+            this.tracesConfigPanel.Controls.Add(this.dataGridView1);
+            this.tracesConfigPanel.Controls.Add(this.textBox4);
+            this.tracesConfigPanel.Location = new System.Drawing.Point(452, 25);
+            this.tracesConfigPanel.Name = "tracesConfigPanel";
+            this.tracesConfigPanel.Size = new System.Drawing.Size(741, 455);
+            this.tracesConfigPanel.TabIndex = 73;
             // 
             // dataGridViewAddRowButton
             // 
@@ -2695,6 +3210,14 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.AutoScroll = true;
+            this.tabPage6.Controls.Add(this.flowLayoutPanel8);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel7);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel3);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel4);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel5);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel6);
+            this.tabPage6.Controls.Add(this.flowLayoutPanel2);
             this.tabPage6.Controls.Add(this.flowLayoutPanel46);
             this.tabPage6.Controls.Add(this.flowLayoutPanel49);
             this.tabPage6.Controls.Add(this.flowLayoutPanel14);
@@ -2712,6 +3235,198 @@
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "连接设置";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel8
+            // 
+            this.flowLayoutPanel8.Controls.Add(this.label63);
+            this.flowLayoutPanel8.Controls.Add(this.sampleTBTextBox);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(486, 147);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel8.TabIndex = 74;
+            // 
+            // label63
+            // 
+            this.label63.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(3, 7);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(71, 12);
+            this.label63.TabIndex = 8;
+            this.label63.Text = "Sample_TB  ";
+            this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sampleTBTextBox
+            // 
+            this.sampleTBTextBox.Location = new System.Drawing.Point(80, 3);
+            this.sampleTBTextBox.Name = "sampleTBTextBox";
+            this.sampleTBTextBox.Size = new System.Drawing.Size(121, 21);
+            this.sampleTBTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(this.label62);
+            this.flowLayoutPanel7.Controls.Add(this.OracleTBTextBox);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(235, 147);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel7.TabIndex = 73;
+            // 
+            // label62
+            // 
+            this.label62.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(3, 7);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(71, 12);
+            this.label62.TabIndex = 8;
+            this.label62.Text = "Oracle_TB  ";
+            this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OracleTBTextBox
+            // 
+            this.OracleTBTextBox.Location = new System.Drawing.Point(80, 3);
+            this.OracleTBTextBox.Name = "OracleTBTextBox";
+            this.OracleTBTextBox.Size = new System.Drawing.Size(121, 21);
+            this.OracleTBTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.AutoSize = true;
+            this.flowLayoutPanel3.Controls.Add(this.label54);
+            this.flowLayoutPanel3.Controls.Add(this.sampleIPTextBox);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(486, 15);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel3.TabIndex = 72;
+            // 
+            // label54
+            // 
+            this.label54.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(3, 7);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(71, 12);
+            this.label54.TabIndex = 8;
+            this.label54.Text = "Sample_IP  ";
+            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sampleIPTextBox
+            // 
+            this.sampleIPTextBox.Location = new System.Drawing.Point(80, 3);
+            this.sampleIPTextBox.Name = "sampleIPTextBox";
+            this.sampleIPTextBox.Size = new System.Drawing.Size(121, 21);
+            this.sampleIPTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.label55);
+            this.flowLayoutPanel4.Controls.Add(this.sampleDBTextBox);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(486, 114);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel4.TabIndex = 69;
+            // 
+            // label55
+            // 
+            this.label55.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(3, 7);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(71, 12);
+            this.label55.TabIndex = 8;
+            this.label55.Text = "Sample_DB  ";
+            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sampleDBTextBox
+            // 
+            this.sampleDBTextBox.Location = new System.Drawing.Point(80, 3);
+            this.sampleDBTextBox.Name = "sampleDBTextBox";
+            this.sampleDBTextBox.Size = new System.Drawing.Size(121, 21);
+            this.sampleDBTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.label56);
+            this.flowLayoutPanel5.Controls.Add(this.samplePWTextBox);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(486, 81);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel5.TabIndex = 71;
+            // 
+            // label56
+            // 
+            this.label56.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(3, 7);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(71, 12);
+            this.label56.TabIndex = 8;
+            this.label56.Text = "Sample_PW  ";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // samplePWTextBox
+            // 
+            this.samplePWTextBox.Location = new System.Drawing.Point(80, 3);
+            this.samplePWTextBox.Name = "samplePWTextBox";
+            this.samplePWTextBox.Size = new System.Drawing.Size(121, 21);
+            this.samplePWTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.AutoSize = true;
+            this.flowLayoutPanel6.Controls.Add(this.label57);
+            this.flowLayoutPanel6.Controls.Add(this.sampleIDTextBox);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(486, 48);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel6.TabIndex = 70;
+            // 
+            // label57
+            // 
+            this.label57.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(3, 7);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(71, 12);
+            this.label57.TabIndex = 8;
+            this.label57.Text = "Sample_ID  ";
+            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sampleIDTextBox
+            // 
+            this.sampleIDTextBox.Location = new System.Drawing.Point(80, 3);
+            this.sampleIDTextBox.Name = "sampleIDTextBox";
+            this.sampleIDTextBox.Size = new System.Drawing.Size(121, 21);
+            this.sampleIDTextBox.TabIndex = 5;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.label53);
+            this.flowLayoutPanel2.Controls.Add(this.OracleIPTextBox);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(235, 15);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(204, 27);
+            this.flowLayoutPanel2.TabIndex = 68;
+            // 
+            // label53
+            // 
+            this.label53.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(3, 7);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(71, 12);
+            this.label53.TabIndex = 8;
+            this.label53.Text = "Oracle_IP  ";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // OracleIPTextBox
+            // 
+            this.OracleIPTextBox.Location = new System.Drawing.Point(80, 3);
+            this.OracleIPTextBox.Name = "OracleIPTextBox";
+            this.OracleIPTextBox.Size = new System.Drawing.Size(121, 21);
+            this.OracleIPTextBox.TabIndex = 5;
             // 
             // flowLayoutPanel46
             // 
@@ -2915,7 +3630,7 @@
             // 
             this.flowLayoutPanel55.Controls.Add(this.label43);
             this.flowLayoutPanel55.Controls.Add(this.OracleDBTextBox);
-            this.flowLayoutPanel55.Location = new System.Drawing.Point(235, 15);
+            this.flowLayoutPanel55.Location = new System.Drawing.Point(235, 114);
             this.flowLayoutPanel55.Name = "flowLayoutPanel55";
             this.flowLayoutPanel55.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel55.TabIndex = 65;
@@ -3221,7 +3936,6 @@
             this.Text = "RF_TestSystem";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.Load += new System.EventHandler(this.RF_TestSystem_Load);
-            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.RF_TestSystem_Layout);
             this.Resize += new System.EventHandler(this.RF_TestSystem_Resize);
             this.flowLayoutPanel43.ResumeLayout(false);
             this.flowLayoutPanel43.PerformLayout();
@@ -3263,14 +3977,6 @@
             this.flowLayoutPanel21.PerformLayout();
             this.flowLayoutPanel23.ResumeLayout(false);
             this.flowLayoutPanel23.PerformLayout();
-            this.chartPanel.ResumeLayout(false);
-            this.chartPanel.PerformLayout();
-            this.flowLayoutPanel29.ResumeLayout(false);
-            this.flowLayoutPanel29.PerformLayout();
-            this.flowLayoutPanel28.ResumeLayout(false);
-            this.flowLayoutPanel28.PerformLayout();
-            this.flowLayoutPanel25.ResumeLayout(false);
-            this.flowLayoutPanel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FTPDataGridView)).EndInit();
             this.flowLayoutPanel40.ResumeLayout(false);
@@ -3292,6 +3998,24 @@
             this.panel3.PerformLayout();
             this.infoPanel.ResumeLayout(false);
             this.infoPanel.PerformLayout();
+            this.chartTabControl.ResumeLayout(false);
+            this.testTabPage2.ResumeLayout(false);
+            this.analysisTabPage.ResumeLayout(false);
+            this.analysisTabPage.PerformLayout();
+            this.historySeriesFlowLayoutPanel.ResumeLayout(false);
+            this.historySeriesFlowLayoutPanel.PerformLayout();
+            this.failTop3ModelFlowLayoutPanel.ResumeLayout(false);
+            this.failTop3ModelFlowLayoutPanel.PerformLayout();
+            this.historyDataFlowLayoutPanel.ResumeLayout(false);
+            this.historyDataFlowLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.testHistorychart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.failTop3Chart)).EndInit();
+            this.flowLayoutPanel29.ResumeLayout(false);
+            this.flowLayoutPanel29.PerformLayout();
+            this.flowLayoutPanel28.ResumeLayout(false);
+            this.flowLayoutPanel28.PerformLayout();
+            this.flowLayoutPanel25.ResumeLayout(false);
+            this.flowLayoutPanel25.PerformLayout();
             this.textPanel.ResumeLayout(false);
             this.textPanel.PerformLayout();
             this.cameraTabPage.ResumeLayout(false);
@@ -3314,7 +4038,6 @@
             this.lPanel.PerformLayout();
             this.simpleManageTabPage.ResumeLayout(false);
             this.samplePermissionsPanel.ResumeLayout(false);
-            this.samplePermissionsPanel.PerformLayout();
             this.samplePanel.ResumeLayout(false);
             this.samplePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.simpleDataGridView)).EndInit();
@@ -3322,17 +4045,28 @@
             this.settingTabPage.PerformLayout();
             this.tabControlExt1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.testModelSettingPanel.ResumeLayout(false);
+            this.testModelSettingPanel.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.uploadModelSettingPanel.ResumeLayout(false);
+            this.uploadModelSettingPanel.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.ABBSettingPanel.ResumeLayout(false);
+            this.ABBSettingPanel.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -3340,13 +4074,27 @@
             this.panel7.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.AnalyzerPathConfigPanel.ResumeLayout(false);
+            this.AnalyzerPathConfigPanel.PerformLayout();
+            this.tracesConfigPanel.ResumeLayout(false);
+            this.tracesConfigPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel5.ResumeLayout(false);
+            this.flowLayoutPanel5.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel46.ResumeLayout(false);
             this.flowLayoutPanel46.PerformLayout();
             this.flowLayoutPanel49.ResumeLayout(false);
@@ -3533,8 +4281,6 @@
         private System.Windows.Forms.Label label14;
         private HZH_Controls.Controls.UCSwitch OracleucSwitch;
         private HZH_Controls.Controls.UCSwitch FTPucSwitch;
-        private System.Windows.Forms.Label label44;
-        private HZH_Controls.Controls.UCSwitch ABBSwitch;
         private System.Windows.Forms.Button openInquireCameraButton;
         private System.Windows.Forms.Button inquireBarcodeButton;
         private System.Windows.Forms.DataGridView inquireDataGridView;
@@ -3593,28 +4339,19 @@
         private System.Windows.Forms.Button deBugSendComm3Button;
         private System.Windows.Forms.TextBox deBugSendComm3textBox;
         private System.Windows.Forms.Button deBugConnButton;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel29;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel28;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox scanTotalTextBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel25;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox scanYieldTextBox;
         private System.Windows.Forms.TextBox machineClassTextBox;
         private System.Windows.Forms.TextBox systemStateTextBox;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel cameraPanel;
         private System.Windows.Forms.Panel cameraSetingPermissionsPanel;
-        private System.Windows.Forms.Label cameraPermissionLabel;
         private System.Windows.Forms.Panel samplePermissionsPanel;
-        private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Panel ftpManualPanel;
         private System.Windows.Forms.Panel samplePanel;
         private System.Windows.Forms.TextBox simplePartNumTextBox;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel tracesConfigPanel;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel AnalyzerPathConfigPanel;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBox1;
@@ -3625,9 +4362,78 @@
         private System.Windows.Forms.TextBox testDelaytextBox;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Label label52;
+        private HZH_Controls.Controls.UCSwitch pcbEnablrSwitch;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox OracleIPTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox sampleIPTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox sampleDBTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox samplePWTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox sampleIDTextBox;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label58;
+        private HZH_Controls.Controls.UCSwitch sampleSwitch;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox sampleIntervalTimeTextBox;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox lastSampleTimeTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox sampleTBTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox OracleTBTextBox;
+        private System.Windows.Forms.TabControl chartTabControl;
+        private System.Windows.Forms.TabPage testTabPage2;
+        private System.Windows.Forms.TabPage analysisTabPage;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel29;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel28;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox scanTotalTextBox;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel25;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox scanYieldTextBox;
+        private System.Windows.Forms.ImageList loginImageList;
+        private System.Windows.Forms.ImageList startImageList;
+        private System.Windows.Forms.ImageList connImageList;
+        private System.Windows.Forms.DataVisualization.Charting.Chart testHistorychart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart failTop3Chart;
+        private System.Windows.Forms.FlowLayoutPanel failTop3ModelFlowLayoutPanel;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.ComboBox analysisModelComboBox;
+        private System.Windows.Forms.FlowLayoutPanel historyDataFlowLayoutPanel;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.ComboBox analysisDataComboBox;
+        private System.Windows.Forms.FlowLayoutPanel historySeriesFlowLayoutPanel;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.ComboBox analysisSeriesComboBox;
+        private System.Windows.Forms.CheckBox ABBNotGoOnTestCheckBox;
+        private System.Windows.Forms.CheckBox enableCPPCheckBox;
+        private System.Windows.Forms.CheckBox ABBOnly3TestsCheckBox;
+        private System.Windows.Forms.CheckBox enableABBCheckBox;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.ComboBox ABBLastStationComboBox;
+        private System.Windows.Forms.Panel ABBSettingPanel;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel testModelSettingPanel;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Panel uploadModelSettingPanel;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 
