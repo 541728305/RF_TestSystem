@@ -713,7 +713,16 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBOnly3Test", modelSetting.ABBOnly3Test);
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBNotGoOnTest", modelSetting.ABBNotGoOnTest);
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "ABBLastStation", modelSetting.ABBLastStation);
-           
+
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "warnYield", modelSetting.warnYield);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "stopYield", modelSetting.stopYield);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "baseYield", modelSetting.baseYield);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "yieldManageEnable", modelSetting.yieldManageEnable);
+
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime", modelSetting.probeUseTime);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
+
             return successful;
         }
         public ModelSetting readModelSettingFromInitFile()
@@ -734,6 +743,15 @@ namespace RF_TestSystem
             modelSetting.mandatorySample = false.ToString();
             modelSetting.sampleTestTime = DateTime.Now.ToString();
             modelSetting.sampleIntervalTime = "6";
+
+            modelSetting.warnYield = "90";
+            modelSetting.stopYield = "80";
+            modelSetting.baseYield = "200";
+            modelSetting.yieldManageEnable = false.ToString();
+
+            modelSetting.probeUseTime = "0";
+            modelSetting.probeUperTime = "15000";
+            modelSetting.probeWarnTime = "500";
             string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -764,7 +782,16 @@ namespace RF_TestSystem
                     modelSetting.testDelay = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "testDelay", "150");
                     modelSetting.sampleTestTime= IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleTestTime", modelSetting.sampleTestTime);
                     modelSetting.sampleIntervalTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleIntervalTime", modelSetting.sampleIntervalTime);
-                    
+
+                    modelSetting.warnYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "warnYield",  modelSetting.warnYield);
+                    modelSetting.stopYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "stopYield", modelSetting.stopYield);
+                    modelSetting.baseYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "baseYield", modelSetting.baseYield);
+                    modelSetting.yieldManageEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "yieldManageEnable", modelSetting.yieldManageEnable);
+
+                    modelSetting.probeUseTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime", modelSetting.probeUseTime);
+                    modelSetting.probeUperTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
+                    modelSetting.probeWarnTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
+
                 }
                 else
                 {

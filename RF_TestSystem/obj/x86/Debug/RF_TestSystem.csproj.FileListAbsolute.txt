@@ -180,3 +180,4 @@ F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Co
 F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.pdb
 F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Newtonsoft.Json.pdb
 F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\Newtonsoft.Json.xml
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Debug\RF_TestSystem.WinForm.ECalWaiting.resources

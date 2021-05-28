@@ -60,6 +60,12 @@ namespace RF_TestSystem
             {
                 try
                 {
+                    ioobj.WriteString(":SYST:ERR?",true);
+                    if(readData().Contains("No error") == false)
+                    {
+                        ioobj.WriteString("*CLS", true);
+                    }
+
                     ioobj.WriteString(commands, true);
                 }
                 catch (Exception)
@@ -580,6 +586,15 @@ namespace RF_TestSystem
 
         }
 
+        public void checkError()
+        {
+            sendCommand(":SYST:ERR?");
+            string error = readData();
+            if (error.Contains("No error") == false)
+            {
+                sendCommand("*CLS");
+            }
+        }
         public void setPortExtensionsLoss(string channel,string state)
         {
 
@@ -596,6 +611,10 @@ namespace RF_TestSystem
 
         }
 
+        public void sendOPC()
+        {
+            sendCommand("*OPC?");
+        }
         public AnalyzerConfig getBasisConfig()
         {
             AnalyzerConfig analyzerConfig = new AnalyzerConfig();

@@ -53,6 +53,8 @@ namespace RF_TestSystem
         bool systemStart = false;
         bool systemTesting = false;//正在测试；
 
+        bool testThreadEntry = false;//防止测试命令风暴，重复调用测试线程
+
         private FilterInfoCollection videoDevices;//所有摄像设备
         private VideoCaptureDevice videoDevice;//摄像设备
         private VideoCapabilities[] videoCapabilities;//摄像头分辨率
@@ -96,6 +98,10 @@ namespace RF_TestSystem
 
         System.Timers.Timer sampleTimer = new System.Timers.Timer(1000);//实例化样本计时Timer类，设置间隔时间为1000毫秒；
 
+        System.Timers.Timer yeildTextBoxFlashTimer = new System.Timers.Timer();//良率文本框闪烁
+        bool yeildTextBoxFlash = false;//颜色反转；
+        Color yeildTextBoxColor = new Color(); //良率文本框颜色
+
         INetworkAnalyzer Analyzer = NetworkAnalyzer.GetInstance(NetworkAnalyzerType.Agilent_E5071C);
         int testLoop = 0;
 
@@ -112,7 +118,7 @@ namespace RF_TestSystem
 
         #region - 委托定义 -
 
-        private BackgroundWorker bkWorker = new BackgroundWorker();
+        private BackgroundWorker TestBackgroundWork = new BackgroundWorker();
 
         private BackgroundWorker FTPBackgroundWorker = new BackgroundWorker();
 
@@ -226,11 +232,11 @@ namespace RF_TestSystem
 
             myTester.ShowCurve += setDataTochart;
             //测试后台线程
-            bkWorker.WorkerReportsProgress = true;
-            bkWorker.WorkerSupportsCancellation = true;
-            bkWorker.DoWork += new DoWorkEventHandler(startTest);
-            bkWorker.ProgressChanged += new ProgressChangedEventHandler(ProgessChanged);
-            //bkWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(CompleteWork);
+            TestBackgroundWork.WorkerReportsProgress = true;
+            TestBackgroundWork.WorkerSupportsCancellation = true;
+            TestBackgroundWork.DoWork += new DoWorkEventHandler(startTest);
+            TestBackgroundWork.ProgressChanged += new ProgressChangedEventHandler(ProgessChanged);
+            TestBackgroundWork.RunWorkerCompleted += TestBackgroundWork_RunWorkerCompleted;
 
 
 
@@ -272,6 +278,9 @@ namespace RF_TestSystem
             globalTimer.Enabled = true;//是否执行System.Timers.Timer.Elapsed事件；
             globalTimer.Start();
 
+            yeildTextBoxFlashTimer.Elapsed += YeildTextBoxFlashTimer_Elapsed;
+            yeildTextBoxFlashTimer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
+
             //样本定时器
             sampleTimer.Elapsed += new System.Timers.ElapsedEventHandler(sampleTimeOut);//到达时间的时候执行事件；
             sampleTimer.AutoReset = true;//设置是执行一次（false）还是一直执行(true)；
@@ -283,7 +292,6 @@ namespace RF_TestSystem
         }
 
        
-
 
         //字符表初始化
         public void initStateHead()
@@ -547,6 +555,27 @@ namespace RF_TestSystem
                     continuouTest = 1;
                     this.continuouTestTextBox.Text = continuouTest.ToString();
                     return;
+                    case "SampleEntryModel":
+                    this.setModelButton.Text = "样本录入";
+                    this.setModelButton.BackColor = Color.Firebrick;
+                    this.testPassNumberTextBox.Text = testInfo.sampleEntryModel.testPassNumber;
+                    this.testFailNumberTextBox.Text = testInfo.sampleEntryModel.testFailNumber;
+                    this.testTotalNumberTextBox.Text = testInfo.sampleEntryModel.testTotalNumber;
+                    this.scanTotalTextBox.Text = testInfo.sampleEntryModel.scanTotalNumber;
+                    try
+                    {
+                        double testPass = Convert.ToDouble(testInfo.sampleEntryModel.testPassNumber);
+                        double testTotal = Convert.ToDouble(testInfo.sampleEntryModel.testTotalNumber);
+                        this.TestYieldTextBox.Text = (testPass / testTotal).ToString("0.0");
+                    }
+                    catch (Exception convertErr)
+                    {
+
+                    }
+                    this.continuouTestTextBox.Enabled = false;
+                    continuouTest = 1;
+                    this.continuouTestTextBox.Text = continuouTest.ToString();
+                    return;
                 case "developerModel":
                     this.setModelButton.Text = "开发模式";
                     this.setModelButton.BackColor = Color.DarkGray;
@@ -686,14 +715,9 @@ namespace RF_TestSystem
                 MessageBox.Show("网分仪未连接，校验失败");
                 return;
             }
-            Gloable.myAnalyzer.ECAL("1");
-            MessageBox.Show("开始校验通道1,等待校验完成后确认");
-            if (agilentConfig.channelNumber == "2")
-            {
-                Gloable.myAnalyzer.ECAL("2");
-                MessageBox.Show("开始校验通道2,等待校验完成后确认");
-            }
-            MessageBox.Show("校验完成，请点击 “保存到配置文件和网分仪” 按钮保存");
+            ECalWaiting eCalWaiting = new ECalWaiting(agilentConfig.channelNumber);
+            eCalWaiting.ShowDialog();
+            MessageBox.Show("点击 “保存到配置文件和网分仪” 按钮以保存");
         }
         private void clearCountButton_Click(object sender, EventArgs e)
         {
@@ -862,12 +886,29 @@ namespace RF_TestSystem
                 Gloable.myAnalyzer.saveStateFile(agilentConfig.calFilePath);
                 Gloable.myAnalyzer.reset();
                 Gloable.myAnalyzer.loadStateFile(agilentConfig.calFilePath);
+
+                Gloable.myAnalyzer.sendOPC();
+                for(int i =0;i<3;i++)
+                {
+                    if (Gloable.myAnalyzer.readData() != "ReadString error")
+                    {
+                        break;
+                    }
+                }
                 //配置写入网分仪
                 writeConfigToAnalyzer(agilentConfig);
 
                 Gloable.myAnalyzer.saveState();
                 Gloable.myAnalyzer.saveStateFile(agilentConfig.calFilePath);
                 Gloable.myAnalyzer.loadStateFile(agilentConfig.calFilePath);
+                Gloable.myAnalyzer.sendOPC();
+                for (int i = 0; i < 3; i++)
+                {
+                    if (Gloable.myAnalyzer.readData() != "ReadString error")
+                    {
+                        break;
+                    }
+                }
                 Gloable.myAnalyzer.setTriggerSource("INTernal");
                 writeInfoTextBox("配置写入网分仪成功");
                 MessageBox.Show("配置保存和写入成功");
@@ -1446,6 +1487,11 @@ namespace RF_TestSystem
             updateALLHistoryTrace();
         }
 
+        private void probeUseResetButton_Click(object sender, EventArgs e)
+        {
+            resetProbeLife();
+        }
+
         #endregion
 
         #region - 界面渲染事件  -
@@ -1697,7 +1743,11 @@ namespace RF_TestSystem
 
         public void startTestThread()
         {
-
+            if(testThreadEntry == true)
+            {
+                return;
+            }
+            testThreadEntry = true;
             if (systemStart == true)
             {
                 if ((Gloable.runningState.AnalyzerState == Gloable.sateHead.connect) && systemTesting == false)
@@ -1706,14 +1756,39 @@ namespace RF_TestSystem
                     Gloable.dataFilePath = this.dataPathTextBox.Text;
                     if ((Gloable.runningState.SystemSate != Gloable.sateHead.free) || systemTesting == true)
                     {
+                        testThreadEntry = false;
                         return;
+                    }
+                    
+                    if(manualTest == false)
+                    {
+                        if (checkProbeLife() == false)
+                        {
+                            testThreadEntry = false;
+                            return;
+                        }
+                        if(checkYeild() == false)
+                        {
+                            testThreadEntry = false;
+                            return;
+                        }
+                        
                     }
                     if (Gloable.cameraInfo.cameraModel == Gloable.cameraInfo.cameramManualModelString || 
                         Gloable.cameraInfo.cameraModel == Gloable.cameraInfo.cameraAutoModelString)
                     {
                         if (manualTest == false && barcodeChecked == false)
-                        {
-                            return;
+                        {                           
+                            if(checkBarcode(this.barcodeTextBox.Text, Gloable.loginInfo.barcodeFormat.Length) == false)
+                            {
+                                this.Invoke(new Action(() =>
+                                {
+                                    setSystemStateLabel(Gloable.sateHead.scanErorr); //错误状态 
+                                }));
+
+                                testThreadEntry = false;
+                                return;
+                            }
                         }                                                                                         
                     }
                     
@@ -1722,27 +1797,25 @@ namespace RF_TestSystem
                     {
                         this.progressBar1.Maximum = percentValue;
                     }));
-
+                    
                     // 执行后台操作
-                    bkWorker.RunWorkerAsync();                 
+                    TestBackgroundWork.RunWorkerAsync();                 
                 
                 }
-                else
-                {
-
-                    if (shieldMCU == false)
-                    {
-                        myTCPClient.clientSendMessge("FAIL");
-                    }                       
-                    MessageBox.Show("网分仪未连接！");
-                    writeInfoTextBox("网分仪未连接！");
-
-                }
+                
             }
-            else if(shieldMCU == false)
+            else
             {
-                myTCPClient.clientSendMessge(Gloable.sateHead.fail);
-            }    
+
+                if (shieldMCU == false)
+                {
+                    myTCPClient.clientSendMessge(Gloable.sateHead.fail);
+                }
+                MessageBox.Show("网分仪未连接！");
+                writeInfoTextBox("网分仪未连接！");
+
+            }
+            testThreadEntry = false; 
 
         }
 
@@ -1844,6 +1917,31 @@ namespace RF_TestSystem
                 
                 if (Gloable.testInfo.currentModel == Gloable.testInfo.sampleEntryModelString)
                 {
+                    DialogResult dialogResult = MessageBox.Show("是否录入数据库？", "样本录入", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    if(dialogResult != DialogResult.OK)
+                    {
+                        if (shieldMCU == false)
+                        {
+                            myTCPClient.clientSendMessge(Gloable.runningState.TesterState);
+                        }
+                        t.Enabled = false;//是否执行System.Timers.Timer.Elapsed事件；    
+                        this.Invoke(new Action(() =>
+                        {
+                            this.barcodeTextBox.Text = "";
+                            setSystemStateLabel(Gloable.sateHead.free);//空闲释放  
+                            setSystemStateLabel(Gloable.runningState.TesterState);//等待状态
+                            writeInfoTextBox("测试完成");
+                            this.startButton.Enabled = true;
+                            this.startButton.Text = "手动测试";
+                        }));
+                        systemTesting = false;
+                        return;
+                    }
+                    this.Invoke(new Action(() =>
+                    {
+                        writeInfoTextBox("正在将样本信息写入Oracle...");
+                       
+                    }));
                     BarsamInfo barsamInfo = new BarsamInfo
                     {
                         PARTNUM = Gloable.loginInfo.partNumber,      //料號
@@ -2178,6 +2276,22 @@ namespace RF_TestSystem
             systemTesting = false;
             Gloable.mutex.ReleaseMutex();
 
+        }
+
+        private void TestBackgroundWork_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.Invoke(new Action(() =>
+            {
+
+                //this.barcodeTextBox.Text = "";
+                //writeInfoTextBox("测试完成");
+                //this.startButton.Enabled = true;
+                //this.startButton.Text = "手动测试";               
+                //setSystemStateLabel(Gloable.sateHead.free);//空闲释放  
+                checkYeild();
+            }));
+            barcodeChecked = false;
+            systemTesting = false;
         }
 
         private void updateTestInfo(string result)
@@ -2619,6 +2733,11 @@ namespace RF_TestSystem
         }
         private void getBarcode(string barcode)
         {
+            if(Gloable.cameraInfo.cameraModel != Gloable.cameraInfo.cameramManualModelString)
+            {
+                return;
+            }
+
             if ((Gloable.runningState.SystemSate != Gloable.sateHead.free) || systemTesting == true || systemStart == false)
             {
                 return;
@@ -2652,7 +2771,7 @@ namespace RF_TestSystem
 
                     if (shieldMCU == false)
                     {
-                    myTCPClient.clientSendMessge("Barcode_OK");
+                        myTCPClient.clientSendMessge("Barcode_OK");
                     }
                 }));
             }
@@ -3624,29 +3743,64 @@ namespace RF_TestSystem
 
         private void clearTestInfo()
         {
-            this.testPassNumberTextBox.Text = Gloable.testInfo.productionModel.testPassNumber = "0";
-            this.testFailNumberTextBox.Text = Gloable.testInfo.productionModel.testFailNumber = "0";
-            this.testTotalNumberTextBox.Text = Gloable.testInfo.productionModel.testTotalNumber = "0";
-            this.TestYieldTextBox.Text = Gloable.testInfo.productionModel.testYield = "0  ";
-            this.scanTotalTextBox.Text = Gloable.testInfo.productionModel.scanTotalNumber = "0";
-            this.scanYieldTextBox.Text = Gloable.testInfo.productionModel.scanYield = "0";
+           
 
-            this.testPassNumberTextBox.Text = Gloable.testInfo.retestModel.testPassNumber = "0";
-            this.testFailNumberTextBox.Text = Gloable.testInfo.retestModel.testFailNumber = "0";
-            this.testTotalNumberTextBox.Text = Gloable.testInfo.retestModel.testTotalNumber = "0";
-            this.TestYieldTextBox.Text = Gloable.testInfo.retestModel.testYield = "0  ";
-            this.scanTotalTextBox.Text = Gloable.testInfo.retestModel.scanTotalNumber = "0";
-            this.scanYieldTextBox.Text = Gloable.testInfo.retestModel.scanYield = "0";
+            if(Gloable.testInfo.currentModel == Gloable.testInfo.productionModelString)
+            {
+                clearTestInfo(ref Gloable.testInfo.productionModel);
+            }
+            else if(Gloable.testInfo.currentModel == Gloable.testInfo.retestModelString)
+            {
+                clearTestInfo(ref Gloable.testInfo.retestModel);
+            }
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.buyoffModelString)
+            {
+                clearTestInfo(ref Gloable.testInfo.buyoffModel);
+            }
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.FAModelString)
+            {
+                clearTestInfo(ref Gloable.testInfo.FAModel);
+            }
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.ORTModelString)
+            {
+                clearTestInfo(ref Gloable.testInfo.ORTModel);
+            }
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.SortingModelString)
+            {
+                clearTestInfo(ref Gloable.testInfo.SortingModel);
+            }
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.developerModelString)
+            {
+                clearTestInfo(ref Gloable.testInfo.developerModel);
+            }
+            this.TestYieldTextBox.BackColor = Color.LightSeaGreen;
 
-            this.testPassNumberTextBox.Text = Gloable.testInfo.developerModel.testPassNumber = "0";
-            this.testFailNumberTextBox.Text = Gloable.testInfo.developerModel.testFailNumber = "0";
-            this.testTotalNumberTextBox.Text = Gloable.testInfo.developerModel.testTotalNumber = "0";
-            this.TestYieldTextBox.Text = Gloable.testInfo.developerModel.testYield = "0  ";
-            this.scanTotalTextBox.Text = Gloable.testInfo.developerModel.scanTotalNumber = "0";
-            this.scanYieldTextBox.Text = Gloable.testInfo.developerModel.scanYield = "0";
+
             myIniFile.writeTestInfoToInitFile(Gloable.testInfo, Gloable.configPath + Gloable.testInfoConifgFileName);
         }
 
+        private void clearTestInfo(ref ModeInfo Model)
+        {
+            Model.testPassNumber = "0";
+            Model.testFailNumber = "0";
+            Model.testTotalNumber = "0";
+
+            Model.testYield = "0";
+            Model.scanTotalNumber = "0";
+            Model.scanYield = "0";
+
+            if(Model.modelHistoryTraces != null)
+            {
+                Model.modelHistoryTraces.Clear();
+            }
+           
+            this.testPassNumberTextBox.Text = "0";
+            this.testFailNumberTextBox.Text = "0";
+            this.testTotalNumberTextBox.Text = "0";
+            this.TestYieldTextBox.Text = "0.0";
+            this.scanTotalTextBox.Text = "0";
+            this.scanYieldTextBox.Text = "0";
+        }
         public void creatChartView()
         {
             List<Series> series = new List<Series>();
@@ -3772,7 +3926,7 @@ namespace RF_TestSystem
 
                 }
                 this.chartPanel.ScrollControlIntoView(charts[currentCurve]);
-                bkWorker.ReportProgress(currentCurve + (testLoop * charts.Count) + 1);
+                TestBackgroundWork.ReportProgress(currentCurve + (testLoop * charts.Count) + 1);
                
                
             }));
@@ -4041,6 +4195,15 @@ namespace RF_TestSystem
             modelSetting.sampleTestTime = this.lastSampleTimeTextBox.Text;
             FTPUploadFlag = this.FTPucSwitch.Checked;
             OracleUploadFlag = this.OracleucSwitch.Checked;
+
+            modelSetting.yieldManageEnable = this.yieldEnableSwitch.Checked.ToString();
+            modelSetting.warnYield = this.warnYieldTextBox.Text;
+            modelSetting.stopYield = this.stopTestYieldTextBox.Text;
+            modelSetting.baseYield = this.baseYieldTextBox.Text;
+
+            modelSetting.probeUseTime = this.probeUseTextBox.Text;
+            modelSetting.probeUperTime = this.probeTotalTextBox.Text;
+            modelSetting.probeWarnTime = this.probeResetWarnTextBox.Text;
             return modelSetting;
         }
 
@@ -4060,6 +4223,26 @@ namespace RF_TestSystem
             this.sampleSwitch.Checked = Convert.ToBoolean(modelSetting.mandatorySample);
             this.sampleIntervalTimeTextBox.Text = modelSetting.sampleIntervalTime;
             this.lastSampleTimeTextBox.Text = modelSetting.sampleTestTime;
+
+            this.yieldEnableSwitch.Checked = Convert.ToBoolean( modelSetting.yieldManageEnable);
+            this.warnYieldTextBox.Text = modelSetting.warnYield;
+            this.stopTestYieldTextBox.Text = modelSetting.stopYield;
+            this.baseYieldTextBox.Text = modelSetting.baseYield;
+
+            this.probeUseTextBox.Text = modelSetting.probeUseTime;
+            this.probeTotalTextBox.Text = modelSetting.probeUperTime;
+            this.probeResetWarnTextBox.Text = modelSetting.probeWarnTime;
+
+            try 
+            {
+                int uper = Convert.ToInt32(modelSetting.probeUperTime);
+                int use = Convert.ToInt32(modelSetting.probeUseTime);
+                this.probeRemainingTextBox.Text = (uper - use).ToString();
+            }catch(Exception)
+            {
+                
+            }
+            
         }
 
         public void setLoginInfoToDataTable(LoginInfo LoginInfo)
@@ -5463,6 +5646,138 @@ namespace RF_TestSystem
            // oracleHelper.CloseOracleConnection();
         }
 
+        private bool checkProbeLife()
+        {
+            try
+            {
+                int uper = Convert.ToInt32(Gloable.modelSetting.probeUperTime);
+                int use = Convert.ToInt32(Gloable.modelSetting.probeUseTime);
+                int warn = Convert.ToInt32(Gloable.modelSetting.probeWarnTime);
+                
+                use++;
+                int remain = uper - use;
+                this.Invoke(new Action(() =>
+                {
+                    this.probeRemainingTextBox.Text = remain.ToString();
+                    this.probeUseTextBox.Text = use.ToString();
+                }));
+               
+                Gloable.modelSetting.probeUseTime = use.ToString();
+                string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
+                IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime",  Gloable.modelSetting.probeUseTime);
+                IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", Gloable.modelSetting.probeWarnTime);
+               
+                if (remain < warn && remain>0)
+                {
+                    Warning warning = new Warning();
+                    warning.setWarningString("探针使用寿命小于"+Gloable.modelSetting.probeWarnTime + "！", WarningLevel.normal);
+                    warning.timerShow(3);
+                    return true;
+                }
+                else if ((uper - use) <= 0)
+                {
+                    Warning warning = new Warning();
+                    warning.setWarningString("探针使用寿命已达上限！", WarningLevel.normal);
+                    warning.ShowDialog();
+                    return false;
+                }
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error.Message);
+            }
+            return true;
+
+        }
+
+        private void resetProbeLife()
+        {
+
+
+            Gloable.modelSetting.probeUseTime = "0";
+            string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
+            IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime", Gloable.modelSetting.probeUseTime);
+
+            try
+            {
+                int uper = Convert.ToInt32(Gloable.modelSetting.probeUperTime);
+                int use = Convert.ToInt32(Gloable.modelSetting.probeUseTime);
+
+
+                int remain = uper - use;
+                this.probeUseTextBox.Text = Gloable.modelSetting.probeUseTime;
+                this.probeRemainingTextBox.Text = remain.ToString();
+            }
+            catch(Exception)
+            {
+
+            }
+           
+        }
+
+        private bool checkYeild()
+        {
+            try
+            {
+
+                double currentYeild = Convert.ToDouble(this.TestYieldTextBox.Text);
+                double warnYeild = Convert.ToDouble(Gloable.modelSetting.warnYield);
+                double stopYield = Convert.ToDouble(Gloable.modelSetting.stopYield);
+
+                int currentTesrNumber = Convert.ToInt32(this.testTotalNumberTextBox.Text);
+                int baseYield = Convert.ToInt32(Gloable.modelSetting.baseYield);
+                if(currentTesrNumber< baseYield)
+                {
+                    return true;
+                }
+                if (currentYeild< warnYeild && currentYeild>= stopYield)
+                {
+                    flashYeildTextBox(Color.Yellow);
+                }
+                else if(currentYeild< stopYield)
+                {
+                    flashYeildTextBox(Color.Red);
+                    if (Gloable.modelSetting.yieldManageEnable == true.ToString())
+                    {
+                        Warning warning = new Warning();
+                        warning.setWarning("良率低于" + stopYield + "%，已停机！", WarningLevel.normal);
+                        return false;
+                    }   
+
+                }
+                else
+                {
+                   
+                    if (yeildTextBoxFlashTimer.Enabled == true)
+                    {
+                        yeildTextBoxFlashTimer.Enabled = false;
+                        yeildTextBoxFlashTimer.Stop();
+                    }
+                    this.TestYieldTextBox.BackColor = Color.LightSeaGreen;
+                }
+
+            }
+            catch
+            {
+                
+            }
+            return true;
+        }
+
+        private void flashYeildTextBox(Color flashColor)
+        {
+            if (yeildTextBoxFlashTimer.Enabled == true)
+            {
+                yeildTextBoxFlashTimer.Enabled = false;
+                yeildTextBoxFlashTimer.Stop();
+            }
+            yeildTextBoxColor = flashColor;
+            yeildTextBoxFlashTimer.Interval = 1000;
+            yeildTextBoxFlashTimer.Enabled = true;
+            yeildTextBoxFlashTimer.Start();
+
+        }
+        
         #endregion
 
         #region - 逻辑事件 -
@@ -5553,6 +5868,28 @@ namespace RF_TestSystem
                 Console.WriteLine(updateErr.Message);
             }
           
+        }
+
+        private void YeildTextBoxFlashTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            if(yeildTextBoxFlash == false)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.TestYieldTextBox.BackColor = yeildTextBoxColor;
+
+                }));
+                yeildTextBoxFlash = true;
+            }
+            else
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.TestYieldTextBox.BackColor = Color.White;
+
+                }));
+                yeildTextBoxFlash = false;
+            }
         }
         #endregion
 
@@ -5872,6 +6209,7 @@ namespace RF_TestSystem
             return checkOK;
         }
 
+       
 
         private bool checkOracleSample(BarsamInfo barsamInfo)
         {
@@ -5951,13 +6289,31 @@ namespace RF_TestSystem
 
     public struct ModelSetting
     {
+
+        //上传
         public string FtpUpload;
         public string OracleUpload;
+
+        //测试
         public string pcbEnable;
         public string testDelay;
+        public string yieldManageEnable;
+        public string warnYield;
+        public string stopYield;
+        public string baseYield;
+
+        //探针 
+        public string probeUseTime;
+        public string probeUperTime;
+        public string probeWarnTime;
+
+
+        //样本
         public string mandatorySample;
         public string sampleTestTime;
         public string sampleIntervalTime;
+
+        //ABB
         public string enableABBCheck;
         public string enableCPPCheck;
         public string ABBOnly3Test;

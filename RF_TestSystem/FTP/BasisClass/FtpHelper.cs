@@ -158,7 +158,7 @@ namespace winform_ftp
                 while (contentLen != 0)//流内容没有结束，循环  
                 {
                     ProgressBarUpdate();
-                    //FTPGloable.FTPbkWorker.ReportProgress(i);
+                   
                     //Console.WriteLine(i);
                     strm.Write(buff, 0, contentLen);// 把内容从file stream 写入upload stream  
                     contentLen = fs.Read(buff, 0, buffLength);//读取流             

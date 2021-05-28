@@ -207,6 +207,12 @@
     <Compile Include="WinForm\Credentials.Designer.cs">
       <DependentUpon>Credentials.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\ECalWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\ECalWaiting.Designer.cs">
+      <DependentUpon>ECalWaiting.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForm\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\Credentials.resx">
       <DependentUpon>Credentials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\ECalWaiting.resx">
+      <DependentUpon>ECalWaiting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

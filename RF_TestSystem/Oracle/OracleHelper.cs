@@ -46,7 +46,7 @@ namespace RF_TestSystem
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             return bOpened;
         }
@@ -75,7 +75,7 @@ namespace RF_TestSystem
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -94,7 +94,7 @@ namespace RF_TestSystem
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -114,7 +114,7 @@ namespace RF_TestSystem
             catch (System.Exception ex)
             {
                 successful = false;
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
 
             return successful;
@@ -134,7 +134,7 @@ namespace RF_TestSystem
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
                 return null;
             }
 
@@ -152,7 +152,7 @@ namespace RF_TestSystem
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             strstatus = "删除成功";
         }
@@ -169,7 +169,7 @@ namespace RF_TestSystem
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -189,7 +189,7 @@ namespace RF_TestSystem
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
 
         }

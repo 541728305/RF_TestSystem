@@ -27,7 +27,7 @@ namespace RF_TestSystem
         public string FAModelString;
         public string SortingModelString;
         public string sampleEntryModelString;
-  
+
         public ModeInfo productionModel;
         public ModeInfo retestModel;
         public ModeInfo developerModel;

@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RF_TestSystem));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.connectButton = new System.Windows.Forms.Button();
             this.connImageList = new System.Windows.Forms.ImageList(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -197,7 +197,33 @@
             this.settingTabPage = new System.Windows.Forms.TabPage();
             this.tabControlExt1 = new HZH_Controls.Controls.TabControlExt();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label76 = new System.Windows.Forms.Label();
+            this.probeResetWarnTextBox = new System.Windows.Forms.TextBox();
+            this.probeUseResetButton = new System.Windows.Forms.Button();
+            this.label68 = new System.Windows.Forms.Label();
+            this.probeTotalTextBox = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.probeRemainingTextBox = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.probeUseTextBox = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.testModelSettingPanel = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label75 = new System.Windows.Forms.Label();
+            this.yieldEnableSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label73 = new System.Windows.Forms.Label();
+            this.baseYieldTextBox = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label71 = new System.Windows.Forms.Label();
+            this.stopTestYieldTextBox = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label69 = new System.Windows.Forms.Label();
+            this.warnYieldTextBox = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.测试稳定性延时 = new System.Windows.Forms.Label();
@@ -411,7 +437,12 @@
             this.settingTabPage.SuspendLayout();
             this.tabControlExt1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.testModelSettingPanel.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -1749,22 +1780,22 @@
             this.testHistorychart.BorderlineColor = System.Drawing.Color.Transparent;
             this.testHistorychart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.testHistorychart.BorderlineWidth = 3;
-            chartArea1.Name = "ChartArea1";
-            this.testHistorychart.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.testHistorychart.ChartAreas.Add(chartArea3);
             this.testHistorychart.Location = new System.Drawing.Point(6, 301);
             this.testHistorychart.Name = "testHistorychart";
             this.testHistorychart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Series1";
-            this.testHistorychart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Name = "Series1";
+            this.testHistorychart.Series.Add(series3);
             this.testHistorychart.Size = new System.Drawing.Size(732, 272);
             this.testHistorychart.TabIndex = 85;
             this.testHistorychart.Text = "chart1";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title1.ForeColor = System.Drawing.Color.DarkRed;
-            title1.Name = "Title1";
-            title1.Text = "测试历史";
-            this.testHistorychart.Titles.Add(title1);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title3.ForeColor = System.Drawing.Color.DarkRed;
+            title3.Name = "Title1";
+            title3.Text = "测试历史";
+            this.testHistorychart.Titles.Add(title3);
             // 
             // failTop3Chart
             // 
@@ -1772,23 +1803,23 @@
             this.failTop3Chart.BorderlineColor = System.Drawing.Color.Transparent;
             this.failTop3Chart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.failTop3Chart.BorderlineWidth = 3;
-            chartArea2.Name = "ChartArea1";
-            this.failTop3Chart.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.failTop3Chart.ChartAreas.Add(chartArea4);
             this.failTop3Chart.Location = new System.Drawing.Point(6, 7);
             this.failTop3Chart.Name = "failTop3Chart";
             this.failTop3Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
-            series2.Name = "Series1";
-            this.failTop3Chart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
+            series4.Name = "Series1";
+            this.failTop3Chart.Series.Add(series4);
             this.failTop3Chart.Size = new System.Drawing.Size(732, 272);
             this.failTop3Chart.TabIndex = 84;
             this.failTop3Chart.Text = "failTop3Chart";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title2.ForeColor = System.Drawing.Color.DarkRed;
-            title2.Name = "Title1";
-            title2.Text = "不良项 Top3";
-            this.failTop3Chart.Titles.Add(title2);
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title4.ForeColor = System.Drawing.Color.DarkRed;
+            title4.Name = "Title1";
+            title4.Text = "不良项 Top3";
+            this.failTop3Chart.Titles.Add(title4);
             // 
             // flowLayoutPanel29
             // 
@@ -2288,6 +2319,7 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.panel8);
             this.tabPage1.Controls.Add(this.testModelSettingPanel);
             this.tabPage1.Controls.Add(this.uploadModelSettingPanel);
             this.tabPage1.Controls.Add(this.ABBSettingPanel);
@@ -2298,9 +2330,129 @@
             this.tabPage1.Text = "模式设定";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.label76);
+            this.panel8.Controls.Add(this.probeResetWarnTextBox);
+            this.panel8.Controls.Add(this.probeUseResetButton);
+            this.panel8.Controls.Add(this.label68);
+            this.panel8.Controls.Add(this.probeTotalTextBox);
+            this.panel8.Controls.Add(this.label67);
+            this.panel8.Controls.Add(this.probeRemainingTextBox);
+            this.panel8.Controls.Add(this.label44);
+            this.panel8.Controls.Add(this.probeUseTextBox);
+            this.panel8.Controls.Add(this.textBox8);
+            this.panel8.Location = new System.Drawing.Point(323, 134);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(119, 168);
+            this.panel8.TabIndex = 103;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(4, 115);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(53, 12);
+            this.label76.TabIndex = 111;
+            this.label76.Text = "更换预警";
+            // 
+            // probeResetWarnTextBox
+            // 
+            this.probeResetWarnTextBox.Location = new System.Drawing.Point(60, 112);
+            this.probeResetWarnTextBox.Name = "probeResetWarnTextBox";
+            this.probeResetWarnTextBox.Size = new System.Drawing.Size(53, 21);
+            this.probeResetWarnTextBox.TabIndex = 110;
+            this.probeResetWarnTextBox.Text = "50000";
+            this.probeResetWarnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // probeUseResetButton
+            // 
+            this.probeUseResetButton.Location = new System.Drawing.Point(12, 136);
+            this.probeUseResetButton.Name = "probeUseResetButton";
+            this.probeUseResetButton.Size = new System.Drawing.Size(88, 23);
+            this.probeUseResetButton.TabIndex = 109;
+            this.probeUseResetButton.Text = "重置";
+            this.probeUseResetButton.UseVisualStyleBackColor = true;
+            this.probeUseResetButton.Click += new System.EventHandler(this.probeUseResetButton_Click);
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(4, 90);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(53, 12);
+            this.label68.TabIndex = 108;
+            this.label68.Text = "使用上限";
+            // 
+            // probeTotalTextBox
+            // 
+            this.probeTotalTextBox.Location = new System.Drawing.Point(60, 86);
+            this.probeTotalTextBox.Name = "probeTotalTextBox";
+            this.probeTotalTextBox.Size = new System.Drawing.Size(53, 21);
+            this.probeTotalTextBox.TabIndex = 107;
+            this.probeTotalTextBox.Text = "50000";
+            this.probeTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(4, 65);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(53, 12);
+            this.label67.TabIndex = 106;
+            this.label67.Text = "剩余次数";
+            // 
+            // probeRemainingTextBox
+            // 
+            this.probeRemainingTextBox.Enabled = false;
+            this.probeRemainingTextBox.Location = new System.Drawing.Point(60, 61);
+            this.probeRemainingTextBox.Name = "probeRemainingTextBox";
+            this.probeRemainingTextBox.ReadOnly = true;
+            this.probeRemainingTextBox.Size = new System.Drawing.Size(53, 21);
+            this.probeRemainingTextBox.TabIndex = 105;
+            this.probeRemainingTextBox.Text = "0";
+            this.probeRemainingTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(4, 40);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(53, 12);
+            this.label44.TabIndex = 104;
+            this.label44.Text = "已用次数";
+            // 
+            // probeUseTextBox
+            // 
+            this.probeUseTextBox.Enabled = false;
+            this.probeUseTextBox.Location = new System.Drawing.Point(60, 36);
+            this.probeUseTextBox.Name = "probeUseTextBox";
+            this.probeUseTextBox.ReadOnly = true;
+            this.probeUseTextBox.Size = new System.Drawing.Size(53, 21);
+            this.probeUseTextBox.TabIndex = 103;
+            this.probeUseTextBox.Text = "50000";
+            this.probeUseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox8.Location = new System.Drawing.Point(0, 0);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(117, 21);
+            this.textBox8.TabIndex = 102;
+            this.textBox8.Text = "探针损耗";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // testModelSettingPanel
             // 
             this.testModelSettingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.testModelSettingPanel.Controls.Add(this.panel22);
+            this.testModelSettingPanel.Controls.Add(this.panel21);
+            this.testModelSettingPanel.Controls.Add(this.panel14);
+            this.testModelSettingPanel.Controls.Add(this.panel9);
             this.testModelSettingPanel.Controls.Add(this.textBox7);
             this.testModelSettingPanel.Controls.Add(this.panel15);
             this.testModelSettingPanel.Controls.Add(this.panel17);
@@ -2310,8 +2462,154 @@
             this.testModelSettingPanel.Controls.Add(this.panel18);
             this.testModelSettingPanel.Location = new System.Drawing.Point(22, 134);
             this.testModelSettingPanel.Name = "testModelSettingPanel";
-            this.testModelSettingPanel.Size = new System.Drawing.Size(295, 156);
+            this.testModelSettingPanel.Size = new System.Drawing.Size(295, 263);
             this.testModelSettingPanel.TabIndex = 103;
+            // 
+            // panel22
+            // 
+            this.panel22.AutoSize = true;
+            this.panel22.Controls.Add(this.label75);
+            this.panel22.Controls.Add(this.yieldEnableSwitch);
+            this.panel22.Location = new System.Drawing.Point(3, 154);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(126, 22);
+            this.panel22.TabIndex = 107;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label75.Location = new System.Drawing.Point(3, 3);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(53, 12);
+            this.label75.TabIndex = 84;
+            this.label75.Text = "良率管控";
+            // 
+            // yieldEnableSwitch
+            // 
+            this.yieldEnableSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.yieldEnableSwitch.Checked = false;
+            this.yieldEnableSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.yieldEnableSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.yieldEnableSwitch.Location = new System.Drawing.Point(73, 3);
+            this.yieldEnableSwitch.Name = "yieldEnableSwitch";
+            this.yieldEnableSwitch.Size = new System.Drawing.Size(50, 16);
+            this.yieldEnableSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.yieldEnableSwitch.TabIndex = 83;
+            this.yieldEnableSwitch.Texts = null;
+            this.yieldEnableSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.yieldEnableSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.label73);
+            this.panel21.Controls.Add(this.baseYieldTextBox);
+            this.panel21.Controls.Add(this.label74);
+            this.panel21.Location = new System.Drawing.Point(3, 191);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(132, 28);
+            this.panel21.TabIndex = 106;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(3, 7);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(53, 12);
+            this.label73.TabIndex = 87;
+            this.label73.Text = "统计基数";
+            // 
+            // baseYieldTextBox
+            // 
+            this.baseYieldTextBox.Location = new System.Drawing.Point(62, 4);
+            this.baseYieldTextBox.Name = "baseYieldTextBox";
+            this.baseYieldTextBox.Size = new System.Drawing.Size(49, 21);
+            this.baseYieldTextBox.TabIndex = 86;
+            this.baseYieldTextBox.Text = "150";
+            this.baseYieldTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(112, 7);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(23, 12);
+            this.label74.TabIndex = 87;
+            this.label74.Text = "Pcs";
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label71);
+            this.panel14.Controls.Add(this.stopTestYieldTextBox);
+            this.panel14.Controls.Add(this.label72);
+            this.panel14.Location = new System.Drawing.Point(158, 191);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(132, 28);
+            this.panel14.TabIndex = 105;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(3, 8);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(53, 12);
+            this.label71.TabIndex = 87;
+            this.label71.Text = "停机良率";
+            // 
+            // stopTestYieldTextBox
+            // 
+            this.stopTestYieldTextBox.Location = new System.Drawing.Point(62, 4);
+            this.stopTestYieldTextBox.Name = "stopTestYieldTextBox";
+            this.stopTestYieldTextBox.Size = new System.Drawing.Size(49, 21);
+            this.stopTestYieldTextBox.TabIndex = 86;
+            this.stopTestYieldTextBox.Text = "150";
+            this.stopTestYieldTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(112, 8);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(11, 12);
+            this.label72.TabIndex = 87;
+            this.label72.Text = "%";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label69);
+            this.panel9.Controls.Add(this.warnYieldTextBox);
+            this.panel9.Controls.Add(this.label70);
+            this.panel9.Location = new System.Drawing.Point(158, 151);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(132, 28);
+            this.panel9.TabIndex = 104;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(3, 8);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(53, 12);
+            this.label69.TabIndex = 87;
+            this.label69.Text = "报警良率";
+            // 
+            // warnYieldTextBox
+            // 
+            this.warnYieldTextBox.Location = new System.Drawing.Point(62, 4);
+            this.warnYieldTextBox.Name = "warnYieldTextBox";
+            this.warnYieldTextBox.Size = new System.Drawing.Size(49, 21);
+            this.warnYieldTextBox.TabIndex = 86;
+            this.warnYieldTextBox.Text = "150";
+            this.warnYieldTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(112, 8);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(11, 12);
+            this.label70.TabIndex = 87;
+            this.label70.Text = "%";
             // 
             // textBox7
             // 
@@ -2330,15 +2628,15 @@
             this.panel15.Controls.Add(this.测试稳定性延时);
             this.panel15.Controls.Add(this.testDelaytextBox);
             this.panel15.Controls.Add(this.label49);
-            this.panel15.Location = new System.Drawing.Point(3, 39);
+            this.panel15.Location = new System.Drawing.Point(158, 36);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(126, 28);
+            this.panel15.Size = new System.Drawing.Size(132, 28);
             this.panel15.TabIndex = 90;
             // 
             // 测试稳定性延时
             // 
             this.测试稳定性延时.AutoSize = true;
-            this.测试稳定性延时.Location = new System.Drawing.Point(3, 7);
+            this.测试稳定性延时.Location = new System.Drawing.Point(3, 8);
             this.测试稳定性延时.Name = "测试稳定性延时";
             this.测试稳定性延时.Size = new System.Drawing.Size(53, 12);
             this.测试稳定性延时.TabIndex = 87;
@@ -2348,7 +2646,7 @@
             // 
             this.testDelaytextBox.Location = new System.Drawing.Point(62, 4);
             this.testDelaytextBox.Name = "testDelaytextBox";
-            this.testDelaytextBox.Size = new System.Drawing.Size(41, 21);
+            this.testDelaytextBox.Size = new System.Drawing.Size(49, 21);
             this.testDelaytextBox.TabIndex = 86;
             this.testDelaytextBox.Text = "150";
             this.testDelaytextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2356,7 +2654,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(109, 7);
+            this.label49.Location = new System.Drawing.Point(112, 8);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(17, 12);
             this.label49.TabIndex = 87;
@@ -2366,7 +2664,7 @@
             // 
             this.panel17.Controls.Add(this.label52);
             this.panel17.Controls.Add(this.pcbEnablrSwitch);
-            this.panel17.Location = new System.Drawing.Point(3, 83);
+            this.panel17.Location = new System.Drawing.Point(3, 77);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(126, 20);
             this.panel17.TabIndex = 91;
@@ -2401,15 +2699,15 @@
             this.panel19.Controls.Add(this.label59);
             this.panel19.Controls.Add(this.sampleIntervalTimeTextBox);
             this.panel19.Controls.Add(this.label60);
-            this.panel19.Location = new System.Drawing.Point(165, 76);
+            this.panel19.Location = new System.Drawing.Point(158, 73);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(126, 35);
+            this.panel19.Size = new System.Drawing.Size(132, 28);
             this.panel19.TabIndex = 93;
             // 
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(3, 10);
+            this.label59.Location = new System.Drawing.Point(3, 8);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(53, 12);
             this.label59.TabIndex = 87;
@@ -2417,9 +2715,9 @@
             // 
             // sampleIntervalTimeTextBox
             // 
-            this.sampleIntervalTimeTextBox.Location = new System.Drawing.Point(62, 7);
+            this.sampleIntervalTimeTextBox.Location = new System.Drawing.Point(62, 4);
             this.sampleIntervalTimeTextBox.Name = "sampleIntervalTimeTextBox";
-            this.sampleIntervalTimeTextBox.Size = new System.Drawing.Size(40, 21);
+            this.sampleIntervalTimeTextBox.Size = new System.Drawing.Size(49, 21);
             this.sampleIntervalTimeTextBox.TabIndex = 86;
             this.sampleIntervalTimeTextBox.Text = "6";
             this.sampleIntervalTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2427,7 +2725,7 @@
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(108, 10);
+            this.label60.Location = new System.Drawing.Point(117, 8);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(11, 12);
             this.label60.TabIndex = 87;
@@ -2437,15 +2735,15 @@
             // 
             this.panel20.Controls.Add(this.label61);
             this.panel20.Controls.Add(this.lastSampleTimeTextBox);
-            this.panel20.Location = new System.Drawing.Point(164, 113);
+            this.panel20.Location = new System.Drawing.Point(158, 111);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(126, 33);
+            this.panel20.Size = new System.Drawing.Size(132, 28);
             this.panel20.TabIndex = 94;
             // 
             // label61
             // 
             this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(3, 9);
+            this.label61.Location = new System.Drawing.Point(3, 8);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(53, 12);
             this.label61.TabIndex = 87;
@@ -2453,9 +2751,9 @@
             // 
             // lastSampleTimeTextBox
             // 
-            this.lastSampleTimeTextBox.Location = new System.Drawing.Point(62, 6);
+            this.lastSampleTimeTextBox.Location = new System.Drawing.Point(62, 4);
             this.lastSampleTimeTextBox.Name = "lastSampleTimeTextBox";
-            this.lastSampleTimeTextBox.Size = new System.Drawing.Size(57, 21);
+            this.lastSampleTimeTextBox.Size = new System.Drawing.Size(67, 21);
             this.lastSampleTimeTextBox.TabIndex = 86;
             this.lastSampleTimeTextBox.Text = "17点28分";
             this.lastSampleTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2465,7 +2763,7 @@
             this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.label50);
             this.panel2.Controls.Add(this.shieldMCUucSwitch);
-            this.panel2.Location = new System.Drawing.Point(3, 118);
+            this.panel2.Location = new System.Drawing.Point(3, 114);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(126, 22);
             this.panel2.TabIndex = 88;
@@ -2474,7 +2772,7 @@
             // 
             this.panel18.Controls.Add(this.label58);
             this.panel18.Controls.Add(this.sampleSwitch);
-            this.panel18.Location = new System.Drawing.Point(166, 43);
+            this.panel18.Location = new System.Drawing.Point(3, 40);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(126, 20);
             this.panel18.TabIndex = 92;
@@ -2510,9 +2808,9 @@
             this.uploadModelSettingPanel.Controls.Add(this.textBox6);
             this.uploadModelSettingPanel.Controls.Add(this.panel11);
             this.uploadModelSettingPanel.Controls.Add(this.panel13);
-            this.uploadModelSettingPanel.Location = new System.Drawing.Point(22, 296);
+            this.uploadModelSettingPanel.Location = new System.Drawing.Point(324, 308);
             this.uploadModelSettingPanel.Name = "uploadModelSettingPanel";
-            this.uploadModelSettingPanel.Size = new System.Drawing.Size(295, 77);
+            this.uploadModelSettingPanel.Size = new System.Drawing.Size(118, 89);
             this.uploadModelSettingPanel.TabIndex = 102;
             // 
             // textBox6
@@ -2522,7 +2820,7 @@
             this.textBox6.Location = new System.Drawing.Point(0, 0);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(293, 21);
+            this.textBox6.Size = new System.Drawing.Size(116, 21);
             this.textBox6.TabIndex = 102;
             this.textBox6.Text = "上传设定";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2531,9 +2829,9 @@
             // 
             this.panel11.Controls.Add(this.label14);
             this.panel11.Controls.Add(this.FTPucSwitch);
-            this.panel11.Location = new System.Drawing.Point(166, 38);
+            this.panel11.Location = new System.Drawing.Point(4, 55);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(126, 20);
+            this.panel11.Size = new System.Drawing.Size(112, 20);
             this.panel11.TabIndex = 89;
             // 
             // label14
@@ -2552,7 +2850,7 @@
             this.FTPucSwitch.Checked = false;
             this.FTPucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.FTPucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.FTPucSwitch.Location = new System.Drawing.Point(74, 2);
+            this.FTPucSwitch.Location = new System.Drawing.Point(62, 1);
             this.FTPucSwitch.Name = "FTPucSwitch";
             this.FTPucSwitch.Size = new System.Drawing.Size(50, 16);
             this.FTPucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
@@ -2566,9 +2864,9 @@
             // 
             this.panel13.Controls.Add(this.label41);
             this.panel13.Controls.Add(this.OracleucSwitch);
-            this.panel13.Location = new System.Drawing.Point(3, 38);
+            this.panel13.Location = new System.Drawing.Point(2, 29);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(126, 20);
+            this.panel13.Size = new System.Drawing.Size(114, 20);
             this.panel13.TabIndex = 89;
             // 
             // label41
@@ -2587,7 +2885,7 @@
             this.OracleucSwitch.Checked = false;
             this.OracleucSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
             this.OracleucSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.OracleucSwitch.Location = new System.Drawing.Point(73, 2);
+            this.OracleucSwitch.Location = new System.Drawing.Point(64, 1);
             this.OracleucSwitch.Name = "OracleucSwitch";
             this.OracleucSwitch.Size = new System.Drawing.Size(50, 16);
             this.OracleucSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
@@ -3157,14 +3455,14 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(3, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -4045,8 +4343,18 @@
             this.settingTabPage.PerformLayout();
             this.tabControlExt1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.testModelSettingPanel.ResumeLayout(false);
             this.testModelSettingPanel.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -4434,6 +4742,32 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel uploadModelSettingPanel;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button probeUseResetButton;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox probeTotalTextBox;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox probeRemainingTextBox;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox probeUseTextBox;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TextBox baseYieldTextBox;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox stopTestYieldTextBox;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.TextBox warnYieldTextBox;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label label75;
+        private HZH_Controls.Controls.UCSwitch yieldEnableSwitch;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.TextBox probeResetWarnTextBox;
     }
 }
 
