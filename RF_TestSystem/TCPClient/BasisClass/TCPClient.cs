@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Net;
+using System.Threading;
 using TCPHelper;
 
 namespace RF_TestSystem
 {
     public delegate void commandComingHandler(string comm);
     public delegate void TcpClientDisconnectHandle();
+    public delegate void TcpMessageHandler(string Msg);
+    
     class TCPClient
     {
         ClientAsync client = new ClientAsync();
         int connectState = 0;
-
+        string msgLog = "";
         public event commandComingHandler commandComingEvent;
         public event TcpClientDisconnectHandle TcpClientDisconnectEven;
+        public  event TcpMessageHandler TcpMessageEvent;
+
+        string tcpExPath = AppDomain.CurrentDomain.BaseDirectory + "TCP_Log\\";
+        string communicationLog = DateTime.Now.ToString("yyyy-MM-dd") + "_TcpCommunicationLog.txt";
+
+        Mutex receiveMutex = new Mutex();
         public TCPClient()
         {
             client.Completed += new Action<System.Net.Sockets.TcpClient, EnSocketAction>((c, enAction) =>
@@ -32,7 +41,15 @@ namespace RF_TestSystem
                             IPEndPoint iep = c.Client.RemoteEndPoint as IPEndPoint;
                             string key = string.Format("{0}:{1}", iep.Address.ToString(), iep.Port);
                             Console.WriteLine("{0}：向{1}发送了一条消息", DateTime.Now, key);
-
+                            try
+                            {
+                                TcpMessageEvent(DateTime.Now.ToString() + "：→ 向 <" + key + "> 发送了一条消息：\r\n" + msgLog);
+                            }
+                            catch (Exception SendMsgError)
+                            {
+                                client.WriteLogFile("TcpMessageEvent " + SendMsgError.Message);
+                            }
+                            
                             break;
                         }
 
@@ -47,16 +64,45 @@ namespace RF_TestSystem
                 }
             });
             client.Received += new Action<string, string>((key, msg) =>
-             {
-                 Console.WriteLine("{0}对我说：{1}", key, msg);
-                 TcpProtocol tcpProtocol = new TcpProtocol();
-                 commandComingEvent(msg);
+            {
+                receiveMutex.WaitOne();
+                 try
+                 {
+                     Console.WriteLine("{0}对我说：{1}", key, msg);
+                     TcpProtocol tcpProtocol = new TcpProtocol();
+                     commandComingEvent(msg);
+                     TcpMessageEvent(DateTime.Now.ToString() + "：← <" + key + "> 对我说：\r\n" + msg);
+                     Console.WriteLine(DateTime.Now.ToString() + ":client.Received:" + msg);
+                     client.WriteLogFile(tcpExPath + communicationLog, DateTime.Now.ToString() + ":client.Received:" + msg);
+                 }
+                 catch(Exception error)
+                 {
+                     client.WriteLogFile("Received Event" + error.Message);                   
+                 }
+                receiveMutex.ReleaseMutex();
+
+
+
              });
 
         }
         public void clientSendMessge(string msg)
         {
-            client.SendAsync(msg);
+            msgLog = msg;
+            if(client.SendAsync(msg) != true)
+            {
+                client.SendAsync(msg);
+            }
+        }
+
+        public void clientSend(string msg)
+        {
+            msgLog = msg;
+            client.send(msg);
+        }
+        public bool getConnected()
+        {
+            return  client.getConneted();
         }
 
         double testTimer = 0;

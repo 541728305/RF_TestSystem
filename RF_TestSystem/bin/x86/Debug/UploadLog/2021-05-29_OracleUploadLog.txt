@@ -1,0 +1,1 @@
+﻿[{"ID":1,"Barcode":"C460ABCDEFGHILKJB","UploadTime":"2021-05-29T08:08:40.1866774+08:00","UploadResult":"false"},{"ID":2,"Barcode":"C460ABCDEFGHILKJB","UploadTime":"2021-05-29T08:09:39.017951+08:00","UploadResult":"false"}]

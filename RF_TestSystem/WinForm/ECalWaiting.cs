@@ -15,44 +15,77 @@ namespace RF_TestSystem.WinForm
 
         BackgroundWorker ECalBackgroundWorker = new BackgroundWorker();
         string allChannelNumber = "";
+        bool waitEcalFlag = false;
         public ECalWaiting(string channelNumber)
         {
             InitializeComponent();
             ECalBackgroundWorker.DoWork += ECalBackgroundWorker_DoWork;
             ECalBackgroundWorker.RunWorkerCompleted += ECalBackgroundWorker_RunWorkerCompleted;
+            allChannelNumber = channelNumber;
         }
 
         private void ECalBackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.Invoke(new Action(() =>
+            try
             {
-                this.textBox1.Text = "校验完成";
-                this.calButton.Text = "校验";
-                this.calButton.Enabled = true;
-            }));
+                this.Invoke(new Action(() =>
+                {
+                    this.textBox1.Text = "校验完成";
+                    this.calButton.Text = "校验";
+                    this.calButton.Enabled = true;
+                }));
+            }
+            catch(Exception)
+            {
+
+            }
+            
         }
 
         private void ECalBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            Gloable.myAnalyzer.ECAL("1");
-            this.Invoke(new Action(() =>
-            {
-                this.textBox1.Text = "正在校验通道1";
-            }));
-            Gloable.myAnalyzer.sendOPC();
 
-            while (Gloable.myAnalyzer.readData() == "ReadString error") ;
-            if (allChannelNumber == "2")
+            try
             {
-                Gloable.myAnalyzer.ECAL("2");
+                Gloable.myAnalyzer.ECAL("1");
                 this.Invoke(new Action(() =>
                 {
-                    this.textBox1.Text = "正在校验通道2";
+                    this.textBox1.Text = "正在校验通道1";
                 }));
                 Gloable.myAnalyzer.sendOPC();
-
-                while (Gloable.myAnalyzer.readData() == "ReadString error") ;
+                waitEcalFlag = true;
+                while (waitEcalFlag)
+                {
+                    if (Gloable.myAnalyzer.readData() != "ReadString error")
+                    {
+                        waitEcalFlag = false;
+                        break;
+                    }
+                }
+                if (allChannelNumber == "2")
+                {
+                    Gloable.myAnalyzer.ECAL("2");
+                    this.Invoke(new Action(() =>
+                    {
+                        this.textBox1.Text = "正在校验通道2";
+                    }));
+                    Gloable.myAnalyzer.sendOPC();
+                    waitEcalFlag = true;
+                    while (waitEcalFlag)
+                    {
+                        if (Gloable.myAnalyzer.readData() != "ReadString error")
+                        {
+                            waitEcalFlag = false;
+                            break;
+                        }
+                    }
+                }
             }
+            catch(Exception calError)
+            {
+                MessageBox.Show(calError.Message);
+            }
+           
         }
 
         private void calButton_Click(object sender, EventArgs e)
@@ -60,6 +93,11 @@ namespace RF_TestSystem.WinForm
             this.calButton.Text = "正在校验...";
             this.calButton.Enabled = false;
             ECalBackgroundWorker.RunWorkerAsync();
+        }
+
+        private void ECalWaiting_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            waitEcalFlag = false;
         }
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace RF_TestSystem
 {
     public delegate void barcodeComingHandler(string comm);
     public delegate void scanCommandHandler();
-    public delegate void startTestCommandHandler();
+    public delegate void startTestCommandHandler(string commd);
 
     public struct Command
     {
@@ -22,6 +23,7 @@ namespace RF_TestSystem
 
 
         Command command = new Command();
+        Mutex mutex = new Mutex();
         public TcpProtocol()
         {
             command.START = "START";
@@ -38,18 +40,24 @@ namespace RF_TestSystem
         public event startTestCommandHandler startTestCommandEvent;
         public void runCommand(string com)
         {
+            mutex.WaitOne();
+
             DataProcessing dataProcessing = new DataProcessing();
             List<string> commands = new List<string>();
-            if (com.Contains("\\r"))
+
+            if (com.Contains("\n"))
             {
-                com = com.Replace("\\r", "");
+                string[] commd = com.Split('\n');
+                foreach (string comm in commd)
+                {
+                    commands.Add(comm);
+                }
             }
-            if (com.Contains("\\n"))
+            else
             {
-                com = com.Replace("\\n", "");
+                commands.Add(com);
             }
-            com = com.Trim();
-            commands.Add(com);
+
 
             foreach (string commad in commands)
             {
@@ -57,20 +65,20 @@ namespace RF_TestSystem
                 if (commad.Contains(command.BARCODE))
                 {
                     string barcode = commad.Replace(command.BARCODE, "").Trim();
-                    if (barcode.Contains("\\r"))
+                    if (barcode.Contains("\r"))
                     {
-                        barcode = barcode.Replace("\\r", "");
+                        barcode = barcode.Replace("\r", "");
                     }
-                    if (barcode.Contains("\\n"))
+                    if (barcode.Contains("\n"))
                     {
-                        barcode = barcode.Replace("\\n", "");
+                        barcode = barcode.Replace("\n", "");
                     }
 
                     barcodeComingEvent(barcode);
                 }
                 else if (commad.Contains(command.START_TEST))
                 {
-                    startTestCommandEvent();
+                    startTestCommandEvent(commad);
 
                 }
                 else if (commad.Contains(command.START))//扫码命令
@@ -79,7 +87,7 @@ namespace RF_TestSystem
                     scanCommandEvent();
                 }
             }
-
+            mutex.ReleaseMutex();
         }
 
 

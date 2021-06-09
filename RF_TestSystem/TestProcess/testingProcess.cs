@@ -9,6 +9,12 @@ namespace RF_TestSystem
 
 
     public delegate void ShowCurveHandler(int Curve, TracesInfo temp);   //显示曲线委托
+    public struct FreqMap
+    {
+        public double freq;
+        public double value;
+        public int valueIndex;
+    }
 
     public struct TestInfo
     {
@@ -192,7 +198,58 @@ namespace RF_TestSystem
                     tracesInfo.tracesDataStringType.realPart = myOutPutStream.joinData( myOutPutStream.doubleToString(transTrace[0].tracesDataDoubleType.realPart),",");
                     transTrace[0] = tracesInfo;
                 }
-                             
+                try
+                {
+                    double freqRangeStart = 0;
+                    double freqRangeStop = 0;
+                    if (transTrace[0].meas == "S11")
+                    {
+                        freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit1);
+                        freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit1);
+                    }
+                    else if(transTrace[0].meas == "S22")
+                    {
+                        freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit2);
+                        freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit2);
+                    }
+                    else if (transTrace[0].meas == "S33")
+                    {
+                        freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit3);
+                        freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit3);
+                    }
+                    else if (transTrace[0].meas == "S44")
+                    {
+                        freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit4);
+                        freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit4);
+                    }
+
+                    FreqMap freqMap = new FreqMap();
+                    freqMap.freq = 0;
+                    freqMap.value = 0;
+                    for (int i = 0; i < transTrace[0].tracesDataDoubleType.realPart.Count; i++)
+                    {
+                        if (transTrace[0].frequencyListDouble[i] > freqRangeStart && transTrace[0].frequencyListDouble[i] < freqRangeStop)
+                        {
+
+                            if (freqMap.value > transTrace[0].tracesDataDoubleType.realPart[i])
+                            {
+                                freqMap.freq = transTrace[0].frequencyListDouble[i];
+                                freqMap.value = transTrace[0].tracesDataDoubleType.realPart[i];
+                                freqMap.valueIndex = i;
+                            }
+
+                        }
+                    }
+                    TracesInfo tracesInfo = new TracesInfo();
+                    tracesInfo = transTrace[0];
+                    tracesInfo.freqMostValue = freqMap;
+                    transTrace[0] = tracesInfo;
+                }
+                catch
+                {
+
+                }
+               
                 string results = curveJudge(transTrace[0]);
                 if (results == "PASS")
                 {
@@ -251,6 +308,8 @@ namespace RF_TestSystem
             return successFlag;
         }
 
+       
+
         public string curveJudge(TracesInfo temp)
         {
             String results = "PASS";
@@ -258,8 +317,9 @@ namespace RF_TestSystem
             Console.WriteLine(temp.limit.tracesRealPartUpLimitDoubleType.Count);
 
             Console.WriteLine(temp.tracesDataDoubleType.realPart.Max());
-            Console.WriteLine(temp.limit.tracesRealPartUpLimitDoubleType.Max());
+            //Console.WriteLine(temp.limit.tracesRealPartUpLimitDoubleType.Max());
 
+            //曲线判定
             if (temp.tracesDataDoubleType.realPart.Count > temp.limit.tracesRealPartUpLimitDoubleType.Count)
             {
                 results = "FAIL";
@@ -278,9 +338,73 @@ namespace RF_TestSystem
                     results = "FAIL" + temp.tracesDataDoubleType.realPart[i];
                     return results;
                 }
+                //foreach(double freq in temp.frequencyListDouble)
+                //{
+                //    Console.WriteLine("freq:{0}", freq);
+                //}
+                
             }
+     
+            //频点判定           
+            try
+            {             
+                double freqRangeStart = 0;
+                double freqRangeStop = 0;
 
-            return results;
+                double freqUpLimit = 0;
+                double freqDownLimit = 0;
+
+                if (temp.meas == "S11")
+                {
+                    freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit1);
+                    freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit1);
+
+                    freqUpLimit = Convert.ToDouble(Gloable.modelSetting.freqUpLimit1);
+                    freqDownLimit = Convert.ToDouble(Gloable.modelSetting.freqDownLimit1);
+                }
+                else if (temp.meas == "S22")
+                {
+                    freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit2);
+                    freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit2);
+
+                    freqUpLimit = Convert.ToDouble(Gloable.modelSetting.freqUpLimit2);
+                    freqDownLimit = Convert.ToDouble(Gloable.modelSetting.freqDownLimit2);
+                }
+                else if (temp.meas == "S33")
+                {
+                    freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit3);
+                    freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit3);
+
+                    freqUpLimit = Convert.ToDouble(Gloable.modelSetting.freqUpLimit3);
+                    freqDownLimit = Convert.ToDouble(Gloable.modelSetting.freqDownLimit3);
+                }
+                else if (temp.meas == "S44")
+                {
+                    freqRangeStart = Convert.ToDouble(Gloable.modelSetting.freqRangeStartLimit4);
+                    freqRangeStop = Convert.ToDouble(Gloable.modelSetting.freqRangeStopLimit4);
+
+                    freqUpLimit = Convert.ToDouble(Gloable.modelSetting.freqUpLimit4);
+                    freqDownLimit = Convert.ToDouble(Gloable.modelSetting.freqDownLimit4);
+                }
+
+                if (temp.freqMostValue.freq < freqRangeStart || temp.freqMostValue.freq > freqRangeStop)
+                {
+                    results = "FAIL";
+                    return results;
+                }
+                if(temp.freqMostValue.freq > freqUpLimit || temp.freqMostValue.freq < freqDownLimit)
+                {
+                    results = "FAIL";
+                    return results;
+                }
+            }
+            catch
+            {
+                results = "FAIL";
+            }
+           
+
+                return results;
         }
     }
 }

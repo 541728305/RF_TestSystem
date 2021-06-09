@@ -138,8 +138,6 @@ namespace winform_ftp
         public bool Upload(string FileDir, string FileName, string localFileName)
         {
 
-
-
             int i = 0;
             try
             {

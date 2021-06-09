@@ -37,8 +37,10 @@ namespace RF_TestSystem
             this.machineClassComboBox.Items.Add("      inline机台");
             this.machineClassComboBox.Items.Add("       复测机台");
             this.machineClassComboBox.Items.Add("       OQC机台");
+            this.machineClassComboBox.SelectedIndex = 0;
 
-         
+
+
 
         }
 

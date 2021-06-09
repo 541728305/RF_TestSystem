@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RF_TestSystem));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.connectButton = new System.Windows.Forms.Button();
             this.connImageList = new System.Windows.Forms.ImageList(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -138,11 +138,81 @@
             this.testPanel = new System.Windows.Forms.Panel();
             this.funcPanel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.testConfigPanel = new System.Windows.Forms.Panel();
+            this.label85 = new System.Windows.Forms.Label();
+            this.testConfigSetPartRadioButton = new System.Windows.Forms.RadioButton();
+            this.testConfigSetAllRadioButton = new System.Windows.Forms.RadioButton();
+            this.testConfigCheckBoxPanel = new System.Windows.Forms.Panel();
+            this.setDataPathNameButton = new System.Windows.Forms.Button();
+            this.储存文件夹 = new System.Windows.Forms.Label();
+            this.saveDataPathNameComboBox = new System.Windows.Forms.ComboBox();
+            this.testLocatioResetButton = new System.Windows.Forms.Button();
+            this.label79 = new System.Windows.Forms.Label();
+            this.testLocationComboBox = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.hWindowControl2 = new HalconDotNet.HWindowControl();
             this.infoPanel = new System.Windows.Forms.Panel();
             this.chartTabControl = new System.Windows.Forms.TabControl();
+            this.testResultTab = new System.Windows.Forms.TabPage();
+            this.uCSignalPanel = new System.Windows.Forms.Panel();
+            this.ucSignalLamp43 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp44 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp45 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp46 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp47 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp48 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp49 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp50 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp51 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp52 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp53 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp54 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp55 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp56 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp29 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp30 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp31 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp32 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp33 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp34 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp35 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp36 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp37 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp38 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp39 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp40 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp41 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp42 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp13 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp15 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp17 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp18 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp19 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp20 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp21 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp22 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp23 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp24 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp25 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp26 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp27 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp28 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp14 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp16 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp9 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp10 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp11 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp12 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp5 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp6 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp7 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp8 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp4 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp3 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp2 = new HZH_Controls.Controls.UCSignalLamp();
+            this.ucSignalLamp1 = new HZH_Controls.Controls.UCSignalLamp();
+            this.label78 = new System.Windows.Forms.Label();
             this.testTabPage2 = new System.Windows.Forms.TabPage();
             this.analysisTabPage = new System.Windows.Forms.TabPage();
             this.historySeriesFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -209,17 +279,24 @@
             this.probeUseTextBox = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.testModelSettingPanel = new System.Windows.Forms.Panel();
+            this.label83 = new System.Windows.Forms.Label();
+            this.freqDownlimitTextBox1 = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
             this.label75 = new System.Windows.Forms.Label();
             this.yieldEnableSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.label82 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.label73 = new System.Windows.Forms.Label();
             this.baseYieldTextBox = new System.Windows.Forms.TextBox();
             this.label74 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox1 = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label71 = new System.Windows.Forms.Label();
             this.stopTestYieldTextBox = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.freqRangeStopTextBox1 = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label69 = new System.Windows.Forms.Label();
             this.warnYieldTextBox = new System.Windows.Forms.TextBox();
@@ -229,20 +306,8 @@
             this.测试稳定性延时 = new System.Windows.Forms.Label();
             this.testDelaytextBox = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.label52 = new System.Windows.Forms.Label();
-            this.pcbEnablrSwitch = new HZH_Controls.Controls.UCSwitch();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.label59 = new System.Windows.Forms.Label();
-            this.sampleIntervalTimeTextBox = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label61 = new System.Windows.Forms.Label();
-            this.lastSampleTimeTextBox = new System.Windows.Forms.TextBox();
+            this.freqRangeStartTextBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.label58 = new System.Windows.Forms.Label();
-            this.sampleSwitch = new HZH_Controls.Controls.UCSwitch();
             this.uploadModelSettingPanel = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -259,6 +324,19 @@
             this.ABBLastStationComboBox = new System.Windows.Forms.ComboBox();
             this.enableCPPCheckBox = new System.Windows.Forms.CheckBox();
             this.ABBNotGoOnTestCheckBox = new System.Windows.Forms.CheckBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label58 = new System.Windows.Forms.Label();
+            this.sampleSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.label52 = new System.Windows.Forms.Label();
+            this.pcbEnablrSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label59 = new System.Windows.Forms.Label();
+            this.sampleIntervalTimeTextBox = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label61 = new System.Windows.Forms.Label();
+            this.lastSampleTimeTextBox = new System.Windows.Forms.TextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -355,25 +433,63 @@
             this.label42 = new System.Windows.Forms.Label();
             this.OracleIDTextBox = new System.Windows.Forms.TextBox();
             this.DebugTabPage = new System.Windows.Forms.TabPage();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.label84 = new System.Windows.Forms.Label();
+            this.heartBeatSwitch = new HZH_Controls.Controls.UCSwitch();
+            this.label77 = new System.Windows.Forms.Label();
+            this.TCPRecordTextBox = new System.Windows.Forms.TextBox();
+            this.deBugSendComm1textBox = new System.Windows.Forms.TextBox();
             this.deBugConnButton = new System.Windows.Forms.Button();
+            this.deBugtextBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm6Button = new System.Windows.Forms.Button();
+            this.deBugSendComm1Button = new System.Windows.Forms.Button();
+            this.deBugSendComm2textBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm6textBox = new System.Windows.Forms.TextBox();
+            this.deBugSendComm2Button = new System.Windows.Forms.Button();
             this.deBugSendComm5Button = new System.Windows.Forms.Button();
+            this.deBugReadCommButton = new System.Windows.Forms.Button();
             this.deBugSendComm5textBox = new System.Windows.Forms.TextBox();
+            this.deBugSendCommALLButton = new System.Windows.Forms.Button();
             this.deBugSendComm4Button = new System.Windows.Forms.Button();
+            this.deBugSendComm3textBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm4textBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm3Button = new System.Windows.Forms.Button();
-            this.deBugSendComm3textBox = new System.Windows.Forms.TextBox();
-            this.deBugSendCommALLButton = new System.Windows.Forms.Button();
-            this.deBugReadCommButton = new System.Windows.Forms.Button();
-            this.deBugSendComm2Button = new System.Windows.Forms.Button();
-            this.deBugSendComm2textBox = new System.Windows.Forms.TextBox();
-            this.deBugSendComm1Button = new System.Windows.Forms.Button();
-            this.deBugSendComm1textBox = new System.Windows.Forms.TextBox();
-            this.deBugtextBox = new System.Windows.Forms.TextBox();
             this.saveInitButton = new System.Windows.Forms.Button();
             this.saveAndWriteIniButton = new System.Windows.Forms.Button();
             this.aboutTabPage = new System.Windows.Forms.TabPage();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.freqRangeStartTextBox2 = new System.Windows.Forms.TextBox();
+            this.freqDownlimitTextBox2 = new System.Windows.Forms.TextBox();
+            this.freqRangeStopTextBox2 = new System.Windows.Forms.TextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox2 = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.freqRangeStartTextBox3 = new System.Windows.Forms.TextBox();
+            this.freqDownlimitTextBox3 = new System.Windows.Forms.TextBox();
+            this.freqRangeStopTextBox3 = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox3 = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.freqRangeStartTextBox4 = new System.Windows.Forms.TextBox();
+            this.freqDownlimitTextBox4 = new System.Windows.Forms.TextBox();
+            this.freqRangeStopTextBox4 = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox4 = new System.Windows.Forms.TextBox();
+            this.label97 = new System.Windows.Forms.Label();
             this.flowLayoutPanel43.SuspendLayout();
             this.flowLayoutPanel42.SuspendLayout();
             this.flowLayoutPanel41.SuspendLayout();
@@ -404,10 +520,13 @@
             this.testPanel.SuspendLayout();
             this.funcPanel.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.testConfigPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.infoPanel.SuspendLayout();
             this.chartTabControl.SuspendLayout();
+            this.testResultTab.SuspendLayout();
+            this.uCSignalPanel.SuspendLayout();
             this.testTabPage2.SuspendLayout();
             this.analysisTabPage.SuspendLayout();
             this.historySeriesFlowLayoutPanel.SuspendLayout();
@@ -444,15 +563,15 @@
             this.panel14.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel15.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.uploadModelSettingPanel.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
             this.ABBSettingPanel.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -479,6 +598,12 @@
             this.flowLayoutPanel52.SuspendLayout();
             this.flowLayoutPanel54.SuspendLayout();
             this.DebugTabPage.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel27.SuspendLayout();
+            this.panel28.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
@@ -579,7 +704,7 @@
             this.flowLayoutPanel41.AutoSize = true;
             this.flowLayoutPanel41.Controls.Add(this.label26);
             this.flowLayoutPanel41.Controls.Add(this.barcodeTextBox);
-            this.flowLayoutPanel41.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel41.Location = new System.Drawing.Point(3, 320);
             this.flowLayoutPanel41.Name = "flowLayoutPanel41";
             this.flowLayoutPanel41.Size = new System.Drawing.Size(201, 27);
             this.flowLayoutPanel41.TabIndex = 105;
@@ -609,7 +734,7 @@
             this.flowLayoutPanel39.BackColor = System.Drawing.Color.LightGray;
             this.flowLayoutPanel39.Controls.Add(this.flowLayoutPanel38);
             this.flowLayoutPanel39.Controls.Add(this.setLoginInfobutton);
-            this.flowLayoutPanel39.Location = new System.Drawing.Point(0, 126);
+            this.flowLayoutPanel39.Location = new System.Drawing.Point(3, 218);
             this.flowLayoutPanel39.Name = "flowLayoutPanel39";
             this.flowLayoutPanel39.Size = new System.Drawing.Size(327, 237);
             this.flowLayoutPanel39.TabIndex = 104;
@@ -874,7 +999,7 @@
             this.setModelButton.BackColor = System.Drawing.Color.LightSeaGreen;
             this.setModelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.setModelButton.Font = new System.Drawing.Font("宋体", 45.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.setModelButton.Location = new System.Drawing.Point(3, 3);
+            this.setModelButton.Location = new System.Drawing.Point(3, -25);
             this.setModelButton.Name = "setModelButton";
             this.setModelButton.Size = new System.Drawing.Size(330, 71);
             this.setModelButton.TabIndex = 105;
@@ -890,10 +1015,11 @@
             this.flowLayoutPanel35.Controls.Add(this.label27);
             this.flowLayoutPanel35.Controls.Add(this.currentLimitComboBox);
             this.flowLayoutPanel35.Controls.Add(this.setCurrentLimitButton);
-            this.flowLayoutPanel35.Location = new System.Drawing.Point(0, 96);
+            this.flowLayoutPanel35.Location = new System.Drawing.Point(964, 37);
             this.flowLayoutPanel35.Name = "flowLayoutPanel35";
             this.flowLayoutPanel35.Size = new System.Drawing.Size(330, 29);
             this.flowLayoutPanel35.TabIndex = 93;
+            this.flowLayoutPanel35.Visible = false;
             // 
             // label27
             // 
@@ -995,7 +1121,7 @@
             this.flowLayoutPanel27.Controls.Add(this.flowLayoutPanel26);
             this.flowLayoutPanel27.Controls.Add(this.clearCountButton);
             this.flowLayoutPanel27.Controls.Add(this.TestYieldTextBox);
-            this.flowLayoutPanel27.Location = new System.Drawing.Point(3, 74);
+            this.flowLayoutPanel27.Location = new System.Drawing.Point(3, 46);
             this.flowLayoutPanel27.Name = "flowLayoutPanel27";
             this.flowLayoutPanel27.Size = new System.Drawing.Size(327, 105);
             this.flowLayoutPanel27.TabIndex = 80;
@@ -1147,9 +1273,9 @@
             // 
             this.startButton.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.startButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.startButton.Location = new System.Drawing.Point(151, 9);
+            this.startButton.Location = new System.Drawing.Point(151, 93);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(176, 81);
+            this.startButton.Size = new System.Drawing.Size(176, 55);
             this.startButton.TabIndex = 60;
             this.startButton.Text = "手动测试";
             this.startButton.UseVisualStyleBackColor = true;
@@ -1440,6 +1566,7 @@
             this.topPanel.Controls.Add(this.connectButton);
             this.topPanel.Controls.Add(this.panel16);
             this.topPanel.Controls.Add(this.systemStateTextBox);
+            this.topPanel.Controls.Add(this.flowLayoutPanel35);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
@@ -1487,8 +1614,7 @@
             // 
             // debugButton
             // 
-            this.debugButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.debugButton.Location = new System.Drawing.Point(165, 43);
+            this.debugButton.Location = new System.Drawing.Point(685, 495);
             this.debugButton.Name = "debugButton";
             this.debugButton.Size = new System.Drawing.Size(130, 52);
             this.debugButton.TabIndex = 7;
@@ -1572,6 +1698,7 @@
             // 
             this.funcPanel.AutoScroll = true;
             this.funcPanel.AutoSize = true;
+            this.funcPanel.Controls.Add(this.flowLayoutPanel41);
             this.funcPanel.Controls.Add(this.panel5);
             this.funcPanel.Controls.Add(this.panel3);
             this.funcPanel.Controls.Add(this.hWindowControl2);
@@ -1586,14 +1713,146 @@
             // panel5
             // 
             this.panel5.AutoSize = true;
+            this.panel5.Controls.Add(this.testConfigPanel);
+            this.panel5.Controls.Add(this.setDataPathNameButton);
+            this.panel5.Controls.Add(this.储存文件夹);
+            this.panel5.Controls.Add(this.saveDataPathNameComboBox);
+            this.panel5.Controls.Add(this.testLocatioResetButton);
+            this.panel5.Controls.Add(this.label79);
+            this.panel5.Controls.Add(this.testLocationComboBox);
             this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.flowLayoutPanel35);
             this.panel5.Controls.Add(this.flowLayoutPanel39);
             this.panel5.Controls.Add(this.startButton);
-            this.panel5.Location = new System.Drawing.Point(3, 378);
+            this.panel5.Location = new System.Drawing.Point(3, 353);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(333, 366);
+            this.panel5.Size = new System.Drawing.Size(336, 461);
             this.panel5.TabIndex = 109;
+            // 
+            // testConfigPanel
+            // 
+            this.testConfigPanel.Controls.Add(this.label85);
+            this.testConfigPanel.Controls.Add(this.testConfigSetPartRadioButton);
+            this.testConfigPanel.Controls.Add(this.testConfigSetAllRadioButton);
+            this.testConfigPanel.Controls.Add(this.testConfigCheckBoxPanel);
+            this.testConfigPanel.Location = new System.Drawing.Point(3, 3);
+            this.testConfigPanel.Name = "testConfigPanel";
+            this.testConfigPanel.Size = new System.Drawing.Size(325, 78);
+            this.testConfigPanel.TabIndex = 110;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(2, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(53, 12);
+            this.label85.TabIndex = 5;
+            this.label85.Text = "测试配置";
+            // 
+            // testConfigSetPartRadioButton
+            // 
+            this.testConfigSetPartRadioButton.AutoSize = true;
+            this.testConfigSetPartRadioButton.Location = new System.Drawing.Point(177, 6);
+            this.testConfigSetPartRadioButton.Name = "testConfigSetPartRadioButton";
+            this.testConfigSetPartRadioButton.Size = new System.Drawing.Size(47, 16);
+            this.testConfigSetPartRadioButton.TabIndex = 4;
+            this.testConfigSetPartRadioButton.Text = "部分";
+            this.testConfigSetPartRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // testConfigSetAllRadioButton
+            // 
+            this.testConfigSetAllRadioButton.AutoSize = true;
+            this.testConfigSetAllRadioButton.Checked = true;
+            this.testConfigSetAllRadioButton.Location = new System.Drawing.Point(97, 6);
+            this.testConfigSetAllRadioButton.Name = "testConfigSetAllRadioButton";
+            this.testConfigSetAllRadioButton.Size = new System.Drawing.Size(47, 16);
+            this.testConfigSetAllRadioButton.TabIndex = 3;
+            this.testConfigSetAllRadioButton.TabStop = true;
+            this.testConfigSetAllRadioButton.Text = "全选";
+            this.testConfigSetAllRadioButton.UseVisualStyleBackColor = true;
+            this.testConfigSetAllRadioButton.CheckedChanged += new System.EventHandler(this.testConfigSetAllRadioButton_CheckedChanged);
+            // 
+            // testConfigCheckBoxPanel
+            // 
+            this.testConfigCheckBoxPanel.AutoScroll = true;
+            this.testConfigCheckBoxPanel.BackColor = System.Drawing.Color.LightGray;
+            this.testConfigCheckBoxPanel.Enabled = false;
+            this.testConfigCheckBoxPanel.Location = new System.Drawing.Point(3, 28);
+            this.testConfigCheckBoxPanel.Name = "testConfigCheckBoxPanel";
+            this.testConfigCheckBoxPanel.Size = new System.Drawing.Size(318, 41);
+            this.testConfigCheckBoxPanel.TabIndex = 2;
+            // 
+            // setDataPathNameButton
+            // 
+            this.setDataPathNameButton.Location = new System.Drawing.Point(216, 189);
+            this.setDataPathNameButton.Name = "setDataPathNameButton";
+            this.setDataPathNameButton.Size = new System.Drawing.Size(107, 23);
+            this.setDataPathNameButton.TabIndex = 114;
+            this.setDataPathNameButton.Text = "修改";
+            this.setDataPathNameButton.UseVisualStyleBackColor = true;
+            this.setDataPathNameButton.Click += new System.EventHandler(this.setDataPathNameButton_Click);
+            // 
+            // 储存文件夹
+            // 
+            this.储存文件夹.AutoSize = true;
+            this.储存文件夹.Location = new System.Drawing.Point(6, 194);
+            this.储存文件夹.Name = "储存文件夹";
+            this.储存文件夹.Size = new System.Drawing.Size(65, 12);
+            this.储存文件夹.TabIndex = 113;
+            this.储存文件夹.Text = "储存文件夹";
+            // 
+            // saveDataPathNameComboBox
+            // 
+            this.saveDataPathNameComboBox.FormattingEnabled = true;
+            this.saveDataPathNameComboBox.Items.AddRange(new object[] {
+            "默认"});
+            this.saveDataPathNameComboBox.Location = new System.Drawing.Point(77, 191);
+            this.saveDataPathNameComboBox.Name = "saveDataPathNameComboBox";
+            this.saveDataPathNameComboBox.Size = new System.Drawing.Size(133, 20);
+            this.saveDataPathNameComboBox.TabIndex = 112;
+            // 
+            // testLocatioResetButton
+            // 
+            this.testLocatioResetButton.Location = new System.Drawing.Point(269, 154);
+            this.testLocatioResetButton.Name = "testLocatioResetButton";
+            this.testLocatioResetButton.Size = new System.Drawing.Size(56, 23);
+            this.testLocatioResetButton.TabIndex = 111;
+            this.testLocatioResetButton.Text = "复位";
+            this.testLocatioResetButton.UseVisualStyleBackColor = true;
+            this.testLocatioResetButton.Click += new System.EventHandler(this.testLocatioResetButton_Click);
+            // 
+            // label79
+            // 
+            this.label79.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(151, 157);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(53, 12);
+            this.label79.TabIndex = 110;
+            this.label79.Text = "测试位置";
+            // 
+            // testLocationComboBox
+            // 
+            this.testLocationComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.testLocationComboBox.FormattingEnabled = true;
+            this.testLocationComboBox.Items.AddRange(new object[] {
+            "第1行",
+            "第2行",
+            "第3行",
+            "第4行",
+            "第5行",
+            "第6行",
+            "第7行",
+            "第8行",
+            "第9行",
+            "第10行",
+            "第11行",
+            "第12行",
+            "第13行",
+            "第14行"});
+            this.testLocationComboBox.Location = new System.Drawing.Point(207, 155);
+            this.testLocationComboBox.Name = "testLocationComboBox";
+            this.testLocationComboBox.Size = new System.Drawing.Size(60, 20);
+            this.testLocationComboBox.TabIndex = 109;
             // 
             // panel4
             // 
@@ -1601,7 +1860,7 @@
             this.panel4.Controls.Add(this.flowLayoutPanel33);
             this.panel4.Controls.Add(this.flowLayoutPanel43);
             this.panel4.Controls.Add(this.flowLayoutPanel31);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(3, 87);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(148, 90);
             this.panel4.TabIndex = 108;
@@ -1609,9 +1868,8 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.flowLayoutPanel41);
             this.panel3.Controls.Add(this.flowLayoutPanel42);
-            this.panel3.Location = new System.Drawing.Point(6, 348);
+            this.panel3.Location = new System.Drawing.Point(6, 320);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.panel3.Size = new System.Drawing.Size(340, 30);
@@ -1622,11 +1880,11 @@
             this.hWindowControl2.BackColor = System.Drawing.Color.Black;
             this.hWindowControl2.BorderColor = System.Drawing.Color.Black;
             this.hWindowControl2.ImagePart = new System.Drawing.Rectangle(0, 0, 640, 480);
-            this.hWindowControl2.Location = new System.Drawing.Point(3, 179);
+            this.hWindowControl2.Location = new System.Drawing.Point(3, 154);
             this.hWindowControl2.Name = "hWindowControl2";
-            this.hWindowControl2.Size = new System.Drawing.Size(327, 166);
+            this.hWindowControl2.Size = new System.Drawing.Size(327, 163);
             this.hWindowControl2.TabIndex = 0;
-            this.hWindowControl2.WindowSize = new System.Drawing.Size(327, 166);
+            this.hWindowControl2.WindowSize = new System.Drawing.Size(327, 163);
             // 
             // infoPanel
             // 
@@ -1640,6 +1898,7 @@
             // 
             // chartTabControl
             // 
+            this.chartTabControl.Controls.Add(this.testResultTab);
             this.chartTabControl.Controls.Add(this.testTabPage2);
             this.chartTabControl.Controls.Add(this.analysisTabPage);
             this.chartTabControl.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1648,6 +1907,763 @@
             this.chartTabControl.SelectedIndex = 0;
             this.chartTabControl.Size = new System.Drawing.Size(902, 604);
             this.chartTabControl.TabIndex = 79;
+            // 
+            // testResultTab
+            // 
+            this.testResultTab.Controls.Add(this.uCSignalPanel);
+            this.testResultTab.Location = new System.Drawing.Point(4, 22);
+            this.testResultTab.Name = "testResultTab";
+            this.testResultTab.Size = new System.Drawing.Size(894, 578);
+            this.testResultTab.TabIndex = 2;
+            this.testResultTab.Text = "测试结果";
+            this.testResultTab.UseVisualStyleBackColor = true;
+            // 
+            // uCSignalPanel
+            // 
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp43);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp44);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp45);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp46);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp47);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp48);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp49);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp50);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp51);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp52);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp53);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp54);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp55);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp56);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp29);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp30);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp31);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp32);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp33);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp34);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp35);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp36);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp37);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp38);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp39);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp40);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp41);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp42);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp13);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp15);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp17);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp18);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp19);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp20);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp21);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp22);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp23);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp24);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp25);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp26);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp27);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp28);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp14);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp16);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp9);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp10);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp11);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp12);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp5);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp6);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp7);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp8);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp4);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp3);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp2);
+            this.uCSignalPanel.Controls.Add(this.ucSignalLamp1);
+            this.uCSignalPanel.Controls.Add(this.label78);
+            this.uCSignalPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uCSignalPanel.Location = new System.Drawing.Point(0, 0);
+            this.uCSignalPanel.Name = "uCSignalPanel";
+            this.uCSignalPanel.Size = new System.Drawing.Size(894, 578);
+            this.uCSignalPanel.TabIndex = 0;
+            // 
+            // ucSignalLamp43
+            // 
+            this.ucSignalLamp43.IsHighlight = true;
+            this.ucSignalLamp43.IsShowBorder = false;
+            this.ucSignalLamp43.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp43.Location = new System.Drawing.Point(757, 424);
+            this.ucSignalLamp43.Name = "ucSignalLamp43";
+            this.ucSignalLamp43.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp43.TabIndex = 57;
+            this.ucSignalLamp43.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp44
+            // 
+            this.ucSignalLamp44.IsHighlight = true;
+            this.ucSignalLamp44.IsShowBorder = false;
+            this.ucSignalLamp44.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp44.Location = new System.Drawing.Point(707, 424);
+            this.ucSignalLamp44.Name = "ucSignalLamp44";
+            this.ucSignalLamp44.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp44.TabIndex = 56;
+            this.ucSignalLamp44.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp45
+            // 
+            this.ucSignalLamp45.IsHighlight = true;
+            this.ucSignalLamp45.IsShowBorder = false;
+            this.ucSignalLamp45.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp45.Location = new System.Drawing.Point(607, 424);
+            this.ucSignalLamp45.Name = "ucSignalLamp45";
+            this.ucSignalLamp45.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp45.TabIndex = 55;
+            this.ucSignalLamp45.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp46
+            // 
+            this.ucSignalLamp46.IsHighlight = true;
+            this.ucSignalLamp46.IsShowBorder = false;
+            this.ucSignalLamp46.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp46.Location = new System.Drawing.Point(557, 424);
+            this.ucSignalLamp46.Name = "ucSignalLamp46";
+            this.ucSignalLamp46.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp46.TabIndex = 54;
+            this.ucSignalLamp46.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp47
+            // 
+            this.ucSignalLamp47.IsHighlight = true;
+            this.ucSignalLamp47.IsShowBorder = false;
+            this.ucSignalLamp47.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp47.Location = new System.Drawing.Point(657, 424);
+            this.ucSignalLamp47.Name = "ucSignalLamp47";
+            this.ucSignalLamp47.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp47.TabIndex = 53;
+            this.ucSignalLamp47.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp48
+            // 
+            this.ucSignalLamp48.IsHighlight = true;
+            this.ucSignalLamp48.IsShowBorder = false;
+            this.ucSignalLamp48.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp48.Location = new System.Drawing.Point(507, 424);
+            this.ucSignalLamp48.Name = "ucSignalLamp48";
+            this.ucSignalLamp48.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp48.TabIndex = 52;
+            this.ucSignalLamp48.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp49
+            // 
+            this.ucSignalLamp49.IsHighlight = true;
+            this.ucSignalLamp49.IsShowBorder = false;
+            this.ucSignalLamp49.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp49.Location = new System.Drawing.Point(407, 424);
+            this.ucSignalLamp49.Name = "ucSignalLamp49";
+            this.ucSignalLamp49.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp49.TabIndex = 51;
+            this.ucSignalLamp49.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp50
+            // 
+            this.ucSignalLamp50.IsHighlight = true;
+            this.ucSignalLamp50.IsShowBorder = false;
+            this.ucSignalLamp50.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp50.Location = new System.Drawing.Point(357, 424);
+            this.ucSignalLamp50.Name = "ucSignalLamp50";
+            this.ucSignalLamp50.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp50.TabIndex = 50;
+            this.ucSignalLamp50.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp51
+            // 
+            this.ucSignalLamp51.IsHighlight = true;
+            this.ucSignalLamp51.IsShowBorder = false;
+            this.ucSignalLamp51.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp51.Location = new System.Drawing.Point(457, 424);
+            this.ucSignalLamp51.Name = "ucSignalLamp51";
+            this.ucSignalLamp51.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp51.TabIndex = 49;
+            this.ucSignalLamp51.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp52
+            // 
+            this.ucSignalLamp52.IsHighlight = true;
+            this.ucSignalLamp52.IsShowBorder = false;
+            this.ucSignalLamp52.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp52.Location = new System.Drawing.Point(307, 424);
+            this.ucSignalLamp52.Name = "ucSignalLamp52";
+            this.ucSignalLamp52.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp52.TabIndex = 48;
+            this.ucSignalLamp52.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp53
+            // 
+            this.ucSignalLamp53.IsHighlight = true;
+            this.ucSignalLamp53.IsShowBorder = false;
+            this.ucSignalLamp53.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp53.Location = new System.Drawing.Point(207, 424);
+            this.ucSignalLamp53.Name = "ucSignalLamp53";
+            this.ucSignalLamp53.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp53.TabIndex = 47;
+            this.ucSignalLamp53.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp54
+            // 
+            this.ucSignalLamp54.IsHighlight = true;
+            this.ucSignalLamp54.IsShowBorder = false;
+            this.ucSignalLamp54.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp54.Location = new System.Drawing.Point(157, 424);
+            this.ucSignalLamp54.Name = "ucSignalLamp54";
+            this.ucSignalLamp54.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp54.TabIndex = 46;
+            this.ucSignalLamp54.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp55
+            // 
+            this.ucSignalLamp55.IsHighlight = true;
+            this.ucSignalLamp55.IsShowBorder = false;
+            this.ucSignalLamp55.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp55.Location = new System.Drawing.Point(257, 424);
+            this.ucSignalLamp55.Name = "ucSignalLamp55";
+            this.ucSignalLamp55.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp55.TabIndex = 45;
+            this.ucSignalLamp55.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp56
+            // 
+            this.ucSignalLamp56.IsHighlight = true;
+            this.ucSignalLamp56.IsShowBorder = false;
+            this.ucSignalLamp56.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp56.Location = new System.Drawing.Point(107, 424);
+            this.ucSignalLamp56.Name = "ucSignalLamp56";
+            this.ucSignalLamp56.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp56.TabIndex = 44;
+            this.ucSignalLamp56.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp29
+            // 
+            this.ucSignalLamp29.IsHighlight = true;
+            this.ucSignalLamp29.IsShowBorder = false;
+            this.ucSignalLamp29.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp29.Location = new System.Drawing.Point(757, 324);
+            this.ucSignalLamp29.Name = "ucSignalLamp29";
+            this.ucSignalLamp29.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp29.TabIndex = 43;
+            this.ucSignalLamp29.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp30
+            // 
+            this.ucSignalLamp30.IsHighlight = true;
+            this.ucSignalLamp30.IsShowBorder = false;
+            this.ucSignalLamp30.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp30.Location = new System.Drawing.Point(707, 324);
+            this.ucSignalLamp30.Name = "ucSignalLamp30";
+            this.ucSignalLamp30.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp30.TabIndex = 42;
+            this.ucSignalLamp30.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp31
+            // 
+            this.ucSignalLamp31.IsHighlight = true;
+            this.ucSignalLamp31.IsShowBorder = false;
+            this.ucSignalLamp31.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp31.Location = new System.Drawing.Point(607, 324);
+            this.ucSignalLamp31.Name = "ucSignalLamp31";
+            this.ucSignalLamp31.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp31.TabIndex = 41;
+            this.ucSignalLamp31.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp32
+            // 
+            this.ucSignalLamp32.IsHighlight = true;
+            this.ucSignalLamp32.IsShowBorder = false;
+            this.ucSignalLamp32.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp32.Location = new System.Drawing.Point(557, 324);
+            this.ucSignalLamp32.Name = "ucSignalLamp32";
+            this.ucSignalLamp32.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp32.TabIndex = 40;
+            this.ucSignalLamp32.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp33
+            // 
+            this.ucSignalLamp33.IsHighlight = true;
+            this.ucSignalLamp33.IsShowBorder = false;
+            this.ucSignalLamp33.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp33.Location = new System.Drawing.Point(657, 324);
+            this.ucSignalLamp33.Name = "ucSignalLamp33";
+            this.ucSignalLamp33.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp33.TabIndex = 39;
+            this.ucSignalLamp33.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp34
+            // 
+            this.ucSignalLamp34.IsHighlight = true;
+            this.ucSignalLamp34.IsShowBorder = false;
+            this.ucSignalLamp34.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp34.Location = new System.Drawing.Point(507, 324);
+            this.ucSignalLamp34.Name = "ucSignalLamp34";
+            this.ucSignalLamp34.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp34.TabIndex = 38;
+            this.ucSignalLamp34.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp35
+            // 
+            this.ucSignalLamp35.IsHighlight = true;
+            this.ucSignalLamp35.IsShowBorder = false;
+            this.ucSignalLamp35.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp35.Location = new System.Drawing.Point(407, 324);
+            this.ucSignalLamp35.Name = "ucSignalLamp35";
+            this.ucSignalLamp35.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp35.TabIndex = 37;
+            this.ucSignalLamp35.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp36
+            // 
+            this.ucSignalLamp36.IsHighlight = true;
+            this.ucSignalLamp36.IsShowBorder = false;
+            this.ucSignalLamp36.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp36.Location = new System.Drawing.Point(357, 324);
+            this.ucSignalLamp36.Name = "ucSignalLamp36";
+            this.ucSignalLamp36.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp36.TabIndex = 36;
+            this.ucSignalLamp36.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp37
+            // 
+            this.ucSignalLamp37.IsHighlight = true;
+            this.ucSignalLamp37.IsShowBorder = false;
+            this.ucSignalLamp37.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp37.Location = new System.Drawing.Point(457, 324);
+            this.ucSignalLamp37.Name = "ucSignalLamp37";
+            this.ucSignalLamp37.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp37.TabIndex = 35;
+            this.ucSignalLamp37.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp38
+            // 
+            this.ucSignalLamp38.IsHighlight = true;
+            this.ucSignalLamp38.IsShowBorder = false;
+            this.ucSignalLamp38.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp38.Location = new System.Drawing.Point(307, 324);
+            this.ucSignalLamp38.Name = "ucSignalLamp38";
+            this.ucSignalLamp38.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp38.TabIndex = 34;
+            this.ucSignalLamp38.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp39
+            // 
+            this.ucSignalLamp39.IsHighlight = true;
+            this.ucSignalLamp39.IsShowBorder = false;
+            this.ucSignalLamp39.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp39.Location = new System.Drawing.Point(207, 324);
+            this.ucSignalLamp39.Name = "ucSignalLamp39";
+            this.ucSignalLamp39.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp39.TabIndex = 33;
+            this.ucSignalLamp39.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp40
+            // 
+            this.ucSignalLamp40.IsHighlight = true;
+            this.ucSignalLamp40.IsShowBorder = false;
+            this.ucSignalLamp40.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp40.Location = new System.Drawing.Point(157, 324);
+            this.ucSignalLamp40.Name = "ucSignalLamp40";
+            this.ucSignalLamp40.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp40.TabIndex = 32;
+            this.ucSignalLamp40.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp41
+            // 
+            this.ucSignalLamp41.IsHighlight = true;
+            this.ucSignalLamp41.IsShowBorder = false;
+            this.ucSignalLamp41.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp41.Location = new System.Drawing.Point(257, 324);
+            this.ucSignalLamp41.Name = "ucSignalLamp41";
+            this.ucSignalLamp41.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp41.TabIndex = 31;
+            this.ucSignalLamp41.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp42
+            // 
+            this.ucSignalLamp42.IsHighlight = true;
+            this.ucSignalLamp42.IsShowBorder = false;
+            this.ucSignalLamp42.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp42.Location = new System.Drawing.Point(107, 324);
+            this.ucSignalLamp42.Name = "ucSignalLamp42";
+            this.ucSignalLamp42.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp42.TabIndex = 30;
+            this.ucSignalLamp42.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp13
+            // 
+            this.ucSignalLamp13.IsHighlight = true;
+            this.ucSignalLamp13.IsShowBorder = false;
+            this.ucSignalLamp13.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp13.Location = new System.Drawing.Point(757, 224);
+            this.ucSignalLamp13.Name = "ucSignalLamp13";
+            this.ucSignalLamp13.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp13.TabIndex = 29;
+            this.ucSignalLamp13.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp15
+            // 
+            this.ucSignalLamp15.IsHighlight = true;
+            this.ucSignalLamp15.IsShowBorder = false;
+            this.ucSignalLamp15.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp15.Location = new System.Drawing.Point(707, 224);
+            this.ucSignalLamp15.Name = "ucSignalLamp15";
+            this.ucSignalLamp15.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp15.TabIndex = 28;
+            this.ucSignalLamp15.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp17
+            // 
+            this.ucSignalLamp17.IsHighlight = true;
+            this.ucSignalLamp17.IsShowBorder = false;
+            this.ucSignalLamp17.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp17.Location = new System.Drawing.Point(607, 224);
+            this.ucSignalLamp17.Name = "ucSignalLamp17";
+            this.ucSignalLamp17.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp17.TabIndex = 27;
+            this.ucSignalLamp17.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp18
+            // 
+            this.ucSignalLamp18.IsHighlight = true;
+            this.ucSignalLamp18.IsShowBorder = false;
+            this.ucSignalLamp18.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp18.Location = new System.Drawing.Point(557, 224);
+            this.ucSignalLamp18.Name = "ucSignalLamp18";
+            this.ucSignalLamp18.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp18.TabIndex = 26;
+            this.ucSignalLamp18.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp19
+            // 
+            this.ucSignalLamp19.IsHighlight = true;
+            this.ucSignalLamp19.IsShowBorder = false;
+            this.ucSignalLamp19.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp19.Location = new System.Drawing.Point(657, 224);
+            this.ucSignalLamp19.Name = "ucSignalLamp19";
+            this.ucSignalLamp19.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp19.TabIndex = 25;
+            this.ucSignalLamp19.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp20
+            // 
+            this.ucSignalLamp20.IsHighlight = true;
+            this.ucSignalLamp20.IsShowBorder = false;
+            this.ucSignalLamp20.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp20.Location = new System.Drawing.Point(507, 224);
+            this.ucSignalLamp20.Name = "ucSignalLamp20";
+            this.ucSignalLamp20.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp20.TabIndex = 24;
+            this.ucSignalLamp20.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp21
+            // 
+            this.ucSignalLamp21.IsHighlight = true;
+            this.ucSignalLamp21.IsShowBorder = false;
+            this.ucSignalLamp21.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp21.Location = new System.Drawing.Point(407, 224);
+            this.ucSignalLamp21.Name = "ucSignalLamp21";
+            this.ucSignalLamp21.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp21.TabIndex = 23;
+            this.ucSignalLamp21.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp22
+            // 
+            this.ucSignalLamp22.IsHighlight = true;
+            this.ucSignalLamp22.IsShowBorder = false;
+            this.ucSignalLamp22.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp22.Location = new System.Drawing.Point(357, 224);
+            this.ucSignalLamp22.Name = "ucSignalLamp22";
+            this.ucSignalLamp22.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp22.TabIndex = 22;
+            this.ucSignalLamp22.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp23
+            // 
+            this.ucSignalLamp23.IsHighlight = true;
+            this.ucSignalLamp23.IsShowBorder = false;
+            this.ucSignalLamp23.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp23.Location = new System.Drawing.Point(457, 224);
+            this.ucSignalLamp23.Name = "ucSignalLamp23";
+            this.ucSignalLamp23.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp23.TabIndex = 21;
+            this.ucSignalLamp23.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp24
+            // 
+            this.ucSignalLamp24.IsHighlight = true;
+            this.ucSignalLamp24.IsShowBorder = false;
+            this.ucSignalLamp24.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp24.Location = new System.Drawing.Point(307, 224);
+            this.ucSignalLamp24.Name = "ucSignalLamp24";
+            this.ucSignalLamp24.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp24.TabIndex = 20;
+            this.ucSignalLamp24.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp25
+            // 
+            this.ucSignalLamp25.IsHighlight = true;
+            this.ucSignalLamp25.IsShowBorder = false;
+            this.ucSignalLamp25.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp25.Location = new System.Drawing.Point(207, 224);
+            this.ucSignalLamp25.Name = "ucSignalLamp25";
+            this.ucSignalLamp25.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp25.TabIndex = 19;
+            this.ucSignalLamp25.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp26
+            // 
+            this.ucSignalLamp26.IsHighlight = true;
+            this.ucSignalLamp26.IsShowBorder = false;
+            this.ucSignalLamp26.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp26.Location = new System.Drawing.Point(157, 224);
+            this.ucSignalLamp26.Name = "ucSignalLamp26";
+            this.ucSignalLamp26.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp26.TabIndex = 18;
+            this.ucSignalLamp26.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp27
+            // 
+            this.ucSignalLamp27.IsHighlight = true;
+            this.ucSignalLamp27.IsShowBorder = false;
+            this.ucSignalLamp27.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp27.Location = new System.Drawing.Point(257, 224);
+            this.ucSignalLamp27.Name = "ucSignalLamp27";
+            this.ucSignalLamp27.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp27.TabIndex = 17;
+            this.ucSignalLamp27.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp28
+            // 
+            this.ucSignalLamp28.IsHighlight = true;
+            this.ucSignalLamp28.IsShowBorder = false;
+            this.ucSignalLamp28.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp28.Location = new System.Drawing.Point(107, 224);
+            this.ucSignalLamp28.Name = "ucSignalLamp28";
+            this.ucSignalLamp28.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp28.TabIndex = 16;
+            this.ucSignalLamp28.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp14
+            // 
+            this.ucSignalLamp14.IsHighlight = true;
+            this.ucSignalLamp14.IsShowBorder = false;
+            this.ucSignalLamp14.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp14.Location = new System.Drawing.Point(757, 124);
+            this.ucSignalLamp14.Name = "ucSignalLamp14";
+            this.ucSignalLamp14.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp14.TabIndex = 15;
+            this.ucSignalLamp14.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp16
+            // 
+            this.ucSignalLamp16.IsHighlight = true;
+            this.ucSignalLamp16.IsShowBorder = false;
+            this.ucSignalLamp16.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp16.Location = new System.Drawing.Point(707, 124);
+            this.ucSignalLamp16.Name = "ucSignalLamp16";
+            this.ucSignalLamp16.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp16.TabIndex = 13;
+            this.ucSignalLamp16.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp9
+            // 
+            this.ucSignalLamp9.IsHighlight = true;
+            this.ucSignalLamp9.IsShowBorder = false;
+            this.ucSignalLamp9.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp9.Location = new System.Drawing.Point(607, 124);
+            this.ucSignalLamp9.Name = "ucSignalLamp9";
+            this.ucSignalLamp9.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp9.TabIndex = 12;
+            this.ucSignalLamp9.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp10
+            // 
+            this.ucSignalLamp10.IsHighlight = true;
+            this.ucSignalLamp10.IsShowBorder = false;
+            this.ucSignalLamp10.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp10.Location = new System.Drawing.Point(557, 124);
+            this.ucSignalLamp10.Name = "ucSignalLamp10";
+            this.ucSignalLamp10.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp10.TabIndex = 11;
+            this.ucSignalLamp10.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp11
+            // 
+            this.ucSignalLamp11.IsHighlight = true;
+            this.ucSignalLamp11.IsShowBorder = false;
+            this.ucSignalLamp11.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp11.Location = new System.Drawing.Point(657, 124);
+            this.ucSignalLamp11.Name = "ucSignalLamp11";
+            this.ucSignalLamp11.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp11.TabIndex = 10;
+            this.ucSignalLamp11.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp12
+            // 
+            this.ucSignalLamp12.IsHighlight = true;
+            this.ucSignalLamp12.IsShowBorder = false;
+            this.ucSignalLamp12.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp12.Location = new System.Drawing.Point(507, 124);
+            this.ucSignalLamp12.Name = "ucSignalLamp12";
+            this.ucSignalLamp12.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp12.TabIndex = 9;
+            this.ucSignalLamp12.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp5
+            // 
+            this.ucSignalLamp5.IsHighlight = true;
+            this.ucSignalLamp5.IsShowBorder = false;
+            this.ucSignalLamp5.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp5.Location = new System.Drawing.Point(407, 124);
+            this.ucSignalLamp5.Name = "ucSignalLamp5";
+            this.ucSignalLamp5.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp5.TabIndex = 8;
+            this.ucSignalLamp5.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp6
+            // 
+            this.ucSignalLamp6.IsHighlight = true;
+            this.ucSignalLamp6.IsShowBorder = false;
+            this.ucSignalLamp6.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp6.Location = new System.Drawing.Point(357, 124);
+            this.ucSignalLamp6.Name = "ucSignalLamp6";
+            this.ucSignalLamp6.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp6.TabIndex = 7;
+            this.ucSignalLamp6.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp7
+            // 
+            this.ucSignalLamp7.IsHighlight = true;
+            this.ucSignalLamp7.IsShowBorder = false;
+            this.ucSignalLamp7.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp7.Location = new System.Drawing.Point(457, 124);
+            this.ucSignalLamp7.Name = "ucSignalLamp7";
+            this.ucSignalLamp7.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp7.TabIndex = 6;
+            this.ucSignalLamp7.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp8
+            // 
+            this.ucSignalLamp8.IsHighlight = true;
+            this.ucSignalLamp8.IsShowBorder = false;
+            this.ucSignalLamp8.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp8.Location = new System.Drawing.Point(307, 124);
+            this.ucSignalLamp8.Name = "ucSignalLamp8";
+            this.ucSignalLamp8.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp8.TabIndex = 5;
+            this.ucSignalLamp8.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp4
+            // 
+            this.ucSignalLamp4.IsHighlight = true;
+            this.ucSignalLamp4.IsShowBorder = false;
+            this.ucSignalLamp4.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp4.Location = new System.Drawing.Point(207, 124);
+            this.ucSignalLamp4.Name = "ucSignalLamp4";
+            this.ucSignalLamp4.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp4.TabIndex = 4;
+            this.ucSignalLamp4.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp3
+            // 
+            this.ucSignalLamp3.IsHighlight = true;
+            this.ucSignalLamp3.IsShowBorder = false;
+            this.ucSignalLamp3.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp3.Location = new System.Drawing.Point(157, 124);
+            this.ucSignalLamp3.Name = "ucSignalLamp3";
+            this.ucSignalLamp3.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp3.TabIndex = 3;
+            this.ucSignalLamp3.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp2
+            // 
+            this.ucSignalLamp2.IsHighlight = true;
+            this.ucSignalLamp2.IsShowBorder = false;
+            this.ucSignalLamp2.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp2.Location = new System.Drawing.Point(257, 124);
+            this.ucSignalLamp2.Name = "ucSignalLamp2";
+            this.ucSignalLamp2.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp2.TabIndex = 2;
+            this.ucSignalLamp2.TwinkleSpeed = 0;
+            // 
+            // ucSignalLamp1
+            // 
+            this.ucSignalLamp1.IsHighlight = true;
+            this.ucSignalLamp1.IsShowBorder = false;
+            this.ucSignalLamp1.LampColor = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))))};
+            this.ucSignalLamp1.Location = new System.Drawing.Point(107, 124);
+            this.ucSignalLamp1.Name = "ucSignalLamp1";
+            this.ucSignalLamp1.Size = new System.Drawing.Size(30, 30);
+            this.ucSignalLamp1.TabIndex = 1;
+            this.ucSignalLamp1.TwinkleSpeed = 0;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("宋体", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label78.Location = new System.Drawing.Point(339, 17);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(216, 48);
+            this.label78.TabIndex = 0;
+            this.label78.Text = "结果显示";
             // 
             // testTabPage2
             // 
@@ -1780,22 +2796,22 @@
             this.testHistorychart.BorderlineColor = System.Drawing.Color.Transparent;
             this.testHistorychart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.testHistorychart.BorderlineWidth = 3;
-            chartArea3.Name = "ChartArea1";
-            this.testHistorychart.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.testHistorychart.ChartAreas.Add(chartArea1);
             this.testHistorychart.Location = new System.Drawing.Point(6, 301);
             this.testHistorychart.Name = "testHistorychart";
             this.testHistorychart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.ChartArea = "ChartArea1";
-            series3.Name = "Series1";
-            this.testHistorychart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.testHistorychart.Series.Add(series1);
             this.testHistorychart.Size = new System.Drawing.Size(732, 272);
             this.testHistorychart.TabIndex = 85;
             this.testHistorychart.Text = "chart1";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title3.ForeColor = System.Drawing.Color.DarkRed;
-            title3.Name = "Title1";
-            title3.Text = "测试历史";
-            this.testHistorychart.Titles.Add(title3);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title1.ForeColor = System.Drawing.Color.DarkRed;
+            title1.Name = "Title1";
+            title1.Text = "测试历史";
+            this.testHistorychart.Titles.Add(title1);
             // 
             // failTop3Chart
             // 
@@ -1803,23 +2819,23 @@
             this.failTop3Chart.BorderlineColor = System.Drawing.Color.Transparent;
             this.failTop3Chart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.failTop3Chart.BorderlineWidth = 3;
-            chartArea4.Name = "ChartArea1";
-            this.failTop3Chart.ChartAreas.Add(chartArea4);
+            chartArea2.Name = "ChartArea1";
+            this.failTop3Chart.ChartAreas.Add(chartArea2);
             this.failTop3Chart.Location = new System.Drawing.Point(6, 7);
             this.failTop3Chart.Name = "failTop3Chart";
             this.failTop3Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series4.ChartArea = "ChartArea1";
-            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
-            series4.Name = "Series1";
-            this.failTop3Chart.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
+            series2.Name = "Series1";
+            this.failTop3Chart.Series.Add(series2);
             this.failTop3Chart.Size = new System.Drawing.Size(732, 272);
             this.failTop3Chart.TabIndex = 84;
             this.failTop3Chart.Text = "failTop3Chart";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title4.ForeColor = System.Drawing.Color.DarkRed;
-            title4.Name = "Title1";
-            title4.Text = "不良项 Top3";
-            this.failTop3Chart.Titles.Add(title4);
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title2.ForeColor = System.Drawing.Color.DarkRed;
+            title2.Name = "Title1";
+            title2.Text = "不良项 Top3";
+            this.failTop3Chart.Titles.Add(title2);
             // 
             // flowLayoutPanel29
             // 
@@ -1990,6 +3006,7 @@
             this.checkBarcodePanel.Name = "checkBarcodePanel";
             this.checkBarcodePanel.Size = new System.Drawing.Size(524, 385);
             this.checkBarcodePanel.TabIndex = 123;
+            this.checkBarcodePanel.Visible = false;
             // 
             // inquireDataGridView
             // 
@@ -2052,6 +3069,7 @@
             this.checkCameraPanel.Name = "checkCameraPanel";
             this.checkCameraPanel.Size = new System.Drawing.Size(524, 247);
             this.checkCameraPanel.TabIndex = 122;
+            this.checkCameraPanel.Visible = false;
             // 
             // inquireHWindowControl
             // 
@@ -2102,6 +3120,7 @@
             this.ftpManualPanel.Name = "ftpManualPanel";
             this.ftpManualPanel.Size = new System.Drawing.Size(480, 70);
             this.ftpManualPanel.TabIndex = 125;
+            this.ftpManualPanel.Visible = false;
             // 
             // panel12
             // 
@@ -2121,6 +3140,7 @@
             this.oracleUploadRecordsPanel.Name = "oracleUploadRecordsPanel";
             this.oracleUploadRecordsPanel.Size = new System.Drawing.Size(480, 300);
             this.oracleUploadRecordsPanel.TabIndex = 120;
+            this.oracleUploadRecordsPanel.Visible = false;
             // 
             // label46
             // 
@@ -2157,6 +3177,7 @@
             this.ftpUploadRecordsPanel.Name = "ftpUploadRecordsPanel";
             this.ftpUploadRecordsPanel.Size = new System.Drawing.Size(480, 300);
             this.ftpUploadRecordsPanel.TabIndex = 119;
+            this.ftpUploadRecordsPanel.Visible = false;
             // 
             // label47
             // 
@@ -2217,6 +3238,7 @@
             this.samplePanel.Name = "samplePanel";
             this.samplePanel.Size = new System.Drawing.Size(921, 595);
             this.samplePanel.TabIndex = 71;
+            this.samplePanel.Visible = false;
             // 
             // simplePartNumTextBox
             // 
@@ -2319,15 +3341,23 @@
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.panel28);
+            this.tabPage1.Controls.Add(this.panel27);
+            this.tabPage1.Controls.Add(this.panel26);
+            this.tabPage1.Controls.Add(this.panel25);
             this.tabPage1.Controls.Add(this.panel8);
             this.tabPage1.Controls.Add(this.testModelSettingPanel);
             this.tabPage1.Controls.Add(this.uploadModelSettingPanel);
             this.tabPage1.Controls.Add(this.ABBSettingPanel);
+            this.tabPage1.Controls.Add(this.panel18);
+            this.tabPage1.Controls.Add(this.panel17);
+            this.tabPage1.Controls.Add(this.panel19);
+            this.tabPage1.Controls.Add(this.panel20);
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(1242, 564);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "模式设定";
+            this.tabPage1.Text = "模式设置";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel8
@@ -2343,7 +3373,7 @@
             this.panel8.Controls.Add(this.label44);
             this.panel8.Controls.Add(this.probeUseTextBox);
             this.panel8.Controls.Add(this.textBox8);
-            this.panel8.Location = new System.Drawing.Point(323, 134);
+            this.panel8.Location = new System.Drawing.Point(323, 28);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(119, 168);
             this.panel8.TabIndex = 103;
@@ -2455,22 +3485,35 @@
             this.testModelSettingPanel.Controls.Add(this.panel9);
             this.testModelSettingPanel.Controls.Add(this.textBox7);
             this.testModelSettingPanel.Controls.Add(this.panel15);
-            this.testModelSettingPanel.Controls.Add(this.panel17);
-            this.testModelSettingPanel.Controls.Add(this.panel19);
-            this.testModelSettingPanel.Controls.Add(this.panel20);
             this.testModelSettingPanel.Controls.Add(this.panel2);
-            this.testModelSettingPanel.Controls.Add(this.panel18);
-            this.testModelSettingPanel.Location = new System.Drawing.Point(22, 134);
+            this.testModelSettingPanel.Location = new System.Drawing.Point(22, 28);
             this.testModelSettingPanel.Name = "testModelSettingPanel";
-            this.testModelSettingPanel.Size = new System.Drawing.Size(295, 263);
+            this.testModelSettingPanel.Size = new System.Drawing.Size(295, 168);
             this.testModelSettingPanel.TabIndex = 103;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(3, 120);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(119, 12);
+            this.label83.TabIndex = 111;
+            this.label83.Text = "频点偏移下限（GHz）";
+            // 
+            // freqDownlimitTextBox1
+            // 
+            this.freqDownlimitTextBox1.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox1.Name = "freqDownlimitTextBox1";
+            this.freqDownlimitTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox1.TabIndex = 107;
+            this.freqDownlimitTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel22
             // 
             this.panel22.AutoSize = true;
             this.panel22.Controls.Add(this.label75);
             this.panel22.Controls.Add(this.yieldEnableSwitch);
-            this.panel22.Location = new System.Drawing.Point(3, 154);
+            this.panel22.Location = new System.Drawing.Point(3, 80);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(126, 22);
             this.panel22.TabIndex = 107;
@@ -2500,12 +3543,21 @@
             this.yieldEnableSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.yieldEnableSwitch.TrueTextColr = System.Drawing.Color.White;
             // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(3, 90);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(119, 12);
+            this.label82.TabIndex = 110;
+            this.label82.Text = "频点偏移上限（GHz）";
+            // 
             // panel21
             // 
             this.panel21.Controls.Add(this.label73);
             this.panel21.Controls.Add(this.baseYieldTextBox);
             this.panel21.Controls.Add(this.label74);
-            this.panel21.Location = new System.Drawing.Point(3, 191);
+            this.panel21.Location = new System.Drawing.Point(3, 117);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(132, 28);
             this.panel21.TabIndex = 106;
@@ -2537,12 +3589,29 @@
             this.label74.TabIndex = 87;
             this.label74.Text = "Pcs";
             // 
+            // freqUplimitTextBox1
+            // 
+            this.freqUplimitTextBox1.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox1.Name = "freqUplimitTextBox1";
+            this.freqUplimitTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox1.TabIndex = 106;
+            this.freqUplimitTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(3, 61);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(119, 12);
+            this.label81.TabIndex = 109;
+            this.label81.Text = "频点范围结束（GHz）";
+            // 
             // panel14
             // 
             this.panel14.Controls.Add(this.label71);
             this.panel14.Controls.Add(this.stopTestYieldTextBox);
             this.panel14.Controls.Add(this.label72);
-            this.panel14.Location = new System.Drawing.Point(158, 191);
+            this.panel14.Location = new System.Drawing.Point(158, 117);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(132, 28);
             this.panel14.TabIndex = 105;
@@ -2574,12 +3643,29 @@
             this.label72.TabIndex = 87;
             this.label72.Text = "%";
             // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(3, 33);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(119, 12);
+            this.label80.TabIndex = 108;
+            this.label80.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStopTextBox1
+            // 
+            this.freqRangeStopTextBox1.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox1.Name = "freqRangeStopTextBox1";
+            this.freqRangeStopTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox1.TabIndex = 105;
+            this.freqRangeStopTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label69);
             this.panel9.Controls.Add(this.warnYieldTextBox);
             this.panel9.Controls.Add(this.label70);
-            this.panel9.Location = new System.Drawing.Point(158, 151);
+            this.panel9.Location = new System.Drawing.Point(158, 77);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(132, 28);
             this.panel9.TabIndex = 104;
@@ -2660,147 +3746,23 @@
             this.label49.TabIndex = 87;
             this.label49.Text = "ms";
             // 
-            // panel17
+            // freqRangeStartTextBox1
             // 
-            this.panel17.Controls.Add(this.label52);
-            this.panel17.Controls.Add(this.pcbEnablrSwitch);
-            this.panel17.Location = new System.Drawing.Point(3, 77);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(126, 20);
-            this.panel17.TabIndex = 91;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label52.Location = new System.Drawing.Point(3, 5);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(65, 12);
-            this.label52.TabIndex = 2;
-            this.label52.Text = "PCB Enable";
-            // 
-            // pcbEnablrSwitch
-            // 
-            this.pcbEnablrSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.pcbEnablrSwitch.Checked = false;
-            this.pcbEnablrSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.pcbEnablrSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.pcbEnablrSwitch.Location = new System.Drawing.Point(74, 1);
-            this.pcbEnablrSwitch.Name = "pcbEnablrSwitch";
-            this.pcbEnablrSwitch.Size = new System.Drawing.Size(50, 16);
-            this.pcbEnablrSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.pcbEnablrSwitch.TabIndex = 0;
-            this.pcbEnablrSwitch.Texts = null;
-            this.pcbEnablrSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.pcbEnablrSwitch.TrueTextColr = System.Drawing.Color.White;
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.label59);
-            this.panel19.Controls.Add(this.sampleIntervalTimeTextBox);
-            this.panel19.Controls.Add(this.label60);
-            this.panel19.Location = new System.Drawing.Point(158, 73);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(132, 28);
-            this.panel19.TabIndex = 93;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(3, 8);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(53, 12);
-            this.label59.TabIndex = 87;
-            this.label59.Text = "样本间隔";
-            // 
-            // sampleIntervalTimeTextBox
-            // 
-            this.sampleIntervalTimeTextBox.Location = new System.Drawing.Point(62, 4);
-            this.sampleIntervalTimeTextBox.Name = "sampleIntervalTimeTextBox";
-            this.sampleIntervalTimeTextBox.Size = new System.Drawing.Size(49, 21);
-            this.sampleIntervalTimeTextBox.TabIndex = 86;
-            this.sampleIntervalTimeTextBox.Text = "6";
-            this.sampleIntervalTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(117, 8);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(11, 12);
-            this.label60.TabIndex = 87;
-            this.label60.Text = "h";
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.label61);
-            this.panel20.Controls.Add(this.lastSampleTimeTextBox);
-            this.panel20.Location = new System.Drawing.Point(158, 111);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(132, 28);
-            this.panel20.TabIndex = 94;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(3, 8);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(53, 12);
-            this.label61.TabIndex = 87;
-            this.label61.Text = "上次样本";
-            // 
-            // lastSampleTimeTextBox
-            // 
-            this.lastSampleTimeTextBox.Location = new System.Drawing.Point(62, 4);
-            this.lastSampleTimeTextBox.Name = "lastSampleTimeTextBox";
-            this.lastSampleTimeTextBox.Size = new System.Drawing.Size(67, 21);
-            this.lastSampleTimeTextBox.TabIndex = 86;
-            this.lastSampleTimeTextBox.Text = "17点28分";
-            this.lastSampleTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.freqRangeStartTextBox1.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox1.Name = "freqRangeStartTextBox1";
+            this.freqRangeStartTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox1.TabIndex = 104;
+            this.freqRangeStartTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
             this.panel2.Controls.Add(this.label50);
             this.panel2.Controls.Add(this.shieldMCUucSwitch);
-            this.panel2.Location = new System.Drawing.Point(3, 114);
+            this.panel2.Location = new System.Drawing.Point(3, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(126, 22);
             this.panel2.TabIndex = 88;
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.label58);
-            this.panel18.Controls.Add(this.sampleSwitch);
-            this.panel18.Location = new System.Drawing.Point(3, 40);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(126, 20);
-            this.panel18.TabIndex = 92;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label58.Location = new System.Drawing.Point(3, 5);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(53, 12);
-            this.label58.TabIndex = 2;
-            this.label58.Text = "强制样本";
-            // 
-            // sampleSwitch
-            // 
-            this.sampleSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.sampleSwitch.Checked = false;
-            this.sampleSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.sampleSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.sampleSwitch.Location = new System.Drawing.Point(74, 1);
-            this.sampleSwitch.Name = "sampleSwitch";
-            this.sampleSwitch.Size = new System.Drawing.Size(50, 16);
-            this.sampleSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.sampleSwitch.TabIndex = 0;
-            this.sampleSwitch.Texts = null;
-            this.sampleSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.sampleSwitch.TrueTextColr = System.Drawing.Color.White;
             // 
             // uploadModelSettingPanel
             // 
@@ -2808,10 +3770,11 @@
             this.uploadModelSettingPanel.Controls.Add(this.textBox6);
             this.uploadModelSettingPanel.Controls.Add(this.panel11);
             this.uploadModelSettingPanel.Controls.Add(this.panel13);
-            this.uploadModelSettingPanel.Location = new System.Drawing.Point(324, 308);
+            this.uploadModelSettingPanel.Location = new System.Drawing.Point(763, 61);
             this.uploadModelSettingPanel.Name = "uploadModelSettingPanel";
             this.uploadModelSettingPanel.Size = new System.Drawing.Size(118, 89);
             this.uploadModelSettingPanel.TabIndex = 102;
+            this.uploadModelSettingPanel.Visible = false;
             // 
             // textBox6
             // 
@@ -2905,10 +3868,11 @@
             this.ABBSettingPanel.Controls.Add(this.ABBLastStationComboBox);
             this.ABBSettingPanel.Controls.Add(this.enableCPPCheckBox);
             this.ABBSettingPanel.Controls.Add(this.ABBNotGoOnTestCheckBox);
-            this.ABBSettingPanel.Location = new System.Drawing.Point(22, 25);
+            this.ABBSettingPanel.Location = new System.Drawing.Point(763, 157);
             this.ABBSettingPanel.Name = "ABBSettingPanel";
             this.ABBSettingPanel.Size = new System.Drawing.Size(420, 103);
             this.ABBSettingPanel.TabIndex = 101;
+            this.ABBSettingPanel.Visible = false;
             // 
             // textBox5
             // 
@@ -2982,6 +3946,142 @@
             this.ABBNotGoOnTestCheckBox.TabIndex = 98;
             this.ABBNotGoOnTestCheckBox.Text = "不允许继续测试";
             this.ABBNotGoOnTestCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.label58);
+            this.panel18.Controls.Add(this.sampleSwitch);
+            this.panel18.Location = new System.Drawing.Point(631, 61);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(126, 20);
+            this.panel18.TabIndex = 92;
+            this.panel18.Visible = false;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label58.Location = new System.Drawing.Point(3, 5);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(53, 12);
+            this.label58.TabIndex = 2;
+            this.label58.Text = "强制样本";
+            // 
+            // sampleSwitch
+            // 
+            this.sampleSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.sampleSwitch.Checked = false;
+            this.sampleSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.sampleSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.sampleSwitch.Location = new System.Drawing.Point(74, 1);
+            this.sampleSwitch.Name = "sampleSwitch";
+            this.sampleSwitch.Size = new System.Drawing.Size(50, 16);
+            this.sampleSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.sampleSwitch.TabIndex = 0;
+            this.sampleSwitch.Texts = null;
+            this.sampleSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.sampleSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.label52);
+            this.panel17.Controls.Add(this.pcbEnablrSwitch);
+            this.panel17.Location = new System.Drawing.Point(631, 92);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(126, 20);
+            this.panel17.TabIndex = 91;
+            this.panel17.Visible = false;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label52.Location = new System.Drawing.Point(3, 5);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(65, 12);
+            this.label52.TabIndex = 2;
+            this.label52.Text = "PCB Enable";
+            // 
+            // pcbEnablrSwitch
+            // 
+            this.pcbEnablrSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.pcbEnablrSwitch.Checked = false;
+            this.pcbEnablrSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.pcbEnablrSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.pcbEnablrSwitch.Location = new System.Drawing.Point(74, 1);
+            this.pcbEnablrSwitch.Name = "pcbEnablrSwitch";
+            this.pcbEnablrSwitch.Size = new System.Drawing.Size(50, 16);
+            this.pcbEnablrSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.pcbEnablrSwitch.TabIndex = 0;
+            this.pcbEnablrSwitch.Texts = null;
+            this.pcbEnablrSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.pcbEnablrSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.label59);
+            this.panel19.Controls.Add(this.sampleIntervalTimeTextBox);
+            this.panel19.Controls.Add(this.label60);
+            this.panel19.Location = new System.Drawing.Point(628, 123);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(132, 28);
+            this.panel19.TabIndex = 93;
+            this.panel19.Visible = false;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(3, 8);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(53, 12);
+            this.label59.TabIndex = 87;
+            this.label59.Text = "样本间隔";
+            // 
+            // sampleIntervalTimeTextBox
+            // 
+            this.sampleIntervalTimeTextBox.Location = new System.Drawing.Point(62, 4);
+            this.sampleIntervalTimeTextBox.Name = "sampleIntervalTimeTextBox";
+            this.sampleIntervalTimeTextBox.Size = new System.Drawing.Size(49, 21);
+            this.sampleIntervalTimeTextBox.TabIndex = 86;
+            this.sampleIntervalTimeTextBox.Text = "6";
+            this.sampleIntervalTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(117, 8);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(11, 12);
+            this.label60.TabIndex = 87;
+            this.label60.Text = "h";
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.label61);
+            this.panel20.Controls.Add(this.lastSampleTimeTextBox);
+            this.panel20.Location = new System.Drawing.Point(628, 162);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(132, 28);
+            this.panel20.TabIndex = 94;
+            this.panel20.Visible = false;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(3, 8);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(53, 12);
+            this.label61.TabIndex = 87;
+            this.label61.Text = "上次样本";
+            // 
+            // lastSampleTimeTextBox
+            // 
+            this.lastSampleTimeTextBox.Location = new System.Drawing.Point(62, 4);
+            this.lastSampleTimeTextBox.Name = "lastSampleTimeTextBox";
+            this.lastSampleTimeTextBox.Size = new System.Drawing.Size(67, 21);
+            this.lastSampleTimeTextBox.TabIndex = 86;
+            this.lastSampleTimeTextBox.Text = "17点28分";
+            this.lastSampleTimeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tabPage7
             // 
@@ -3353,7 +4453,7 @@
             this.loadAnalyzerButton.Name = "loadAnalyzerButton";
             this.loadAnalyzerButton.Size = new System.Drawing.Size(92, 23);
             this.loadAnalyzerButton.TabIndex = 66;
-            this.loadAnalyzerButton.Text = "调用规格文件";
+            this.loadAnalyzerButton.Text = "调用校验文件";
             this.loadAnalyzerButton.UseVisualStyleBackColor = true;
             this.loadAnalyzerButton.Click += new System.EventHandler(this.loadAnalyzerButton_Click);
             // 
@@ -3386,6 +4486,7 @@
             this.setLimitPathButton.TabIndex = 52;
             this.setLimitPathButton.Text = "修改规格路径";
             this.setLimitPathButton.UseVisualStyleBackColor = true;
+            this.setLimitPathButton.Visible = false;
             this.setLimitPathButton.Click += new System.EventHandler(this.setLimitPathButton_Click);
             // 
             // setDataPathButton
@@ -3397,6 +4498,7 @@
             this.setDataPathButton.TabIndex = 52;
             this.setDataPathButton.Text = "修改数据路径";
             this.setDataPathButton.UseVisualStyleBackColor = true;
+            this.setDataPathButton.Visible = false;
             this.setDataPathButton.Click += new System.EventHandler(this.setDataPathButton_Click);
             // 
             // textBox3
@@ -3455,14 +4557,14 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(3, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -3542,6 +4644,7 @@
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
             this.flowLayoutPanel8.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel8.TabIndex = 74;
+            this.flowLayoutPanel8.Visible = false;
             // 
             // label63
             // 
@@ -3569,6 +4672,7 @@
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel7.TabIndex = 73;
+            this.flowLayoutPanel7.Visible = false;
             // 
             // label62
             // 
@@ -3597,6 +4701,7 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel3.TabIndex = 72;
+            this.flowLayoutPanel3.Visible = false;
             // 
             // label54
             // 
@@ -3624,6 +4729,7 @@
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel4.TabIndex = 69;
+            this.flowLayoutPanel4.Visible = false;
             // 
             // label55
             // 
@@ -3651,6 +4757,7 @@
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel5.TabIndex = 71;
+            this.flowLayoutPanel5.Visible = false;
             // 
             // label56
             // 
@@ -3679,6 +4786,7 @@
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel6.TabIndex = 70;
+            this.flowLayoutPanel6.Visible = false;
             // 
             // label57
             // 
@@ -3707,6 +4815,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel2.TabIndex = 68;
+            this.flowLayoutPanel2.Visible = false;
             // 
             // label53
             // 
@@ -3735,6 +4844,7 @@
             this.flowLayoutPanel46.Name = "flowLayoutPanel46";
             this.flowLayoutPanel46.Size = new System.Drawing.Size(186, 27);
             this.flowLayoutPanel46.TabIndex = 61;
+            this.flowLayoutPanel46.Visible = false;
             // 
             // label33
             // 
@@ -3763,6 +4873,7 @@
             this.flowLayoutPanel49.Name = "flowLayoutPanel49";
             this.flowLayoutPanel49.Size = new System.Drawing.Size(186, 27);
             this.flowLayoutPanel49.TabIndex = 64;
+            this.flowLayoutPanel49.Visible = false;
             // 
             // label36
             // 
@@ -3819,6 +4930,7 @@
             this.flowLayoutPanel47.Name = "flowLayoutPanel47";
             this.flowLayoutPanel47.Size = new System.Drawing.Size(186, 27);
             this.flowLayoutPanel47.TabIndex = 62;
+            this.flowLayoutPanel47.Visible = false;
             // 
             // label34
             // 
@@ -3876,6 +4988,7 @@
             this.flowLayoutPanel48.Name = "flowLayoutPanel48";
             this.flowLayoutPanel48.Size = new System.Drawing.Size(186, 27);
             this.flowLayoutPanel48.TabIndex = 63;
+            this.flowLayoutPanel48.Visible = false;
             // 
             // label35
             // 
@@ -3932,6 +5045,7 @@
             this.flowLayoutPanel55.Name = "flowLayoutPanel55";
             this.flowLayoutPanel55.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel55.TabIndex = 65;
+            this.flowLayoutPanel55.Visible = false;
             // 
             // label43
             // 
@@ -3959,6 +5073,7 @@
             this.flowLayoutPanel52.Name = "flowLayoutPanel52";
             this.flowLayoutPanel52.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel52.TabIndex = 67;
+            this.flowLayoutPanel52.Visible = false;
             // 
             // label40
             // 
@@ -3987,6 +5102,7 @@
             this.flowLayoutPanel54.Name = "flowLayoutPanel54";
             this.flowLayoutPanel54.Size = new System.Drawing.Size(204, 27);
             this.flowLayoutPanel54.TabIndex = 66;
+            this.flowLayoutPanel54.Visible = false;
             // 
             // label42
             // 
@@ -4008,23 +5124,8 @@
             // 
             // DebugTabPage
             // 
-            this.DebugTabPage.Controls.Add(this.deBugConnButton);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm6Button);
-            this.DebugTabPage.Controls.Add(this.debugButton);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm6textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm5Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm5textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm4Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm4textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm3Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm3textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendCommALLButton);
-            this.DebugTabPage.Controls.Add(this.deBugReadCommButton);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm2Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm2textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm1Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm1textBox);
-            this.DebugTabPage.Controls.Add(this.deBugtextBox);
+            this.DebugTabPage.AutoScroll = true;
+            this.DebugTabPage.Controls.Add(this.panel23);
             this.DebugTabPage.Location = new System.Drawing.Point(4, 54);
             this.DebugTabPage.Name = "DebugTabPage";
             this.DebugTabPage.Size = new System.Drawing.Size(1242, 564);
@@ -4032,10 +5133,99 @@
             this.DebugTabPage.Text = "DebugModel";
             this.DebugTabPage.UseVisualStyleBackColor = true;
             // 
+            // panel23
+            // 
+            this.panel23.AutoScroll = true;
+            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Controls.Add(this.label77);
+            this.panel23.Controls.Add(this.TCPRecordTextBox);
+            this.panel23.Controls.Add(this.deBugSendComm1textBox);
+            this.panel23.Controls.Add(this.debugButton);
+            this.panel23.Controls.Add(this.deBugConnButton);
+            this.panel23.Controls.Add(this.deBugtextBox);
+            this.panel23.Controls.Add(this.deBugSendComm6Button);
+            this.panel23.Controls.Add(this.deBugSendComm1Button);
+            this.panel23.Controls.Add(this.deBugSendComm2textBox);
+            this.panel23.Controls.Add(this.deBugSendComm6textBox);
+            this.panel23.Controls.Add(this.deBugSendComm2Button);
+            this.panel23.Controls.Add(this.deBugSendComm5Button);
+            this.panel23.Controls.Add(this.deBugReadCommButton);
+            this.panel23.Controls.Add(this.deBugSendComm5textBox);
+            this.panel23.Controls.Add(this.deBugSendCommALLButton);
+            this.panel23.Controls.Add(this.deBugSendComm4Button);
+            this.panel23.Controls.Add(this.deBugSendComm3textBox);
+            this.panel23.Controls.Add(this.deBugSendComm4textBox);
+            this.panel23.Controls.Add(this.deBugSendComm3Button);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1242, 564);
+            this.panel23.TabIndex = 22;
+            // 
+            // panel24
+            // 
+            this.panel24.AutoSize = true;
+            this.panel24.Controls.Add(this.label84);
+            this.panel24.Controls.Add(this.heartBeatSwitch);
+            this.panel24.Location = new System.Drawing.Point(361, 432);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(184, 28);
+            this.panel24.TabIndex = 109;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label84.Location = new System.Drawing.Point(3, 3);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(98, 22);
+            this.label84.TabIndex = 84;
+            this.label84.Text = "发送新跳";
+            // 
+            // heartBeatSwitch
+            // 
+            this.heartBeatSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.heartBeatSwitch.Checked = true;
+            this.heartBeatSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.heartBeatSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.heartBeatSwitch.Location = new System.Drawing.Point(107, 3);
+            this.heartBeatSwitch.Name = "heartBeatSwitch";
+            this.heartBeatSwitch.Size = new System.Drawing.Size(74, 22);
+            this.heartBeatSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.heartBeatSwitch.TabIndex = 83;
+            this.heartBeatSwitch.Texts = null;
+            this.heartBeatSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.heartBeatSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("宋体", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label77.Location = new System.Drawing.Point(160, 31);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(215, 33);
+            this.label77.TabIndex = 23;
+            this.label77.Text = "TCP 通讯记录";
+            // 
+            // TCPRecordTextBox
+            // 
+            this.TCPRecordTextBox.Location = new System.Drawing.Point(22, 74);
+            this.TCPRecordTextBox.Multiline = true;
+            this.TCPRecordTextBox.Name = "TCPRecordTextBox";
+            this.TCPRecordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.TCPRecordTextBox.Size = new System.Drawing.Size(523, 343);
+            this.TCPRecordTextBox.TabIndex = 22;
+            // 
+            // deBugSendComm1textBox
+            // 
+            this.deBugSendComm1textBox.Location = new System.Drawing.Point(685, 19);
+            this.deBugSendComm1textBox.Name = "deBugSendComm1textBox";
+            this.deBugSendComm1textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm1textBox.TabIndex = 1;
+            // 
             // deBugConnButton
             // 
-            this.deBugConnButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugConnButton.Location = new System.Drawing.Point(952, 34);
+            this.deBugConnButton.Location = new System.Drawing.Point(1063, 19);
             this.deBugConnButton.Name = "deBugConnButton";
             this.deBugConnButton.Size = new System.Drawing.Size(130, 46);
             this.deBugConnButton.TabIndex = 21;
@@ -4043,10 +5233,18 @@
             this.deBugConnButton.UseVisualStyleBackColor = true;
             this.deBugConnButton.Click += new System.EventHandler(this.deBugConnButton_Click);
             // 
+            // deBugtextBox
+            // 
+            this.deBugtextBox.Location = new System.Drawing.Point(685, 181);
+            this.deBugtextBox.Multiline = true;
+            this.deBugtextBox.Name = "deBugtextBox";
+            this.deBugtextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.deBugtextBox.Size = new System.Drawing.Size(523, 308);
+            this.deBugtextBox.TabIndex = 0;
+            // 
             // deBugSendComm6Button
             // 
-            this.deBugSendComm6Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm6Button.Location = new System.Drawing.Point(862, 169);
+            this.deBugSendComm6Button.Location = new System.Drawing.Point(973, 154);
             this.deBugSendComm6Button.Name = "deBugSendComm6Button";
             this.deBugSendComm6Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm6Button.TabIndex = 20;
@@ -4054,111 +5252,9 @@
             this.deBugSendComm6Button.UseVisualStyleBackColor = true;
             this.deBugSendComm6Button.Click += new System.EventHandler(this.deBugSendComm6Button_Click);
             // 
-            // deBugSendComm6textBox
-            // 
-            this.deBugSendComm6textBox.Location = new System.Drawing.Point(574, 170);
-            this.deBugSendComm6textBox.Name = "deBugSendComm6textBox";
-            this.deBugSendComm6textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm6textBox.TabIndex = 19;
-            // 
-            // deBugSendComm5Button
-            // 
-            this.deBugSendComm5Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm5Button.Location = new System.Drawing.Point(862, 142);
-            this.deBugSendComm5Button.Name = "deBugSendComm5Button";
-            this.deBugSendComm5Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm5Button.TabIndex = 18;
-            this.deBugSendComm5Button.Text = "发送5";
-            this.deBugSendComm5Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm5Button.Click += new System.EventHandler(this.deBugSendComm5Button_Click);
-            // 
-            // deBugSendComm5textBox
-            // 
-            this.deBugSendComm5textBox.Location = new System.Drawing.Point(574, 143);
-            this.deBugSendComm5textBox.Name = "deBugSendComm5textBox";
-            this.deBugSendComm5textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm5textBox.TabIndex = 17;
-            // 
-            // deBugSendComm4Button
-            // 
-            this.deBugSendComm4Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm4Button.Location = new System.Drawing.Point(862, 115);
-            this.deBugSendComm4Button.Name = "deBugSendComm4Button";
-            this.deBugSendComm4Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm4Button.TabIndex = 16;
-            this.deBugSendComm4Button.Text = "发送4";
-            this.deBugSendComm4Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm4Button.Click += new System.EventHandler(this.deBugSendComm4Button_Click);
-            // 
-            // deBugSendComm4textBox
-            // 
-            this.deBugSendComm4textBox.Location = new System.Drawing.Point(574, 116);
-            this.deBugSendComm4textBox.Name = "deBugSendComm4textBox";
-            this.deBugSendComm4textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm4textBox.TabIndex = 15;
-            // 
-            // deBugSendComm3Button
-            // 
-            this.deBugSendComm3Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm3Button.Location = new System.Drawing.Point(862, 88);
-            this.deBugSendComm3Button.Name = "deBugSendComm3Button";
-            this.deBugSendComm3Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm3Button.TabIndex = 14;
-            this.deBugSendComm3Button.Text = "发送3";
-            this.deBugSendComm3Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm3Button.Click += new System.EventHandler(this.deBugSendComm3Button_Click);
-            // 
-            // deBugSendComm3textBox
-            // 
-            this.deBugSendComm3textBox.Location = new System.Drawing.Point(574, 89);
-            this.deBugSendComm3textBox.Name = "deBugSendComm3textBox";
-            this.deBugSendComm3textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm3textBox.TabIndex = 13;
-            // 
-            // deBugSendCommALLButton
-            // 
-            this.deBugSendCommALLButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendCommALLButton.Location = new System.Drawing.Point(952, 86);
-            this.deBugSendCommALLButton.Name = "deBugSendCommALLButton";
-            this.deBugSendCommALLButton.Size = new System.Drawing.Size(130, 48);
-            this.deBugSendCommALLButton.TabIndex = 12;
-            this.deBugSendCommALLButton.Text = "顺序发送";
-            this.deBugSendCommALLButton.UseVisualStyleBackColor = true;
-            this.deBugSendCommALLButton.Click += new System.EventHandler(this.deBugSendCommALLButton_Click);
-            // 
-            // deBugReadCommButton
-            // 
-            this.deBugReadCommButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugReadCommButton.Location = new System.Drawing.Point(952, 140);
-            this.deBugReadCommButton.Name = "deBugReadCommButton";
-            this.deBugReadCommButton.Size = new System.Drawing.Size(130, 47);
-            this.deBugReadCommButton.TabIndex = 11;
-            this.deBugReadCommButton.Text = "读取";
-            this.deBugReadCommButton.UseVisualStyleBackColor = true;
-            this.deBugReadCommButton.Click += new System.EventHandler(this.deBugReadCommButton_Click);
-            // 
-            // deBugSendComm2Button
-            // 
-            this.deBugSendComm2Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm2Button.Location = new System.Drawing.Point(862, 61);
-            this.deBugSendComm2Button.Name = "deBugSendComm2Button";
-            this.deBugSendComm2Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm2Button.TabIndex = 10;
-            this.deBugSendComm2Button.Text = "发送2";
-            this.deBugSendComm2Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm2Button.Click += new System.EventHandler(this.deBugSendComm2Button_Click);
-            // 
-            // deBugSendComm2textBox
-            // 
-            this.deBugSendComm2textBox.Location = new System.Drawing.Point(574, 62);
-            this.deBugSendComm2textBox.Name = "deBugSendComm2textBox";
-            this.deBugSendComm2textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm2textBox.TabIndex = 9;
-            // 
             // deBugSendComm1Button
             // 
-            this.deBugSendComm1Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm1Button.Location = new System.Drawing.Point(862, 34);
+            this.deBugSendComm1Button.Location = new System.Drawing.Point(973, 19);
             this.deBugSendComm1Button.Name = "deBugSendComm1Button";
             this.deBugSendComm1Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm1Button.TabIndex = 8;
@@ -4166,21 +5262,100 @@
             this.deBugSendComm1Button.UseVisualStyleBackColor = true;
             this.deBugSendComm1Button.Click += new System.EventHandler(this.deBugSendComm1Button_Click);
             // 
-            // deBugSendComm1textBox
+            // deBugSendComm2textBox
             // 
-            this.deBugSendComm1textBox.Location = new System.Drawing.Point(574, 35);
-            this.deBugSendComm1textBox.Name = "deBugSendComm1textBox";
-            this.deBugSendComm1textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm1textBox.TabIndex = 1;
+            this.deBugSendComm2textBox.Location = new System.Drawing.Point(685, 46);
+            this.deBugSendComm2textBox.Name = "deBugSendComm2textBox";
+            this.deBugSendComm2textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm2textBox.TabIndex = 9;
             // 
-            // deBugtextBox
+            // deBugSendComm6textBox
             // 
-            this.deBugtextBox.Location = new System.Drawing.Point(574, 197);
-            this.deBugtextBox.Multiline = true;
-            this.deBugtextBox.Name = "deBugtextBox";
-            this.deBugtextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.deBugtextBox.Size = new System.Drawing.Size(523, 308);
-            this.deBugtextBox.TabIndex = 0;
+            this.deBugSendComm6textBox.Location = new System.Drawing.Point(685, 154);
+            this.deBugSendComm6textBox.Name = "deBugSendComm6textBox";
+            this.deBugSendComm6textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm6textBox.TabIndex = 19;
+            // 
+            // deBugSendComm2Button
+            // 
+            this.deBugSendComm2Button.Location = new System.Drawing.Point(973, 46);
+            this.deBugSendComm2Button.Name = "deBugSendComm2Button";
+            this.deBugSendComm2Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm2Button.TabIndex = 10;
+            this.deBugSendComm2Button.Text = "发送2";
+            this.deBugSendComm2Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm2Button.Click += new System.EventHandler(this.deBugSendComm2Button_Click);
+            // 
+            // deBugSendComm5Button
+            // 
+            this.deBugSendComm5Button.Location = new System.Drawing.Point(973, 127);
+            this.deBugSendComm5Button.Name = "deBugSendComm5Button";
+            this.deBugSendComm5Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm5Button.TabIndex = 18;
+            this.deBugSendComm5Button.Text = "发送5";
+            this.deBugSendComm5Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm5Button.Click += new System.EventHandler(this.deBugSendComm5Button_Click);
+            // 
+            // deBugReadCommButton
+            // 
+            this.deBugReadCommButton.Location = new System.Drawing.Point(1063, 125);
+            this.deBugReadCommButton.Name = "deBugReadCommButton";
+            this.deBugReadCommButton.Size = new System.Drawing.Size(130, 47);
+            this.deBugReadCommButton.TabIndex = 11;
+            this.deBugReadCommButton.Text = "读取";
+            this.deBugReadCommButton.UseVisualStyleBackColor = true;
+            this.deBugReadCommButton.Click += new System.EventHandler(this.deBugReadCommButton_Click);
+            // 
+            // deBugSendComm5textBox
+            // 
+            this.deBugSendComm5textBox.Location = new System.Drawing.Point(685, 127);
+            this.deBugSendComm5textBox.Name = "deBugSendComm5textBox";
+            this.deBugSendComm5textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm5textBox.TabIndex = 17;
+            // 
+            // deBugSendCommALLButton
+            // 
+            this.deBugSendCommALLButton.Location = new System.Drawing.Point(1063, 71);
+            this.deBugSendCommALLButton.Name = "deBugSendCommALLButton";
+            this.deBugSendCommALLButton.Size = new System.Drawing.Size(130, 48);
+            this.deBugSendCommALLButton.TabIndex = 12;
+            this.deBugSendCommALLButton.Text = "顺序发送";
+            this.deBugSendCommALLButton.UseVisualStyleBackColor = true;
+            this.deBugSendCommALLButton.Click += new System.EventHandler(this.deBugSendCommALLButton_Click);
+            // 
+            // deBugSendComm4Button
+            // 
+            this.deBugSendComm4Button.Location = new System.Drawing.Point(973, 100);
+            this.deBugSendComm4Button.Name = "deBugSendComm4Button";
+            this.deBugSendComm4Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm4Button.TabIndex = 16;
+            this.deBugSendComm4Button.Text = "发送4";
+            this.deBugSendComm4Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm4Button.Click += new System.EventHandler(this.deBugSendComm4Button_Click);
+            // 
+            // deBugSendComm3textBox
+            // 
+            this.deBugSendComm3textBox.Location = new System.Drawing.Point(685, 73);
+            this.deBugSendComm3textBox.Name = "deBugSendComm3textBox";
+            this.deBugSendComm3textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm3textBox.TabIndex = 13;
+            // 
+            // deBugSendComm4textBox
+            // 
+            this.deBugSendComm4textBox.Location = new System.Drawing.Point(685, 100);
+            this.deBugSendComm4textBox.Name = "deBugSendComm4textBox";
+            this.deBugSendComm4textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm4textBox.TabIndex = 15;
+            // 
+            // deBugSendComm3Button
+            // 
+            this.deBugSendComm3Button.Location = new System.Drawing.Point(973, 73);
+            this.deBugSendComm3Button.Name = "deBugSendComm3Button";
+            this.deBugSendComm3Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm3Button.TabIndex = 14;
+            this.deBugSendComm3Button.Text = "发送3";
+            this.deBugSendComm3Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm3Button.Click += new System.EventHandler(this.deBugSendComm3Button_Click);
             // 
             // saveInitButton
             // 
@@ -4218,6 +5393,326 @@
             this.aboutTabPage.Text = "关于我们";
             this.aboutTabPage.UseVisualStyleBackColor = true;
             // 
+            // panel25
+            // 
+            this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel25.Controls.Add(this.textBox12);
+            this.panel25.Controls.Add(this.label83);
+            this.panel25.Controls.Add(this.label80);
+            this.panel25.Controls.Add(this.freqRangeStartTextBox1);
+            this.panel25.Controls.Add(this.freqDownlimitTextBox1);
+            this.panel25.Controls.Add(this.freqRangeStopTextBox1);
+            this.panel25.Controls.Add(this.label81);
+            this.panel25.Controls.Add(this.freqUplimitTextBox1);
+            this.panel25.Controls.Add(this.label82);
+            this.panel25.Location = new System.Drawing.Point(23, 207);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(194, 150);
+            this.panel25.TabIndex = 112;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox12.Location = new System.Drawing.Point(0, 0);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(192, 21);
+            this.textBox12.TabIndex = 103;
+            this.textBox12.Text = "通道一";
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel26
+            // 
+            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel26.Controls.Add(this.textBox9);
+            this.panel26.Controls.Add(this.label86);
+            this.panel26.Controls.Add(this.label87);
+            this.panel26.Controls.Add(this.freqRangeStartTextBox2);
+            this.panel26.Controls.Add(this.freqDownlimitTextBox2);
+            this.panel26.Controls.Add(this.freqRangeStopTextBox2);
+            this.panel26.Controls.Add(this.label88);
+            this.panel26.Controls.Add(this.freqUplimitTextBox2);
+            this.panel26.Controls.Add(this.label89);
+            this.panel26.Location = new System.Drawing.Point(248, 208);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(194, 150);
+            this.panel26.TabIndex = 113;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox9.Location = new System.Drawing.Point(0, 0);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(192, 21);
+            this.textBox9.TabIndex = 103;
+            this.textBox9.Text = "通道二";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(3, 120);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(119, 12);
+            this.label86.TabIndex = 111;
+            this.label86.Text = "频点偏移下限（GHz）";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(3, 33);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(119, 12);
+            this.label87.TabIndex = 108;
+            this.label87.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStartTextBox2
+            // 
+            this.freqRangeStartTextBox2.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox2.Name = "freqRangeStartTextBox2";
+            this.freqRangeStartTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox2.TabIndex = 104;
+            this.freqRangeStartTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqDownlimitTextBox2
+            // 
+            this.freqDownlimitTextBox2.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox2.Name = "freqDownlimitTextBox2";
+            this.freqDownlimitTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox2.TabIndex = 107;
+            this.freqDownlimitTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqRangeStopTextBox2
+            // 
+            this.freqRangeStopTextBox2.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox2.Name = "freqRangeStopTextBox2";
+            this.freqRangeStopTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox2.TabIndex = 105;
+            this.freqRangeStopTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(3, 61);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(119, 12);
+            this.label88.TabIndex = 109;
+            this.label88.Text = "频点范围结束（GHz）";
+            // 
+            // freqUplimitTextBox2
+            // 
+            this.freqUplimitTextBox2.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox2.Name = "freqUplimitTextBox2";
+            this.freqUplimitTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox2.TabIndex = 106;
+            this.freqUplimitTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(3, 90);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(119, 12);
+            this.label89.TabIndex = 110;
+            this.label89.Text = "频点偏移上限（GHz）";
+            // 
+            // panel27
+            // 
+            this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel27.Controls.Add(this.textBox15);
+            this.panel27.Controls.Add(this.label90);
+            this.panel27.Controls.Add(this.label91);
+            this.panel27.Controls.Add(this.freqRangeStartTextBox3);
+            this.panel27.Controls.Add(this.freqDownlimitTextBox3);
+            this.panel27.Controls.Add(this.freqRangeStopTextBox3);
+            this.panel27.Controls.Add(this.label92);
+            this.panel27.Controls.Add(this.freqUplimitTextBox3);
+            this.panel27.Controls.Add(this.label93);
+            this.panel27.Location = new System.Drawing.Point(22, 363);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(194, 150);
+            this.panel27.TabIndex = 114;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox15.Location = new System.Drawing.Point(0, 0);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(192, 21);
+            this.textBox15.TabIndex = 103;
+            this.textBox15.Text = "通道三";
+            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(3, 120);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(119, 12);
+            this.label90.TabIndex = 111;
+            this.label90.Text = "频点偏移下限（GHz）";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(3, 33);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(119, 12);
+            this.label91.TabIndex = 108;
+            this.label91.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStartTextBox3
+            // 
+            this.freqRangeStartTextBox3.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox3.Name = "freqRangeStartTextBox3";
+            this.freqRangeStartTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox3.TabIndex = 104;
+            this.freqRangeStartTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqDownlimitTextBox3
+            // 
+            this.freqDownlimitTextBox3.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox3.Name = "freqDownlimitTextBox3";
+            this.freqDownlimitTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox3.TabIndex = 107;
+            this.freqDownlimitTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqRangeStopTextBox3
+            // 
+            this.freqRangeStopTextBox3.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox3.Name = "freqRangeStopTextBox3";
+            this.freqRangeStopTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox3.TabIndex = 105;
+            this.freqRangeStopTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(3, 61);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(119, 12);
+            this.label92.TabIndex = 109;
+            this.label92.Text = "频点范围结束（GHz）";
+            // 
+            // freqUplimitTextBox3
+            // 
+            this.freqUplimitTextBox3.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox3.Name = "freqUplimitTextBox3";
+            this.freqUplimitTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox3.TabIndex = 106;
+            this.freqUplimitTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(3, 90);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(119, 12);
+            this.label93.TabIndex = 110;
+            this.label93.Text = "频点偏移上限（GHz）";
+            // 
+            // panel28
+            // 
+            this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel28.Controls.Add(this.textBox20);
+            this.panel28.Controls.Add(this.label94);
+            this.panel28.Controls.Add(this.label95);
+            this.panel28.Controls.Add(this.freqRangeStartTextBox4);
+            this.panel28.Controls.Add(this.freqDownlimitTextBox4);
+            this.panel28.Controls.Add(this.freqRangeStopTextBox4);
+            this.panel28.Controls.Add(this.label96);
+            this.panel28.Controls.Add(this.freqUplimitTextBox4);
+            this.panel28.Controls.Add(this.label97);
+            this.panel28.Location = new System.Drawing.Point(247, 364);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(194, 150);
+            this.panel28.TabIndex = 115;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox20.Location = new System.Drawing.Point(0, 0);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
+            this.textBox20.Size = new System.Drawing.Size(192, 21);
+            this.textBox20.TabIndex = 103;
+            this.textBox20.Text = "通道四";
+            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(3, 120);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(119, 12);
+            this.label94.TabIndex = 111;
+            this.label94.Text = "频点偏移下限（GHz）";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(3, 33);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(119, 12);
+            this.label95.TabIndex = 108;
+            this.label95.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStartTextBox4
+            // 
+            this.freqRangeStartTextBox4.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox4.Name = "freqRangeStartTextBox4";
+            this.freqRangeStartTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox4.TabIndex = 104;
+            this.freqRangeStartTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqDownlimitTextBox4
+            // 
+            this.freqDownlimitTextBox4.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox4.Name = "freqDownlimitTextBox4";
+            this.freqDownlimitTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox4.TabIndex = 107;
+            this.freqDownlimitTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqRangeStopTextBox4
+            // 
+            this.freqRangeStopTextBox4.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox4.Name = "freqRangeStopTextBox4";
+            this.freqRangeStopTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox4.TabIndex = 105;
+            this.freqRangeStopTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(3, 61);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(119, 12);
+            this.label96.TabIndex = 109;
+            this.label96.Text = "频点范围结束（GHz）";
+            // 
+            // freqUplimitTextBox4
+            // 
+            this.freqUplimitTextBox4.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox4.Name = "freqUplimitTextBox4";
+            this.freqUplimitTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox4.TabIndex = 106;
+            this.freqUplimitTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(3, 90);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(119, 12);
+            this.label97.TabIndex = 110;
+            this.label97.Text = "频点偏移上限（GHz）";
+            // 
             // RF_TestSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -4231,7 +5726,7 @@
             this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RF_TestSystem";
+            this.Text = "RF_TestSystem_20210605";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.Load += new System.EventHandler(this.RF_TestSystem_Load);
             this.Resize += new System.EventHandler(this.RF_TestSystem_Resize);
@@ -4290,6 +5785,8 @@
             this.funcPanel.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.testConfigPanel.ResumeLayout(false);
+            this.testConfigPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -4297,6 +5794,9 @@
             this.infoPanel.ResumeLayout(false);
             this.infoPanel.PerformLayout();
             this.chartTabControl.ResumeLayout(false);
+            this.testResultTab.ResumeLayout(false);
+            this.uCSignalPanel.ResumeLayout(false);
+            this.uCSignalPanel.PerformLayout();
             this.testTabPage2.ResumeLayout(false);
             this.analysisTabPage.ResumeLayout(false);
             this.analysisTabPage.PerformLayout();
@@ -4357,16 +5857,8 @@
             this.panel9.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
             this.uploadModelSettingPanel.ResumeLayout(false);
             this.uploadModelSettingPanel.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -4375,6 +5867,14 @@
             this.panel13.PerformLayout();
             this.ABBSettingPanel.ResumeLayout(false);
             this.ABBSettingPanel.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -4424,7 +5924,18 @@
             this.flowLayoutPanel54.ResumeLayout(false);
             this.flowLayoutPanel54.PerformLayout();
             this.DebugTabPage.ResumeLayout(false);
-            this.DebugTabPage.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4768,6 +6279,122 @@
         private HZH_Controls.Controls.UCSwitch yieldEnableSwitch;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.TextBox probeResetWarnTextBox;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox TCPRecordTextBox;
+        private System.Windows.Forms.TabPage testResultTab;
+        private System.Windows.Forms.Panel uCSignalPanel;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.ComboBox testLocationComboBox;
+        private System.Windows.Forms.Button testLocatioResetButton;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox freqDownlimitTextBox1;
+        private System.Windows.Forms.TextBox freqUplimitTextBox1;
+        private System.Windows.Forms.TextBox freqRangeStopTextBox1;
+        private System.Windows.Forms.TextBox freqRangeStartTextBox1;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Label label84;
+        private HZH_Controls.Controls.UCSwitch heartBeatSwitch;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp43;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp44;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp45;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp46;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp47;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp48;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp49;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp50;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp51;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp52;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp53;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp54;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp55;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp56;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp29;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp30;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp31;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp32;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp33;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp34;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp35;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp36;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp37;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp38;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp39;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp40;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp41;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp42;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp13;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp15;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp17;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp18;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp19;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp20;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp21;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp22;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp23;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp24;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp25;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp26;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp27;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp28;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp14;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp16;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp9;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp10;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp11;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp12;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp5;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp6;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp7;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp8;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp4;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp3;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp2;
+        private HZH_Controls.Controls.UCSignalLamp ucSignalLamp1;
+        private System.Windows.Forms.Button setDataPathNameButton;
+        private System.Windows.Forms.Label 储存文件夹;
+        private System.Windows.Forms.ComboBox saveDataPathNameComboBox;
+        private System.Windows.Forms.Panel testConfigPanel;
+        private System.Windows.Forms.RadioButton testConfigSetPartRadioButton;
+        private System.Windows.Forms.RadioButton testConfigSetAllRadioButton;
+        private System.Windows.Forms.Panel testConfigCheckBoxPanel;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.TextBox freqRangeStartTextBox4;
+        private System.Windows.Forms.TextBox freqDownlimitTextBox4;
+        private System.Windows.Forms.TextBox freqRangeStopTextBox4;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.TextBox freqUplimitTextBox4;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox freqRangeStartTextBox3;
+        private System.Windows.Forms.TextBox freqDownlimitTextBox3;
+        private System.Windows.Forms.TextBox freqRangeStopTextBox3;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.TextBox freqUplimitTextBox3;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox freqRangeStartTextBox2;
+        private System.Windows.Forms.TextBox freqDownlimitTextBox2;
+        private System.Windows.Forms.TextBox freqRangeStopTextBox2;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.TextBox freqUplimitTextBox2;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }
 

@@ -59,13 +59,15 @@ namespace RF_TestSystem
         public string rawData;
         public string sheetHead;
         public string frequency;
+        public List<double> frequencyListDouble;
+        public List<string> frequencyListString;
         public string note;
         public string testDate;
         public string state;
         public string NG_Value;
         public separationGeneric<string> tracesDataStringType;
         public separationGeneric<List<double>> tracesDataDoubleType;
-
+        public FreqMap freqMostValue;
     }
     public class OracleDataPackage
     {

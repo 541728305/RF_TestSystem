@@ -166,9 +166,9 @@ namespace RF_TestSystem
 
             //配置缺省值
             agilentConfig.path = Gloable.configPath + Gloable.AnalyzerConfigFileName;
-            agilentConfig.IP = "192.168.0.51";
+            agilentConfig.IP = "100.1.1.252";
             agilentConfig.channelNumber = "1";
-            agilentConfig.windows = "曲线多窗口显示";
+            agilentConfig.windows = "曲线单窗口显示";
             agilentConfig.startFrequency = "100";
             agilentConfig.startFrequencyUnit = "MHz";
             agilentConfig.stopFrequency = "10";
@@ -231,6 +231,10 @@ namespace RF_TestSystem
                 writeAnalyzerConfigToInitFile(agilentConfig);
             }
             Gloable.limitFilePath = agilentConfig.limitPath;
+
+            // 2021年6月1日 更新为软件所在目录
+            agilentConfig.dataPath = System.Windows.Forms.Application.StartupPath + "\\RF_Data\\";
+            agilentConfig.limitPath = System.Windows.Forms.Application.StartupPath + "\\Limit\\";
             return agilentConfig;
         }
 
@@ -723,6 +727,26 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
 
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit1", modelSetting.freqUpLimit1);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit1", modelSetting.freqDownLimit1);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit1", modelSetting.freqRangeStartLimit1);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit1", modelSetting.freqRangeStopLimit1);
+
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit2", modelSetting.freqUpLimit2);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit2", modelSetting.freqDownLimit2);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit2", modelSetting.freqRangeStartLimit2);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit2", modelSetting.freqRangeStopLimit2);
+
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit3", modelSetting.freqUpLimit3);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit3", modelSetting.freqDownLimit3);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit3", modelSetting.freqRangeStartLimit3);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit3", modelSetting.freqRangeStopLimit3);
+
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit4", modelSetting.freqUpLimit4);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit4", modelSetting.freqDownLimit4);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit4", modelSetting.freqRangeStartLimit4);
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit4", modelSetting.freqRangeStopLimit4);
+
             return successful;
         }
         public ModelSetting readModelSettingFromInitFile()
@@ -752,6 +776,26 @@ namespace RF_TestSystem
             modelSetting.probeUseTime = "0";
             modelSetting.probeUperTime = "15000";
             modelSetting.probeWarnTime = "500";
+
+            modelSetting.freqUpLimit1 = "6.7";
+            modelSetting.freqDownLimit1 = "6.4";
+            modelSetting.freqRangeStartLimit1 = "5";
+            modelSetting.freqRangeStopLimit1 = "7";
+
+            modelSetting.freqUpLimit2 = "6.7";
+            modelSetting.freqDownLimit2 = "6.4";
+            modelSetting.freqRangeStartLimit2 = "5";
+            modelSetting.freqRangeStopLimit2 = "7";
+
+            modelSetting.freqUpLimit3 = "6.7";
+            modelSetting.freqDownLimit3 = "6.4";
+            modelSetting.freqRangeStartLimit3 = "5";
+            modelSetting.freqRangeStopLimit3 = "7";
+
+            modelSetting.freqUpLimit4 = "6.7";
+            modelSetting.freqDownLimit4 = "6.4";
+            modelSetting.freqRangeStartLimit4 = "5";
+            modelSetting.freqRangeStopLimit4 = "7";
             string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -791,6 +835,26 @@ namespace RF_TestSystem
                     modelSetting.probeUseTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime", modelSetting.probeUseTime);
                     modelSetting.probeUperTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
                     modelSetting.probeWarnTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
+
+                    modelSetting.freqUpLimit1 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit1", modelSetting.freqUpLimit1);
+                    modelSetting.freqDownLimit1 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit1", modelSetting.freqDownLimit1);
+                    modelSetting.freqRangeStartLimit1 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit1", modelSetting.freqRangeStartLimit1);
+                    modelSetting.freqRangeStopLimit1 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit1", modelSetting.freqRangeStopLimit1);
+
+                    modelSetting.freqUpLimit2 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit2", modelSetting.freqUpLimit2);
+                    modelSetting.freqDownLimit2 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit2", modelSetting.freqDownLimit2);
+                    modelSetting.freqRangeStartLimit2 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit2", modelSetting.freqRangeStartLimit2);
+                    modelSetting.freqRangeStopLimit2 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit2", modelSetting.freqRangeStopLimit2);
+
+                    modelSetting.freqUpLimit3 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit3", modelSetting.freqUpLimit3);
+                    modelSetting.freqDownLimit3 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit3", modelSetting.freqDownLimit3);
+                    modelSetting.freqRangeStartLimit3 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit3", modelSetting.freqRangeStartLimit3);
+                    modelSetting.freqRangeStopLimit3 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit3", modelSetting.freqRangeStopLimit3);
+
+                    modelSetting.freqUpLimit4 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqUpLimit4", modelSetting.freqUpLimit4);
+                    modelSetting.freqDownLimit4 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqDownLimit4", modelSetting.freqDownLimit4);
+                    modelSetting.freqRangeStartLimit4 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStartLimit4", modelSetting.freqRangeStartLimit4);
+                    modelSetting.freqRangeStopLimit4 = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "freqRangeStopLimit4", modelSetting.freqRangeStopLimit4);
 
                 }
                 else

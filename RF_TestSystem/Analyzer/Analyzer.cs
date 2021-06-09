@@ -309,7 +309,7 @@ namespace RF_TestSystem
         {
             string setContinuous = "";
             string setContinuousCommand = ":INIT" + channel + ":CONT " + status;
-            Console.WriteLine(setContinuousCommand);
+ //           Console.WriteLine(setContinuousCommand);
             sendCommand(setContinuousCommand);
       //      setContinuous = ackContinuousStatus(channel);
             return setContinuous;
@@ -319,7 +319,7 @@ namespace RF_TestSystem
             string activeTraceData = "";
             string getActiveTraceDataCommand = ":CALC" + channel + ":DATA:FDAT?";
             selectTrace(channel, trace);
-            Console.WriteLine(getActiveTraceDataCommand);
+//            Console.WriteLine(getActiveTraceDataCommand);
             sendCommand(getActiveTraceDataCommand);
             Thread.Sleep(50);
             activeTraceData = readData();
@@ -331,7 +331,7 @@ namespace RF_TestSystem
             string activeTraceData = "";
             string getActiveTraceDataCommand = ":CALC" + channel + ":DATA:FMEM?";
             selectTrace(channel, trace);
-            Console.WriteLine(getActiveTraceDataCommand);
+ //           Console.WriteLine(getActiveTraceDataCommand);
             sendCommand(getActiveTraceDataCommand);
             activeTraceData = readData();
             return activeTraceData;
@@ -341,7 +341,7 @@ namespace RF_TestSystem
         {
             string frequency = "";
             string getFrequencyCommand = ":SENS" + channel + ":FREQ:DATA?";
-            Console.WriteLine(getFrequencyCommand);
+ //           Console.WriteLine(getFrequencyCommand);
             sendCommand(getFrequencyCommand);
             frequency = readData();
             return frequency;
@@ -351,7 +351,7 @@ namespace RF_TestSystem
             string dataToMemory = "";
             string dataToMemoryCommand = ":CALC" + channel + ":MATH:MEM";
             selectTrace(channel, trace);
-            Console.WriteLine(dataToMemoryCommand);
+ //           Console.WriteLine(dataToMemoryCommand);
             sendCommand(dataToMemoryCommand);
             return dataToMemory;
         }
@@ -360,7 +360,7 @@ namespace RF_TestSystem
         {
             string display = "";
             string ackDisplayCommand = ":DISP:WIND" + channel + ":TRAC" + trace + ":" + memOrStat + "?";
-            Console.WriteLine(ackDisplayCommand);
+ //           Console.WriteLine(ackDisplayCommand);
             sendCommand(ackDisplayCommand);
             display = readData();
             return display;
@@ -369,7 +369,7 @@ namespace RF_TestSystem
         {
             string setDisplay = "";
             string setDisplayCommand = ":DISP:WIND" + channel + ":TRAC" + trace + ":" + memOrStat + " " + offOrOn;
-            Console.WriteLine(setDisplayCommand);
+ //           Console.WriteLine(setDisplayCommand);
             sendCommand(setDisplayCommand);
             setDisplay = ackDisplay(channel, trace, memOrStat);
             return setDisplay;
@@ -379,7 +379,7 @@ namespace RF_TestSystem
         {
             string sParameter = "";
             string ackMeasCommand = ":CALC" + channel + ":PAR" + trace + ":DEF?";
-            Console.WriteLine(ackMeasCommand);
+//            Console.WriteLine(ackMeasCommand);
             sendCommand(ackMeasCommand);
             sParameter = readData();
             return sParameter;
@@ -613,7 +613,15 @@ namespace RF_TestSystem
 
         public void sendOPC()
         {
-            sendCommand("*OPC?");
+            try
+            {
+                ioobj.WriteString("*OPC?", true);
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+           
         }
         public AnalyzerConfig getBasisConfig()
         {
@@ -768,7 +776,27 @@ namespace RF_TestSystem
                 else
                 {
                     analyzerConfig.smooth = "OFF";
-                    analyzerConfig.smoothValue = "0";
+                    string smoothValue = "";
+
+                    try
+                    {
+                        smoothValue = ((Convert.ToDouble(ackSmoothValue("1").Replace("\n", "")))).ToString();
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        try
+                        {
+                            smoothValue = ((Convert.ToDouble(ackSmoothValue("1").Replace("\n", "")))).ToString();
+
+                        }
+                        catch (Exception e1)
+                        { Console.WriteLine(e1.Message); }
+                    }
+
+                    analyzerConfig.smoothValue = smoothValue;
+                    break;
                 }
             }
             return analyzerConfig;

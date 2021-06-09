@@ -178,3 +178,53 @@ F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Co
 F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Release\RF_TestSystem.csprojAssemblyReference.cache
 F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Release\Newtonsoft.Json.pdb
 F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Release\Newtonsoft.Json.xml
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\obj\x86\Release\RF_TestSystem.WinForm.ECalWaiting.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Resources\BACK.jpg
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Resources\multiple-11@4x.png
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Resources\pig.gif
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Resources\single-01@4x.png
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Resources\skull-2@4x.png
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Resources\skull-2.png
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Resources\银河.gif
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\RF_TestSystem.exe.config
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\RF_TestSystem.exe.manifest
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\RF_TestSystem.application
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\RF_TestSystem.exe
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\RF_TestSystem.pdb
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\AForge.Controls.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\AForge.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\AForge.Imaging.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\AForge.Math.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\AForge.Video.DirectShow.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\AForge.Video.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\AvaryAPI_v2.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\DVPCameraCS.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\halcondotnet.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\HZH_Controls.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Newtonsoft.Json.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Oracle.ManagedDataAccess.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\DVPCameraCS.pdb
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Newtonsoft.Json.pdb
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Newtonsoft.Json.xml
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\bin\x86\Release\Ivi.Visa.Interop.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.csprojAssemblyReference.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\Interop.BASICFORMATTEDIOLib.dll
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.csproj.ResolveComReference.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.AnalyzerEXTension.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.Trigger.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.Credentials.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.WinForm.ECalWaiting.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.Login.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.LoginInformation.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.RF_TestSystem.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.Properties.Resources.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.WinForm.SampleManage.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.SelectModel.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.Warning.resources
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.csproj.GenerateResource.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.csproj.CoreCompileInputs.cache
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.exe.manifest
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.application
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.csproj.CopyComplete
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.exe
+F:\VisualStudioProject\RF_TestSystem\RF_TestSystem Version1.0\RF_TestSystem\obj\x86\Release\RF_TestSystem.pdb
