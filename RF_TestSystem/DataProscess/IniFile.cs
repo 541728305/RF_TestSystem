@@ -230,11 +230,12 @@ namespace RF_TestSystem
                 //写入缺省值
                 writeAnalyzerConfigToInitFile(agilentConfig);
             }
-            Gloable.limitFilePath = agilentConfig.limitPath;
+            
 
             // 2021年6月1日 更新为软件所在目录
             agilentConfig.dataPath = System.Windows.Forms.Application.StartupPath + "\\RF_Data\\";
             agilentConfig.limitPath = System.Windows.Forms.Application.StartupPath + "\\Limit\\";
+            Gloable.limitFilePath = agilentConfig.limitPath;
             return agilentConfig;
         }
 

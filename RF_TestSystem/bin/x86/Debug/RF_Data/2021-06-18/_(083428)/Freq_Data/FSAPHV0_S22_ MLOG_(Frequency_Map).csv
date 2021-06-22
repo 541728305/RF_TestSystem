@@ -1,0 +1,4 @@
+﻿SWVersion:1.0
+Serial Number,Test Start Time,Test Stop Time, SubStation ID, Overall Result, FailingBands,Frequency（GHz）,Mag Log(dB),
+AMV0312820024671W31,2021/6/18 8:34:26,2021/6/18 8:34:28,HV0-1,FAIL,S11 S22 S33 S44 ,0,0,
+AMV0312820024671W31,2021/6/18 8:34:50,2021/6/18 8:34:53,HV0-1,FAIL,S11 S22 S33 S44 ,0,0,

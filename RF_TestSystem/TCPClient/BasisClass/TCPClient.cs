@@ -55,7 +55,7 @@ namespace RF_TestSystem
 
                     case EnSocketAction.Close:
                         Console.WriteLine("服务端连接关闭");
-                        TcpClientDisconnectEven();
+                        //TcpClientDisconnectEven();
                         connectState = 3;
                         break;
                     default:
@@ -119,6 +119,11 @@ namespace RF_TestSystem
             }
             
         }
+
+        public bool conncet(string IP, int Port)
+        {
+            return client.connect(IP, Port);
+        }
         public bool clientConncet(string IP, int Port)
         {
             bool successful = false;
@@ -146,13 +151,13 @@ namespace RF_TestSystem
                 }
                 else
                 {
-                    if (client.getConneted() == true)
-                    {
-                        t.Stop();
-                        t.Enabled = false;
-                        successful = true;
-                        return successful;
-                    }                
+                    //if (client.getConneted() == true)
+                    //{
+                    //    t.Stop();
+                    //    t.Enabled = false;
+                    //    successful = true;
+                    //    return successful;
+                    //}                
                 }
             }
             return successful;

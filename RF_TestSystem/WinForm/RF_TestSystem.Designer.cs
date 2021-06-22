@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RF_TestSystem));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.connectButton = new System.Windows.Forms.Button();
             this.connImageList = new System.Windows.Forms.ImageList(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -267,6 +267,46 @@
             this.settingTabPage = new System.Windows.Forms.TabPage();
             this.tabControlExt1 = new HZH_Controls.Controls.TabControlExt();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.freqRangeStartTextBox4 = new System.Windows.Forms.TextBox();
+            this.freqDownlimitTextBox4 = new System.Windows.Forms.TextBox();
+            this.freqRangeStopTextBox4 = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox4 = new System.Windows.Forms.TextBox();
+            this.label97 = new System.Windows.Forms.Label();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.freqRangeStartTextBox3 = new System.Windows.Forms.TextBox();
+            this.freqDownlimitTextBox3 = new System.Windows.Forms.TextBox();
+            this.freqRangeStopTextBox3 = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox3 = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.freqRangeStartTextBox2 = new System.Windows.Forms.TextBox();
+            this.freqDownlimitTextBox2 = new System.Windows.Forms.TextBox();
+            this.freqRangeStopTextBox2 = new System.Windows.Forms.TextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox2 = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.freqRangeStartTextBox1 = new System.Windows.Forms.TextBox();
+            this.freqDownlimitTextBox1 = new System.Windows.Forms.TextBox();
+            this.freqRangeStopTextBox1 = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.freqUplimitTextBox1 = new System.Windows.Forms.TextBox();
+            this.label82 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label76 = new System.Windows.Forms.Label();
             this.probeResetWarnTextBox = new System.Windows.Forms.TextBox();
@@ -279,24 +319,17 @@
             this.probeUseTextBox = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.testModelSettingPanel = new System.Windows.Forms.Panel();
-            this.label83 = new System.Windows.Forms.Label();
-            this.freqDownlimitTextBox1 = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
             this.label75 = new System.Windows.Forms.Label();
             this.yieldEnableSwitch = new HZH_Controls.Controls.UCSwitch();
-            this.label82 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.label73 = new System.Windows.Forms.Label();
             this.baseYieldTextBox = new System.Windows.Forms.TextBox();
             this.label74 = new System.Windows.Forms.Label();
-            this.freqUplimitTextBox1 = new System.Windows.Forms.TextBox();
-            this.label81 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label71 = new System.Windows.Forms.Label();
             this.stopTestYieldTextBox = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.freqRangeStopTextBox1 = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label69 = new System.Windows.Forms.Label();
             this.warnYieldTextBox = new System.Windows.Forms.TextBox();
@@ -306,7 +339,6 @@
             this.测试稳定性延时 = new System.Windows.Forms.Label();
             this.testDelaytextBox = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.freqRangeStartTextBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.uploadModelSettingPanel = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -434,6 +466,9 @@
             this.OracleIDTextBox = new System.Windows.Forms.TextBox();
             this.DebugTabPage = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.label98 = new System.Windows.Forms.Label();
+            this.shieldAnalyzerSwitch = new HZH_Controls.Controls.UCSwitch();
             this.panel24 = new System.Windows.Forms.Panel();
             this.label84 = new System.Windows.Forms.Label();
             this.heartBeatSwitch = new HZH_Controls.Controls.UCSwitch();
@@ -458,38 +493,9 @@
             this.saveInitButton = new System.Windows.Forms.Button();
             this.saveAndWriteIniButton = new System.Windows.Forms.Button();
             this.aboutTabPage = new System.Windows.Forms.TabPage();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.freqRangeStartTextBox2 = new System.Windows.Forms.TextBox();
-            this.freqDownlimitTextBox2 = new System.Windows.Forms.TextBox();
-            this.freqRangeStopTextBox2 = new System.Windows.Forms.TextBox();
-            this.label88 = new System.Windows.Forms.Label();
-            this.freqUplimitTextBox2 = new System.Windows.Forms.TextBox();
-            this.label89 = new System.Windows.Forms.Label();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.freqRangeStartTextBox3 = new System.Windows.Forms.TextBox();
-            this.freqDownlimitTextBox3 = new System.Windows.Forms.TextBox();
-            this.freqRangeStopTextBox3 = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
-            this.freqUplimitTextBox3 = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.freqRangeStartTextBox4 = new System.Windows.Forms.TextBox();
-            this.freqDownlimitTextBox4 = new System.Windows.Forms.TextBox();
-            this.freqRangeStopTextBox4 = new System.Windows.Forms.TextBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.freqUplimitTextBox4 = new System.Windows.Forms.TextBox();
-            this.label97 = new System.Windows.Forms.Label();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.label99 = new System.Windows.Forms.Label();
+            this.autoSetTestConfigSwitch1 = new HZH_Controls.Controls.UCSwitch();
             this.flowLayoutPanel43.SuspendLayout();
             this.flowLayoutPanel42.SuspendLayout();
             this.flowLayoutPanel41.SuspendLayout();
@@ -556,6 +562,10 @@
             this.settingTabPage.SuspendLayout();
             this.tabControlExt1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel28.SuspendLayout();
+            this.panel27.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel25.SuspendLayout();
             this.panel8.SuspendLayout();
             this.testModelSettingPanel.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -599,11 +609,9 @@
             this.flowLayoutPanel54.SuspendLayout();
             this.DebugTabPage.SuspendLayout();
             this.panel23.SuspendLayout();
+            this.panel29.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel27.SuspendLayout();
-            this.panel28.SuspendLayout();
+            this.panel30.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
@@ -673,7 +681,7 @@
             this.flowLayoutPanel42.AutoSize = true;
             this.flowLayoutPanel42.Controls.Add(this.label29);
             this.flowLayoutPanel42.Controls.Add(this.scanModelComboBox);
-            this.flowLayoutPanel42.Location = new System.Drawing.Point(204, 1);
+            this.flowLayoutPanel42.Location = new System.Drawing.Point(204, 3);
             this.flowLayoutPanel42.Name = "flowLayoutPanel42";
             this.flowLayoutPanel42.Size = new System.Drawing.Size(123, 26);
             this.flowLayoutPanel42.TabIndex = 106;
@@ -704,7 +712,7 @@
             this.flowLayoutPanel41.AutoSize = true;
             this.flowLayoutPanel41.Controls.Add(this.label26);
             this.flowLayoutPanel41.Controls.Add(this.barcodeTextBox);
-            this.flowLayoutPanel41.Location = new System.Drawing.Point(3, 320);
+            this.flowLayoutPanel41.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel41.Name = "flowLayoutPanel41";
             this.flowLayoutPanel41.Size = new System.Drawing.Size(201, 27);
             this.flowLayoutPanel41.TabIndex = 105;
@@ -999,7 +1007,7 @@
             this.setModelButton.BackColor = System.Drawing.Color.LightSeaGreen;
             this.setModelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.setModelButton.Font = new System.Drawing.Font("宋体", 45.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.setModelButton.Location = new System.Drawing.Point(3, -25);
+            this.setModelButton.Location = new System.Drawing.Point(1, 6);
             this.setModelButton.Name = "setModelButton";
             this.setModelButton.Size = new System.Drawing.Size(330, 71);
             this.setModelButton.TabIndex = 105;
@@ -1121,7 +1129,7 @@
             this.flowLayoutPanel27.Controls.Add(this.flowLayoutPanel26);
             this.flowLayoutPanel27.Controls.Add(this.clearCountButton);
             this.flowLayoutPanel27.Controls.Add(this.TestYieldTextBox);
-            this.flowLayoutPanel27.Location = new System.Drawing.Point(3, 46);
+            this.flowLayoutPanel27.Location = new System.Drawing.Point(3, 83);
             this.flowLayoutPanel27.Name = "flowLayoutPanel27";
             this.flowLayoutPanel27.Size = new System.Drawing.Size(327, 105);
             this.flowLayoutPanel27.TabIndex = 80;
@@ -1222,7 +1230,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 12);
             this.label15.TabIndex = 68;
-            this.label15.Text = "TEST TOTAL";
+            this.label15.Text = "TOTAL SET ";
             // 
             // testTotalNumberTextBox
             // 
@@ -1698,16 +1706,15 @@
             // 
             this.funcPanel.AutoScroll = true;
             this.funcPanel.AutoSize = true;
-            this.funcPanel.Controls.Add(this.flowLayoutPanel41);
             this.funcPanel.Controls.Add(this.panel5);
+            this.funcPanel.Controls.Add(this.flowLayoutPanel27);
             this.funcPanel.Controls.Add(this.panel3);
             this.funcPanel.Controls.Add(this.hWindowControl2);
             this.funcPanel.Controls.Add(this.setModelButton);
-            this.funcPanel.Controls.Add(this.flowLayoutPanel27);
             this.funcPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.funcPanel.Location = new System.Drawing.Point(0, 0);
             this.funcPanel.Name = "funcPanel";
-            this.funcPanel.Size = new System.Drawing.Size(349, 733);
+            this.funcPanel.Size = new System.Drawing.Size(344, 733);
             this.funcPanel.TabIndex = 0;
             // 
             // panel5
@@ -1723,20 +1730,21 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.flowLayoutPanel39);
             this.panel5.Controls.Add(this.startButton);
-            this.panel5.Location = new System.Drawing.Point(3, 353);
+            this.panel5.Location = new System.Drawing.Point(3, 396);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(336, 461);
+            this.panel5.Size = new System.Drawing.Size(336, 458);
             this.panel5.TabIndex = 109;
             // 
             // testConfigPanel
             // 
+            this.testConfigPanel.Controls.Add(this.panel30);
             this.testConfigPanel.Controls.Add(this.label85);
             this.testConfigPanel.Controls.Add(this.testConfigSetPartRadioButton);
             this.testConfigPanel.Controls.Add(this.testConfigSetAllRadioButton);
             this.testConfigPanel.Controls.Add(this.testConfigCheckBoxPanel);
-            this.testConfigPanel.Location = new System.Drawing.Point(3, 3);
+            this.testConfigPanel.Location = new System.Drawing.Point(2, 13);
             this.testConfigPanel.Name = "testConfigPanel";
-            this.testConfigPanel.Size = new System.Drawing.Size(325, 78);
+            this.testConfigPanel.Size = new System.Drawing.Size(325, 73);
             this.testConfigPanel.TabIndex = 110;
             // 
             // label85
@@ -1751,7 +1759,7 @@
             // testConfigSetPartRadioButton
             // 
             this.testConfigSetPartRadioButton.AutoSize = true;
-            this.testConfigSetPartRadioButton.Location = new System.Drawing.Point(177, 6);
+            this.testConfigSetPartRadioButton.Location = new System.Drawing.Point(258, 6);
             this.testConfigSetPartRadioButton.Name = "testConfigSetPartRadioButton";
             this.testConfigSetPartRadioButton.Size = new System.Drawing.Size(47, 16);
             this.testConfigSetPartRadioButton.TabIndex = 4;
@@ -1762,7 +1770,7 @@
             // 
             this.testConfigSetAllRadioButton.AutoSize = true;
             this.testConfigSetAllRadioButton.Checked = true;
-            this.testConfigSetAllRadioButton.Location = new System.Drawing.Point(97, 6);
+            this.testConfigSetAllRadioButton.Location = new System.Drawing.Point(205, 6);
             this.testConfigSetAllRadioButton.Name = "testConfigSetAllRadioButton";
             this.testConfigSetAllRadioButton.Size = new System.Drawing.Size(47, 16);
             this.testConfigSetAllRadioButton.TabIndex = 3;
@@ -1776,7 +1784,7 @@
             this.testConfigCheckBoxPanel.AutoScroll = true;
             this.testConfigCheckBoxPanel.BackColor = System.Drawing.Color.LightGray;
             this.testConfigCheckBoxPanel.Enabled = false;
-            this.testConfigCheckBoxPanel.Location = new System.Drawing.Point(3, 28);
+            this.testConfigCheckBoxPanel.Location = new System.Drawing.Point(5, 28);
             this.testConfigCheckBoxPanel.Name = "testConfigCheckBoxPanel";
             this.testConfigCheckBoxPanel.Size = new System.Drawing.Size(318, 41);
             this.testConfigCheckBoxPanel.TabIndex = 2;
@@ -1824,7 +1832,7 @@
             // 
             this.label79.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(151, 157);
+            this.label79.Location = new System.Drawing.Point(151, 156);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(53, 12);
             this.label79.TabIndex = 110;
@@ -1868,11 +1876,12 @@
             // panel3
             // 
             this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.flowLayoutPanel41);
             this.panel3.Controls.Add(this.flowLayoutPanel42);
-            this.panel3.Location = new System.Drawing.Point(6, 320);
+            this.panel3.Location = new System.Drawing.Point(1, 364);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.panel3.Size = new System.Drawing.Size(340, 30);
+            this.panel3.Size = new System.Drawing.Size(340, 33);
             this.panel3.TabIndex = 108;
             // 
             // hWindowControl2
@@ -1880,7 +1889,7 @@
             this.hWindowControl2.BackColor = System.Drawing.Color.Black;
             this.hWindowControl2.BorderColor = System.Drawing.Color.Black;
             this.hWindowControl2.ImagePart = new System.Drawing.Rectangle(0, 0, 640, 480);
-            this.hWindowControl2.Location = new System.Drawing.Point(3, 154);
+            this.hWindowControl2.Location = new System.Drawing.Point(3, 198);
             this.hWindowControl2.Name = "hWindowControl2";
             this.hWindowControl2.Size = new System.Drawing.Size(327, 163);
             this.hWindowControl2.TabIndex = 0;
@@ -2796,22 +2805,22 @@
             this.testHistorychart.BorderlineColor = System.Drawing.Color.Transparent;
             this.testHistorychart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.testHistorychart.BorderlineWidth = 3;
-            chartArea1.Name = "ChartArea1";
-            this.testHistorychart.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.testHistorychart.ChartAreas.Add(chartArea3);
             this.testHistorychart.Location = new System.Drawing.Point(6, 301);
             this.testHistorychart.Name = "testHistorychart";
             this.testHistorychart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Series1";
-            this.testHistorychart.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Name = "Series1";
+            this.testHistorychart.Series.Add(series3);
             this.testHistorychart.Size = new System.Drawing.Size(732, 272);
             this.testHistorychart.TabIndex = 85;
             this.testHistorychart.Text = "chart1";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title1.ForeColor = System.Drawing.Color.DarkRed;
-            title1.Name = "Title1";
-            title1.Text = "测试历史";
-            this.testHistorychart.Titles.Add(title1);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title3.ForeColor = System.Drawing.Color.DarkRed;
+            title3.Name = "Title1";
+            title3.Text = "测试历史";
+            this.testHistorychart.Titles.Add(title3);
             // 
             // failTop3Chart
             // 
@@ -2819,23 +2828,23 @@
             this.failTop3Chart.BorderlineColor = System.Drawing.Color.Transparent;
             this.failTop3Chart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.failTop3Chart.BorderlineWidth = 3;
-            chartArea2.Name = "ChartArea1";
-            this.failTop3Chart.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.failTop3Chart.ChartAreas.Add(chartArea4);
             this.failTop3Chart.Location = new System.Drawing.Point(6, 7);
             this.failTop3Chart.Name = "failTop3Chart";
             this.failTop3Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
-            series2.Name = "Series1";
-            this.failTop3Chart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
+            series4.Name = "Series1";
+            this.failTop3Chart.Series.Add(series4);
             this.failTop3Chart.Size = new System.Drawing.Size(732, 272);
             this.failTop3Chart.TabIndex = 84;
             this.failTop3Chart.Text = "failTop3Chart";
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title2.ForeColor = System.Drawing.Color.DarkRed;
-            title2.Name = "Title1";
-            title2.Text = "不良项 Top3";
-            this.failTop3Chart.Titles.Add(title2);
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title4.ForeColor = System.Drawing.Color.DarkRed;
+            title4.Name = "Title1";
+            title4.Text = "不良项 Top3";
+            this.failTop3Chart.Titles.Add(title4);
             // 
             // flowLayoutPanel29
             // 
@@ -3360,6 +3369,394 @@
             this.tabPage1.Text = "模式设置";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel28
+            // 
+            this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel28.Controls.Add(this.textBox20);
+            this.panel28.Controls.Add(this.label94);
+            this.panel28.Controls.Add(this.label95);
+            this.panel28.Controls.Add(this.freqRangeStartTextBox4);
+            this.panel28.Controls.Add(this.freqDownlimitTextBox4);
+            this.panel28.Controls.Add(this.freqRangeStopTextBox4);
+            this.panel28.Controls.Add(this.label96);
+            this.panel28.Controls.Add(this.freqUplimitTextBox4);
+            this.panel28.Controls.Add(this.label97);
+            this.panel28.Location = new System.Drawing.Point(247, 364);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(194, 150);
+            this.panel28.TabIndex = 115;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox20.Location = new System.Drawing.Point(0, 0);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
+            this.textBox20.Size = new System.Drawing.Size(192, 21);
+            this.textBox20.TabIndex = 103;
+            this.textBox20.Text = "通道四";
+            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(3, 120);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(119, 12);
+            this.label94.TabIndex = 111;
+            this.label94.Text = "频点偏移下限（GHz）";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(3, 33);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(119, 12);
+            this.label95.TabIndex = 108;
+            this.label95.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStartTextBox4
+            // 
+            this.freqRangeStartTextBox4.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox4.Name = "freqRangeStartTextBox4";
+            this.freqRangeStartTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox4.TabIndex = 104;
+            this.freqRangeStartTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqDownlimitTextBox4
+            // 
+            this.freqDownlimitTextBox4.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox4.Name = "freqDownlimitTextBox4";
+            this.freqDownlimitTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox4.TabIndex = 107;
+            this.freqDownlimitTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqRangeStopTextBox4
+            // 
+            this.freqRangeStopTextBox4.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox4.Name = "freqRangeStopTextBox4";
+            this.freqRangeStopTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox4.TabIndex = 105;
+            this.freqRangeStopTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(3, 61);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(119, 12);
+            this.label96.TabIndex = 109;
+            this.label96.Text = "频点范围结束（GHz）";
+            // 
+            // freqUplimitTextBox4
+            // 
+            this.freqUplimitTextBox4.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox4.Name = "freqUplimitTextBox4";
+            this.freqUplimitTextBox4.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox4.TabIndex = 106;
+            this.freqUplimitTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(3, 90);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(119, 12);
+            this.label97.TabIndex = 110;
+            this.label97.Text = "频点偏移上限（GHz）";
+            // 
+            // panel27
+            // 
+            this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel27.Controls.Add(this.textBox15);
+            this.panel27.Controls.Add(this.label90);
+            this.panel27.Controls.Add(this.label91);
+            this.panel27.Controls.Add(this.freqRangeStartTextBox3);
+            this.panel27.Controls.Add(this.freqDownlimitTextBox3);
+            this.panel27.Controls.Add(this.freqRangeStopTextBox3);
+            this.panel27.Controls.Add(this.label92);
+            this.panel27.Controls.Add(this.freqUplimitTextBox3);
+            this.panel27.Controls.Add(this.label93);
+            this.panel27.Location = new System.Drawing.Point(22, 363);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(194, 150);
+            this.panel27.TabIndex = 114;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox15.Location = new System.Drawing.Point(0, 0);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(192, 21);
+            this.textBox15.TabIndex = 103;
+            this.textBox15.Text = "通道三";
+            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(3, 120);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(119, 12);
+            this.label90.TabIndex = 111;
+            this.label90.Text = "频点偏移下限（GHz）";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(3, 33);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(119, 12);
+            this.label91.TabIndex = 108;
+            this.label91.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStartTextBox3
+            // 
+            this.freqRangeStartTextBox3.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox3.Name = "freqRangeStartTextBox3";
+            this.freqRangeStartTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox3.TabIndex = 104;
+            this.freqRangeStartTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqDownlimitTextBox3
+            // 
+            this.freqDownlimitTextBox3.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox3.Name = "freqDownlimitTextBox3";
+            this.freqDownlimitTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox3.TabIndex = 107;
+            this.freqDownlimitTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqRangeStopTextBox3
+            // 
+            this.freqRangeStopTextBox3.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox3.Name = "freqRangeStopTextBox3";
+            this.freqRangeStopTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox3.TabIndex = 105;
+            this.freqRangeStopTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(3, 61);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(119, 12);
+            this.label92.TabIndex = 109;
+            this.label92.Text = "频点范围结束（GHz）";
+            // 
+            // freqUplimitTextBox3
+            // 
+            this.freqUplimitTextBox3.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox3.Name = "freqUplimitTextBox3";
+            this.freqUplimitTextBox3.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox3.TabIndex = 106;
+            this.freqUplimitTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(3, 90);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(119, 12);
+            this.label93.TabIndex = 110;
+            this.label93.Text = "频点偏移上限（GHz）";
+            // 
+            // panel26
+            // 
+            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel26.Controls.Add(this.textBox9);
+            this.panel26.Controls.Add(this.label86);
+            this.panel26.Controls.Add(this.label87);
+            this.panel26.Controls.Add(this.freqRangeStartTextBox2);
+            this.panel26.Controls.Add(this.freqDownlimitTextBox2);
+            this.panel26.Controls.Add(this.freqRangeStopTextBox2);
+            this.panel26.Controls.Add(this.label88);
+            this.panel26.Controls.Add(this.freqUplimitTextBox2);
+            this.panel26.Controls.Add(this.label89);
+            this.panel26.Location = new System.Drawing.Point(248, 208);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(194, 150);
+            this.panel26.TabIndex = 113;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox9.Location = new System.Drawing.Point(0, 0);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(192, 21);
+            this.textBox9.TabIndex = 103;
+            this.textBox9.Text = "通道二";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(3, 120);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(119, 12);
+            this.label86.TabIndex = 111;
+            this.label86.Text = "频点偏移下限（GHz）";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(3, 33);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(119, 12);
+            this.label87.TabIndex = 108;
+            this.label87.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStartTextBox2
+            // 
+            this.freqRangeStartTextBox2.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox2.Name = "freqRangeStartTextBox2";
+            this.freqRangeStartTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox2.TabIndex = 104;
+            this.freqRangeStartTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqDownlimitTextBox2
+            // 
+            this.freqDownlimitTextBox2.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox2.Name = "freqDownlimitTextBox2";
+            this.freqDownlimitTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox2.TabIndex = 107;
+            this.freqDownlimitTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqRangeStopTextBox2
+            // 
+            this.freqRangeStopTextBox2.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox2.Name = "freqRangeStopTextBox2";
+            this.freqRangeStopTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox2.TabIndex = 105;
+            this.freqRangeStopTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(3, 61);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(119, 12);
+            this.label88.TabIndex = 109;
+            this.label88.Text = "频点范围结束（GHz）";
+            // 
+            // freqUplimitTextBox2
+            // 
+            this.freqUplimitTextBox2.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox2.Name = "freqUplimitTextBox2";
+            this.freqUplimitTextBox2.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox2.TabIndex = 106;
+            this.freqUplimitTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(3, 90);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(119, 12);
+            this.label89.TabIndex = 110;
+            this.label89.Text = "频点偏移上限（GHz）";
+            // 
+            // panel25
+            // 
+            this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel25.Controls.Add(this.textBox12);
+            this.panel25.Controls.Add(this.label83);
+            this.panel25.Controls.Add(this.label80);
+            this.panel25.Controls.Add(this.freqRangeStartTextBox1);
+            this.panel25.Controls.Add(this.freqDownlimitTextBox1);
+            this.panel25.Controls.Add(this.freqRangeStopTextBox1);
+            this.panel25.Controls.Add(this.label81);
+            this.panel25.Controls.Add(this.freqUplimitTextBox1);
+            this.panel25.Controls.Add(this.label82);
+            this.panel25.Location = new System.Drawing.Point(23, 207);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(194, 150);
+            this.panel25.TabIndex = 112;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox12.Location = new System.Drawing.Point(0, 0);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.ReadOnly = true;
+            this.textBox12.Size = new System.Drawing.Size(192, 21);
+            this.textBox12.TabIndex = 103;
+            this.textBox12.Text = "通道一";
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(3, 120);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(119, 12);
+            this.label83.TabIndex = 111;
+            this.label83.Text = "频点偏移下限（GHz）";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(3, 33);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(119, 12);
+            this.label80.TabIndex = 108;
+            this.label80.Text = "频点范围起始（GHz）";
+            // 
+            // freqRangeStartTextBox1
+            // 
+            this.freqRangeStartTextBox1.Location = new System.Drawing.Point(128, 30);
+            this.freqRangeStartTextBox1.Name = "freqRangeStartTextBox1";
+            this.freqRangeStartTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStartTextBox1.TabIndex = 104;
+            this.freqRangeStartTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqDownlimitTextBox1
+            // 
+            this.freqDownlimitTextBox1.Location = new System.Drawing.Point(128, 117);
+            this.freqDownlimitTextBox1.Name = "freqDownlimitTextBox1";
+            this.freqDownlimitTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqDownlimitTextBox1.TabIndex = 107;
+            this.freqDownlimitTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // freqRangeStopTextBox1
+            // 
+            this.freqRangeStopTextBox1.Location = new System.Drawing.Point(128, 58);
+            this.freqRangeStopTextBox1.Name = "freqRangeStopTextBox1";
+            this.freqRangeStopTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqRangeStopTextBox1.TabIndex = 105;
+            this.freqRangeStopTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(3, 61);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(119, 12);
+            this.label81.TabIndex = 109;
+            this.label81.Text = "频点范围结束（GHz）";
+            // 
+            // freqUplimitTextBox1
+            // 
+            this.freqUplimitTextBox1.Location = new System.Drawing.Point(128, 87);
+            this.freqUplimitTextBox1.Name = "freqUplimitTextBox1";
+            this.freqUplimitTextBox1.Size = new System.Drawing.Size(55, 21);
+            this.freqUplimitTextBox1.TabIndex = 106;
+            this.freqUplimitTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(3, 90);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(119, 12);
+            this.label82.TabIndex = 110;
+            this.label82.Text = "频点偏移上限（GHz）";
+            // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3491,23 +3888,6 @@
             this.testModelSettingPanel.Size = new System.Drawing.Size(295, 168);
             this.testModelSettingPanel.TabIndex = 103;
             // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(3, 120);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(119, 12);
-            this.label83.TabIndex = 111;
-            this.label83.Text = "频点偏移下限（GHz）";
-            // 
-            // freqDownlimitTextBox1
-            // 
-            this.freqDownlimitTextBox1.Location = new System.Drawing.Point(128, 117);
-            this.freqDownlimitTextBox1.Name = "freqDownlimitTextBox1";
-            this.freqDownlimitTextBox1.Size = new System.Drawing.Size(55, 21);
-            this.freqDownlimitTextBox1.TabIndex = 107;
-            this.freqDownlimitTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel22
             // 
             this.panel22.AutoSize = true;
@@ -3542,15 +3922,6 @@
             this.yieldEnableSwitch.Texts = null;
             this.yieldEnableSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
             this.yieldEnableSwitch.TrueTextColr = System.Drawing.Color.White;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(3, 90);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(119, 12);
-            this.label82.TabIndex = 110;
-            this.label82.Text = "频点偏移上限（GHz）";
             // 
             // panel21
             // 
@@ -3589,23 +3960,6 @@
             this.label74.TabIndex = 87;
             this.label74.Text = "Pcs";
             // 
-            // freqUplimitTextBox1
-            // 
-            this.freqUplimitTextBox1.Location = new System.Drawing.Point(128, 87);
-            this.freqUplimitTextBox1.Name = "freqUplimitTextBox1";
-            this.freqUplimitTextBox1.Size = new System.Drawing.Size(55, 21);
-            this.freqUplimitTextBox1.TabIndex = 106;
-            this.freqUplimitTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(3, 61);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(119, 12);
-            this.label81.TabIndex = 109;
-            this.label81.Text = "频点范围结束（GHz）";
-            // 
             // panel14
             // 
             this.panel14.Controls.Add(this.label71);
@@ -3642,23 +3996,6 @@
             this.label72.Size = new System.Drawing.Size(11, 12);
             this.label72.TabIndex = 87;
             this.label72.Text = "%";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(3, 33);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(119, 12);
-            this.label80.TabIndex = 108;
-            this.label80.Text = "频点范围起始（GHz）";
-            // 
-            // freqRangeStopTextBox1
-            // 
-            this.freqRangeStopTextBox1.Location = new System.Drawing.Point(128, 58);
-            this.freqRangeStopTextBox1.Name = "freqRangeStopTextBox1";
-            this.freqRangeStopTextBox1.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStopTextBox1.TabIndex = 105;
-            this.freqRangeStopTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel9
             // 
@@ -3745,14 +4082,6 @@
             this.label49.Size = new System.Drawing.Size(17, 12);
             this.label49.TabIndex = 87;
             this.label49.Text = "ms";
-            // 
-            // freqRangeStartTextBox1
-            // 
-            this.freqRangeStartTextBox1.Location = new System.Drawing.Point(128, 30);
-            this.freqRangeStartTextBox1.Name = "freqRangeStartTextBox1";
-            this.freqRangeStartTextBox1.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStartTextBox1.TabIndex = 104;
-            this.freqRangeStartTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 
@@ -4557,14 +4886,14 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(3, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -5136,6 +5465,7 @@
             // panel23
             // 
             this.panel23.AutoScroll = true;
+            this.panel23.Controls.Add(this.panel29);
             this.panel23.Controls.Add(this.panel24);
             this.panel23.Controls.Add(this.label77);
             this.panel23.Controls.Add(this.TCPRecordTextBox);
@@ -5161,6 +5491,42 @@
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1242, 564);
             this.panel23.TabIndex = 22;
+            // 
+            // panel29
+            // 
+            this.panel29.AutoSize = true;
+            this.panel29.Controls.Add(this.label98);
+            this.panel29.Controls.Add(this.shieldAnalyzerSwitch);
+            this.panel29.Location = new System.Drawing.Point(22, 432);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(184, 28);
+            this.panel29.TabIndex = 110;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label98.Location = new System.Drawing.Point(3, 3);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(98, 22);
+            this.label98.TabIndex = 84;
+            this.label98.Text = "网分屏蔽";
+            // 
+            // shieldAnalyzerSwitch
+            // 
+            this.shieldAnalyzerSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.shieldAnalyzerSwitch.Checked = false;
+            this.shieldAnalyzerSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.shieldAnalyzerSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.shieldAnalyzerSwitch.Location = new System.Drawing.Point(107, 3);
+            this.shieldAnalyzerSwitch.Name = "shieldAnalyzerSwitch";
+            this.shieldAnalyzerSwitch.Size = new System.Drawing.Size(74, 22);
+            this.shieldAnalyzerSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.shieldAnalyzerSwitch.TabIndex = 83;
+            this.shieldAnalyzerSwitch.Texts = null;
+            this.shieldAnalyzerSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.shieldAnalyzerSwitch.TrueTextColr = System.Drawing.Color.White;
+            this.shieldAnalyzerSwitch.CheckedChanged += new System.EventHandler(this.shieldAnalyzerSwitch_CheckedChanged);
             // 
             // panel24
             // 
@@ -5393,325 +5759,41 @@
             this.aboutTabPage.Text = "关于我们";
             this.aboutTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel25
+            // panel30
             // 
-            this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel25.Controls.Add(this.textBox12);
-            this.panel25.Controls.Add(this.label83);
-            this.panel25.Controls.Add(this.label80);
-            this.panel25.Controls.Add(this.freqRangeStartTextBox1);
-            this.panel25.Controls.Add(this.freqDownlimitTextBox1);
-            this.panel25.Controls.Add(this.freqRangeStopTextBox1);
-            this.panel25.Controls.Add(this.label81);
-            this.panel25.Controls.Add(this.freqUplimitTextBox1);
-            this.panel25.Controls.Add(this.label82);
-            this.panel25.Location = new System.Drawing.Point(23, 207);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(194, 150);
-            this.panel25.TabIndex = 112;
+            this.panel30.AutoSize = true;
+            this.panel30.Controls.Add(this.label99);
+            this.panel30.Controls.Add(this.autoSetTestConfigSwitch1);
+            this.panel30.Location = new System.Drawing.Point(61, 3);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(127, 22);
+            this.panel30.TabIndex = 89;
             // 
-            // textBox12
+            // label99
             // 
-            this.textBox12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox12.Location = new System.Drawing.Point(0, 0);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(192, 21);
-            this.textBox12.TabIndex = 103;
-            this.textBox12.Text = "通道一";
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label99.AutoSize = true;
+            this.label99.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label99.Location = new System.Drawing.Point(3, 5);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(65, 12);
+            this.label99.TabIndex = 84;
+            this.label99.Text = "以条码识别";
             // 
-            // panel26
+            // autoSetTestConfigSwitch1
             // 
-            this.panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel26.Controls.Add(this.textBox9);
-            this.panel26.Controls.Add(this.label86);
-            this.panel26.Controls.Add(this.label87);
-            this.panel26.Controls.Add(this.freqRangeStartTextBox2);
-            this.panel26.Controls.Add(this.freqDownlimitTextBox2);
-            this.panel26.Controls.Add(this.freqRangeStopTextBox2);
-            this.panel26.Controls.Add(this.label88);
-            this.panel26.Controls.Add(this.freqUplimitTextBox2);
-            this.panel26.Controls.Add(this.label89);
-            this.panel26.Location = new System.Drawing.Point(248, 208);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(194, 150);
-            this.panel26.TabIndex = 113;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox9.Location = new System.Drawing.Point(0, 0);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(192, 21);
-            this.textBox9.TabIndex = 103;
-            this.textBox9.Text = "通道二";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(3, 120);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(119, 12);
-            this.label86.TabIndex = 111;
-            this.label86.Text = "频点偏移下限（GHz）";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(3, 33);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(119, 12);
-            this.label87.TabIndex = 108;
-            this.label87.Text = "频点范围起始（GHz）";
-            // 
-            // freqRangeStartTextBox2
-            // 
-            this.freqRangeStartTextBox2.Location = new System.Drawing.Point(128, 30);
-            this.freqRangeStartTextBox2.Name = "freqRangeStartTextBox2";
-            this.freqRangeStartTextBox2.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStartTextBox2.TabIndex = 104;
-            this.freqRangeStartTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // freqDownlimitTextBox2
-            // 
-            this.freqDownlimitTextBox2.Location = new System.Drawing.Point(128, 117);
-            this.freqDownlimitTextBox2.Name = "freqDownlimitTextBox2";
-            this.freqDownlimitTextBox2.Size = new System.Drawing.Size(55, 21);
-            this.freqDownlimitTextBox2.TabIndex = 107;
-            this.freqDownlimitTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // freqRangeStopTextBox2
-            // 
-            this.freqRangeStopTextBox2.Location = new System.Drawing.Point(128, 58);
-            this.freqRangeStopTextBox2.Name = "freqRangeStopTextBox2";
-            this.freqRangeStopTextBox2.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStopTextBox2.TabIndex = 105;
-            this.freqRangeStopTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(3, 61);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(119, 12);
-            this.label88.TabIndex = 109;
-            this.label88.Text = "频点范围结束（GHz）";
-            // 
-            // freqUplimitTextBox2
-            // 
-            this.freqUplimitTextBox2.Location = new System.Drawing.Point(128, 87);
-            this.freqUplimitTextBox2.Name = "freqUplimitTextBox2";
-            this.freqUplimitTextBox2.Size = new System.Drawing.Size(55, 21);
-            this.freqUplimitTextBox2.TabIndex = 106;
-            this.freqUplimitTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(3, 90);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(119, 12);
-            this.label89.TabIndex = 110;
-            this.label89.Text = "频点偏移上限（GHz）";
-            // 
-            // panel27
-            // 
-            this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel27.Controls.Add(this.textBox15);
-            this.panel27.Controls.Add(this.label90);
-            this.panel27.Controls.Add(this.label91);
-            this.panel27.Controls.Add(this.freqRangeStartTextBox3);
-            this.panel27.Controls.Add(this.freqDownlimitTextBox3);
-            this.panel27.Controls.Add(this.freqRangeStopTextBox3);
-            this.panel27.Controls.Add(this.label92);
-            this.panel27.Controls.Add(this.freqUplimitTextBox3);
-            this.panel27.Controls.Add(this.label93);
-            this.panel27.Location = new System.Drawing.Point(22, 363);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(194, 150);
-            this.panel27.TabIndex = 114;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox15.Location = new System.Drawing.Point(0, 0);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(192, 21);
-            this.textBox15.TabIndex = 103;
-            this.textBox15.Text = "通道三";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(3, 120);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(119, 12);
-            this.label90.TabIndex = 111;
-            this.label90.Text = "频点偏移下限（GHz）";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(3, 33);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(119, 12);
-            this.label91.TabIndex = 108;
-            this.label91.Text = "频点范围起始（GHz）";
-            // 
-            // freqRangeStartTextBox3
-            // 
-            this.freqRangeStartTextBox3.Location = new System.Drawing.Point(128, 30);
-            this.freqRangeStartTextBox3.Name = "freqRangeStartTextBox3";
-            this.freqRangeStartTextBox3.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStartTextBox3.TabIndex = 104;
-            this.freqRangeStartTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // freqDownlimitTextBox3
-            // 
-            this.freqDownlimitTextBox3.Location = new System.Drawing.Point(128, 117);
-            this.freqDownlimitTextBox3.Name = "freqDownlimitTextBox3";
-            this.freqDownlimitTextBox3.Size = new System.Drawing.Size(55, 21);
-            this.freqDownlimitTextBox3.TabIndex = 107;
-            this.freqDownlimitTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // freqRangeStopTextBox3
-            // 
-            this.freqRangeStopTextBox3.Location = new System.Drawing.Point(128, 58);
-            this.freqRangeStopTextBox3.Name = "freqRangeStopTextBox3";
-            this.freqRangeStopTextBox3.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStopTextBox3.TabIndex = 105;
-            this.freqRangeStopTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(3, 61);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(119, 12);
-            this.label92.TabIndex = 109;
-            this.label92.Text = "频点范围结束（GHz）";
-            // 
-            // freqUplimitTextBox3
-            // 
-            this.freqUplimitTextBox3.Location = new System.Drawing.Point(128, 87);
-            this.freqUplimitTextBox3.Name = "freqUplimitTextBox3";
-            this.freqUplimitTextBox3.Size = new System.Drawing.Size(55, 21);
-            this.freqUplimitTextBox3.TabIndex = 106;
-            this.freqUplimitTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(3, 90);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(119, 12);
-            this.label93.TabIndex = 110;
-            this.label93.Text = "频点偏移上限（GHz）";
-            // 
-            // panel28
-            // 
-            this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel28.Controls.Add(this.textBox20);
-            this.panel28.Controls.Add(this.label94);
-            this.panel28.Controls.Add(this.label95);
-            this.panel28.Controls.Add(this.freqRangeStartTextBox4);
-            this.panel28.Controls.Add(this.freqDownlimitTextBox4);
-            this.panel28.Controls.Add(this.freqRangeStopTextBox4);
-            this.panel28.Controls.Add(this.label96);
-            this.panel28.Controls.Add(this.freqUplimitTextBox4);
-            this.panel28.Controls.Add(this.label97);
-            this.panel28.Location = new System.Drawing.Point(247, 364);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(194, 150);
-            this.panel28.TabIndex = 115;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox20.Location = new System.Drawing.Point(0, 0);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(192, 21);
-            this.textBox20.TabIndex = 103;
-            this.textBox20.Text = "通道四";
-            this.textBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(3, 120);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(119, 12);
-            this.label94.TabIndex = 111;
-            this.label94.Text = "频点偏移下限（GHz）";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(3, 33);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(119, 12);
-            this.label95.TabIndex = 108;
-            this.label95.Text = "频点范围起始（GHz）";
-            // 
-            // freqRangeStartTextBox4
-            // 
-            this.freqRangeStartTextBox4.Location = new System.Drawing.Point(128, 30);
-            this.freqRangeStartTextBox4.Name = "freqRangeStartTextBox4";
-            this.freqRangeStartTextBox4.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStartTextBox4.TabIndex = 104;
-            this.freqRangeStartTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // freqDownlimitTextBox4
-            // 
-            this.freqDownlimitTextBox4.Location = new System.Drawing.Point(128, 117);
-            this.freqDownlimitTextBox4.Name = "freqDownlimitTextBox4";
-            this.freqDownlimitTextBox4.Size = new System.Drawing.Size(55, 21);
-            this.freqDownlimitTextBox4.TabIndex = 107;
-            this.freqDownlimitTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // freqRangeStopTextBox4
-            // 
-            this.freqRangeStopTextBox4.Location = new System.Drawing.Point(128, 58);
-            this.freqRangeStopTextBox4.Name = "freqRangeStopTextBox4";
-            this.freqRangeStopTextBox4.Size = new System.Drawing.Size(55, 21);
-            this.freqRangeStopTextBox4.TabIndex = 105;
-            this.freqRangeStopTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(3, 61);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(119, 12);
-            this.label96.TabIndex = 109;
-            this.label96.Text = "频点范围结束（GHz）";
-            // 
-            // freqUplimitTextBox4
-            // 
-            this.freqUplimitTextBox4.Location = new System.Drawing.Point(128, 87);
-            this.freqUplimitTextBox4.Name = "freqUplimitTextBox4";
-            this.freqUplimitTextBox4.Size = new System.Drawing.Size(55, 21);
-            this.freqUplimitTextBox4.TabIndex = 106;
-            this.freqUplimitTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(3, 90);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(119, 12);
-            this.label97.TabIndex = 110;
-            this.label97.Text = "频点偏移上限（GHz）";
+            this.autoSetTestConfigSwitch1.BackColor = System.Drawing.Color.Transparent;
+            this.autoSetTestConfigSwitch1.Checked = false;
+            this.autoSetTestConfigSwitch1.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.autoSetTestConfigSwitch1.FalseTextColr = System.Drawing.Color.White;
+            this.autoSetTestConfigSwitch1.Location = new System.Drawing.Point(74, 3);
+            this.autoSetTestConfigSwitch1.Name = "autoSetTestConfigSwitch1";
+            this.autoSetTestConfigSwitch1.Size = new System.Drawing.Size(50, 16);
+            this.autoSetTestConfigSwitch1.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.autoSetTestConfigSwitch1.TabIndex = 83;
+            this.autoSetTestConfigSwitch1.Texts = null;
+            this.autoSetTestConfigSwitch1.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.autoSetTestConfigSwitch1.TrueTextColr = System.Drawing.Color.White;
+            this.autoSetTestConfigSwitch1.CheckedChanged += new System.EventHandler(this.autoSetTestConfigSwitch1_CheckedChanged);
             // 
             // RF_TestSystem
             // 
@@ -5726,7 +5808,7 @@
             this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RF_TestSystem_20210605";
+            this.Text = "RF_TestSystem_20210614_v1.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.Load += new System.EventHandler(this.RF_TestSystem_Load);
             this.Resize += new System.EventHandler(this.RF_TestSystem_Resize);
@@ -5843,6 +5925,14 @@
             this.settingTabPage.PerformLayout();
             this.tabControlExt1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.testModelSettingPanel.ResumeLayout(false);
@@ -5926,16 +6016,12 @@
             this.DebugTabPage.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
+            this.panel29.ResumeLayout(false);
+            this.panel29.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
-            this.panel27.ResumeLayout(false);
-            this.panel27.PerformLayout();
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
+            this.panel30.ResumeLayout(false);
+            this.panel30.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6395,6 +6481,12 @@
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.Label label98;
+        private HZH_Controls.Controls.UCSwitch shieldAnalyzerSwitch;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Label label99;
+        private HZH_Controls.Controls.UCSwitch autoSetTestConfigSwitch1;
     }
 }
 

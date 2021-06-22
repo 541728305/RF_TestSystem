@@ -1,6 +1,0 @@
-﻿SWVersion:1.0
-Serial Number,Test Start Time,Test Stop Time, SubStation ID, Overall Result, FailingBands,Frequency（GHz）,Mag Log(dB),
-_No_Have_Barcode_,2021/6/8 10:46:04,2021/6/8 10:46:06,HV0-1,FAIL,S22 S33 S44 ,0,0,
-,2021/6/8 10:46:06,2021/6/8 10:46:08,HV0-1,FAIL,S22 S33 S44 ,0,0,
-,2021/6/8 10:46:08,2021/6/8 10:46:10,HV0-1,FAIL,S22 S33 S44 ,0,0,
-,2021/6/8 10:46:11,2021/6/8 10:46:13,HV0-1,FAIL,S22 S33 S44 ,0,0,

@@ -23,7 +23,7 @@ namespace RF_TestSystem
         {
             InitializeComponent();
             timer.Interval = (1000);
-            timer.Tick += Timer_Tick;
+            timer.Tick += Timer_Tick;          
         }
 
         private void Timer_Tick(object sender, EventArgs e)

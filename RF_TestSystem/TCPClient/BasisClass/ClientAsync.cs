@@ -32,6 +32,7 @@ namespace TCPHelper
 
         Mutex logFileWritingMutex = new Mutex();
 
+        Mutex ReceiveMutex = new Mutex();
         Thread myReceiveThread;
         /// <summary>
         /// 意外断开
@@ -43,7 +44,7 @@ namespace TCPHelper
         public ClientAsync()
         {
             client = new TcpClient();
-           
+            client.ReceiveTimeout = -1;
             WriteLogFile("TCP Creat!");
         }
 
@@ -131,14 +132,27 @@ namespace TCPHelper
             {
                 throw new Exception("ip地址格式不正确，请使用正确的ip地址！");
                 
-
             }
             Shutdown();
             client = new TcpClient();
             IAsyncResult asyncResult = client.BeginConnect(ipAddress, port, ConnectCallBack, client);
-            
+           
             Console.WriteLine(client.Connected);
             Console.WriteLine(asyncResult.AsyncState.ToString());
+        }
+
+        public bool connect(string ipAddress,int port)
+        {
+            try
+            {
+                client.Connect(ipAddress, port);
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+            return true;
+           
         }
         public bool getConneted()
         {
@@ -165,9 +179,7 @@ namespace TCPHelper
                 WriteLogFile(tcpExPath + communicationLog, DateTime.Now.ToString() + " ReceiveAsync ");
                 client.Client.BeginReceive(obj.ListData, 0, obj.ListData.Length, SocketFlags.None, ReceiveCallBack, obj);
                
-                Gloable. tcpRecivOK = true;
-                HeartBeat = true;
-                Gloable.heartbeatFlag = true;
+                
                 
             }
             catch (Exception ReceiveError)
@@ -182,8 +194,14 @@ namespace TCPHelper
         }
         public void receiveThread()
         {
+            //ReceiveMutex.WaitOne();
+            Gloable.tcpMutex.WaitOne();
+            Gloable.tcpRecivOK = true;
+            HeartBeat = true;
+            Gloable.heartbeatFlag = true;
+            Gloable.tcpMutex.ReleaseMutex();
             byte[] result = new byte[4096];
-            while (true)
+            while (!isClose)
             {
                 try
                 {
@@ -192,11 +210,14 @@ namespace TCPHelper
                     string resultStr = Encoding.UTF8.GetString(result, 0, receiveLength);
                     if (!string.IsNullOrEmpty(resultStr))
                     {
+
                         if (Received != null)
                         {
+
                             IPEndPoint iep = client.Client.RemoteEndPoint as IPEndPoint;
                             string key = string.Format("{0}:{1}", iep.Address, iep.Port);
                             Received(key, resultStr);
+                            //WriteLogFile(tcpExPath + communicationLog, DateTime.Now.ToString() + " ReceiveAsync ");
                         }
                     }
                 }
@@ -205,8 +226,8 @@ namespace TCPHelper
                     WriteLogFile(tcpExPath + LogfileName, e.Message);
                 }
                 
-            }   
-
+            }
+           // ReceiveMutex.ReleaseMutex();
         }
         /// <summary>
         /// 异步发送消息
@@ -282,6 +303,11 @@ namespace TCPHelper
         /// <param name="ar"></param>
         private void ReceiveCallBack(IAsyncResult ar)
         {
+            Gloable.tcpMutex.WaitOne();
+            Gloable.tcpRecivOK = true;
+            HeartBeat = true;
+            Gloable.heartbeatFlag = true;
+            Gloable.tcpMutex.ReleaseMutex();
             StateObject obj = ar.AsyncState as StateObject;
             int count = -1;
             try
@@ -296,7 +322,14 @@ namespace TCPHelper
                 OnComplete(obj.Client, EnSocketAction.Close);
                 WriteLogFile(tcpExPath + LogfileName, e.Message);
             }
-            WriteLogFile(tcpExPath + communicationLog, DateTime.Now.ToString() + " ReceiveCallBack: "+ Encoding.UTF8.GetString(obj.ListData, 0, count));
+            try
+            {
+                WriteLogFile(tcpExPath + communicationLog, DateTime.Now.ToString() + " ReceiveCallBack: " + Encoding.UTF8.GetString(obj.ListData, 0, count));
+            }
+            catch
+            {
+
+            }
             if (count > 0)
             {
                 string msg = Encoding.UTF8.GetString(obj.ListData, 0, count);
@@ -333,7 +366,9 @@ namespace TCPHelper
                 Completed(client, enAction);
             if (enAction == EnSocketAction.Connect)//建立连接后，开始接收数据
             {
-                ThreadPool.QueueUserWorkItem(x =>
+                //receiveThread();
+
+                 ThreadPool.QueueUserWorkItem(x =>
                 {
                     while (!isClose)
                     {
@@ -341,9 +376,10 @@ namespace TCPHelper
                         try
                         {
                             Thread.Sleep(20);
-                            ReceiveAsync();
+                            
+                           ReceiveAsync();
                             Thread.Sleep(20);
-                           
+
                         }
                         catch (Exception reError)
                         {
@@ -352,10 +388,8 @@ namespace TCPHelper
                             OnComplete(client, EnSocketAction.Close);
                         }
                         mutex.ReleaseMutex();
-                    }
-                
-                });
-                
+                    }              
+                });                
             }
         }
 
