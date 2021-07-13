@@ -63,7 +63,7 @@
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label22.ForeColor = System.Drawing.SystemColors.Window;
-            this.label22.Location = new System.Drawing.Point(7, 65);
+            this.label22.Location = new System.Drawing.Point(7, 60);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(131, 33);
             this.label22.TabIndex = 66;
@@ -74,7 +74,7 @@
             this.machineNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.machineNameTextBox.BackColor = System.Drawing.Color.White;
             this.machineNameTextBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.machineNameTextBox.Location = new System.Drawing.Point(144, 59);
+            this.machineNameTextBox.Location = new System.Drawing.Point(144, 54);
             this.machineNameTextBox.Name = "machineNameTextBox";
             this.machineNameTextBox.Size = new System.Drawing.Size(374, 44);
             this.machineNameTextBox.TabIndex = 65;
@@ -88,7 +88,7 @@
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label28.ForeColor = System.Drawing.SystemColors.Window;
-            this.label28.Location = new System.Drawing.Point(7, 121);
+            this.label28.Location = new System.Drawing.Point(7, 116);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(132, 33);
             this.label28.TabIndex = 66;
@@ -99,7 +99,7 @@
             this.partNumberTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.partNumberTextBox.BackColor = System.Drawing.Color.White;
             this.partNumberTextBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.partNumberTextBox.Location = new System.Drawing.Point(145, 115);
+            this.partNumberTextBox.Location = new System.Drawing.Point(145, 110);
             this.partNumberTextBox.Name = "partNumberTextBox";
             this.partNumberTextBox.Size = new System.Drawing.Size(374, 44);
             this.partNumberTextBox.TabIndex = 65;
@@ -113,7 +113,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(7, 177);
+            this.label2.Location = new System.Drawing.Point(7, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 33);
             this.label2.TabIndex = 66;
@@ -124,7 +124,7 @@
             this.versionTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.versionTextBox.BackColor = System.Drawing.Color.White;
             this.versionTextBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.versionTextBox.Location = new System.Drawing.Point(145, 171);
+            this.versionTextBox.Location = new System.Drawing.Point(145, 166);
             this.versionTextBox.Name = "versionTextBox";
             this.versionTextBox.Size = new System.Drawing.Size(374, 44);
             this.versionTextBox.TabIndex = 65;
@@ -138,7 +138,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label16.ForeColor = System.Drawing.SystemColors.Window;
-            this.label16.Location = new System.Drawing.Point(7, 233);
+            this.label16.Location = new System.Drawing.Point(7, 228);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(132, 33);
             this.label16.TabIndex = 66;
@@ -149,7 +149,7 @@
             this.workOrderTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.workOrderTextBox.BackColor = System.Drawing.Color.White;
             this.workOrderTextBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.workOrderTextBox.Location = new System.Drawing.Point(145, 227);
+            this.workOrderTextBox.Location = new System.Drawing.Point(145, 222);
             this.workOrderTextBox.Name = "workOrderTextBox";
             this.workOrderTextBox.Size = new System.Drawing.Size(374, 44);
             this.workOrderTextBox.TabIndex = 65;
@@ -163,7 +163,7 @@
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label24.ForeColor = System.Drawing.SystemColors.Window;
-            this.label24.Location = new System.Drawing.Point(7, 289);
+            this.label24.Location = new System.Drawing.Point(7, 284);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(132, 33);
             this.label24.TabIndex = 66;
@@ -174,7 +174,7 @@
             this.lineBodyTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lineBodyTextBox.BackColor = System.Drawing.Color.White;
             this.lineBodyTextBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lineBodyTextBox.Location = new System.Drawing.Point(145, 283);
+            this.lineBodyTextBox.Location = new System.Drawing.Point(145, 278);
             this.lineBodyTextBox.Name = "lineBodyTextBox";
             this.lineBodyTextBox.Size = new System.Drawing.Size(374, 44);
             this.lineBodyTextBox.TabIndex = 65;
@@ -188,7 +188,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label20.ForeColor = System.Drawing.SystemColors.Window;
-            this.label20.Location = new System.Drawing.Point(7, 345);
+            this.label20.Location = new System.Drawing.Point(7, 340);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(132, 33);
             this.label20.TabIndex = 66;
@@ -199,7 +199,7 @@
             this.jobNumberTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.jobNumberTextBox.BackColor = System.Drawing.Color.White;
             this.jobNumberTextBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.jobNumberTextBox.Location = new System.Drawing.Point(145, 339);
+            this.jobNumberTextBox.Location = new System.Drawing.Point(145, 334);
             this.jobNumberTextBox.Name = "jobNumberTextBox";
             this.jobNumberTextBox.Size = new System.Drawing.Size(374, 44);
             this.jobNumberTextBox.TabIndex = 65;
@@ -213,7 +213,7 @@
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label27.ForeColor = System.Drawing.SystemColors.Window;
-            this.label27.Location = new System.Drawing.Point(7, 399);
+            this.label27.Location = new System.Drawing.Point(135, 524);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(132, 33);
             this.label27.TabIndex = 104;
@@ -226,7 +226,7 @@
             this.currentLimitComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.currentLimitComboBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.currentLimitComboBox.FormattingEnabled = true;
-            this.currentLimitComboBox.Location = new System.Drawing.Point(145, 395);
+            this.currentLimitComboBox.Location = new System.Drawing.Point(273, 520);
             this.currentLimitComboBox.Name = "currentLimitComboBox";
             this.currentLimitComboBox.Size = new System.Drawing.Size(374, 41);
             this.currentLimitComboBox.TabIndex = 103;
@@ -238,7 +238,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(7, 454);
+            this.label1.Location = new System.Drawing.Point(6, 399);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 33);
             this.label1.TabIndex = 66;
@@ -249,7 +249,7 @@
             this.barcodeFormatTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.barcodeFormatTextBox.BackColor = System.Drawing.Color.White;
             this.barcodeFormatTextBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.barcodeFormatTextBox.Location = new System.Drawing.Point(145, 448);
+            this.barcodeFormatTextBox.Location = new System.Drawing.Point(144, 393);
             this.barcodeFormatTextBox.Name = "barcodeFormatTextBox";
             this.barcodeFormatTextBox.Size = new System.Drawing.Size(374, 44);
             this.barcodeFormatTextBox.TabIndex = 65;
@@ -296,7 +296,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(7, 10);
+            this.label3.Location = new System.Drawing.Point(7, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 33);
             this.label3.TabIndex = 66;
@@ -309,7 +309,7 @@
             this.machineClassComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.machineClassComboBox.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.machineClassComboBox.FormattingEnabled = true;
-            this.machineClassComboBox.Location = new System.Drawing.Point(144, 6);
+            this.machineClassComboBox.Location = new System.Drawing.Point(144, 1);
             this.machineClassComboBox.Name = "machineClassComboBox";
             this.machineClassComboBox.Size = new System.Drawing.Size(374, 41);
             this.machineClassComboBox.TabIndex = 105;
@@ -329,8 +329,6 @@
             this.panel2.Controls.Add(this.lineBodyTextBox);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.jobNumberTextBox);
-            this.panel2.Controls.Add(this.label27);
-            this.panel2.Controls.Add(this.currentLimitComboBox);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.barcodeFormatTextBox);
             this.panel2.Controls.Add(this.label22);
@@ -338,14 +336,15 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.machineClassComboBox);
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Location = new System.Drawing.Point(99, 26);
+            this.panel2.Location = new System.Drawing.Point(99, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(524, 498);
+            this.panel2.Size = new System.Drawing.Size(524, 488);
             this.panel2.TabIndex = 109;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::RF_TestSystem.Properties.Resources.阿丽塔战斗天使的剧照4k壁纸_彼岸图网;
+            this.pictureBox1.BackgroundImage = global::FCT_TestSystem.Properties.Resources.阿丽塔战斗天使的剧照4k壁纸_彼岸图网;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(723, 555);
@@ -363,6 +362,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.currentLimitComboBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

@@ -177,7 +177,7 @@ namespace RF_TestSystem
             agilentConfig.smooth = "OFF";
             agilentConfig.smoothValue = "3";
             agilentConfig.date = DateTime.Now.ToString("yyyy-MM-dd");
-            agilentConfig.dataPath = System.Windows.Forms.Application.StartupPath + "\\RF_Data\\";
+            agilentConfig.dataPath = System.Windows.Forms.Application.StartupPath + "\\FCT_Data\\";
             agilentConfig.limitPath = System.Windows.Forms.Application.StartupPath + "\\Limit\\";
             agilentConfig.calFilePath = "D:\\State0111.sta";
             Gloable.dataFilePath = agilentConfig.dataPath;
@@ -212,7 +212,7 @@ namespace RF_TestSystem
                     agilentConfig.limitPath = IniOP.INIGetStringValue(agilentConfig.path, "AnalyzerConfig", "limitPath", agilentConfig.limitPath);
                     agilentConfig.calFilePath = IniOP.INIGetStringValue(agilentConfig.path, "AnalyzerConfig", "calFilePath", agilentConfig.calFilePath);
                     agilentConfig.date = DateTime.Now.ToString("yyyy-MM-dd");   //获取当天日期
-                    Gloable.dataFilePath = agilentConfig.dataPath;
+                    Gloable.dataFilePath = System.Windows.Forms.Application.StartupPath + "\\FCT_Data\\";
                 }
                 else
                 {
@@ -620,7 +620,7 @@ namespace RF_TestSystem
             uploadInfo.ftpIP = "10.182.108.46";
             uploadInfo.ftpID = "";
             uploadInfo.ftpPW = "";
-            uploadInfo.ftpPath = "/fun_t/RF";
+            uploadInfo.ftpPath = "fun_t/FCT";
             uploadInfo.ftpUploadTime = DateTime.Now.ToLocalTime().AddHours(2).ToString();
 
             uploadInfo.fixtureIP = "100.1.1.240";
@@ -628,7 +628,7 @@ namespace RF_TestSystem
 
             uploadInfo.oracleIP = "192.168.0.114";
             uploadInfo.oracleDB = "ZDTDB";
-            uploadInfo.oracleTB = "TED_RF_DATA";
+            uploadInfo.oracleTB = "FCT_DATA";
             uploadInfo.oracleID = "ictdata";
             uploadInfo.oraclePW = "ict*1";
 
@@ -664,8 +664,8 @@ namespace RF_TestSystem
                     uploadInfo.fixtureIP = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixtureIP", "100.1.1.240");
                     uploadInfo.fixturePort = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixturePort", "8233");
 
-                    uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleIP", uploadInfo.oracleIP);
-                    uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleTB", uploadInfo.oracleTB);
+                    uploadInfo.oracleIP = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleIP", uploadInfo.oracleIP);
+                    uploadInfo.oracleTB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleTB", uploadInfo.oracleTB);
                     uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
                     uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
                     uploadInfo.oraclePW = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
@@ -723,6 +723,8 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
 
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "openListEnable", modelSetting.openListEnable);
+
             return successful;
         }
         public ModelSetting readModelSettingFromInitFile()
@@ -752,6 +754,8 @@ namespace RF_TestSystem
             modelSetting.probeUseTime = "0";
             modelSetting.probeUperTime = "15000";
             modelSetting.probeWarnTime = "500";
+
+            modelSetting.openListEnable = false.ToString();
             string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -791,6 +795,8 @@ namespace RF_TestSystem
                     modelSetting.probeUseTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime", modelSetting.probeUseTime);
                     modelSetting.probeUperTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
                     modelSetting.probeWarnTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
+
+                    modelSetting.openListEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "openListEnable", modelSetting.openListEnable);
 
                 }
                 else

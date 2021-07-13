@@ -28,17 +28,19 @@ namespace RF_TestSystem
            // this.pictureBox1.ImageLocation = @".\\Resources\\银河.gif";
            
             setInfoToTabel();
-            foreach (string name in Gloable.limitNameList)
-            {
-                this.currentLimitComboBox.Items.Add(name);
-            }
-            this.currentLimitComboBox.SelectedIndex = 0;
+            //foreach (string name in Gloable.limitNameList)
+            //{
+            //    this.currentLimitComboBox.Items.Add(name);
+            //}
+            //this.currentLimitComboBox.SelectedIndex = 0;
 
             this.machineClassComboBox.Items.Add("      inline机台");
             this.machineClassComboBox.Items.Add("       复测机台");
             this.machineClassComboBox.Items.Add("       OQC机台");
+            this.machineClassComboBox.SelectedIndex = 0;
 
-         
+
+
 
         }
 
@@ -66,13 +68,13 @@ namespace RF_TestSystem
                 MessageBox.Show("请选择机台类别");
                 successful = false;
             }
-            Gloable.currentLimitName = this.currentLimitComboBox.SelectedItem.ToString();
-            List<string> rawLimit = Gloable.myOutPutStream.getlimitStringFromFile(Gloable.limitFilePath + Gloable.currentLimitName);
-            if (rawLimit[0] == "fail")
-            {
-                successful = false;
-                return successful;
-            }
+            //Gloable.currentLimitName = this.currentLimitComboBox.SelectedItem.ToString();
+            //List<string> rawLimit = Gloable.myOutPutStream.getlimitStringFromFile(Gloable.limitFilePath + Gloable.currentLimitName);
+            //if (rawLimit[0] == "fail")
+            //{
+            //    successful = false;
+            //    return successful;
+            //}
             if(this.machineClassComboBox.SelectedIndex == 0)
             {
                 Gloable.loginInfo.machineClass = Gloable.machineClassString.InlineMachine;

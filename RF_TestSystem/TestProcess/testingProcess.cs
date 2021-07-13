@@ -47,7 +47,8 @@ namespace RF_TestSystem
         public string scanTotalNumber;
         public string testYield;
         public string scanYield;
-        
+
+        public List<int> fctFailCount;
         public List<HistoryTraces> modelHistoryTraces;
 
     }

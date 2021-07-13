@@ -242,11 +242,93 @@ namespace RF_TestSystem
             }
             return myTraces;
         }
-        public string saveTracesData(string path, List<TracesInfo> myTraces, string realPartOrImaginaryPart, bool deleteNewline, string fileSizeLimit, string saveDate)
+
+
+        public bool saveFctData(string path, FctResult fctResult,string saveTime)
         {
             string successFlag = "true";
 
-            path += saveDate + "\\";
+            path += DateTime.Now.ToString("yyyy-MM-dd") + "\\" + saveTime + "\\";
+
+            string MACID = "MacID,";
+            string PRODUCT = "Product,";
+            string LINE_ID = "LineID,";
+            string OPERTOR = "Operator,";
+            string BARCODE = "Barcode,";
+            string TIME = "Time,";
+            string ACUPOINT = "Acupoint,";
+            string RESULT = "Result,";
+            string TITLE = "Connect TitileChinese,";
+            string UpperLimitString = "Upper Limits----->,,,,,,,,,";
+            string LowerLimitString = "Lower Limits----->,,,,,,,,,";
+            string MeasurementUnitString = "Measurement Unit----->,,,,,,,,,";
+
+            string barcode = ",";
+            if (Gloable.myBarcode.Count > 0)
+                barcode = Gloable.myBarcode[0].Trim() + ",";
+
+            string SubStationID = Gloable.loginInfo.machineName + ",";
+            string Product = Gloable.loginInfo.partNumber + ",";
+            string LineID = Gloable.loginInfo.lineBody + ",";
+            string Operator = Gloable.loginInfo.workOrder + ",";
+            string time = DateTime.Now.ToString() + ",";
+            string Acipoint = fctResult.acupoint + ",";
+            string Result = fctResult.Result + ",,";
+
+            string dataHead = SubStationID + Product + LineID + Operator + barcode + time + Acipoint + Result ;
+
+            if (!Directory.Exists(path))//如果不存在就创建file文件夹
+            {
+                Directory.CreateDirectory(path);//创建该文件夹
+            }
+
+            string csvFileName = path + Gloable.loginInfo.partNumber +"_" + saveTime + ".csv";
+            string csvData = string.Empty;
+            string csvItem = string.Empty;
+            string upLimit = string.Empty;
+            string downLimit = string.Empty;
+            string unit = string.Empty;
+            for (int i = 0; i < fctResult.itemNumber;i++)
+            {
+                csvData += fctResult.ResultString[i]+ ",";
+                csvItem += fctResult.ItemString[i] + ",";
+                upLimit += fctResult.UpLimitString[i] + ",";
+                downLimit += fctResult.DownLimitString[i] + ",";
+                unit += fctResult.Unit[i] + ",";
+            }
+
+            if (File.Exists(csvFileName))
+            {
+                successFlag = saveToCsv(csvFileName, dataHead + csvData, false);
+            }
+            else
+            {
+                File.Create(csvFileName).Close();//创建该文件，如果路径文件夹不存在，则报错
+
+                string Header = MACID + PRODUCT + LINE_ID + OPERTOR + BARCODE + TIME + ACUPOINT + RESULT + TITLE + csvItem;
+                successFlag = saveToCsv(csvFileName, Header, false);
+                successFlag = saveToCsv(csvFileName, UpperLimitString + upLimit, false);
+                successFlag = saveToCsv(csvFileName, LowerLimitString + downLimit, false);
+                successFlag = saveToCsv(csvFileName, MeasurementUnitString + unit, false);
+                successFlag = saveToCsv(csvFileName, dataHead + csvData, false);
+            }
+            if(successFlag.Contains("true"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
+            
+        }
+
+        public string saveTracesData(string path, List<TracesInfo> myTraces, string realPartOrImaginaryPart, bool deleteNewline, string fileSizeLimit, string saveTime)
+        {
+            string successFlag = "true";
+
+            path += DateTime.Now.ToString("yyyy-MM-dd") + "\\" + saveTime + "\\";
 
             string SerialNumberString = "Serial Number,";
             string TestStartTimeString = "Test Start Time,";

@@ -1,9 +1,0 @@
-[modelSetting]
-FtpUpload=False
-OracleUpload=False
-ABBCheck=False
-PCB Enable=False
-MandatorySample=False
-testDelay=150
-sampleTestTime=2021/5/17 10:01:31
-sampleIntervalTime=6

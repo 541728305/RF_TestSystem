@@ -1,0 +1,5 @@
+﻿MacID,Product,LineID,Operator,Barcode,Time,Acupoint,Result,Connect TitileChinese,TP101-TP102,TP101-TP103,TP101-TP104,TP102-TP103,TP102-TP104,TP103-TP104,S201_OFF1,S202_OFF1,S203_OFF1,S201_ON,S202_ON,S203_ON,S201_OFF2,S202_OFF2,S203_OFF2,
+Upper Limits----->,,,,,,,,,99,99,99,99,99,99,99,99,99,5,5,5,99,99,99,
+Lower Limits----->,,,,,,,,,2,2,2,2,2,2,2,2,2,0,0,0,2,2,2,
+Measurement Unit----->,,,,,,,,,Mohm,Mohm,Mohm,Mohm,Mohm,Mohm,Mohm,Mohm,Mohm,ohm,ohm,ohm,Mohm,Mohm,Mohm,
+HV0-1,FSAPHV0,L2-10,FSPA123,NOSCAN,2021/7/10 17:22:36,,FAIL,,9.9000,9.9000,9.9000,9.9000,9.9000,9.9000,9.9000,9.9000,9.9000,999.0000,,,,,,

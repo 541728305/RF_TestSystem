@@ -11796,3 +11796,993 @@
    在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
    在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
    在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:55:53.152]:call function checkBarcode()
+[2021-05-28 18:55:53.188]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:55:53.189]:-->part=FSAPHV0
+[2021-05-28 18:55:53.190]:-->last_station_code=TEDFCT
+[2021-05-28 18:55:53.190]:-->current_station_code=RF
+[2021-05-28 18:55:53.191]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 18:55:53.191]:-->fixture=HV0-1
+[2021-05-28 18:55:53.192]:-->work_order=FSPA644
+[2021-05-28 18:55:53.193]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:55:53.824]:dllVersion v2.5.2.20210129
+[2021-05-28 18:55:53.824]:Environment:4.0.30319.42000
+[2021-05-28 18:55:53.825]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:55:53.825]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:55:53.961]:call function checkBarcode()
+[2021-05-28 18:55:53.961]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:55:53.962]:-->part=FSAPHV0
+[2021-05-28 18:55:53.962]:-->last_station_code=TEDFCT
+[2021-05-28 18:55:53.963]:-->current_station_code=RF
+[2021-05-28 18:55:53.963]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 18:55:53.964]:-->fixture=HV0-1
+[2021-05-28 18:55:53.964]:-->work_order=FSPA644
+[2021-05-28 18:55:53.965]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:55:54.424]:dllVersion v2.5.2.20210129
+[2021-05-28 18:55:54.424]:Environment:4.0.30319.42000
+[2021-05-28 18:55:54.425]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:55:54.425]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:56:08.536]:call function checkBarcode()
+[2021-05-28 18:56:08.537]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:56:08.537]:-->part=FSAPHV0
+[2021-05-28 18:56:08.538]:-->last_station_code=TEDFCT
+[2021-05-28 18:56:08.538]:-->current_station_code=RF
+[2021-05-28 18:56:08.539]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 18:56:08.540]:-->fixture=HV0-1
+[2021-05-28 18:56:08.540]:-->work_order=FSPA644
+[2021-05-28 18:56:08.541]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:56:09.423]:dllVersion v2.5.2.20210129
+[2021-05-28 18:56:09.423]:Environment:4.0.30319.42000
+[2021-05-28 18:56:09.424]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:56:09.424]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:56:14.118]:dllVersion v2.5.2.20210129
+[2021-05-28 18:56:14.119]:Environment:4.0.30319.42000
+[2021-05-28 18:56:14.119]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:56:14.120]:call function uploadABB()
+[2021-05-28 18:56:14.120]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:56:14.121]:-->current_station_code=RF
+[2021-05-28 18:56:14.122]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:56:14.160]:dllVersion v2.5.2.20210129
+[2021-05-28 18:56:14.160]:Environment:4.0.30319.42000
+[2021-05-28 18:56:14.161]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:56:14.161]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 18:56:14.469]:call function checkBarcode()
+[2021-05-28 18:56:14.469]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:56:14.470]:-->part=FSAPHV0
+[2021-05-28 18:56:14.470]:-->last_station_code=TEDFCT
+[2021-05-28 18:56:14.471]:-->current_station_code=RF
+[2021-05-28 18:56:14.471]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 18:56:14.472]:-->fixture=HV0-1
+[2021-05-28 18:56:14.472]:-->work_order=FSPA644
+[2021-05-28 18:56:14.473]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:56:14.502]:dllVersion v2.5.2.20210129
+[2021-05-28 18:56:14.502]:Environment:4.0.30319.42000
+[2021-05-28 18:56:14.503]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:56:14.503]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:56:19.157]:dllVersion v2.5.2.20210129
+[2021-05-28 18:56:19.158]:Environment:4.0.30319.42000
+[2021-05-28 18:56:19.158]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:56:19.159]:call function uploadABB()
+[2021-05-28 18:56:19.159]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:56:19.160]:-->current_station_code=RF
+[2021-05-28 18:56:19.160]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:56:19.183]:dllVersion v2.5.2.20210129
+[2021-05-28 18:56:19.184]:Environment:4.0.30319.42000
+[2021-05-28 18:56:19.184]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:56:19.184]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 18:59:26.857]:call function checkBarcode()
+[2021-05-28 18:59:26.897]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:59:26.898]:-->part=FSAPHV0
+[2021-05-28 18:59:26.898]:-->last_station_code=TEDFCT
+[2021-05-28 18:59:26.899]:-->current_station_code=RF
+[2021-05-28 18:59:26.899]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 18:59:26.900]:-->fixture=HV0-1
+[2021-05-28 18:59:26.900]:-->work_order=FSPA644
+[2021-05-28 18:59:26.901]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:59:27.422]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:27.423]:Environment:4.0.30319.42000
+[2021-05-28 18:59:27.424]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:27.424]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:59:31.962]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:31.963]:Environment:4.0.30319.42000
+[2021-05-28 18:59:31.963]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:31.964]:call function uploadABB()
+[2021-05-28 18:59:31.964]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:59:31.965]:-->current_station_code=RF
+[2021-05-28 18:59:31.965]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:59:33.000]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:33.000]:Environment:4.0.30319.42000
+[2021-05-28 18:59:33.001]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:33.001]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 18:59:33.216]:call function checkBarcode()
+[2021-05-28 18:59:33.217]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:59:33.217]:-->part=FSAPHV0
+[2021-05-28 18:59:33.218]:-->last_station_code=TEDFCT
+[2021-05-28 18:59:33.218]:-->current_station_code=RF
+[2021-05-28 18:59:33.219]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 18:59:33.219]:-->fixture=HV0-1
+[2021-05-28 18:59:33.220]:-->work_order=FSPA644
+[2021-05-28 18:59:33.220]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:59:33.243]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:33.244]:Environment:4.0.30319.42000
+[2021-05-28 18:59:33.244]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:33.245]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:59:36.753]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:36.754]:Environment:4.0.30319.42000
+[2021-05-28 18:59:36.754]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:36.755]:call function uploadABB()
+[2021-05-28 18:59:36.755]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:59:36.756]:-->current_station_code=RF
+[2021-05-28 18:59:36.757]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:59:36.781]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:36.782]:Environment:4.0.30319.42000
+[2021-05-28 18:59:36.782]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:36.783]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 18:59:36.954]:call function checkBarcode()
+[2021-05-28 18:59:36.954]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:59:36.955]:-->part=FSAPHV0
+[2021-05-28 18:59:36.955]:-->last_station_code=TEDFCT
+[2021-05-28 18:59:36.956]:-->current_station_code=RF
+[2021-05-28 18:59:36.957]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 18:59:36.957]:-->fixture=HV0-1
+[2021-05-28 18:59:36.958]:-->work_order=FSPA644
+[2021-05-28 18:59:36.958]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:59:36.983]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:36.984]:Environment:4.0.30319.42000
+[2021-05-28 18:59:36.984]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:36.985]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 18:59:40.149]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:40.150]:Environment:4.0.30319.42000
+[2021-05-28 18:59:40.150]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:40.151]:call function uploadABB()
+[2021-05-28 18:59:40.151]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 18:59:40.152]:-->current_station_code=RF
+[2021-05-28 18:59:40.152]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 18:59:40.188]:dllVersion v2.5.2.20210129
+[2021-05-28 18:59:40.188]:Environment:4.0.30319.42000
+[2021-05-28 18:59:40.189]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 18:59:40.189]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:25:36.426]:call function checkBarcode()
+[2021-05-28 19:25:36.460]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:36.461]:-->part=FSAPHV0
+[2021-05-28 19:25:36.461]:-->last_station_code=TEDFCT
+[2021-05-28 19:25:36.462]:-->current_station_code=RF
+[2021-05-28 19:25:36.463]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:25:36.463]:-->fixture=HV0-1
+[2021-05-28 19:25:36.464]:-->work_order=FSPA644
+[2021-05-28 19:25:36.464]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:37.030]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:37.031]:Environment:4.0.30319.42000
+[2021-05-28 19:25:37.031]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:37.032]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:25:41.805]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:41.806]:Environment:4.0.30319.42000
+[2021-05-28 19:25:41.806]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:41.806]:call function uploadABB()
+[2021-05-28 19:25:41.807]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:41.808]:-->current_station_code=RF
+[2021-05-28 19:25:41.808]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:41.833]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:41.834]:Environment:4.0.30319.42000
+[2021-05-28 19:25:41.835]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:41.835]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:25:41.885]:call function checkBarcode()
+[2021-05-28 19:25:41.886]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:41.887]:-->part=FSAPHV0
+[2021-05-28 19:25:41.887]:-->last_station_code=TEDFCT
+[2021-05-28 19:25:41.888]:-->current_station_code=RF
+[2021-05-28 19:25:41.888]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:25:41.889]:-->fixture=HV0-1
+[2021-05-28 19:25:41.889]:-->work_order=FSPA644
+[2021-05-28 19:25:41.890]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:41.939]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:41.939]:Environment:4.0.30319.42000
+[2021-05-28 19:25:41.940]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:41.940]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:25:46.656]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:46.657]:Environment:4.0.30319.42000
+[2021-05-28 19:25:46.657]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:46.658]:call function uploadABB()
+[2021-05-28 19:25:46.659]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:46.659]:-->current_station_code=RF
+[2021-05-28 19:25:46.660]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:47.099]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:47.100]:Environment:4.0.30319.42000
+[2021-05-28 19:25:47.100]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:47.101]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:25:47.189]:call function checkBarcode()
+[2021-05-28 19:25:47.190]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:47.190]:-->part=FSAPHV0
+[2021-05-28 19:25:47.191]:-->last_station_code=TEDFCT
+[2021-05-28 19:25:47.191]:-->current_station_code=RF
+[2021-05-28 19:25:47.192]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:25:47.192]:-->fixture=HV0-1
+[2021-05-28 19:25:47.193]:-->work_order=FSPA644
+[2021-05-28 19:25:47.194]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:47.222]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:47.223]:Environment:4.0.30319.42000
+[2021-05-28 19:25:47.223]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:47.224]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:25:50.376]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:50.376]:Environment:4.0.30319.42000
+[2021-05-28 19:25:50.377]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:50.377]:call function uploadABB()
+[2021-05-28 19:25:50.377]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:50.378]:-->current_station_code=RF
+[2021-05-28 19:25:50.378]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:50.405]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:50.405]:Environment:4.0.30319.42000
+[2021-05-28 19:25:50.406]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:50.406]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:25:50.628]:call function checkBarcode()
+[2021-05-28 19:25:50.629]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:50.629]:-->part=FSAPHV0
+[2021-05-28 19:25:50.630]:-->last_station_code=TEDFCT
+[2021-05-28 19:25:50.630]:-->current_station_code=RF
+[2021-05-28 19:25:50.631]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:25:50.631]:-->fixture=HV0-1
+[2021-05-28 19:25:50.632]:-->work_order=FSPA644
+[2021-05-28 19:25:50.632]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:50.666]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:50.667]:Environment:4.0.30319.42000
+[2021-05-28 19:25:50.667]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:50.668]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:25:53.954]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:53.955]:Environment:4.0.30319.42000
+[2021-05-28 19:25:53.955]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:53.956]:call function uploadABB()
+[2021-05-28 19:25:53.956]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:53.957]:-->current_station_code=RF
+[2021-05-28 19:25:53.957]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:53.982]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:53.983]:Environment:4.0.30319.42000
+[2021-05-28 19:25:53.983]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:53.984]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:25:54.064]:call function checkBarcode()
+[2021-05-28 19:25:54.065]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:54.066]:-->part=FSAPHV0
+[2021-05-28 19:25:54.067]:-->last_station_code=TEDFCT
+[2021-05-28 19:25:54.067]:-->current_station_code=RF
+[2021-05-28 19:25:54.068]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:25:54.069]:-->fixture=HV0-1
+[2021-05-28 19:25:54.069]:-->work_order=FSPA644
+[2021-05-28 19:25:54.070]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:54.093]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:54.093]:Environment:4.0.30319.42000
+[2021-05-28 19:25:54.094]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:54.094]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:25:57.269]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:57.270]:Environment:4.0.30319.42000
+[2021-05-28 19:25:57.270]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:57.271]:call function uploadABB()
+[2021-05-28 19:25:57.271]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:57.272]:-->current_station_code=RF
+[2021-05-28 19:25:57.272]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:57.303]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:57.303]:Environment:4.0.30319.42000
+[2021-05-28 19:25:57.304]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:57.305]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:25:57.501]:call function checkBarcode()
+[2021-05-28 19:25:57.502]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:25:57.502]:-->part=FSAPHV0
+[2021-05-28 19:25:57.503]:-->last_station_code=TEDFCT
+[2021-05-28 19:25:57.503]:-->current_station_code=RF
+[2021-05-28 19:25:57.504]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:25:57.504]:-->fixture=HV0-1
+[2021-05-28 19:25:57.505]:-->work_order=FSPA644
+[2021-05-28 19:25:57.505]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:25:57.535]:dllVersion v2.5.2.20210129
+[2021-05-28 19:25:57.535]:Environment:4.0.30319.42000
+[2021-05-28 19:25:57.536]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:25:57.536]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:26:00.661]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:00.661]:Environment:4.0.30319.42000
+[2021-05-28 19:26:00.662]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:00.662]:call function uploadABB()
+[2021-05-28 19:26:00.663]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:00.663]:-->current_station_code=RF
+[2021-05-28 19:26:00.664]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:00.692]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:00.693]:Environment:4.0.30319.42000
+[2021-05-28 19:26:00.693]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:00.694]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:26:00.940]:call function checkBarcode()
+[2021-05-28 19:26:00.941]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:00.942]:-->part=FSAPHV0
+[2021-05-28 19:26:00.942]:-->last_station_code=TEDFCT
+[2021-05-28 19:26:00.943]:-->current_station_code=RF
+[2021-05-28 19:26:00.943]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:26:00.944]:-->fixture=HV0-1
+[2021-05-28 19:26:00.944]:-->work_order=FSPA644
+[2021-05-28 19:26:00.945]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:00.972]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:00.973]:Environment:4.0.30319.42000
+[2021-05-28 19:26:00.974]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:00.974]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:26:04.209]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:04.210]:Environment:4.0.30319.42000
+[2021-05-28 19:26:04.210]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:04.211]:call function uploadABB()
+[2021-05-28 19:26:04.211]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:04.212]:-->current_station_code=RF
+[2021-05-28 19:26:04.212]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:04.246]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:04.247]:Environment:4.0.30319.42000
+[2021-05-28 19:26:04.247]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:04.248]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:26:04.376]:call function checkBarcode()
+[2021-05-28 19:26:04.377]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:04.377]:-->part=FSAPHV0
+[2021-05-28 19:26:04.378]:-->last_station_code=TEDFCT
+[2021-05-28 19:26:04.378]:-->current_station_code=RF
+[2021-05-28 19:26:04.379]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:26:04.379]:-->fixture=HV0-1
+[2021-05-28 19:26:04.380]:-->work_order=FSPA644
+[2021-05-28 19:26:04.380]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:04.393]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:04.393]:Environment:4.0.30319.42000
+[2021-05-28 19:26:04.394]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:04.395]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:26:07.567]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:07.567]:Environment:4.0.30319.42000
+[2021-05-28 19:26:07.568]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:07.568]:call function uploadABB()
+[2021-05-28 19:26:07.569]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:07.570]:-->current_station_code=RF
+[2021-05-28 19:26:07.570]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:07.596]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:07.597]:Environment:4.0.30319.42000
+[2021-05-28 19:26:07.597]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:07.598]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:26:07.822]:call function checkBarcode()
+[2021-05-28 19:26:07.823]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:07.823]:-->part=FSAPHV0
+[2021-05-28 19:26:07.824]:-->last_station_code=TEDFCT
+[2021-05-28 19:26:07.824]:-->current_station_code=RF
+[2021-05-28 19:26:07.825]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:26:07.826]:-->fixture=HV0-1
+[2021-05-28 19:26:07.826]:-->work_order=FSPA644
+[2021-05-28 19:26:07.827]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:07.863]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:07.864]:Environment:4.0.30319.42000
+[2021-05-28 19:26:07.864]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:07.864]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:26:11.136]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:11.136]:Environment:4.0.30319.42000
+[2021-05-28 19:26:11.137]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:11.137]:call function uploadABB()
+[2021-05-28 19:26:11.138]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:11.139]:-->current_station_code=RF
+[2021-05-28 19:26:11.139]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:11.244]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:11.245]:Environment:4.0.30319.42000
+[2021-05-28 19:26:11.245]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:11.246]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-28 19:26:11.564]:call function checkBarcode()
+[2021-05-28 19:26:11.565]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:11.566]:-->part=FSAPHV0
+[2021-05-28 19:26:11.566]:-->last_station_code=TEDFCT
+[2021-05-28 19:26:11.567]:-->current_station_code=RF
+[2021-05-28 19:26:11.568]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-28 19:26:11.568]:-->fixture=HV0-1
+[2021-05-28 19:26:11.569]:-->work_order=FSPA644
+[2021-05-28 19:26:11.569]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:11.595]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:11.595]:Environment:4.0.30319.42000
+[2021-05-28 19:26:11.596]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:11.596]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-28 19:26:14.871]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:14.872]:Environment:4.0.30319.42000
+[2021-05-28 19:26:14.872]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:14.873]:call function uploadABB()
+[2021-05-28 19:26:14.874]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-28 19:26:14.874]:-->current_station_code=RF
+[2021-05-28 19:26:14.875]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-28 19:26:15.106]:dllVersion v2.5.2.20210129
+[2021-05-28 19:26:15.107]:Environment:4.0.30319.42000
+[2021-05-28 19:26:15.107]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-28 19:26:15.108]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-29 08:08:31.622]:call function checkBarcode()
+[2021-05-29 08:08:31.686]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-29 08:08:31.687]:-->part=FSAPHV0
+[2021-05-29 08:08:31.687]:-->last_station_code=TEDFCT
+[2021-05-29 08:08:31.688]:-->current_station_code=RF
+[2021-05-29 08:08:31.688]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-29 08:08:31.689]:-->fixture=HV0-1
+[2021-05-29 08:08:31.689]:-->work_order=FSPA644
+[2021-05-29 08:08:31.690]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-29 08:08:32.009]:dllVersion v2.5.2.20210129
+[2021-05-29 08:08:32.009]:Environment:4.0.30319.42000
+[2021-05-29 08:08:32.010]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-29 08:08:32.010]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-29 08:08:35.869]:call function checkBarcode()
+[2021-05-29 08:08:35.869]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-29 08:08:35.870]:-->part=FSAPHV0
+[2021-05-29 08:08:35.870]:-->last_station_code=TEDFCT
+[2021-05-29 08:08:35.871]:-->current_station_code=RF
+[2021-05-29 08:08:35.871]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-29 08:08:35.872]:-->fixture=HV0-1
+[2021-05-29 08:08:35.872]:-->work_order=FSPA644
+[2021-05-29 08:08:35.873]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-29 08:08:35.995]:dllVersion v2.5.2.20210129
+[2021-05-29 08:08:35.996]:Environment:4.0.30319.42000
+[2021-05-29 08:08:35.996]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-29 08:08:35.997]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-29 08:08:40.158]:dllVersion v2.5.2.20210129
+[2021-05-29 08:08:40.159]:Environment:4.0.30319.42000
+[2021-05-29 08:08:40.159]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-29 08:08:40.160]:call function uploadABB()
+[2021-05-29 08:08:40.160]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-29 08:08:40.161]:-->current_station_code=RF
+[2021-05-29 08:08:40.161]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-29 08:08:40.184]:dllVersion v2.5.2.20210129
+[2021-05-29 08:08:40.185]:Environment:4.0.30319.42000
+[2021-05-29 08:08:40.185]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-29 08:08:40.185]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-05-29 08:09:35.563]:call function checkBarcode()
+[2021-05-29 08:09:35.564]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-29 08:09:35.565]:-->part=FSAPHV0
+[2021-05-29 08:09:35.565]:-->last_station_code=TEDFCT
+[2021-05-29 08:09:35.566]:-->current_station_code=RF
+[2021-05-29 08:09:35.566]:-->barcode=C460ABCDEFGHILKJB
+[2021-05-29 08:09:35.567]:-->fixture=HV0-1
+[2021-05-29 08:09:35.572]:-->work_order=FSPA644
+[2021-05-29 08:09:35.573]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-29 08:09:35.605]:dllVersion v2.5.2.20210129
+[2021-05-29 08:09:35.606]:Environment:4.0.30319.42000
+[2021-05-29 08:09:35.606]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-29 08:09:35.607]:-->checkBarcode fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.checkBarcode(AvaCheckBarcodeConfig2 config, String part, String last_station_code, String current_station_code, String barcode, String fixture, String work_order)
+[2021-05-29 08:09:38.680]:dllVersion v2.5.2.20210129
+[2021-05-29 08:09:38.681]:Environment:4.0.30319.42000
+[2021-05-29 08:09:38.681]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-29 08:09:38.682]:call function uploadABB()
+[2021-05-29 08:09:38.682]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-05-29 08:09:38.683]:-->current_station_code=RF
+[2021-05-29 08:09:38.683]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-05-29 08:09:39.014]:dllVersion v2.5.2.20210129
+[2021-05-29 08:09:39.015]:Environment:4.0.30319.42000
+[2021-05-29 08:09:39.015]:application:F:\VisualStudioProject\RF_TestSystem\RF_TestSystem 禁止跨线程操作 (HZH Control) - 降级\RF_TestSystem\bin\x86\Debug\RF_TestSystem.exe
+[2021-05-29 08:09:39.016]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 10:46:53.099]:dllVersion v2.5.2.20210129
+[2021-06-26 10:46:53.128]:Environment:4.0.30319.42000
+[2021-06-26 10:46:53.129]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 10:46:53.130]:call function uploadABB()
+[2021-06-26 10:46:53.182]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 10:46:53.183]:-->current_station_code=FCT
+[2021-06-26 10:46:53.184]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 10:46:53.586]:dllVersion v2.5.2.20210129
+[2021-06-26 10:46:53.586]:Environment:4.0.30319.42000
+[2021-06-26 10:46:53.587]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 10:46:53.587]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 10:53:24.480]:dllVersion v2.5.2.20210129
+[2021-06-26 10:53:24.481]:Environment:4.0.30319.42000
+[2021-06-26 10:53:24.482]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 10:53:24.482]:call function uploadABB()
+[2021-06-26 10:53:24.527]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 10:53:24.528]:-->current_station_code=FCT
+[2021-06-26 10:53:24.528]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 10:53:25.801]:dllVersion v2.5.2.20210129
+[2021-06-26 10:53:25.802]:Environment:4.0.30319.42000
+[2021-06-26 10:53:25.802]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 10:53:25.803]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 10:57:16.905]:dllVersion v2.5.2.20210129
+[2021-06-26 10:57:16.906]:Environment:4.0.30319.42000
+[2021-06-26 10:57:16.906]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 10:57:16.907]:call function uploadABB()
+[2021-06-26 10:57:16.907]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 10:57:16.908]:-->current_station_code=FCT
+[2021-06-26 10:57:16.908]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 10:57:17.028]:dllVersion v2.5.2.20210129
+[2021-06-26 10:57:17.029]:Environment:4.0.30319.42000
+[2021-06-26 10:57:17.029]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 10:57:17.030]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:48:09.153]:dllVersion v2.5.2.20210129
+[2021-06-26 16:48:09.154]:Environment:4.0.30319.42000
+[2021-06-26 16:48:09.155]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:48:09.155]:call function uploadABB()
+[2021-06-26 16:48:09.190]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:48:09.190]:-->current_station_code=FCT
+[2021-06-26 16:48:09.191]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:48:11.469]:dllVersion v2.5.2.20210129
+[2021-06-26 16:48:11.469]:Environment:4.0.30319.42000
+[2021-06-26 16:48:11.470]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:48:11.470]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:49:34.999]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:34.999]:Environment:4.0.30319.42000
+[2021-06-26 16:49:35.000]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:35.000]:call function uploadABB()
+[2021-06-26 16:49:35.001]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:49:35.001]:-->current_station_code=FCT
+[2021-06-26 16:49:35.001]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:49:35.058]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:35.059]:Environment:4.0.30319.42000
+[2021-06-26 16:49:35.059]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:35.059]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:49:40.288]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:40.289]:Environment:4.0.30319.42000
+[2021-06-26 16:49:40.289]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:40.289]:call function uploadABB()
+[2021-06-26 16:49:40.290]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:49:40.290]:-->current_station_code=FCT
+[2021-06-26 16:49:40.291]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:49:40.317]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:40.318]:Environment:4.0.30319.42000
+[2021-06-26 16:49:40.318]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:40.319]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:49:45.525]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:45.526]:Environment:4.0.30319.42000
+[2021-06-26 16:49:45.526]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:45.527]:call function uploadABB()
+[2021-06-26 16:49:45.527]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:49:45.528]:-->current_station_code=FCT
+[2021-06-26 16:49:45.528]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:49:45.560]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:45.560]:Environment:4.0.30319.42000
+[2021-06-26 16:49:45.561]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:45.561]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:49:51.104]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:51.104]:Environment:4.0.30319.42000
+[2021-06-26 16:49:51.105]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:51.105]:call function uploadABB()
+[2021-06-26 16:49:51.106]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:49:51.106]:-->current_station_code=FCT
+[2021-06-26 16:49:51.107]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:49:51.234]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:51.234]:Environment:4.0.30319.42000
+[2021-06-26 16:49:51.235]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:51.235]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:49:56.847]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:56.847]:Environment:4.0.30319.42000
+[2021-06-26 16:49:56.848]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:56.848]:call function uploadABB()
+[2021-06-26 16:49:56.849]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:49:56.850]:-->current_station_code=FCT
+[2021-06-26 16:49:56.850]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:49:56.881]:dllVersion v2.5.2.20210129
+[2021-06-26 16:49:56.881]:Environment:4.0.30319.42000
+[2021-06-26 16:49:56.882]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:49:56.882]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:52:44.762]:dllVersion v2.5.2.20210129
+[2021-06-26 16:52:44.763]:Environment:4.0.30319.42000
+[2021-06-26 16:52:44.763]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:52:44.763]:call function uploadABB()
+[2021-06-26 16:52:44.764]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:52:44.765]:-->current_station_code=FCT
+[2021-06-26 16:52:44.765]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:52:44.890]:dllVersion v2.5.2.20210129
+[2021-06-26 16:52:44.891]:Environment:4.0.30319.42000
+[2021-06-26 16:52:44.891]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:52:44.891]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 16:52:50.257]:dllVersion v2.5.2.20210129
+[2021-06-26 16:52:50.258]:Environment:4.0.30319.42000
+[2021-06-26 16:52:50.258]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:52:50.259]:call function uploadABB()
+[2021-06-26 16:52:50.259]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 16:52:50.260]:-->current_station_code=FCT
+[2021-06-26 16:52:50.260]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 16:52:50.290]:dllVersion v2.5.2.20210129
+[2021-06-26 16:52:50.290]:Environment:4.0.30319.42000
+[2021-06-26 16:52:50.291]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 16:52:50.291]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 17:11:27.788]:dllVersion v2.5.2.20210129
+[2021-06-26 17:11:27.788]:Environment:4.0.30319.42000
+[2021-06-26 17:11:27.789]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 17:11:27.789]:call function uploadABB()
+[2021-06-26 17:11:27.823]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 17:11:27.824]:-->current_station_code=FCT
+[2021-06-26 17:11:27.824]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 17:11:28.049]:dllVersion v2.5.2.20210129
+[2021-06-26 17:11:28.050]:Environment:4.0.30319.42000
+[2021-06-26 17:11:28.050]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 17:11:28.051]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)
+[2021-06-26 17:14:27.382]:dllVersion v2.5.2.20210129
+[2021-06-26 17:14:27.383]:Environment:4.0.30319.42000
+[2021-06-26 17:14:27.383]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 17:14:27.384]:call function uploadABB()
+[2021-06-26 17:14:27.419]:-->AvaCheckBarcodeConfig2={"m_testerType":0,"m_testMode":0,"m_chk_useCPP":false,"m_configABB":{"m_chk_useABB":false,"m_chk_useThreeTimes":false,"m_chk_useStopFail":false,"m_chk_tagABB":0}}
+[2021-06-26 17:14:27.420]:-->current_station_code=FCT
+[2021-06-26 17:14:27.420]:-->connect string:data source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.0.114) (PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = ZDTDB)));user id=ictdata;password=ict*1
+[2021-06-26 17:14:27.636]:dllVersion v2.5.2.20210129
+[2021-06-26 17:14:27.636]:Environment:4.0.30319.42000
+[2021-06-26 17:14:27.637]:application:F:\VisualStudioProject\FCT_TestSystem\FCT_TestSystem Version1.0\RF_TestSystem\bin\x86\Debug\FCT_TestSystem.exe
+[2021-06-26 17:14:27.637]:-->uploadABB fail! err string:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务 ---> OracleInternal.Network.NetworkException (0x000030E2): ORA-12514: TNS: 监听程序当前无法识别连接描述符中请求的服务
+   在 OracleInternal.Network.OracleCommunication.DoConnect(String tnsDescriptor)
+   在 OracleInternal.ServiceObjects.OracleConnectionImpl.Connect(ConnectionString cs, Boolean bOpenEndUserSession, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.CreateNewPR(Int32 reqCount, Boolean bForPoolPopulation, ConnectionString csWithDiffOrNewPwd, String instanceName)
+   在 OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   在 OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   在 Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   在 AvaryAPI.AvaCheckBarcode2.uploadABB(AvaCheckBarcodeConfig2 config, String current_station_code, String fixture_no, String part_no, String version_no, String work_order, String line_no, String operator_no, String barcode, String result, String testDate, String testTime, String ut_01, String ut_02, String ut_03, String ut_04, String ut_05, String ut_06, String ut_07, String ut_08, String ut_09, String ut_10, String sDate, String sTime, String ftp_pcs_path, String local_pcs_path, String ng_category, String ng_item, String ng_item_value, String& errMsg)

@@ -137,13 +137,13 @@ namespace RF_TestSystem
                                        + "'" + BARCODE + "'," + "'" + TRESULT + "'," + "'" + TESTDATE + "'," + "'" + TESTTIME + "'," + "'" + UT01 + "'," + "'" + UT02 + "',"
                                        + "'" + UT03 + "'," + "'" + UT04 + "'," + "'" + UT05 + "'," + "'" + UT06 + "'," + "'" + UT07 + "'," + "'" + UT08 + "',"
                                        + "'" + UT09 + "'," + "'" + UT10 + "'," + "'" + SDATE + "'," + "'" + STIME + "',"
-                                       + "'" + FPATH + "'," + "'" + NASPATH + "'," + "'" + NG_CATEGORY + "'," + "'" + NG_ITEM + "'," + "'" + NG_ITEM_VAL + "'";
+                                       + "'" + FPATH + "'";
             return OraclePackege;
         }
         public string getOracleColumnPackege()
         {
             string oracleColumnPackege = "MACID,PARTNUM,REVISION,WORKNO,LINEID,OPERTOR,BARCODE,TRESULT,TESTDATE,TESTTIME," +
-                "UT01,UT02,UT03,UT04,UT05,UT06,UT07,UT08,UT09,UT10,SDATE,STIME,FPATH,NASPATH,NG_CATEGORY,NG_ITEM,NG_ITEM_VAL";
+                "UT01,UT02,UT03,UT04,UT05,UT06,UT07,UT08,UT09,UT10,SDATE,STIME,FPATH";
             return oracleColumnPackege;
         }
 

@@ -6,13 +6,17 @@ namespace RF_TestSystem
 {
     public delegate void commandComingHandler(string comm);
     public delegate void TcpClientDisconnectHandle();
+
+    public delegate void TcpMessageHandler(string Msg);
+    
     class TCPClient
     {
         ClientAsync client = new ClientAsync();
         int connectState = 0;
-
+        string msgLog = "";
         public event commandComingHandler commandComingEvent;
         public event TcpClientDisconnectHandle TcpClientDisconnectEven;
+        public  event TcpMessageHandler TcpMessageEvent;
         public TCPClient()
         {
             client.Completed += new Action<System.Net.Sockets.TcpClient, EnSocketAction>((c, enAction) =>
@@ -33,6 +37,7 @@ namespace RF_TestSystem
                             string key = string.Format("{0}:{1}", iep.Address.ToString(), iep.Port);
                             Console.WriteLine("{0}：向{1}发送了一条消息", DateTime.Now, key);
 
+                            TcpMessageEvent(DateTime.Now.ToString() + "：→ 向 <" + key + "> 发送了一条消息：\r\n"+ msgLog);
                             break;
                         }
 
@@ -51,11 +56,13 @@ namespace RF_TestSystem
                  Console.WriteLine("{0}对我说：{1}", key, msg);
                  TcpProtocol tcpProtocol = new TcpProtocol();
                  commandComingEvent(msg);
+                 TcpMessageEvent(DateTime.Now.ToString() + "：← <"+ key + "> 对我说：\r\n" + msg);
              });
 
         }
         public void clientSendMessge(string msg)
         {
+            msgLog = msg;
             client.SendAsync(msg);
         }
 
