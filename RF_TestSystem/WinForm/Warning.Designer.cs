@@ -108,6 +108,7 @@ namespace RF_TestSystem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Warning";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Warning_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

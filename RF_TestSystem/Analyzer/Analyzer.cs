@@ -613,7 +613,15 @@ namespace RF_TestSystem
 
         public void sendOPC()
         {
-            sendCommand("*OPC?");
+            try
+            {
+                ioobj.WriteString("*OPC?", true);
+            }
+            catch(Exception err)
+            {
+                Console.WriteLine(err.Message);
+            }
+           
         }
         public AnalyzerConfig getBasisConfig()
         {

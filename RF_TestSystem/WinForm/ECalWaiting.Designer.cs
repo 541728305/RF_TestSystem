@@ -77,6 +77,7 @@ namespace RF_TestSystem.WinForm
             this.MinimumSize = new System.Drawing.Size(480, 320);
             this.Name = "ECalWaiting";
             this.Text = "ECalWaiting";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ECalWaiting_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

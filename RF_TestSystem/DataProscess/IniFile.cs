@@ -230,6 +230,10 @@ namespace RF_TestSystem
                 //写入缺省值
                 writeAnalyzerConfigToInitFile(agilentConfig);
             }
+            
+
+            agilentConfig.dataPath = System.Windows.Forms.Application.StartupPath + "\\RF_Data\\";
+            agilentConfig.limitPath = System.Windows.Forms.Application.StartupPath + "\\Limit\\";
             Gloable.limitFilePath = agilentConfig.limitPath;
             return agilentConfig;
         }
@@ -617,10 +621,10 @@ namespace RF_TestSystem
             UpLoadInfo uploadInfo = new UpLoadInfo();
 
             //配置缺省值      
-            uploadInfo.ftpIP = "10.182.108.46";
-            uploadInfo.ftpID = "";
-            uploadInfo.ftpPW = "";
-            uploadInfo.ftpPath = "/fun_t/RF";
+            uploadInfo.ftpIP = "10.182.108.43";
+            uploadInfo.ftpID = "fun_t";
+            uploadInfo.ftpPW = "ZDTnpiftp!789";
+            uploadInfo.ftpPath = "fun_t/RF/";
             uploadInfo.ftpUploadTime = DateTime.Now.ToLocalTime().AddHours(2).ToString();
 
             uploadInfo.fixtureIP = "100.1.1.240";
@@ -664,14 +668,14 @@ namespace RF_TestSystem
                     uploadInfo.fixtureIP = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixtureIP", "100.1.1.240");
                     uploadInfo.fixturePort = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "fixturePort", "8233");
 
-                    uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleIP", uploadInfo.oracleIP);
-                    uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleTB", uploadInfo.oracleTB);
+                    uploadInfo.oracleIP = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleIP", uploadInfo.oracleIP);
+                    uploadInfo.oracleTB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleTB", uploadInfo.oracleTB);
                     uploadInfo.oracleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleDB", uploadInfo.oracleDB);
                     uploadInfo.oracleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oracleID", uploadInfo.oracleID);
                     uploadInfo.oraclePW = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "oraclePW", uploadInfo.oraclePW);
 
                     uploadInfo.sampleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleIP", uploadInfo.sampleIP);
-                    uploadInfo.sampleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleTB", uploadInfo.sampleTB);
+                    uploadInfo.sampleTB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleTB", uploadInfo.sampleTB);
                     uploadInfo.sampleDB = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleDB", uploadInfo.sampleDB);
                     uploadInfo.sampleID = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "sampleID", uploadInfo.sampleID);
                     uploadInfo.samplePW = IniOP.INIGetStringValue(uploadInfoConifgFilePath, "uploadInfo", "samplePW", uploadInfo.samplePW);
@@ -723,6 +727,8 @@ namespace RF_TestSystem
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
             successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
 
+            successful = IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "heartbeatEnable", modelSetting.heartbeatEnable);
+
             return successful;
         }
         public ModelSetting readModelSettingFromInitFile()
@@ -752,6 +758,8 @@ namespace RF_TestSystem
             modelSetting.probeUseTime = "0";
             modelSetting.probeUperTime = "15000";
             modelSetting.probeWarnTime = "500";
+
+            modelSetting.heartbeatEnable = true.ToString();
             string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
 
             if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
@@ -791,6 +799,8 @@ namespace RF_TestSystem
                     modelSetting.probeUseTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime", modelSetting.probeUseTime);
                     modelSetting.probeUperTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeUperTime", modelSetting.probeUperTime);
                     modelSetting.probeWarnTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", modelSetting.probeWarnTime);
+
+                    modelSetting.heartbeatEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "heartbeatEnable", modelSetting.heartbeatEnable);
 
                 }
                 else

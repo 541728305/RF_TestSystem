@@ -3,9 +3,17 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-
+using RF_TestSystem;
 namespace TCPHelper
 {
+    struct ReceivePackage
+    {
+        public string key;
+        public string msg;
+    };
+
+
+
     public class ClientAsync
     {
         private TcpClient client;
@@ -28,6 +36,7 @@ namespace TCPHelper
         /// 意外断开
         /// </summary>
 
+        bool aliveFlag = false;
 
         
         public ClientAsync()
@@ -49,9 +58,21 @@ namespace TCPHelper
             // connection shut. ObjectDisposedException should never be part of the normal application flow.
             if (client != null && client.Connected)
             {
-                client.Client.Shutdown(SocketShutdown.Both);
-                client.Client.Disconnect(true);
-                client.Client.Close();
+                try
+                {
+                    client.Client.Shutdown(SocketShutdown.Both);
+                    client.Client.Disconnect(true);
+                    client.Client.Close();
+                }
+                catch(Exception e)
+                {
+                    
+                }
+                finally
+                {
+                    client.Client.Close();
+                }
+                
             }
         }
 
@@ -80,6 +101,17 @@ namespace TCPHelper
             Console.WriteLine(client.Connected);
             Console.WriteLine(asyncResult.AsyncState.ToString());
         }
+
+        public bool getAlive()
+        {
+            if(aliveFlag)
+            {
+                aliveFlag = false;
+                return true;
+            }
+            return false;
+        }
+
         public bool getConneted()
         {
             return client.Connected;
@@ -170,11 +202,26 @@ namespace TCPHelper
                     {
                         IPEndPoint iep = obj.Client.Client.RemoteEndPoint as IPEndPoint;
                         string key = string.Format("{0}:{1}", iep.Address, iep.Port);
-                        Received(key, msg);
+                        Gloable.tcpAliveFlag = true;
+                        aliveFlag = true;
+                        Thread  thread = new Thread(new ParameterizedThreadStart(sendReveive));
+                        ReceivePackage receivePackage = new ReceivePackage();
+                        receivePackage.key = key;
+                        receivePackage.msg = msg;
+                        object receiveObj = receivePackage;
+                        thread.Start(receiveObj);
                     }
                 }
             }
         }
+
+        private void sendReveive(object Package)
+        {
+            ReceivePackage receivePackage = (ReceivePackage)Package;
+
+            Received(receivePackage.key, receivePackage.msg);
+        }
+
         private void SendCallBack(IAsyncResult ar)
         {
             TcpClient client = ar.AsyncState as TcpClient;

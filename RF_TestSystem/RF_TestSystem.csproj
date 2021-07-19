@@ -173,6 +173,7 @@
   <ItemGroup>
     <Compile Include="Analyzer\Analyzer.cs" />
     <Compile Include="DataProscess\DataClass.cs" />
+    <Compile Include="DataProscess\ExceptionLog.cs" />
     <Compile Include="FTP\FTP.cs" />
     <Compile Include="InstrumentUtilityDotNet\AddressConversion.cs" />
     <Compile Include="InstrumentUtilityDotNet\Enum.cs" />

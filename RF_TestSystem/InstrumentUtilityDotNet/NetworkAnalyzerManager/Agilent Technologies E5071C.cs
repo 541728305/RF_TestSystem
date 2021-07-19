@@ -37,7 +37,6 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             try
             {
                 return base.WriteString(sendMsg);
-                return true;
             }
             catch (Exception ex)
             {
@@ -71,7 +70,6 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             try
             {
                 return base.WriteString(sendMsg);
-                return true;
             }
             catch (Exception ex)
             {
@@ -141,7 +139,6 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             try
             {
                 return base.WriteString(sendMsg);
-                return true;
             }
             catch (Exception ex)
             {
@@ -176,7 +173,6 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             try
             {
                 return base.WriteString(sendMsg);
-                return true;
             }
             catch (Exception ex)
             {
@@ -281,17 +277,11 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
         }
         public override string transFromAllocateID(string allocateID)
         {
-            string allocateNumber = "";
-
             if (allocateID == "D1\n")
             {
-                return allocateNumber = "1";
+                return  "1";
             }
-            else
-            {
-                return allocateNumber = "2";
-            }
-
+            return  "2";
         }
         public override string ackAllocateChannelst()
         {
@@ -380,8 +370,13 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":CALC" + channel + ":DATA:FDAT?";
             if (selectTrace(channel, trace) == true)
+            {
                 if (base.WriteString(command) == true)
+                {
                     data = base.ReadString();
+                }                   
+            }
+                
             return data;
         }
 
@@ -390,8 +385,13 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":CALC" + channel + ":DATA:FMEM?";
             if (selectTrace(channel, trace) == true)
+            {
                 if (base.WriteString(command) == true)
+                {
                     data = base.ReadString();
+                }                   
+            }
+               
             return data;
         }
 
@@ -400,14 +400,20 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":SENS" + channel + ":FREQ:DATA?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+              
             return data;
         }
         public override bool dataToMemory(string channel, string trace)
         {         
             string command = ":CALC" + channel + ":MATH:MEM";
             if(selectTrace(channel, trace)==true)
+            {
                 return base.WriteString(command);
+            }
+               
             return false;
         }
 
@@ -416,7 +422,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":DISP:WIND" + channel + ":TRAC" + trace + ":" + memOrStat + "?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setDisplay(string channel, string trace, string memOrStat, string offOrOn)
@@ -430,7 +439,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":CALC" + channel + ":PAR" + trace + ":DEF?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setTracesMeas(string channel, string trace, string sParameter)
@@ -450,7 +462,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":CALC" + channel + ":SMO:STAT?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setSmooth(string channel, string state) //  state = ON \OFF
@@ -464,7 +479,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":CALC" + channel + ":SMO:APER?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setSmoothValue(string channel, string value)
@@ -494,7 +512,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":DISP:ENAB?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool displayUpdate(string state) //ON|OFF
@@ -508,7 +529,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":TRIG:SOUR?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setTriggerSource(string source)  // INTernal|EXTernal|MANual|BUS
@@ -527,7 +551,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":SENS" + channel + ":CORR:EXT:AUTO:" + port + "?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+               
             return data;
         }
         public override bool setPortExtensions(string channel, string port, string state)
@@ -542,7 +569,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":SENS" + channel + ":CORR:EXT:AUTO:CONF?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setPortExtensionsSpan(string channel, string state) //CSPN|AMKR|USPN
@@ -556,7 +586,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":SENS" + channel + ":CORR:EXT:AUTO:MEAS?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setPortExtensionsOpen(string channel, string state) //OPEN|SHORt
@@ -569,7 +602,10 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             string data = "";
             string command = ":SENS" + channel + ":CORR:EXT?";
             if (base.WriteString(command) == true)
+            {
                 data = base.ReadString();
+            }
+                
             return data;
         }
         public override bool setPortExtensions(string channel, string state)

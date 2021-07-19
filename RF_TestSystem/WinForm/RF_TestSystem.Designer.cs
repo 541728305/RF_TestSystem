@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RF_TestSystem));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.connectButton = new System.Windows.Forms.Button();
             this.connImageList = new System.Windows.Forms.ImageList(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -128,6 +128,7 @@
             this.flowLayoutPanel40 = new System.Windows.Forms.FlowLayoutPanel();
             this.topPanel = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.machineClassTextBox = new System.Windows.Forms.TextBox();
             this.systemStateTextBox = new System.Windows.Forms.TextBox();
             this.debugButton = new System.Windows.Forms.Button();
@@ -355,25 +356,31 @@
             this.label42 = new System.Windows.Forms.Label();
             this.OracleIDTextBox = new System.Windows.Forms.TextBox();
             this.DebugTabPage = new System.Windows.Forms.TabPage();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label77 = new System.Windows.Forms.Label();
+            this.TCPRecordTextBox = new System.Windows.Forms.TextBox();
+            this.deBugSendComm1textBox = new System.Windows.Forms.TextBox();
             this.deBugConnButton = new System.Windows.Forms.Button();
+            this.deBugtextBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm6Button = new System.Windows.Forms.Button();
+            this.deBugSendComm1Button = new System.Windows.Forms.Button();
+            this.deBugSendComm2textBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm6textBox = new System.Windows.Forms.TextBox();
+            this.deBugSendComm2Button = new System.Windows.Forms.Button();
             this.deBugSendComm5Button = new System.Windows.Forms.Button();
+            this.deBugReadCommButton = new System.Windows.Forms.Button();
             this.deBugSendComm5textBox = new System.Windows.Forms.TextBox();
+            this.deBugSendCommALLButton = new System.Windows.Forms.Button();
             this.deBugSendComm4Button = new System.Windows.Forms.Button();
+            this.deBugSendComm3textBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm4textBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm3Button = new System.Windows.Forms.Button();
-            this.deBugSendComm3textBox = new System.Windows.Forms.TextBox();
-            this.deBugSendCommALLButton = new System.Windows.Forms.Button();
-            this.deBugReadCommButton = new System.Windows.Forms.Button();
-            this.deBugSendComm2Button = new System.Windows.Forms.Button();
-            this.deBugSendComm2textBox = new System.Windows.Forms.TextBox();
-            this.deBugSendComm1Button = new System.Windows.Forms.Button();
-            this.deBugSendComm1textBox = new System.Windows.Forms.TextBox();
-            this.deBugtextBox = new System.Windows.Forms.TextBox();
             this.saveInitButton = new System.Windows.Forms.Button();
             this.saveAndWriteIniButton = new System.Windows.Forms.Button();
             this.aboutTabPage = new System.Windows.Forms.TabPage();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.label78 = new System.Windows.Forms.Label();
+            this.heartbeatSwitch = new HZH_Controls.Controls.UCSwitch();
             this.flowLayoutPanel43.SuspendLayout();
             this.flowLayoutPanel42.SuspendLayout();
             this.flowLayoutPanel41.SuspendLayout();
@@ -479,6 +486,8 @@
             this.flowLayoutPanel52.SuspendLayout();
             this.flowLayoutPanel54.SuspendLayout();
             this.DebugTabPage.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.SuspendLayout();
             // 
             // connectButton
@@ -1449,12 +1458,28 @@
             // panel16
             // 
             this.panel16.AutoSize = true;
+            this.panel16.Controls.Add(this.textBox9);
             this.panel16.Controls.Add(this.flowLayoutPanel40);
             this.panel16.Controls.Add(this.machineClassTextBox);
             this.panel16.Location = new System.Drawing.Point(13, 16);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(411, 64);
+            this.panel16.Size = new System.Drawing.Size(510, 64);
             this.panel16.TabIndex = 88;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox9.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Enabled = false;
+            this.textBox9.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(236, 21);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(100, 37);
+            this.textBox9.TabIndex = 87;
+            this.textBox9.Text = "RF";
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // machineClassTextBox
             // 
@@ -1463,7 +1488,7 @@
             this.machineClassTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.machineClassTextBox.Enabled = false;
             this.machineClassTextBox.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.machineClassTextBox.Location = new System.Drawing.Point(244, 21);
+            this.machineClassTextBox.Location = new System.Drawing.Point(342, 21);
             this.machineClassTextBox.Name = "machineClassTextBox";
             this.machineClassTextBox.ReadOnly = true;
             this.machineClassTextBox.Size = new System.Drawing.Size(161, 37);
@@ -1487,8 +1512,7 @@
             // 
             // debugButton
             // 
-            this.debugButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.debugButton.Location = new System.Drawing.Point(165, 43);
+            this.debugButton.Location = new System.Drawing.Point(415, 423);
             this.debugButton.Name = "debugButton";
             this.debugButton.Size = new System.Drawing.Size(130, 52);
             this.debugButton.TabIndex = 7;
@@ -1780,22 +1804,22 @@
             this.testHistorychart.BorderlineColor = System.Drawing.Color.Transparent;
             this.testHistorychart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.testHistorychart.BorderlineWidth = 3;
-            chartArea3.Name = "ChartArea1";
-            this.testHistorychart.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.testHistorychart.ChartAreas.Add(chartArea1);
             this.testHistorychart.Location = new System.Drawing.Point(6, 301);
             this.testHistorychart.Name = "testHistorychart";
             this.testHistorychart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.ChartArea = "ChartArea1";
-            series3.Name = "Series1";
-            this.testHistorychart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.testHistorychart.Series.Add(series1);
             this.testHistorychart.Size = new System.Drawing.Size(732, 272);
             this.testHistorychart.TabIndex = 85;
             this.testHistorychart.Text = "chart1";
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title3.ForeColor = System.Drawing.Color.DarkRed;
-            title3.Name = "Title1";
-            title3.Text = "测试历史";
-            this.testHistorychart.Titles.Add(title3);
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title1.ForeColor = System.Drawing.Color.DarkRed;
+            title1.Name = "Title1";
+            title1.Text = "测试历史";
+            this.testHistorychart.Titles.Add(title1);
             // 
             // failTop3Chart
             // 
@@ -1803,23 +1827,23 @@
             this.failTop3Chart.BorderlineColor = System.Drawing.Color.Transparent;
             this.failTop3Chart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.failTop3Chart.BorderlineWidth = 3;
-            chartArea4.Name = "ChartArea1";
-            this.failTop3Chart.ChartAreas.Add(chartArea4);
+            chartArea2.Name = "ChartArea1";
+            this.failTop3Chart.ChartAreas.Add(chartArea2);
             this.failTop3Chart.Location = new System.Drawing.Point(6, 7);
             this.failTop3Chart.Name = "failTop3Chart";
             this.failTop3Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series4.ChartArea = "ChartArea1";
-            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
-            series4.Name = "Series1";
-            this.failTop3Chart.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Triangle;
+            series2.Name = "Series1";
+            this.failTop3Chart.Series.Add(series2);
             this.failTop3Chart.Size = new System.Drawing.Size(732, 272);
             this.failTop3Chart.TabIndex = 84;
             this.failTop3Chart.Text = "failTop3Chart";
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            title4.ForeColor = System.Drawing.Color.DarkRed;
-            title4.Name = "Title1";
-            title4.Text = "不良项 Top3";
-            this.failTop3Chart.Titles.Add(title4);
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            title2.ForeColor = System.Drawing.Color.DarkRed;
+            title2.Name = "Title1";
+            title2.Text = "不良项 Top3";
+            this.failTop3Chart.Titles.Add(title2);
             // 
             // flowLayoutPanel29
             // 
@@ -3455,14 +3479,14 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(3, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -4008,23 +4032,8 @@
             // 
             // DebugTabPage
             // 
-            this.DebugTabPage.Controls.Add(this.deBugConnButton);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm6Button);
-            this.DebugTabPage.Controls.Add(this.debugButton);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm6textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm5Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm5textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm4Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm4textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm3Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm3textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendCommALLButton);
-            this.DebugTabPage.Controls.Add(this.deBugReadCommButton);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm2Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm2textBox);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm1Button);
-            this.DebugTabPage.Controls.Add(this.deBugSendComm1textBox);
-            this.DebugTabPage.Controls.Add(this.deBugtextBox);
+            this.DebugTabPage.AutoScroll = true;
+            this.DebugTabPage.Controls.Add(this.panel23);
             this.DebugTabPage.Location = new System.Drawing.Point(4, 54);
             this.DebugTabPage.Name = "DebugTabPage";
             this.DebugTabPage.Size = new System.Drawing.Size(1242, 564);
@@ -4032,10 +4041,64 @@
             this.DebugTabPage.Text = "DebugModel";
             this.DebugTabPage.UseVisualStyleBackColor = true;
             // 
+            // panel23
+            // 
+            this.panel23.AutoScroll = true;
+            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Controls.Add(this.label77);
+            this.panel23.Controls.Add(this.TCPRecordTextBox);
+            this.panel23.Controls.Add(this.deBugSendComm1textBox);
+            this.panel23.Controls.Add(this.debugButton);
+            this.panel23.Controls.Add(this.deBugConnButton);
+            this.panel23.Controls.Add(this.deBugtextBox);
+            this.panel23.Controls.Add(this.deBugSendComm6Button);
+            this.panel23.Controls.Add(this.deBugSendComm1Button);
+            this.panel23.Controls.Add(this.deBugSendComm2textBox);
+            this.panel23.Controls.Add(this.deBugSendComm6textBox);
+            this.panel23.Controls.Add(this.deBugSendComm2Button);
+            this.panel23.Controls.Add(this.deBugSendComm5Button);
+            this.panel23.Controls.Add(this.deBugReadCommButton);
+            this.panel23.Controls.Add(this.deBugSendComm5textBox);
+            this.panel23.Controls.Add(this.deBugSendCommALLButton);
+            this.panel23.Controls.Add(this.deBugSendComm4Button);
+            this.panel23.Controls.Add(this.deBugSendComm3textBox);
+            this.panel23.Controls.Add(this.deBugSendComm4textBox);
+            this.panel23.Controls.Add(this.deBugSendComm3Button);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1242, 564);
+            this.panel23.TabIndex = 22;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("宋体", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label77.Location = new System.Drawing.Point(160, 31);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(215, 33);
+            this.label77.TabIndex = 23;
+            this.label77.Text = "TCP 通讯记录";
+            // 
+            // TCPRecordTextBox
+            // 
+            this.TCPRecordTextBox.Location = new System.Drawing.Point(22, 74);
+            this.TCPRecordTextBox.Multiline = true;
+            this.TCPRecordTextBox.Name = "TCPRecordTextBox";
+            this.TCPRecordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.TCPRecordTextBox.Size = new System.Drawing.Size(523, 343);
+            this.TCPRecordTextBox.TabIndex = 22;
+            // 
+            // deBugSendComm1textBox
+            // 
+            this.deBugSendComm1textBox.Location = new System.Drawing.Point(685, 19);
+            this.deBugSendComm1textBox.Name = "deBugSendComm1textBox";
+            this.deBugSendComm1textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm1textBox.TabIndex = 1;
+            // 
             // deBugConnButton
             // 
-            this.deBugConnButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugConnButton.Location = new System.Drawing.Point(952, 34);
+            this.deBugConnButton.Location = new System.Drawing.Point(1063, 19);
             this.deBugConnButton.Name = "deBugConnButton";
             this.deBugConnButton.Size = new System.Drawing.Size(130, 46);
             this.deBugConnButton.TabIndex = 21;
@@ -4043,10 +4106,18 @@
             this.deBugConnButton.UseVisualStyleBackColor = true;
             this.deBugConnButton.Click += new System.EventHandler(this.deBugConnButton_Click);
             // 
+            // deBugtextBox
+            // 
+            this.deBugtextBox.Location = new System.Drawing.Point(685, 181);
+            this.deBugtextBox.Multiline = true;
+            this.deBugtextBox.Name = "deBugtextBox";
+            this.deBugtextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.deBugtextBox.Size = new System.Drawing.Size(523, 308);
+            this.deBugtextBox.TabIndex = 0;
+            // 
             // deBugSendComm6Button
             // 
-            this.deBugSendComm6Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm6Button.Location = new System.Drawing.Point(862, 169);
+            this.deBugSendComm6Button.Location = new System.Drawing.Point(973, 154);
             this.deBugSendComm6Button.Name = "deBugSendComm6Button";
             this.deBugSendComm6Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm6Button.TabIndex = 20;
@@ -4054,111 +4125,9 @@
             this.deBugSendComm6Button.UseVisualStyleBackColor = true;
             this.deBugSendComm6Button.Click += new System.EventHandler(this.deBugSendComm6Button_Click);
             // 
-            // deBugSendComm6textBox
-            // 
-            this.deBugSendComm6textBox.Location = new System.Drawing.Point(574, 170);
-            this.deBugSendComm6textBox.Name = "deBugSendComm6textBox";
-            this.deBugSendComm6textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm6textBox.TabIndex = 19;
-            // 
-            // deBugSendComm5Button
-            // 
-            this.deBugSendComm5Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm5Button.Location = new System.Drawing.Point(862, 142);
-            this.deBugSendComm5Button.Name = "deBugSendComm5Button";
-            this.deBugSendComm5Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm5Button.TabIndex = 18;
-            this.deBugSendComm5Button.Text = "发送5";
-            this.deBugSendComm5Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm5Button.Click += new System.EventHandler(this.deBugSendComm5Button_Click);
-            // 
-            // deBugSendComm5textBox
-            // 
-            this.deBugSendComm5textBox.Location = new System.Drawing.Point(574, 143);
-            this.deBugSendComm5textBox.Name = "deBugSendComm5textBox";
-            this.deBugSendComm5textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm5textBox.TabIndex = 17;
-            // 
-            // deBugSendComm4Button
-            // 
-            this.deBugSendComm4Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm4Button.Location = new System.Drawing.Point(862, 115);
-            this.deBugSendComm4Button.Name = "deBugSendComm4Button";
-            this.deBugSendComm4Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm4Button.TabIndex = 16;
-            this.deBugSendComm4Button.Text = "发送4";
-            this.deBugSendComm4Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm4Button.Click += new System.EventHandler(this.deBugSendComm4Button_Click);
-            // 
-            // deBugSendComm4textBox
-            // 
-            this.deBugSendComm4textBox.Location = new System.Drawing.Point(574, 116);
-            this.deBugSendComm4textBox.Name = "deBugSendComm4textBox";
-            this.deBugSendComm4textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm4textBox.TabIndex = 15;
-            // 
-            // deBugSendComm3Button
-            // 
-            this.deBugSendComm3Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm3Button.Location = new System.Drawing.Point(862, 88);
-            this.deBugSendComm3Button.Name = "deBugSendComm3Button";
-            this.deBugSendComm3Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm3Button.TabIndex = 14;
-            this.deBugSendComm3Button.Text = "发送3";
-            this.deBugSendComm3Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm3Button.Click += new System.EventHandler(this.deBugSendComm3Button_Click);
-            // 
-            // deBugSendComm3textBox
-            // 
-            this.deBugSendComm3textBox.Location = new System.Drawing.Point(574, 89);
-            this.deBugSendComm3textBox.Name = "deBugSendComm3textBox";
-            this.deBugSendComm3textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm3textBox.TabIndex = 13;
-            // 
-            // deBugSendCommALLButton
-            // 
-            this.deBugSendCommALLButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendCommALLButton.Location = new System.Drawing.Point(952, 86);
-            this.deBugSendCommALLButton.Name = "deBugSendCommALLButton";
-            this.deBugSendCommALLButton.Size = new System.Drawing.Size(130, 48);
-            this.deBugSendCommALLButton.TabIndex = 12;
-            this.deBugSendCommALLButton.Text = "顺序发送";
-            this.deBugSendCommALLButton.UseVisualStyleBackColor = true;
-            this.deBugSendCommALLButton.Click += new System.EventHandler(this.deBugSendCommALLButton_Click);
-            // 
-            // deBugReadCommButton
-            // 
-            this.deBugReadCommButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugReadCommButton.Location = new System.Drawing.Point(952, 140);
-            this.deBugReadCommButton.Name = "deBugReadCommButton";
-            this.deBugReadCommButton.Size = new System.Drawing.Size(130, 47);
-            this.deBugReadCommButton.TabIndex = 11;
-            this.deBugReadCommButton.Text = "读取";
-            this.deBugReadCommButton.UseVisualStyleBackColor = true;
-            this.deBugReadCommButton.Click += new System.EventHandler(this.deBugReadCommButton_Click);
-            // 
-            // deBugSendComm2Button
-            // 
-            this.deBugSendComm2Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm2Button.Location = new System.Drawing.Point(862, 61);
-            this.deBugSendComm2Button.Name = "deBugSendComm2Button";
-            this.deBugSendComm2Button.Size = new System.Drawing.Size(78, 21);
-            this.deBugSendComm2Button.TabIndex = 10;
-            this.deBugSendComm2Button.Text = "发送2";
-            this.deBugSendComm2Button.UseVisualStyleBackColor = true;
-            this.deBugSendComm2Button.Click += new System.EventHandler(this.deBugSendComm2Button_Click);
-            // 
-            // deBugSendComm2textBox
-            // 
-            this.deBugSendComm2textBox.Location = new System.Drawing.Point(574, 62);
-            this.deBugSendComm2textBox.Name = "deBugSendComm2textBox";
-            this.deBugSendComm2textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm2textBox.TabIndex = 9;
-            // 
             // deBugSendComm1Button
             // 
-            this.deBugSendComm1Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deBugSendComm1Button.Location = new System.Drawing.Point(862, 34);
+            this.deBugSendComm1Button.Location = new System.Drawing.Point(973, 19);
             this.deBugSendComm1Button.Name = "deBugSendComm1Button";
             this.deBugSendComm1Button.Size = new System.Drawing.Size(78, 21);
             this.deBugSendComm1Button.TabIndex = 8;
@@ -4166,21 +4135,100 @@
             this.deBugSendComm1Button.UseVisualStyleBackColor = true;
             this.deBugSendComm1Button.Click += new System.EventHandler(this.deBugSendComm1Button_Click);
             // 
-            // deBugSendComm1textBox
+            // deBugSendComm2textBox
             // 
-            this.deBugSendComm1textBox.Location = new System.Drawing.Point(574, 35);
-            this.deBugSendComm1textBox.Name = "deBugSendComm1textBox";
-            this.deBugSendComm1textBox.Size = new System.Drawing.Size(282, 21);
-            this.deBugSendComm1textBox.TabIndex = 1;
+            this.deBugSendComm2textBox.Location = new System.Drawing.Point(685, 46);
+            this.deBugSendComm2textBox.Name = "deBugSendComm2textBox";
+            this.deBugSendComm2textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm2textBox.TabIndex = 9;
             // 
-            // deBugtextBox
+            // deBugSendComm6textBox
             // 
-            this.deBugtextBox.Location = new System.Drawing.Point(574, 197);
-            this.deBugtextBox.Multiline = true;
-            this.deBugtextBox.Name = "deBugtextBox";
-            this.deBugtextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.deBugtextBox.Size = new System.Drawing.Size(523, 308);
-            this.deBugtextBox.TabIndex = 0;
+            this.deBugSendComm6textBox.Location = new System.Drawing.Point(685, 154);
+            this.deBugSendComm6textBox.Name = "deBugSendComm6textBox";
+            this.deBugSendComm6textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm6textBox.TabIndex = 19;
+            // 
+            // deBugSendComm2Button
+            // 
+            this.deBugSendComm2Button.Location = new System.Drawing.Point(973, 46);
+            this.deBugSendComm2Button.Name = "deBugSendComm2Button";
+            this.deBugSendComm2Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm2Button.TabIndex = 10;
+            this.deBugSendComm2Button.Text = "发送2";
+            this.deBugSendComm2Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm2Button.Click += new System.EventHandler(this.deBugSendComm2Button_Click);
+            // 
+            // deBugSendComm5Button
+            // 
+            this.deBugSendComm5Button.Location = new System.Drawing.Point(973, 127);
+            this.deBugSendComm5Button.Name = "deBugSendComm5Button";
+            this.deBugSendComm5Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm5Button.TabIndex = 18;
+            this.deBugSendComm5Button.Text = "发送5";
+            this.deBugSendComm5Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm5Button.Click += new System.EventHandler(this.deBugSendComm5Button_Click);
+            // 
+            // deBugReadCommButton
+            // 
+            this.deBugReadCommButton.Location = new System.Drawing.Point(1063, 125);
+            this.deBugReadCommButton.Name = "deBugReadCommButton";
+            this.deBugReadCommButton.Size = new System.Drawing.Size(130, 47);
+            this.deBugReadCommButton.TabIndex = 11;
+            this.deBugReadCommButton.Text = "读取";
+            this.deBugReadCommButton.UseVisualStyleBackColor = true;
+            this.deBugReadCommButton.Click += new System.EventHandler(this.deBugReadCommButton_Click);
+            // 
+            // deBugSendComm5textBox
+            // 
+            this.deBugSendComm5textBox.Location = new System.Drawing.Point(685, 127);
+            this.deBugSendComm5textBox.Name = "deBugSendComm5textBox";
+            this.deBugSendComm5textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm5textBox.TabIndex = 17;
+            // 
+            // deBugSendCommALLButton
+            // 
+            this.deBugSendCommALLButton.Location = new System.Drawing.Point(1063, 71);
+            this.deBugSendCommALLButton.Name = "deBugSendCommALLButton";
+            this.deBugSendCommALLButton.Size = new System.Drawing.Size(130, 48);
+            this.deBugSendCommALLButton.TabIndex = 12;
+            this.deBugSendCommALLButton.Text = "顺序发送";
+            this.deBugSendCommALLButton.UseVisualStyleBackColor = true;
+            this.deBugSendCommALLButton.Click += new System.EventHandler(this.deBugSendCommALLButton_Click);
+            // 
+            // deBugSendComm4Button
+            // 
+            this.deBugSendComm4Button.Location = new System.Drawing.Point(973, 100);
+            this.deBugSendComm4Button.Name = "deBugSendComm4Button";
+            this.deBugSendComm4Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm4Button.TabIndex = 16;
+            this.deBugSendComm4Button.Text = "发送4";
+            this.deBugSendComm4Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm4Button.Click += new System.EventHandler(this.deBugSendComm4Button_Click);
+            // 
+            // deBugSendComm3textBox
+            // 
+            this.deBugSendComm3textBox.Location = new System.Drawing.Point(685, 73);
+            this.deBugSendComm3textBox.Name = "deBugSendComm3textBox";
+            this.deBugSendComm3textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm3textBox.TabIndex = 13;
+            // 
+            // deBugSendComm4textBox
+            // 
+            this.deBugSendComm4textBox.Location = new System.Drawing.Point(685, 100);
+            this.deBugSendComm4textBox.Name = "deBugSendComm4textBox";
+            this.deBugSendComm4textBox.Size = new System.Drawing.Size(282, 21);
+            this.deBugSendComm4textBox.TabIndex = 15;
+            // 
+            // deBugSendComm3Button
+            // 
+            this.deBugSendComm3Button.Location = new System.Drawing.Point(973, 73);
+            this.deBugSendComm3Button.Name = "deBugSendComm3Button";
+            this.deBugSendComm3Button.Size = new System.Drawing.Size(78, 21);
+            this.deBugSendComm3Button.TabIndex = 14;
+            this.deBugSendComm3Button.Text = "发送3";
+            this.deBugSendComm3Button.UseVisualStyleBackColor = true;
+            this.deBugSendComm3Button.Click += new System.EventHandler(this.deBugSendComm3Button_Click);
             // 
             // saveInitButton
             // 
@@ -4218,6 +4266,40 @@
             this.aboutTabPage.Text = "关于我们";
             this.aboutTabPage.UseVisualStyleBackColor = true;
             // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.label78);
+            this.panel24.Controls.Add(this.heartbeatSwitch);
+            this.panel24.Location = new System.Drawing.Point(22, 435);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(126, 20);
+            this.panel24.TabIndex = 93;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label78.Location = new System.Drawing.Point(3, 5);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(53, 12);
+            this.label78.TabIndex = 2;
+            this.label78.Text = "心跳检测";
+            // 
+            // heartbeatSwitch
+            // 
+            this.heartbeatSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.heartbeatSwitch.Checked = false;
+            this.heartbeatSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.heartbeatSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.heartbeatSwitch.Location = new System.Drawing.Point(74, 1);
+            this.heartbeatSwitch.Name = "heartbeatSwitch";
+            this.heartbeatSwitch.Size = new System.Drawing.Size(50, 16);
+            this.heartbeatSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.heartbeatSwitch.TabIndex = 0;
+            this.heartbeatSwitch.Texts = null;
+            this.heartbeatSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.heartbeatSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
             // RF_TestSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -4227,6 +4309,7 @@
             this.ClientSize = new System.Drawing.Size(1344, 830);
             this.Controls.Add(this.mainTabControl);
             this.Controls.Add(this.topPanel);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
@@ -4424,7 +4507,10 @@
             this.flowLayoutPanel54.ResumeLayout(false);
             this.flowLayoutPanel54.PerformLayout();
             this.DebugTabPage.ResumeLayout(false);
-            this.DebugTabPage.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4768,6 +4854,13 @@
         private HZH_Controls.Controls.UCSwitch yieldEnableSwitch;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.TextBox probeResetWarnTextBox;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox TCPRecordTextBox;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Label label78;
+        private HZH_Controls.Controls.UCSwitch heartbeatSwitch;
     }
 }
 

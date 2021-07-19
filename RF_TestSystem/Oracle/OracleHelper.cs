@@ -82,20 +82,23 @@ namespace RF_TestSystem
         //INSERT INTO table_name (column1,column2,column3,...) VALUES(value1, value2, value3,...);
 
         [System.Obsolete]
-        public void insertData(string tableName, string column, string values)
+        public bool insertData(string tableName, string column, string values)
         {
             string strstatus = "插入数据失败";
             try
             {
                 string cmmdStr;
-                cmmdStr = "insert into " + tableName + " (" + column + ")" + " values " + "(" + values + ")" + ";";
+                cmmdStr = "insert into " + tableName + " (" + column + ")" + " values " + "(" + values + ")" ;
                 oraData.RunNonQuery(cmmdStr);
                 strstatus = "插入数据成功";
+                
             }
             catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
             }
+            return true;
         }
 
         [System.Obsolete]

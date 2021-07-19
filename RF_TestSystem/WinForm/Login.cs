@@ -99,6 +99,7 @@ namespace RF_TestSystem
                 else
                 {
                     MessageBox.Show("密码错误！");
+                    this.passwdMaskedTextBox.Clear();
                     return;
                 }
             }
@@ -112,6 +113,7 @@ namespace RF_TestSystem
                 else
                 {
                     MessageBox.Show("密码错误！");
+                    this.passwdMaskedTextBox.Clear();
                     return;
                 }
             }
@@ -125,6 +127,7 @@ namespace RF_TestSystem
                 else
                 {
                     MessageBox.Show("密码错误！");
+                    this.passwdMaskedTextBox.Clear();
                     return;
                 }
             }

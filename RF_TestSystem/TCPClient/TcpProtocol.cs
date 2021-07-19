@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace RF_TestSystem
 {
@@ -40,49 +41,31 @@ namespace RF_TestSystem
         {
             DataProcessing dataProcessing = new DataProcessing();
             List<string> commands = new List<string>();
-            if (com.Contains("\\r"))
+            char[] spliter = {'\r','\n'};
+            string[] comms = com.Split(spliter);
+            foreach(string s in comms)
             {
-                com = com.Replace("\\r", "");
-            }
-            if (com.Contains("\\n"))
-            {
-                com = com.Replace("\\n", "");
-            }
-            com = com.Trim();
-            commands.Add(com);
-
+                commands.Add(s);
+            }        
             foreach (string commad in commands)
             {
-                // MessageBox.Show(com);
                 if (commad.Contains(command.BARCODE))
                 {
-                    string barcode = commad.Replace(command.BARCODE, "").Trim();
-                    if (barcode.Contains("\\r"))
-                    {
-                        barcode = barcode.Replace("\\r", "");
-                    }
-                    if (barcode.Contains("\\n"))
-                    {
-                        barcode = barcode.Replace("\\n", "");
-                    }
-
+                    string pattern = @"SN:.*";
+                    Regex rgx = new Regex(pattern);
+                    string barcode = rgx.Match(commad).Value;
+                    barcode = barcode.Replace("SN:","");
                     barcodeComingEvent(barcode);
                 }
                 else if (commad.Contains(command.START_TEST))
                 {
                     startTestCommandEvent();
-
                 }
                 else if (commad.Contains(command.START))//扫码命令
                 {
-                    Console.WriteLine(commad);
                     scanCommandEvent();
                 }
             }
-
         }
-
-
-
     }
 }

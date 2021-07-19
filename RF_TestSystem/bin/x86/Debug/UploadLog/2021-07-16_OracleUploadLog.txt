@@ -1,0 +1,1 @@
+﻿[{"ID":1,"Barcode":"NOSCAN","UploadTime":"2021-07-16T09:12:00.492543+08:00","UploadResult":"OK"}]

@@ -150,7 +150,19 @@ namespace RF_TestSystem
             try
             {
                 //此处，txt文件“db.txt”充当数据库文件，用于存放、读写、删除,json数据对象集合(即json字符串)
-                FileStream fs = new FileStream(Application.StartupPath + "\\db.txt", FileMode.Open);
+                string path = Application.StartupPath + "\\UploadLog\\";
+                string fullPath = path + DateTime.Now.ToString("yyyy-MM-dd");
+                if (Directory.Exists(path) == false)
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                if (File.Exists(fullPath + "_FtpUploadLog.txt") == false)
+                {
+                    File.Create(fullPath + "_FtpUploadLog.txt").Close();//创建该文件，如果路径文件夹不存在，则报错
+                }
+
+                FileStream fs = new FileStream(fullPath + "_FtpUploadLog.txt", FileMode.Open);
                 StreamReader sr = new StreamReader(fs, Encoding.Default);
                 var jsonStr = sr.ReadToEnd();
                 List<FtpEntity> temp = new List<FtpEntity>();
@@ -180,7 +192,7 @@ namespace RF_TestSystem
 
                     string json = JsonHelper.ObjectToJson(list);//list集合转json字符串
 
-                    StreamWriter sw = new StreamWriter(Application.StartupPath + "\\db.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加
+                    StreamWriter sw = new StreamWriter(fullPath + "_FtpUploadLog.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加
                     sw.WriteLine(json);//写入文件
                     sw.Close();
 
@@ -197,16 +209,19 @@ namespace RF_TestSystem
         {
             try
             {
-                if (File.Exists(Application.StartupPath + "\\db.txt"))
+                string path = Application.StartupPath + "\\UploadLog\\";
+                string fullPath = path + DateTime.Now.ToString("yyyy-MM-dd");
+                if (Directory.Exists(path) == false)
                 {
+                    Directory.CreateDirectory(path);
+                }
 
-                }
-                else
+                if (File.Exists(fullPath + "_FtpUploadLog.txt") == false)
                 {
-                    File.Create(Application.StartupPath + "\\db.txt").Close();//创建该文件，如果路径文件夹不存在，则报错
+                    File.Create(fullPath + "_FtpUploadLog.txt").Close();//创建该文件，如果路径文件夹不存在，则报错
                 }
-                //此处，txt文件“db.txt”充当数据库文件，用于存放、读写、删除,json数据对象集合(即json字符串)
-                FileStream fs = new FileStream(Application.StartupPath + "\\db.txt", FileMode.Open);
+
+                FileStream fs = new FileStream(fullPath + "_FtpUploadLog.txt", FileMode.Open);
                 StreamReader sr = new StreamReader(fs, Encoding.Default);
                 var jsonStr = sr.ReadToEnd();
                 List<FtpEntity> temp = new List<FtpEntity>();
@@ -241,7 +256,7 @@ namespace RF_TestSystem
 
                 string json = JsonHelper.ObjectToJson(list);//list集合转json字符串
 
-                StreamWriter sw = new StreamWriter(Application.StartupPath + "\\db.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加                    
+                StreamWriter sw = new StreamWriter(fullPath + "_FtpUploadLog.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加                    
                 sw.WriteLine(json);//写入文件
                 sw.Close();
 

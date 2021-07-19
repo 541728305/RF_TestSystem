@@ -97,7 +97,7 @@ namespace RF_TestSystem
             try
             {
                 foreach (string ctrans in data)
-                {
+                {                 
                     transData.Add(Convert.ToDouble(ctrans));
                 }
             }
@@ -242,11 +242,11 @@ namespace RF_TestSystem
             }
             return myTraces;
         }
-        public string saveTracesData(string path, List<TracesInfo> myTraces, string realPartOrImaginaryPart, bool deleteNewline, string fileSizeLimit, string saveDate)
+        public string saveTracesData(string path, List<TracesInfo> myTraces, string realPartOrImaginaryPart, bool deleteNewline, string fileSizeLimit, string saveTime)
         {
             string successFlag = "true";
 
-            path += saveDate + "\\";
+            path += DateTime.Now.ToString("yyyy-MM-dd") + "\\" + saveTime + "\\";
 
             string SerialNumberString = "Serial Number,";
             string TestStartTimeString = "Test Start Time,";

@@ -190,6 +190,7 @@ namespace RF_TestSystem
                     TracesInfo tracesInfo = new TracesInfo();
                     tracesInfo = transTrace[0];
                     tracesInfo.tracesDataStringType.realPart = myOutPutStream.joinData( myOutPutStream.doubleToString(transTrace[0].tracesDataDoubleType.realPart),",");
+                    Console.WriteLine(tracesInfo.tracesDataStringType.realPart);
                     transTrace[0] = tracesInfo;
                 }
                              
@@ -213,6 +214,7 @@ namespace RF_TestSystem
                 }
                 ShowCurve(currentCurve, temp);
                 currentCurve++;
+                Console.WriteLine(temp.tracesDataStringType.realPart);
                 rawAnalyzerData.Add(temp);
             }
             Gloable.myAnalyzer.displayUpdate("ON");
@@ -244,8 +246,8 @@ namespace RF_TestSystem
                     }
                 }
             }
-        
-            Gloable.myTraces = myOutPutStream.dataIntegration(Gloable.myTraces);//将网分里获得的数据进行转化分流处理
+            //Gloable.myTraces = myOutPutStream.dataIntegration(Gloable.myTraces);//将网分里获得的数据进行转化分流处理
+
             Gloable.tracesMutex.ReleaseMutex();
 
             return successFlag;
