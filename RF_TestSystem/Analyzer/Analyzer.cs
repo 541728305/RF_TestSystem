@@ -5,29 +5,43 @@ using System.Threading;
 
 namespace RF_TestSystem
 {
-   
+
     public class Analyzer
     {
         bool isConnect = false;//连接状态，true表示已连接
         ResourceManager con = new ResourceManager();
         FormattedIO488 ioobj = new FormattedIO488();
+
+        /// <summary>
+        /// 返回连接状态
+        /// </summary>
+        /// <returns></returns>
         public bool isConnected()
         {
             return isConnect;
         }
+
+        /// <summary>
+        /// 关闭网分仪连接
+        /// </summary>
         public void disConnect()
         {
             try
             {
-                
                 ioobj.IO.Close();
                 isConnect = false;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine("网分仪断开失败！ " + e.Message);
             }
         }
+
+        /// <summary>
+        /// 连接网分仪
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
         public string Connect(string address)
         {
             string message = "";
@@ -39,7 +53,7 @@ namespace RF_TestSystem
                 message = ioobj.ReadString();
 
                 Console.WriteLine(message);
-                if (message !="")
+                if (message != "")
                 {
                     isConnect = true;
                     message = "Connect Success!\r\n" + message;
@@ -53,6 +67,12 @@ namespace RF_TestSystem
 
             return message;
         }
+
+        /// <summary>
+        /// 发送命令
+        /// </summary>
+        /// <param name="commands"></param>
+        /// <returns></returns>
         public string sendCommand(string commands)
         {
             string message = "";
@@ -60,8 +80,8 @@ namespace RF_TestSystem
             {
                 try
                 {
-                    ioobj.WriteString(":SYST:ERR?",true);
-                    if(readData().Contains("No error") == false)
+                    ioobj.WriteString(":SYST:ERR?", true);
+                    if (readData().Contains("No error") == false)
                     {
                         ioobj.WriteString("*CLS", true);
                     }
@@ -79,6 +99,11 @@ namespace RF_TestSystem
             }
             return message;
         }
+
+        /// <summary>
+        /// 读取数据
+        /// </summary>
+        /// <returns></returns>
         public string readData()
         {
             string message = "";
@@ -100,43 +125,61 @@ namespace RF_TestSystem
             return message;
         }
 
+        /// <summary>
+        /// 获取频率
+        /// 起始为 START ，结束为 STOP
+        /// </summary>
+        /// <param name="channel">通道</param>
+        /// <param name="startOrStop">获取起始或结束</param>
+        /// <returns></returns>
         public string ackFrequency(string channel, string startOrStop)
         {
-            string frequency = "";
             string ackFrequencyCommand = ":SENS" + channel + ":FREQ:" + startOrStop + "?";
             sendCommand(ackFrequencyCommand);
-            frequency = readData();
-            return frequency;
+            return readData();
         }
-        public string setFrequency(string channel, string frequency, string startOrStop)
+
+        /// <summary>
+        /// 设置频率
+        /// 起始为 START ，结束为 STOP
+        /// </summary>
+        /// <param name="channel">通道</param>
+        /// <param name="frequency">频率</param>
+        /// <param name="startOrStop">设置起始或结束</param>
+        public void setFrequency(string channel, string frequency, string startOrStop)
         {
-            string setFrequency = "";
             string setFrequencyCommand = ":SENS" + channel + ":FREQ:" + startOrStop + " " + frequency;
-
             sendCommand(setFrequencyCommand);
-          //  setFrequency = ackFrequency(channel, startOrStop);
-
-            return setFrequency;
         }
+
+        /// <summary>
+        /// 获取扫描点数
+        /// </summary>
+        /// <param name="channel">通道</param>
+        /// <returns></returns>
         public string ackSweepPoint(string channel)
         {
-            string sweepPoint = "";
             string ackPointCommand = ":SENS" + channel + ":SWE:POIN?";
-            Console.WriteLine(ackPointCommand);
             sendCommand(ackPointCommand);
-            sweepPoint = readData();
-            return sweepPoint;
-        }
-        public string setSweepPoint(string channel, string point)
-        {
-            string setPoint = "";
-            string setPointCommand = ":SENS" + channel + ":SWE:POIN " + point;
-            Console.WriteLine(setPointCommand);
-            sendCommand(setPointCommand);
-       //     setPoint = ackSweepPoint(channel);
-            return setPoint;
+            return readData();
         }
 
+        /// <summary>
+        /// 设置扫描点数
+        /// </summary>
+        /// <param name="channel">通道</param>
+        /// <param name="point">点数</param>
+        public void setSweepPoint(string channel, string point)
+        {
+            string setPointCommand = ":SENS" + channel + ":SWE:POIN " + point;
+            sendCommand(setPointCommand);
+        }
+
+        /// <summary>
+        /// 将数字转换为网分仪设置窗口的ID
+        /// </summary>
+        /// <param name="allocateNumber"></param>
+        /// <returns></returns>
         private string transToAllocateID(string allocateNumber)
         {
             string allocateID = "D1";
@@ -193,206 +236,262 @@ namespace RF_TestSystem
                 default:
                     return allocateID;
             }
-
         }
+
+        /// <summary>
+        /// 将网分仪窗口ID转换为数字
+        /// </summary>
+        /// <param name="allocateID"></param>
+        /// <returns></returns>
         public string transFromAllocateID(string allocateID)
         {
             if (allocateID == "D1\n")
             {
                 return "1";
             }
-            else
-            {
-                return "2";
-            }
 
+            return "2";
         }
+
+        /// <summary>
+        /// 获取通道数
+        /// </summary>
+        /// <returns></returns>
         public string ackAllocateChannelst()
         {
-            string allocateChannelst = "";
             string allocateChannelstCommand = ":DISP:SPL?";
-            Console.WriteLine(allocateChannelstCommand);
             sendCommand(allocateChannelstCommand);
-            allocateChannelst = readData();
-            return allocateChannelst;
+            return readData();
         }
-        public string setAllocateChannels(string channelNumber)
+
+        /// <summary>
+        /// 设置通道数量
+        /// </summary>
+        /// <param name="channelNumber">通道数量</param>
+        public void setAllocateChannels(string channelNumber)
         {
-            string setChannelNumber = "";
             string setChannelNumberCommand = ":DISP:SPL " + transToAllocateID(channelNumber);
-            Console.WriteLine(setChannelNumberCommand);
             sendCommand(setChannelNumberCommand);
-      //      setChannelNumber = ackAllocateChannelst();
-            return setChannelNumber;
         }
 
-
+        /// <summary>
+        /// 获取窗口数量
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackAllocateTraces(string channel)
         {
-            string allocateTraces = "";
             string allocateTracesCommand = ":DISP:WIND" + channel + ":SPL?";
-            Console.WriteLine(allocateTracesCommand);
             sendCommand(allocateTracesCommand);
-            allocateTraces = readData();
-            return allocateTraces;
+            return readData();
+        }
 
-        }
-        public string setAllocateTraces(string channel, string allocateTracesNumber)
+        /// <summary>
+        /// 设置窗口数量
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="allocateTracesNumber">窗口数量</param>
+        public void setAllocateTraces(string channel, string allocateTracesNumber)
         {
-            string setAllocateTraces = "";
             string setAllocateTracesCommand = ":DISP:WIND" + channel + ":SPL " + transToAllocateID(allocateTracesNumber);
-            Console.WriteLine(setAllocateTracesCommand);
             sendCommand(setAllocateTracesCommand);
-       //     setAllocateTraces = ackAllocateTraces(channel);
-            return setAllocateTraces;
         }
+
+        /// <summary>
+        /// 获取曲线数量
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackNumberOfTraces(string channel)
         {
-            string numberOfTraces = "";
             string numberOfTracesCommand = ":CALC" + channel + ":PAR:COUN?";
-            Console.WriteLine(numberOfTracesCommand);
             sendCommand(numberOfTracesCommand);
-            numberOfTraces = readData();
-            return numberOfTraces;
+            return readData();
         }
-        public string setNumberOfTraces(string channel, string tracesNumber)
+
+        /// <summary>
+        /// 设置曲线数量
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="tracesNumber">曲线数量</param>
+        public void setNumberOfTraces(string channel, string tracesNumber)
         {
-            string setTracesNumber = "";
             string setTracesNumberCommand = ":CALC" + channel + ":PAR:COUN " + tracesNumber;
-            Console.WriteLine(setTracesNumberCommand);
             sendCommand(setTracesNumberCommand);
-      //      setTracesNumber = ackNumberOfTraces(channel);
-            return setTracesNumber;
         }
 
-
+        /// <summary>
+        /// 选择曲线
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
         public void selectTrace(string channel, string trace)
         {
             string selectTraceCommand = ":CALC" + channel + ":PAR" + trace + ":SEL";
-            Console.WriteLine(selectTraceCommand);
             sendCommand(selectTraceCommand);
         }
 
+        /// <summary>
+        /// 获取曲线格式
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <returns></returns>
         public string ackTracesFormat(string channel, string trace)
         {
-            string tracesFormat = "";
             string ackTracesFormatCommand = ":CALC" + channel + ":FORM?";
             selectTrace(channel, trace);
-            Console.WriteLine(ackTracesFormatCommand);
             sendCommand(ackTracesFormatCommand);
-            tracesFormat = readData();
-            return tracesFormat;
+            return readData();
         }
-        public string setTracesFormat(string channel, string trace, string tracesFormat)
+
+        /// <summary>
+        /// 设置曲线格式
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <param name="tracesFormat">格式</param>
+        public void setTracesFormat(string channel, string trace, string tracesFormat)
         {
-            string setTracesFormat = "";
             string TracesFormatCommamd = ":CALC" + channel + ":FORM " + tracesFormat;
             selectTrace(channel, trace);
-            Console.WriteLine(TracesFormatCommamd);
             sendCommand(TracesFormatCommamd);
-      //      setTracesFormat = ackTracesFormat(channel, trace);
-            return setTracesFormat;
         }
 
+        /// <summary>
+        /// 获取测量状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackContinuousStatus(string channel)
         {
-            string continuousStatus = "";
             string ackContinuousStatusCommand = ":INIT" + channel + ":CONT?";
-            Console.WriteLine(ackContinuousStatusCommand);
             sendCommand(ackContinuousStatusCommand);
-            continuousStatus = readData();
-            return continuousStatus;
+            return readData();
         }
 
-
-        public string setContinuousStatus(string channel, string status) //Continuous(continuous initiation mode ON),Hold (continuous initiation mode OFF)
+        /// <summary>
+        /// 设置测量状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="status">状态</param>
+        public void setContinuousStatus(string channel, string status) //Continuous(continuous initiation mode ON),Hold (continuous initiation mode OFF)
         {
-            string setContinuous = "";
             string setContinuousCommand = ":INIT" + channel + ":CONT " + status;
-            Console.WriteLine(setContinuousCommand);
             sendCommand(setContinuousCommand);
-      //      setContinuous = ackContinuousStatus(channel);
-            return setContinuous;
         }
+
+        /// <summary>
+        /// 获取活跃曲线的数据
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <returns></returns>
         public string getActiveTraceData(string channel, string trace)
         {
-            string activeTraceData = "";
             string getActiveTraceDataCommand = ":CALC" + channel + ":DATA:FDAT?";
             selectTrace(channel, trace);
-            Console.WriteLine(getActiveTraceDataCommand);
             sendCommand(getActiveTraceDataCommand);
             Thread.Sleep(50);
-            activeTraceData = readData();
-            return activeTraceData;
+            return readData();
         }
 
+        /// <summary>
+        /// 获取记忆曲线的数据
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <returns></returns>
         public string getMemoryTraceData(string channel, string trace)
         {
-            string activeTraceData = "";
             string getActiveTraceDataCommand = ":CALC" + channel + ":DATA:FMEM?";
             selectTrace(channel, trace);
-            Console.WriteLine(getActiveTraceDataCommand);
             sendCommand(getActiveTraceDataCommand);
-            activeTraceData = readData();
-            return activeTraceData;
+            return readData();
         }
 
+        /// <summary>
+        /// 获取所有测量的频率
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string getFrequency(string channel)
         {
-            string frequency = "";
             string getFrequencyCommand = ":SENS" + channel + ":FREQ:DATA?";
-            Console.WriteLine(getFrequencyCommand);
             sendCommand(getFrequencyCommand);
-            frequency = readData();
-            return frequency;
+            return readData();
         }
-        public string dataToMemory(string channel, string trace)
+
+        /// <summary>
+        /// 记忆曲线
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        public void dataToMemory(string channel, string trace)
         {
-            string dataToMemory = "";
             string dataToMemoryCommand = ":CALC" + channel + ":MATH:MEM";
             selectTrace(channel, trace);
-            Console.WriteLine(dataToMemoryCommand);
             sendCommand(dataToMemoryCommand);
-            return dataToMemory;
         }
 
+        /// <summary>
+        /// 获取窗口布局
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <param name="memOrStat"></param>
+        /// <returns></returns>
         public string ackDisplay(string channel, string trace, string memOrStat)
         {
-            string display = "";
             string ackDisplayCommand = ":DISP:WIND" + channel + ":TRAC" + trace + ":" + memOrStat + "?";
-            Console.WriteLine(ackDisplayCommand);
             sendCommand(ackDisplayCommand);
-            display = readData();
-            return display;
-        }
-        public string setDisplay(string channel, string trace, string memOrStat, string offOrOn)
-        {
-            string setDisplay = "";
-            string setDisplayCommand = ":DISP:WIND" + channel + ":TRAC" + trace + ":" + memOrStat + " " + offOrOn;
-            Console.WriteLine(setDisplayCommand);
-            sendCommand(setDisplayCommand);
-            setDisplay = ackDisplay(channel, trace, memOrStat);
-            return setDisplay;
+            return readData();
         }
 
+        /// <summary>
+        /// 设置窗口布局
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <param name="memOrStat"></param>
+        /// <param name="offOrOn"></param>
+        /// <returns></returns>
+        public string setDisplay(string channel, string trace, string memOrStat, string offOrOn)
+        {
+            string setDisplayCommand = ":DISP:WIND" + channel + ":TRAC" + trace + ":" + memOrStat + " " + offOrOn;
+            sendCommand(setDisplayCommand);
+            return ackDisplay(channel, trace, memOrStat);
+        }
+
+        /// <summary>
+        /// 获取曲线格式
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <returns></returns>
         public string ackTracesMeas(string channel, string trace)
         {
-            string sParameter = "";
             string ackMeasCommand = ":CALC" + channel + ":PAR" + trace + ":DEF?";
-            Console.WriteLine(ackMeasCommand);
             sendCommand(ackMeasCommand);
-            sParameter = readData();
-            return sParameter;
+            return readData();
         }
-        public string setTracesMeas(string channel, string trace, string sParameter)
+
+        /// <summary>
+        /// 设置曲线格式
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="trace">所选曲线</param>
+        /// <param name="sParameter">格式</param>
+        public void setTracesMeas(string channel, string trace, string sParameter)
         {
-            string measParameter = "";
             string setMeasCommand = ":CALC" + channel + ":PAR" + trace + ":DEF " + sParameter;
-            Console.WriteLine(setMeasCommand);
             sendCommand(setMeasCommand);
-        //    measParameter = ackTracesMeas(channel, trace);
-            return measParameter;
         }
+
+        /// <summary>
+        /// 加载校验文件
+        /// </summary>
+        /// <param name="path"></param>
         public void loadStateFile(string path)
         {
             string loadStateFileCommand = ":MMEM:LOAD " + "\"" + path + "\"";
@@ -400,192 +499,252 @@ namespace RF_TestSystem
             sendCommand(loadStateFileCommand);
         }
 
+        /// <summary>
+        /// 获取平滑开启状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackSmooth(string channel)
         {
-            string ackSmooth = "";
             string setSmoothCommand = ":CALC" + channel + ":SMO:STAT?";
             sendCommand(setSmoothCommand);
-            ackSmooth = readData();
-            return ackSmooth;
+            return readData();
         }
-        public string setSmooth(string channel, string state) //  state = ON \OFF
+
+        /// <summary>
+        /// 设置曲线平滑开启状态
+        /// ON 开启 ， OFF 关闭
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="state"></param>
+        public void setSmooth(string channel, string state) //  state = ON \OFF
         {
-            string setSmooth = "";
             string setSmoothCommand = ":CALC" + channel + ":SMO:STAT " + state;
             sendCommand(setSmoothCommand);
-         //   setSmooth = ackSmooth(channel);
-            return setSmooth;
         }
 
+        /// <summary>
+        /// 获取曲线平滑值
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackSmoothValue(string channel)
         {
-            string smoothValue = "";
             string setSmoothValueCommand = ":CALC" + channel + ":SMO:APER?";
             sendCommand(setSmoothValueCommand);
-            smoothValue = readData();
-            Console.WriteLine(smoothValue);
-            return smoothValue;
-        }
-        public string setSmoothValue(string channel, string value)
-        {
-            string setSmoothValue = "";
-            string setSmoothValueCommand = ":CALC" + channel + ":SMO:APER " + value;
-            sendCommand(setSmoothValueCommand);
-        //    setSmoothValue = ackSmooth(channel);
-            return setSmoothValue;
+            return readData();
         }
 
-        public string saveState()
+        /// <summary>
+        /// 设置曲线平滑值
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="value">设置值</param>
+        public void setSmoothValue(string channel, string value)
         {
-            string saveState = "";
-            string saveStateCommad = ":MMEM:STOR:STYP CDST";
-            string ackSaveStateCommad = ":MMEM:STOR:STYP?";
-            sendCommand(saveStateCommad);
-        //    sendCommand(ackSaveStateCommad);
-         //   saveState = readData();
-            return saveState;
+            string setSmoothValueCommand = ":CALC" + channel + ":SMO:APER " + value;
+            sendCommand(setSmoothValueCommand);
         }
+
+        /// <summary>
+        /// 保存校验文件
+        /// </summary>
+        public void saveState()
+        {
+            string saveStateCommad = ":MMEM:STOR:STYP CDST";
+            //string ackSaveStateCommad = ":MMEM:STOR:STYP?";
+            sendCommand(saveStateCommad);
+        }
+
+        /// <summary>
+        /// 将校验文件另存到
+        /// </summary>
+        /// <param name="path">路径</param>
         public void saveStateFile(string path)
         {
             string saveStateFileCommand = ":MMEM:STOR " + "\"" + path + "\"";
-            Console.WriteLine(saveStateFileCommand);
             sendCommand(saveStateFileCommand);
         }
 
-
+        /// <summary>
+        /// 查询校验
+        /// </summary>
+        /// <returns></returns>
         public string ackECAL()
         {
-            string ackECAL = "";
             string ackECALCommad = "ECAL:SOLT4 1,2,3,4";
-
             sendCommand(ackECALCommad);
-            ackECAL = readData();
-            return ackECAL;
+            return readData();
         }
-        public string ECAL(string channel)
+
+        /// <summary>
+        /// 校验
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        public void ECAL(string channel)
         {
-            string ECAL = "";
             string ECALCommad = ":SENS" + channel + ":CORR:COLL:ECAL:SOLT4 1,2,3,4";
             sendCommand(ECALCommad);
-            //  ECAL = ackECAL();
-            return ECAL;
         }
-        public string ackDisplayUpdate()
+
+        /// <summary>
+        /// 查询屏幕更新状态
+        /// </summary>
+        public void ackDisplayUpdate()
         {
-            string ackDisplayUpdate = "";
             string ackDisplayUpdateCommad = ":DISP:ENAB?";
             sendCommand(ackDisplayUpdateCommad);
-
-            return ackDisplayUpdate;
         }
-        public string displayUpdate(string state) //ON|OFF
+
+        /// <summary>
+        /// 设置屏幕更新状态
+        /// ON OFF
+        /// </summary>
+        /// <param name="state">状态</param>
+        public void displayUpdate(string state) //ON|OFF
         {
-            string displayUpdate = "";
             string displayUpdateCommad = ":DISP:ENAB " + state;
             sendCommand(displayUpdateCommad);
-            // displayUpdate = ackDisplayUpdate();
-            return displayUpdate;
         }
 
+        /// <summary>
+        /// 查询触发源
+        /// </summary>
+        /// <returns></returns>
         public string ackTriggerSource()
         {
-            string triggerSource = "";
             string ackTriggerSourceCommad = ":TRIG:SOUR?";
-
             sendCommand(ackTriggerSourceCommad);
-            triggerSource = readData();
-            return triggerSource;
+            return readData();
         }
-        public string setTriggerSource(string source)  // INTernal|EXTernal|MANual|BUS
+
+        /// <summary>
+        /// 设置触发源
+        /// INTernal|EXTernal|MANual|BUS
+        /// </summary>
+        /// <param name="source">触发源 INTernal|EXTernal|MANual|BUS</param>
+        public void setTriggerSource(string source)  // INTernal|EXTernal|MANual|BUS
         {
-            string triggerSource = "";
             string setTriggerSourceCommad = ":TRIG:SOUR " + source;
             sendCommand(setTriggerSourceCommad);
-         //   triggerSource = ackTriggerSource();
-            return triggerSource;
         }
+
+        /// <summary>
+        /// 复位
+        /// </summary>
         public void reset()
         {
             sendCommand(":SYST:PRES");
         }
 
+        /// <summary>
+        /// 获取针对选择的通道(Ch)启动/关闭或获取自动端口扩展的状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="port">所选端口</param>
+        /// <returns></returns>
         public string ackPortExtensions(string channel, string port)
         {
-            string portExtensions = "";
             string ackPortExtensionsCommad = ":SENS" + channel + ":CORR:EXT:AUTO:" + port + "?";
             sendCommand(ackPortExtensionsCommad);
-            portExtensions = readData();
-            return portExtensions;
+            return readData();
         }
-        public string setPortExtensions(string channel, string port, string state)
+
+        /// <summary>
+        /// 针对选择的通道(Ch)启动/关闭或获取自动端口扩展的状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="port">所选端口</param>
+        /// <param name="state">状态</param>
+        public void setPortExtensions(string channel, string port, string state)
         {
-            string portExtensions = "";
             string setPortExtensionsCommad = ":SENS" + channel + ":CORR:EXT:AUTO:" + port + " " + state;
             sendCommand(setPortExtensionsCommad);
-         //   portExtensions = ackPortExtensions(channel, port);
-            return portExtensions;
         }
 
-
+        /// <summary>
+        /// 针对选择的通道(Ch)设置/获取计算自动端口扩展损耗值的频率点
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackPortExtensionsSpan(string channel)
         {
-            string portExtensionsSpan = "";
             string ackPortExtensionsSpanCommad = ":SENS" + channel + ":CORR:EXT:AUTO:CONF?";
             sendCommand(ackPortExtensionsSpanCommad);
-            portExtensionsSpan = readData();
-            return portExtensionsSpan;
+            return readData();
         }
-        public string setPortExtensionsSpan(string channel, string state) //CSPN|AMKR|USPN
+
+        /// <summary>
+        /// 设置选择的通道(Ch)设置/获取计算自动端口扩展损耗值的频率点
+        /// CSPN|AMKR|USPN
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="state">CSPN|AMKR|USPN</param>
+        public void setPortExtensionsSpan(string channel, string state) //CSPN|AMKR|USPN
         {
-            string portExtensionsSpan = "";
             string portExtensionsSpanCommad = ":SENS" + channel + ":CORR:EXT:AUTO:CONF " + state;
             sendCommand(portExtensionsSpanCommad);
-         //   portExtensionsSpan = ackPortExtensionsSpan(channel);
-            return portExtensionsSpan;
         }
 
+        /// <summary>
+        /// 获取针对选择的通道(Ch)测量自动端口扩展开路标准或短路标准的校准数据
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackPortExtensionsOpen(string channel)
         {
-            string portExtensionsOpen = "";
             string ackPortExtensionsOpenCommad = ":SENS" + channel + ":CORR:EXT:AUTO:MEAS?";
             sendCommand(ackPortExtensionsOpenCommad);
-            portExtensionsOpen = readData();
-            return portExtensionsOpen;
+            return readData();
         }
-        public string setPortExtensionsOpen(string channel, string state) //OPEN|SHORt
+
+        /// <summary>
+        /// 设置针对选择的通道(Ch)测量自动端口扩展开路标准或短路标准的校准数据
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="state">状态 OPEN|SHORt</param>
+        public void setPortExtensionsOpen(string channel, string state) //OPEN|SHORt
         {
-            string portExtensionsOpen = "";
             string portExtensionsOpenCommad = ":SENS" + channel + ":CORR:EXT:AUTO:MEAS " + state;
             sendCommand(portExtensionsOpenCommad);
-        //    portExtensionsOpen = ackPortExtensionsSpan(channel);
-            return portExtensionsOpen;
         }
+
+        /// <summary>
+        /// 获取针对选择的通道(Ch)开启/关闭或返回端口扩展的状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <returns></returns>
         public string ackPortExtensions(string channel)
         {
-            string portExtensions = "";
             string ackPortExtensionsCommad = ":SENS" + channel + ":CORR:EXT?";
             sendCommand(ackPortExtensionsCommad);
-            portExtensions = readData();
-            return portExtensions;
+            return readData();
         }
-        public string setPortExtensions(string channel, string state)
+
+        /// <summary>
+        /// 设置针对选择的通道(Ch)开启/关闭或返回端口扩展的状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="state">ON|OFF|1|0</param>
+        public void setPortExtensions(string channel, string state)
         {
-            string portExtensions = "";
             string setPortExtensionsCommad = ":SENS" + channel + ":CORR:EXT " + state;
             sendCommand(setPortExtensionsCommad);
-        //    portExtensions = ackPortExtensions(channel);
-            return portExtensions;
         }
 
-
+        /// <summary>
+        /// 针对选择的通道(Ch)删除完成的测量数据（开路和短路）
+        /// </summary>
+        /// <param name="channel">所选通道</param>
         public void setPortExtensionsReSet(string channel)
         {
-
             string setPortExtensionsReSetCommad = ":SENS" + channel + ":CORR:EXT:AUTO:RESet";
             sendCommand(setPortExtensionsReSetCommad);
-
         }
 
+        /// <summary>
+        /// 错误查询
+        /// </summary>
         public void checkError()
         {
             sendCommand(":SYST:ERR?");
@@ -595,34 +754,49 @@ namespace RF_TestSystem
                 sendCommand("*CLS");
             }
         }
-        public void setPortExtensionsLoss(string channel,string state)
+
+        /// <summary>
+        /// 设置针对选择的通道(Ch)开启/关闭或获取自动端口扩展结果的损耗补偿状态
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="state">ON|OFF|1|0</param>
+        public void setPortExtensionsLoss(string channel, string state)
         {
-
-            string setPortExtensionsLossCommad = ":SENS" + channel + ":CORR:EXT:AUTO:LOSS "+ state;
+            string setPortExtensionsLossCommad = ":SENS" + channel + ":CORR:EXT:AUTO:LOSS " + state;
             sendCommand(setPortExtensionsLossCommad);
-
         }
 
+        /// <summary>
+        /// 设置针对选择的通道(Ch)开启/关闭或获取使用自动端口扩展结果直流损耗值
+        /// </summary>
+        /// <param name="channel">所选通道</param>
+        /// <param name="state">ON|OFF|1|0</param>
         public void setPortExtensionsAdjust(string channel, string state)
         {
-
             string setPortExtensionsAdjustCommad = ":SENS" + channel + ":CORR:EXT:AUTO:DCOF " + state;
             sendCommand(setPortExtensionsAdjustCommad);
-
         }
 
+        /// <summary>
+        /// 发送等待操作完成
+        /// </summary>
         public void sendOPC()
         {
             try
             {
                 ioobj.WriteString("*OPC?", true);
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Console.WriteLine(err.Message);
             }
-           
+
         }
+
+        /// <summary>
+        /// 获取基础配置
+        /// </summary>
+        /// <returns></returns>
         public AnalyzerConfig getBasisConfig()
         {
             AnalyzerConfig analyzerConfig = new AnalyzerConfig();
@@ -655,7 +829,6 @@ namespace RF_TestSystem
                     Console.WriteLine(e2.Message);
                 }
             }
-
 
             if (startfrequency > (1000 * 1000 * 1000))
             {
@@ -693,8 +866,8 @@ namespace RF_TestSystem
                 { Console.WriteLine(e2.Message); }
             }
 
-            Console.WriteLine(ackFrequency("1", "STOP"));
-            Console.WriteLine(stopfrequency);
+            ackFrequency("1", "STOP");
+
             if (stopfrequency > (1000 * 1000 * 1000))
             {
                 analyzerConfig.stopFrequency = (stopfrequency / 1000 / 1000 / 1000).ToString();
@@ -780,8 +953,13 @@ namespace RF_TestSystem
                 }
             }
             return analyzerConfig;
-            
+
         }
+
+        /// <summary>
+        /// 获取曲线信息
+        /// </summary>
+        /// <returns></returns>
         public List<TracesInfo> getTracesInfo()
         {
             List<TracesInfo> tracesInfos = new List<TracesInfo>();
@@ -792,7 +970,6 @@ namespace RF_TestSystem
             try
             {
                 Taces1 = Convert.ToInt32(taces1);
-
             }
             catch
             {
@@ -800,7 +977,6 @@ namespace RF_TestSystem
                 try
                 {
                     Taces1 = Convert.ToInt32(taces1);
-
                 }
                 catch
                 { }
@@ -815,14 +991,13 @@ namespace RF_TestSystem
                 traces.note = "";
                 tracesInfos.Add(traces);
             }
-            if(transFromAllocateID(ackAllocateChannelst()) == "2")
+            if (transFromAllocateID(ackAllocateChannelst()) == "2")
             {
                 string taces2 = ackNumberOfTraces("2");
                 int Taces2 = 0;
                 try
                 {
                     Taces2 = Convert.ToInt32(taces2);
-
                 }
                 catch
                 {
@@ -834,20 +1009,18 @@ namespace RF_TestSystem
                     catch
                     { }
                 }
-                
+
+                for (int i = 0; i < Taces2; i++)
                 {
-                    for (int i = 0; i < Taces2; i++)
-                    {
-                        selectTrace("2", (i + 1).ToString());
-                        traces.channel = "2";
-                        traces.meas = ackTracesMeas("2", (i + 1).ToString()).Replace("\n", "");
-                        traces.formate = ackTracesFormat("2", (i + 1).ToString()).Replace("\n", ""); ;
-                        traces.note = "";
-                        tracesInfos.Add(traces);
-                    }
+                    selectTrace("2", (i + 1).ToString());
+                    traces.channel = "2";
+                    traces.meas = ackTracesMeas("2", (i + 1).ToString()).Replace("\n", "");
+                    traces.formate = ackTracesFormat("2", (i + 1).ToString()).Replace("\n", ""); ;
+                    traces.note = "";
+                    tracesInfos.Add(traces);
                 }
             }
-           
+
             return tracesInfos;
         }
 

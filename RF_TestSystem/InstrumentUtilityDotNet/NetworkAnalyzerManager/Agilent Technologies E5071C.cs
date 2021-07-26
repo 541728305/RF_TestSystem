@@ -655,13 +655,13 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             {
                 startfrequency = double.Parse(ackFrequency("1", "START"));
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 try
                 {
                     startfrequency = double.Parse(ackFrequency("1", "START"));
                 }
-                catch (Exception e2)
+                catch (Exception )
                 { }
             }
 
@@ -691,14 +691,14 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
             {
                 stopfrequency = double.Parse(ackFrequency("1", "STOP"));
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 try
                 {
                     stopfrequency = double.Parse(ackFrequency("1", "STOP"));
                 }
-                catch (Exception e2)
-                { }
+                catch (Exception e)
+                { Console.WriteLine("频率转换为double失败：" + e.Message); }
             }
 
             Console.WriteLine(ackFrequency("1", "STOP"));
@@ -729,15 +729,15 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
                 tracesNumber = Convert.ToInt32(ackNumberOfTraces("1").Replace("\n", ""));
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 try
                 {
                     tracesNumber = Convert.ToInt32(ackNumberOfTraces("1").Replace("\n", ""));
 
                 }
-                catch (Exception e2)
-                { }
+                catch (Exception e)
+                { Console.WriteLine("曲线数量转换为Int失败："+ e.Message); }
             }
 
             for (int i = 0; i < tracesNumber; i++)
@@ -749,7 +749,7 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
                 {
                     smoothON = Convert.ToInt32(ackSmooth("1"));
                 }
-                catch (Exception e)
+                catch (Exception )
                 {
                     smoothON = Convert.ToInt32(ackSmooth("1"));
                 }
@@ -763,14 +763,14 @@ namespace InstrumentUtilityDotNet.NetworkAnalyzerManager
                         smoothValue = ((Convert.ToDouble(ackSmoothValue("1").Replace("\n", "")))).ToString();
 
                     }
-                    catch (Exception e)
+                    catch (Exception )
                     {
                         try
                         {
                             smoothValue = ((Convert.ToDouble(ackSmoothValue("1").Replace("\n", "")))).ToString();
 
                         }
-                        catch (Exception e1)
+                        catch (Exception )
                         { }
                     }
 

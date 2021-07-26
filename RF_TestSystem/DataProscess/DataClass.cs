@@ -66,6 +66,9 @@ namespace RF_TestSystem
         public separationGeneric<string> tracesDataStringType;
         public separationGeneric<List<double>> tracesDataDoubleType;
 
+        public List<double> frequencyListDouble;
+        public List<string> frequencyListString;
+
     }
     public class OracleDataPackage
     {

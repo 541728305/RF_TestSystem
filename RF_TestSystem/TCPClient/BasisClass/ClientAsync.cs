@@ -38,7 +38,7 @@ namespace TCPHelper
 
         bool aliveFlag = false;
 
-        
+
         public ClientAsync()
         {
             client = new TcpClient();
@@ -64,15 +64,15 @@ namespace TCPHelper
                     client.Client.Disconnect(true);
                     client.Client.Close();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    
+                    Console.WriteLine("TCP关闭失败：" + e.Message);
                 }
                 finally
                 {
                     client.Client.Close();
                 }
-                
+
             }
         }
 
@@ -97,14 +97,14 @@ namespace TCPHelper
             Shutdown();
             client = new TcpClient();
             IAsyncResult asyncResult = client.BeginConnect(ipAddress, port, ConnectCallBack, client);
-            
+
             Console.WriteLine(client.Connected);
             Console.WriteLine(asyncResult.AsyncState.ToString());
         }
 
         public bool getAlive()
         {
-            if(aliveFlag)
+            if (aliveFlag)
             {
                 aliveFlag = false;
                 return true;
@@ -147,12 +147,12 @@ namespace TCPHelper
                 byte[] listData = Encoding.UTF8.GetBytes(msg);
                 client.Client.BeginSend(listData, 0, listData.Length, SocketFlags.None, SendCallBack, client);
             }
-            catch(Exception sendErr)
+            catch (Exception sendErr)
             {
                 Console.WriteLine(sendErr.Message);
-                
+
             }
-               
+
         }
         /// <summary>
         /// 异步连接的回调函数
@@ -204,7 +204,7 @@ namespace TCPHelper
                         string key = string.Format("{0}:{1}", iep.Address, iep.Port);
                         Gloable.tcpAliveFlag = true;
                         aliveFlag = true;
-                        Thread  thread = new Thread(new ParameterizedThreadStart(sendReveive));
+                        Thread thread = new Thread(new ParameterizedThreadStart(sendReveive));
                         ReceivePackage receivePackage = new ReceivePackage();
                         receivePackage.key = key;
                         receivePackage.msg = msg;

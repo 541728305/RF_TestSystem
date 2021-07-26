@@ -7,11 +7,11 @@ namespace RF_TestSystem
     {
 
         private OraDb oraData;
-        private  string strTB;
+        //private  string strTB;
 
         public OracleHelper()
         {
-            strTB = "TED_RF_DATA";
+            //strTB = "TED_RF_DATA";
         }
 
 
@@ -65,13 +65,11 @@ namespace RF_TestSystem
         [System.Obsolete]
         public void createTable(string tableName, string table)
         {
-            string strstatus = "创建数据库表失败";
             try
             {
                 // table = "(id integer, name char(50), sex char(10), age integer, banji char(50))";
                 string cmmdStr = "create table " + tableName + table;
                 oraData.RunNonQuery(cmmdStr);
-                strstatus = "创建数据库表成功";
             }
             catch (System.Exception ex)
             {
@@ -84,14 +82,11 @@ namespace RF_TestSystem
         [System.Obsolete]
         public bool insertData(string tableName, string column, string values)
         {
-            string strstatus = "插入数据失败";
             try
             {
                 string cmmdStr;
                 cmmdStr = "insert into " + tableName + " (" + column + ")" + " values " + "(" + values + ")" ;
-                oraData.RunNonQuery(cmmdStr);
-                strstatus = "插入数据成功";
-                
+                oraData.RunNonQuery(cmmdStr);         
             }
             catch (System.Exception ex)
             {
@@ -104,14 +99,12 @@ namespace RF_TestSystem
         [System.Obsolete]
         public bool insertData(string tableName, string values)
         {
-            bool successful = false;
-            string strstatus = "插入数据失败";
+            bool successful;
             try
             {
                 string cmmdStr;
                 cmmdStr = "INSERT INTO " + tableName + " VALUES(" + values + ")";
                 oraData.RunNonQuery(cmmdStr);
-                strstatus = "插入数据成功";
                 successful = true;
             }
             catch (System.Exception ex)
@@ -126,13 +119,11 @@ namespace RF_TestSystem
         [System.Obsolete]
         public DataTable queryData(string tableName, string column, string values)
         {
-            string strstatus = "查询显示失败";
             try
             {
                 string cmmdStr;
                 cmmdStr = "select * from " + tableName + " where " + column + "=" + "'" + values + "'";
                 DataTable DataSource = oraData.FillTable(cmmdStr);
-                strstatus = "查询显示成功";
                 return DataSource;
             }
             catch (System.Exception ex)
@@ -146,7 +137,6 @@ namespace RF_TestSystem
         [System.Obsolete]
         public void delData(string tableName, string column, string values)
         {
-            string strstatus = "删除失败";
             try
             {
                 string cmmdStr;
@@ -157,18 +147,15 @@ namespace RF_TestSystem
             {
                 MessageBox.Show(ex.Message);
             }
-            strstatus = "删除成功";
         }
 
         [System.Obsolete]
         public void delTable(string tableName)
         {
-            string strstatus = "删除失败";
             try
             {
                 string cmmdStr = "truncate table " + tableName;
                 oraData.RunNonQuery(cmmdStr);
-                strstatus = "删除成功";
             }
             catch (System.Exception ex)
             {
@@ -180,15 +167,11 @@ namespace RF_TestSystem
         [System.Obsolete]
         public void updateTable(string tableName, string column, string oldValues, string newValues)
         {
-            string strstatus = "更新失败";
             try
             {
                 string cmmdStr = "UPDATE " + tableName + " SET " + column + "=" + oldValues + " WHERE " + column + "=" + newValues;
 
                 oraData.RunNonQuery(cmmdStr);
-
-                strstatus = "更新成功";
-
             }
             catch (System.Exception ex)
             {

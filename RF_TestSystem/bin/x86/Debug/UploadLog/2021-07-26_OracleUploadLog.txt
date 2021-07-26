@@ -1,0 +1,1 @@
+﻿[{"ID":1,"Barcode":"123","UploadTime":"2021-07-26T10:30:28.4365426+08:00","UploadResult":"OK"}]

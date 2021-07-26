@@ -7,7 +7,7 @@
     <ProjectGuid>{74B66FE3-1D01-4E4F-B796-852A777D21EB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>RF_TestSystem</RootNamespace>
-    <AssemblyName>RF_TestSystem</AssemblyName>
+    <AssemblyName>RF_TestSystem_20210726_v1.0</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

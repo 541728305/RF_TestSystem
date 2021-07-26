@@ -357,6 +357,9 @@
             this.OracleIDTextBox = new System.Windows.Forms.TextBox();
             this.DebugTabPage = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.label78 = new System.Windows.Forms.Label();
+            this.heartbeatSwitch = new HZH_Controls.Controls.UCSwitch();
             this.label77 = new System.Windows.Forms.Label();
             this.TCPRecordTextBox = new System.Windows.Forms.TextBox();
             this.deBugSendComm1textBox = new System.Windows.Forms.TextBox();
@@ -378,9 +381,6 @@
             this.saveInitButton = new System.Windows.Forms.Button();
             this.saveAndWriteIniButton = new System.Windows.Forms.Button();
             this.aboutTabPage = new System.Windows.Forms.TabPage();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.label78 = new System.Windows.Forms.Label();
-            this.heartbeatSwitch = new HZH_Controls.Controls.UCSwitch();
             this.flowLayoutPanel43.SuspendLayout();
             this.flowLayoutPanel42.SuspendLayout();
             this.flowLayoutPanel41.SuspendLayout();
@@ -4070,6 +4070,40 @@
             this.panel23.Size = new System.Drawing.Size(1242, 564);
             this.panel23.TabIndex = 22;
             // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.label78);
+            this.panel24.Controls.Add(this.heartbeatSwitch);
+            this.panel24.Location = new System.Drawing.Point(22, 435);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(126, 20);
+            this.panel24.TabIndex = 93;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label78.Location = new System.Drawing.Point(3, 5);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(53, 12);
+            this.label78.TabIndex = 2;
+            this.label78.Text = "心跳检测";
+            // 
+            // heartbeatSwitch
+            // 
+            this.heartbeatSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.heartbeatSwitch.Checked = false;
+            this.heartbeatSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.heartbeatSwitch.FalseTextColr = System.Drawing.Color.White;
+            this.heartbeatSwitch.Location = new System.Drawing.Point(74, 1);
+            this.heartbeatSwitch.Name = "heartbeatSwitch";
+            this.heartbeatSwitch.Size = new System.Drawing.Size(50, 16);
+            this.heartbeatSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+            this.heartbeatSwitch.TabIndex = 0;
+            this.heartbeatSwitch.Texts = null;
+            this.heartbeatSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.heartbeatSwitch.TrueTextColr = System.Drawing.Color.White;
+            // 
             // label77
             // 
             this.label77.AutoSize = true;
@@ -4266,40 +4300,6 @@
             this.aboutTabPage.Text = "关于我们";
             this.aboutTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.label78);
-            this.panel24.Controls.Add(this.heartbeatSwitch);
-            this.panel24.Location = new System.Drawing.Point(22, 435);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(126, 20);
-            this.panel24.TabIndex = 93;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label78.Location = new System.Drawing.Point(3, 5);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(53, 12);
-            this.label78.TabIndex = 2;
-            this.label78.Text = "心跳检测";
-            // 
-            // heartbeatSwitch
-            // 
-            this.heartbeatSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.heartbeatSwitch.Checked = false;
-            this.heartbeatSwitch.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.heartbeatSwitch.FalseTextColr = System.Drawing.Color.White;
-            this.heartbeatSwitch.Location = new System.Drawing.Point(74, 1);
-            this.heartbeatSwitch.Name = "heartbeatSwitch";
-            this.heartbeatSwitch.Size = new System.Drawing.Size(50, 16);
-            this.heartbeatSwitch.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
-            this.heartbeatSwitch.TabIndex = 0;
-            this.heartbeatSwitch.Texts = null;
-            this.heartbeatSwitch.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-            this.heartbeatSwitch.TrueTextColr = System.Drawing.Color.White;
-            // 
             // RF_TestSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -4314,7 +4314,7 @@
             this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RF_TestSystem";
+            this.Text = "RF_TestSystem_20210726_v1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.Load += new System.EventHandler(this.RF_TestSystem_Load);
             this.Resize += new System.EventHandler(this.RF_TestSystem_Resize);

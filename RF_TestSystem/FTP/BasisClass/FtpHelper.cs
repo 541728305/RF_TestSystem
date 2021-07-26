@@ -137,10 +137,7 @@ namespace winform_ftp
 
         public bool Upload(string FileDir, string FileName, string localFileName)
         {
-
-
-
-            int i = 0;
+            //int i = 0;
             try
             {
                 //①在FTP上创建一个空文件:

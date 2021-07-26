@@ -33,23 +33,16 @@ namespace RF_TestSystem
             string tracesInfoConifgFilePath = Gloable.configPath + Gloable.tracesInfoConifgFileName;
             TracesInfo configTrans = new TracesInfo();
 
-
-            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            if (!Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
             {
-                Console.WriteLine("存在文件夹");
-            }
-            else
-            {
-                Console.WriteLine("不存在文件夹");
                 Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
             }
+
             if (File.Exists(tracesInfoConifgFilePath))
             {
-                Console.WriteLine("存在tracesInfoConifg文件");
                 string[] section = IniOP.INIGetAllSectionNames(tracesInfoConifgFilePath);
                 if (section.Length != 4)
                 {
-                    Console.WriteLine("tracesInfoConifg");
                     //配置缺省值       
                     configTrans.rawData = "";
                     configTrans.channel = "1";
@@ -74,12 +67,10 @@ namespace RF_TestSystem
                 string[] key2 = IniOP.INIGetAllItemKeys(tracesInfoConifgFilePath, "meas");
                 string[] key3 = IniOP.INIGetAllItemKeys(tracesInfoConifgFilePath, "formate");
                 string[] key4 = IniOP.INIGetAllItemKeys(tracesInfoConifgFilePath, "note");
-                Console.WriteLine(key1.Length);
                 if ((key1.Length == key2.Length) && (key2.Length == key3.Length) && (key3.Length == key4.Length) && key1.Length > 0 && section.Length > 0)
                 {
                     for (int i = 0; i < key1.Length; i++)
                     {
-
                         configTrans.channel = IniOP.INIGetStringValue(tracesInfoConifgFilePath, "channel", "Trace" + (i + 1).ToString(), "1");
                         configTrans.meas = IniOP.INIGetStringValue(tracesInfoConifgFilePath, "meas", "Trace" + (i + 1).ToString(), "S11");
                         configTrans.formate = IniOP.INIGetStringValue(tracesInfoConifgFilePath, "formate", "Trace" + (i + 1).ToString(), "MLOG");
@@ -90,7 +81,6 @@ namespace RF_TestSystem
                 }
                 else
                 {
-                    Console.WriteLine("tracesInfoConifg");
                     //配置缺省值       
                     configTrans.rawData = "";
                     configTrans.channel = "1";
@@ -113,9 +103,7 @@ namespace RF_TestSystem
             }
             else
             {
-                Console.WriteLine("不存tracesInfoConifg在文件");
                 File.Create(tracesInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
-                Console.WriteLine("tracesInfoConifg");
                 //配置缺省值                                                    
                 configTrans.rawData = "";
                 configTrans.channel = "1";
@@ -182,18 +170,13 @@ namespace RF_TestSystem
             agilentConfig.calFilePath = "D:\\State0111.sta";
             Gloable.dataFilePath = agilentConfig.dataPath;
 
-            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            if (!Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
             {
-                Console.WriteLine("存在文件夹 {0}", Gloable.configPath);
-            }
-            else
-            {
-                Console.WriteLine("不存在文件夹 {0}", Gloable.configPath);
                 Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
             }
+
             if (File.Exists(agilentConfig.path))
             {
-                Console.WriteLine("存在文件");
                 string[] key = IniOP.INIGetAllItemKeys(agilentConfig.path, "AnalyzerConfig");
 
                 if (key.Length == 13)
@@ -223,14 +206,12 @@ namespace RF_TestSystem
             }
             else
             {
-                Console.WriteLine("不存在文件");
                 File.Create(agilentConfig.path).Close();//创建该文件，如果路径文件夹不存在，则报错
 
                 MessageBox.Show("Analyzer.ini文件丢失，Analyzer.ini已被重新创建成缺省值");
                 //写入缺省值
                 writeAnalyzerConfigToInitFile(agilentConfig);
             }
-            
 
             agilentConfig.dataPath = System.Windows.Forms.Application.StartupPath + "\\RF_Data\\";
             agilentConfig.limitPath = System.Windows.Forms.Application.StartupPath + "\\Limit\\";
@@ -238,15 +219,13 @@ namespace RF_TestSystem
             return agilentConfig;
         }
 
-
-
         public bool writeTestInfoToInitFile(TestInfo testInfo, String tracesInfoConifgFilePath)
         {
             bool successful = true;
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "productionModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "retestModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "developerModel");
-            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "buyoffModel"); 
+            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "buyoffModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "FAModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "ORTModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "SortingModel");
@@ -302,15 +281,11 @@ namespace RF_TestSystem
             ModeInfo configTrans = new ModeInfo();
 
 
-            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            if (!Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
             {
-                Console.WriteLine("存在文件夹");
-            }
-            else
-            {
-                Console.WriteLine("不存在文件夹");
                 Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
             }
+
             if (File.Exists(testInfoConifgFilePath))
             {
                 string[] section = IniOP.INIGetAllSectionNames(testInfoConifgFilePath);
@@ -318,7 +293,6 @@ namespace RF_TestSystem
                 string[] key2 = IniOP.INIGetAllItemKeys(testInfoConifgFilePath, "channel");
                 string[] key3 = IniOP.INIGetAllItemKeys(testInfoConifgFilePath, "channel");
 
-                Console.WriteLine(key1.Length);
                 if ((key1.Length == key2.Length) && (key2.Length == key3.Length) && section.Length > 0)
                 {
                     testInfo.currentModel = IniOP.INIGetStringValue(testInfoConifgFilePath, "currentModel", "currentModel", "inlineModel");
@@ -400,9 +374,7 @@ namespace RF_TestSystem
             }
             else
             {
-                Console.WriteLine("不存tracesInfoConifg在文件");
                 File.Create(testInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
-                Console.WriteLine("tracesInfoConifg");
                 //配置缺省值   
                 testInfo.currentModel = "inlineModel";
                 configTrans.testPassNumber = "0";
@@ -450,15 +422,11 @@ namespace RF_TestSystem
             LoginInfo loginInfo = new LoginInfo();
             string loginInfoConifgFilePath = Gloable.configPath + Gloable.loginInfoConifgFileName;
 
-            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            if (!Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
             {
-                Console.WriteLine("存在文件夹");
-            }
-            else
-            {
-                Console.WriteLine("不存在文件夹");
                 Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
             }
+
             if (File.Exists(loginInfoConifgFilePath))
             {
 
@@ -491,9 +459,7 @@ namespace RF_TestSystem
             }
             else
             {
-                Console.WriteLine("不存LoginInfoConifg在文件");
                 File.Create(loginInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
-                Console.WriteLine("LoginInfoConifg");
                 //配置缺省值
                 loginInfo.machineClass = "InlimeMachine";
                 loginInfo.workOrder = "FSPA123";
@@ -543,13 +509,8 @@ namespace RF_TestSystem
             cameraInfo.ptEnd.Y = 0;
             string cameraInfoConifgFilePath = Gloable.configPath + Gloable.cameraInfoConifgFileName;
 
-            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            if (!Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
             {
-                Console.WriteLine("存在文件夹");
-            }
-            else
-            {
-                Console.WriteLine("不存在文件夹");
                 Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
             }
             if (File.Exists(cameraInfoConifgFilePath))
@@ -574,12 +535,9 @@ namespace RF_TestSystem
             }
             else
             {
-                Console.WriteLine("不存cameraInfoConifg在文件");
                 File.Create(cameraInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
-                Console.WriteLine("cameraInfoConifg");
                 writeCameraInfoToInitFile(cameraInfo, cameraInfoConifgFilePath);
                 MessageBox.Show("camera.ini文件丢失，camera.ini已被重新创建成缺省值");
-
             }
             return cameraInfo;
         }
@@ -644,18 +602,13 @@ namespace RF_TestSystem
 
             string uploadInfoConifgFilePath = Gloable.configPath + Gloable.upLoadInfoConifgFileName;
 
-            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            if (!Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
             {
-                Console.WriteLine("存在文件夹");
-            }
-            else
-            {
-                Console.WriteLine("不存在文件夹");
                 Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
             }
+
             if (File.Exists(uploadInfoConifgFilePath))
             {
-
                 string[] section = IniOP.INIGetAllSectionNames(uploadInfoConifgFilePath);
                 if (section.Length > 0)
                 {
@@ -688,12 +641,9 @@ namespace RF_TestSystem
             }
             else
             {
-                Console.WriteLine("不存uploadInfoConifg在文件");
                 File.Create(uploadInfoConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
-                Console.WriteLine("uploadInfoConifg");
                 writeUpLoadInfoToInitFile(uploadInfo, uploadInfoConifgFilePath);
                 MessageBox.Show("upload.ini文件丢失，upload.ini已被重新创建成缺省值");
-
             }
             return uploadInfo;
         }
@@ -762,13 +712,8 @@ namespace RF_TestSystem
             modelSetting.heartbeatEnable = true.ToString();
             string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
 
-            if (Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
+            if (!Directory.Exists(Gloable.configPath))//如果不存在就创建file文件夹
             {
-                Console.WriteLine("存在文件夹");
-            }
-            else
-            {
-                Console.WriteLine("不存在文件夹");
                 Directory.CreateDirectory(Gloable.configPath);//创建该文件夹
             }
             if (File.Exists(modelSettingConifgFilePath))
@@ -788,10 +733,10 @@ namespace RF_TestSystem
                     modelSetting.pcbEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "PCB Enable", false.ToString());
                     modelSetting.mandatorySample = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "MandatorySample", false.ToString());
                     modelSetting.testDelay = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "testDelay", "150");
-                    modelSetting.sampleTestTime= IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleTestTime", modelSetting.sampleTestTime);
+                    modelSetting.sampleTestTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleTestTime", modelSetting.sampleTestTime);
                     modelSetting.sampleIntervalTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleIntervalTime", modelSetting.sampleIntervalTime);
 
-                    modelSetting.warnYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "warnYield",  modelSetting.warnYield);
+                    modelSetting.warnYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "warnYield", modelSetting.warnYield);
                     modelSetting.stopYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "stopYield", modelSetting.stopYield);
                     modelSetting.baseYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "baseYield", modelSetting.baseYield);
                     modelSetting.yieldManageEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "yieldManageEnable", modelSetting.yieldManageEnable);
@@ -811,22 +756,12 @@ namespace RF_TestSystem
             }
             else
             {
-                Console.WriteLine("不存modelSettingConifg在文件");
                 File.Create(modelSettingConifgFilePath).Close();//创建该文件，如果路径文件夹不存在，则报错
-                Console.WriteLine("modelSettingConifg");
                 writeModelSettingInfoToInitFile(modelSetting, modelSettingConifgFilePath);
                 MessageBox.Show("modelSetting.ini文件丢失，modelSetting.ini已被重新创建成缺省值");
-
             }
             return modelSetting;
         }
-
-
-
-
-
-
-
 
     }
 

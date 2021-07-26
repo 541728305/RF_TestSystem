@@ -16,7 +16,9 @@ namespace RF_TestSystem
         HTuple hv_DataCodeHandle, hv_ResultHandles, hv_DecodedDataStrings;
         HObject symbolXLDs;
 
-        HTuple hv_coding, hv_timeOut, hv_count, hv_codemode;
+        HTuple hv_timeOut, hv_count;
+
+        //HTuple hv_coding, hv_codemode;
         //private HWindowControl hWindowControl1;
 
 
@@ -163,7 +165,6 @@ namespace RF_TestSystem
             ,"GS1 QR Code","Micro QR Code"};
             HOperatorSet.Rgb1ToGray(m_image, out ho_GrayImage);
             HOperatorSet.CountSeconds(out hv_T1);
-            // Console.WriteLine("开始解码");
             for (int i = 0; i < hv_codemode.Length; i++)
             {                          
                 try
