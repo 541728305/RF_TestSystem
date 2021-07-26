@@ -8,7 +8,7 @@ namespace RF_TestSystem
     public delegate void TcpClientDisconnectHandle();
 
     public delegate void TcpMessageHandler(string Msg);
-    
+
     class TCPClient
     {
         ClientAsync client = new ClientAsync();
@@ -16,7 +16,7 @@ namespace RF_TestSystem
         string msgLog = "";
         public event commandComingHandler commandComingEvent;
         public event TcpClientDisconnectHandle TcpClientDisconnectEven;
-        public  event TcpMessageHandler TcpMessageEvent;
+        public event TcpMessageHandler TcpMessageEvent;
         public TCPClient()
         {
             client.Completed += new Action<System.Net.Sockets.TcpClient, EnSocketAction>((c, enAction) =>
@@ -37,7 +37,7 @@ namespace RF_TestSystem
                             string key = string.Format("{0}:{1}", iep.Address.ToString(), iep.Port);
                             Console.WriteLine("{0}：向{1}发送了一条消息", DateTime.Now, key);
 
-                            TcpMessageEvent(DateTime.Now.ToString() + "：→ 向 <" + key + "> 发送了一条消息：\r\n"+ msgLog);
+                            TcpMessageEvent(DateTime.Now.ToString() + "：→ 向 <" + key + "> 发送了一条消息：\r\n" + msgLog);
                             break;
                         }
 
@@ -56,7 +56,7 @@ namespace RF_TestSystem
                  Console.WriteLine("{0}对我说：{1}", key, msg);
                  TcpProtocol tcpProtocol = new TcpProtocol();
                  commandComingEvent(msg);
-                 TcpMessageEvent(DateTime.Now.ToString() + "：← <"+ key + "> 对我说：\r\n" + msg);
+                 TcpMessageEvent(DateTime.Now.ToString() + "：← <" + key + "> 对我说：\r\n" + msg);
              });
 
         }
@@ -75,10 +75,10 @@ namespace RF_TestSystem
             }
             else
             {
-               
+
                 connectState = 2;
             }
-            
+
         }
         public bool clientConncet(string IP, int Port)
         {
@@ -99,7 +99,7 @@ namespace RF_TestSystem
                     successful = true;
                     return successful;
                 }
-                else if (connectState == 2 )
+                else if (connectState == 2)
                 {
                     t.Stop();
                     t.Enabled = false;
@@ -113,7 +113,7 @@ namespace RF_TestSystem
                         t.Enabled = false;
                         successful = true;
                         return successful;
-                    }                
+                    }
                 }
             }
             return successful;

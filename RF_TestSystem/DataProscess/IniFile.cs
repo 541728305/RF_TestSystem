@@ -230,7 +230,7 @@ namespace RF_TestSystem
                 //写入缺省值
                 writeAnalyzerConfigToInitFile(agilentConfig);
             }
-            
+
 
             agilentConfig.dataPath = System.Windows.Forms.Application.StartupPath + "\\RF_Data\\";
             agilentConfig.limitPath = System.Windows.Forms.Application.StartupPath + "\\Limit\\";
@@ -246,7 +246,7 @@ namespace RF_TestSystem
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "productionModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "retestModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "developerModel");
-            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "buyoffModel"); 
+            successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "buyoffModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "FAModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "ORTModel");
             successful = IniOP.INIDeleteSection(tracesInfoConifgFilePath, "SortingModel");
@@ -788,10 +788,10 @@ namespace RF_TestSystem
                     modelSetting.pcbEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "PCB Enable", false.ToString());
                     modelSetting.mandatorySample = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "MandatorySample", false.ToString());
                     modelSetting.testDelay = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "testDelay", "150");
-                    modelSetting.sampleTestTime= IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleTestTime", modelSetting.sampleTestTime);
+                    modelSetting.sampleTestTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleTestTime", modelSetting.sampleTestTime);
                     modelSetting.sampleIntervalTime = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "sampleIntervalTime", modelSetting.sampleIntervalTime);
 
-                    modelSetting.warnYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "warnYield",  modelSetting.warnYield);
+                    modelSetting.warnYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "warnYield", modelSetting.warnYield);
                     modelSetting.stopYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "stopYield", modelSetting.stopYield);
                     modelSetting.baseYield = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "baseYield", modelSetting.baseYield);
                     modelSetting.yieldManageEnable = IniOP.INIGetStringValue(modelSettingConifgFilePath, "modelSetting", "yieldManageEnable", modelSetting.yieldManageEnable);
@@ -820,13 +820,6 @@ namespace RF_TestSystem
             }
             return modelSetting;
         }
-
-
-
-
-
-
-
 
     }
 

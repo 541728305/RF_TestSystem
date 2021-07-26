@@ -35,11 +35,11 @@ namespace RF_TestSystem.WinForm
                     this.calButton.Enabled = true;
                 }));
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
-            
+
         }
 
         private void ECalBackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -81,11 +81,11 @@ namespace RF_TestSystem.WinForm
                     }
                 }
             }
-            catch(Exception calError)
+            catch (Exception calError)
             {
                 MessageBox.Show(calError.Message);
             }
-           
+
         }
 
         private void calButton_Click(object sender, EventArgs e)

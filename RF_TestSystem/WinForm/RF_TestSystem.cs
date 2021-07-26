@@ -23,7 +23,7 @@ namespace RF_TestSystem
 
     public partial class RF_TestSystem : Form
     {
- 
+
         #region - 全局变量 -
         AnalyzerConfig agilentConfig = new AnalyzerConfig();
         List<string> TraceNumberOfChannel = new List<string>();
@@ -38,7 +38,7 @@ namespace RF_TestSystem
 
         OracleHelper oracleHelper = new OracleHelper();
 
-        string dataSaveDate =  DateTime.Now.ToString("HHmmss");
+        string dataSaveDate = DateTime.Now.ToString("HHmmss");
 
         bool FTPUploadFlag = false;
         bool OracleUploadFlag = false;
@@ -122,6 +122,8 @@ namespace RF_TestSystem
         System.Timers.Timer heartBeatTimer = new System.Timers.Timer(1000);//实例化样本计时Timer类，设置间隔时间为1000毫秒；
         int tcpConnectMiss = 0;
 
+        //测试线程锁
+        Mutex testThreadMutex = new Mutex();
         #endregion
 
         #region - 委托定义 -
@@ -146,24 +148,24 @@ namespace RF_TestSystem
         #region - 构造函数 -
         public RF_TestSystem()
         {
-            
+
 
             InitializeComponent();
 
             int xWidth1 = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Width;//获取显示器屏幕宽度
             int yHeight1 = System.Windows.Forms.SystemInformation.PrimaryMonitorSize.Height;//高度
             Console.WriteLine(xWidth1 + "px * " + yHeight1 + "px");
-            
+
             this.Height = (int)(yHeight1 * 0.8);
-            this.Width = (int)((yHeight1 * 0.8)/ 869 * 1360);
+            this.Width = (int)((yHeight1 * 0.8) / 869 * 1360);
         }
         private float x, y;//定义窗体宽高
         #endregion
 
         #region - 系统初始化 -
         private void RF_TestSystem_Load(object sender, EventArgs e)
-        {                    
-            SystemInit();                   
+        {
+            SystemInit();
         }
         public void SystemInit()
         {
@@ -198,7 +200,7 @@ namespace RF_TestSystem
             LoginInformation iniLoginInformation = new LoginInformation();
             iniLoginInformation.ShowDialog();
 
-            setCurrentLimit(Gloable.limitNameList, Gloable.currentLimitName);            
+            setCurrentLimit(Gloable.limitNameList, Gloable.currentLimitName);
             setLoginInfoToDataTable(Gloable.loginInfo);
             setTestInfoToDataTable(Gloable.testInfo);
             creatChartView();
@@ -215,7 +217,7 @@ namespace RF_TestSystem
             this.simplePartNumTextBox.Text = Gloable.loginInfo.partNumber;
             if (dt != null)
             {
-                this.simpleDataGridView.DataSource = dt;              
+                this.simpleDataGridView.DataSource = dt;
             }
 
             BindOracleUpdateRecord();//Oracle上传记录
@@ -272,7 +274,7 @@ namespace RF_TestSystem
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-                       //让控件支持透明色
+            //让控件支持透明色
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
 
 
@@ -293,7 +295,7 @@ namespace RF_TestSystem
             heartBeatTimer.Elapsed += HeartBeatTimer_Elapsed;
             heartBeatTimer.AutoReset = true;
 
-            this.UpdateAnalysisTabPageEvent += RF_TestSystem_UpdateAnalysisTabPageEvent;           
+            this.UpdateAnalysisTabPageEvent += RF_TestSystem_UpdateAnalysisTabPageEvent;
         }
 
         //字符表初始化
@@ -452,9 +454,9 @@ namespace RF_TestSystem
                     }
                     catch (Exception convertErr)
                     {
-                       
+
                     }
-                    
+
                     this.continuouTestTextBox.Enabled = false;
                     continuouTest = 1;
                     this.continuouTestTextBox.Text = continuouTest.ToString();
@@ -565,7 +567,7 @@ namespace RF_TestSystem
                     continuouTest = 1;
                     this.continuouTestTextBox.Text = continuouTest.ToString();
                     return;
-                    case "SampleEntryModel":
+                case "SampleEntryModel":
                     this.setModelButton.Text = "样本录入";
                     this.setModelButton.BackColor = Color.Firebrick;
                     this.testPassNumberTextBox.Text = testInfo.sampleEntryModel.testPassNumber;
@@ -637,7 +639,7 @@ namespace RF_TestSystem
                         Gloable.limitNameList = Gloable.myOutPutStream.getlimitList(ref agilentConfig.limitPath);
                         Gloable.currentLimitName = this.currentLimitComboBox.SelectedItem.ToString();
                         setCurrentLimit(Gloable.limitNameList, Gloable.currentLimitName);
-                        
+
 
                     }
                     return;
@@ -676,7 +678,7 @@ namespace RF_TestSystem
                     return;
 
             }
-        }      
+        }
         bool tcpClientConnect = false;
         bool analyzerConnect = false;
         #endregion
@@ -685,7 +687,7 @@ namespace RF_TestSystem
         [Obsolete]
         private void connectButton_Click(object sender, EventArgs e)
         {
-           
+
             if (Gloable.myAnalyzer.isConnected() == false)
             {
                 systemConnect();
@@ -827,10 +829,10 @@ namespace RF_TestSystem
                 this.systemStartButton.Text = "正在部署";
                 if (deployTestSystem() == true)
                 {
-                       
+
                     if (Gloable.cameraInfo.cameraModel == (Gloable.cameraInfo.cameraAutoModelString))
                     {
-                        connectCamera();                        
+                        connectCamera();
                     }
                     else
                     {
@@ -840,7 +842,7 @@ namespace RF_TestSystem
                     this.systemStartButton.Text = "关闭测试系统";
                     this.systemStartButton.ImageIndex = 1;
                     this.startButton.Enabled = true;
-                    
+
                     writeInfoTextBox("部署测试系统成功\r\n");
                     systemStart = true;
                 }
@@ -900,7 +902,7 @@ namespace RF_TestSystem
                 Gloable.myAnalyzer.loadStateFile(agilentConfig.calFilePath);
 
                 Gloable.myAnalyzer.sendOPC();
-                for(int i =0;i<3;i++)
+                for (int i = 0; i < 3; i++)
                 {
                     if (Gloable.myAnalyzer.readData() != "ReadString error")
                     {
@@ -996,24 +998,24 @@ namespace RF_TestSystem
             else if (myButtonState.setLoginInfobuttonState == myButtonState.setting)
             {
                 setButtonState(myButtonState.setLoginInfobutton, myButtonState.normal);
-                var dt =  readSampleFromLocal();
+                var dt = readSampleFromLocal();
                 this.simplePartNumTextBox.Text = Gloable.loginInfo.partNumber;
                 if (dt != null)
                 {
                     this.simpleDataGridView.DataSource = dt;
-                   
+
                 }
             }
 
         }
         private void setModelButton_Click(object sender, EventArgs e)
         {
-           
+
             if (sampleTestFlag == true)
             {
                 Credentials credentials = new Credentials("789");
                 credentials.ShowDialog();
-                if(credentials.getResult() == false)
+                if (credentials.getResult() == false)
                 {
                     MessageBox.Show("密码错误");
                     return;
@@ -1022,7 +1024,7 @@ namespace RF_TestSystem
             SelectModel selectModel = new SelectModel();
             selectModel.ShowDialog();
             setCurrentModel(Gloable.testInfo);
-            if( this.analysisModelComboBox.SelectedItem.ToString().Contains(Gloable.testInfo.currentModel))
+            if (this.analysisModelComboBox.SelectedItem.ToString().Contains(Gloable.testInfo.currentModel))
             {
                 this.analysisModelComboBox.SelectedItem = Gloable.testInfo.currentModel;
             }
@@ -1078,11 +1080,11 @@ namespace RF_TestSystem
             RF_TestSystemLogin.Show();
         }
 
-   
+
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            connectCamera();           
+            connectCamera();
         }
 
         private void deBugReadCommButton_Click(object sender, EventArgs e)
@@ -1312,7 +1314,7 @@ namespace RF_TestSystem
         private void openInquireCameraButton_Click(object sender, EventArgs e)
         {
             if (connectFlag == false)
-            {               
+            {
                 connectCamera();
 
                 this.openInquireCameraButton.Text = "关闭";
@@ -1353,9 +1355,9 @@ namespace RF_TestSystem
             //    sampleEntryFlag = true;
             //    SampleManage sampleManage = new SampleManage();
             //    sampleManage.ShowDialog();
-                
+
             //}
-           
+
         }
 
 
@@ -1428,7 +1430,7 @@ namespace RF_TestSystem
                 DisConnectCamera();
             }
             setCameraInfoToDataTable(Gloable.cameraInfo);
-            
+
             if (IniOP.INIWriteValue(Gloable.configPath + Gloable.cameraInfoConifgFileName, "cameraInfo", "cameraModel", Gloable.cameraInfo.cameraModel) == true)
             {
                 //MessageBox.Show("设置成功");
@@ -1477,7 +1479,7 @@ namespace RF_TestSystem
 
         private void machineNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            updateSampleDataTable( readSampleFromLocal());
+            updateSampleDataTable(readSampleFromLocal());
         }
 
         private void analysisModelComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -1520,11 +1522,11 @@ namespace RF_TestSystem
         private void RF_TestSystem_Resize(object sender, EventArgs e)
         {
             rePaint();
-            for(int i=0;i<this.tabResizeFlag.Count;i++)
+            for (int i = 0; i < this.tabResizeFlag.Count; i++)
             {
                 tabResizeFlag[i] = true;
             }
-            
+
             //float newx = (this.Width) / x;
             //float newy = (this.Height) / y;
             //AutoSizea.SetControls(newx, newy, this);
@@ -1540,9 +1542,9 @@ namespace RF_TestSystem
             this.chartTabControl.Height = this.infoPanel.Height - this.textPanel.Height - 10;
             //this.chartPanel.Height = 
             Console.WriteLine("Resize{0},{1}", testPanel.Width, this.mainTabControl.Width - this.mainTabControl.ItemSize.Height);
-            if(charts.Count>0)
+            if (charts.Count > 0)
             {
-                
+
                 this.chartPanel.ScrollControlIntoView(charts[0]);
             }
             Point point = new Point();
@@ -1560,19 +1562,19 @@ namespace RF_TestSystem
                 };
                 charts[i].Location = charPoint;
             }
-            if((int)(this.chartTabControl.Width - this.failTop3ModelFlowLayoutPanel.Width * 1.2)>0)
+            if ((int)(this.chartTabControl.Width - this.failTop3ModelFlowLayoutPanel.Width * 1.2) > 0)
             {
                 this.failTop3Chart.Width = (int)(this.chartTabControl.Width - this.failTop3ModelFlowLayoutPanel.Width * 1.2);
             }
-           
-            this.failTop3Chart.Height = (int)(this.chartTabControl.Height/2 - this.chartTabControl.Height * 0.05);
+
+            this.failTop3Chart.Height = (int)(this.chartTabControl.Height / 2 - this.chartTabControl.Height * 0.05);
 
             Point testHistorychartPoint = this.testHistorychart.Location;
-            if((int)(this.chartTabControl.Width - this.failTop3ModelFlowLayoutPanel.Width * 1.2)>0)
+            if ((int)(this.chartTabControl.Width - this.failTop3ModelFlowLayoutPanel.Width * 1.2) > 0)
             {
                 this.testHistorychart.Width = (int)(this.chartTabControl.Width - this.failTop3ModelFlowLayoutPanel.Width * 1.2);
             }
-            
+
             this.testHistorychart.Height = (int)(this.chartTabControl.Height / 2 - this.chartTabControl.Height * 0.05);
             //testHistorychartPoint.X = (int)(this.chartTabControl.Width * 0.1);
             testHistorychartPoint.Y = (int)(this.failTop3Chart.Location.Y + this.testHistorychart.Height + this.chartTabControl.Height * 0.02);
@@ -1592,7 +1594,7 @@ namespace RF_TestSystem
             Console.WriteLine(historyDataFlowLayoutPanelPoint);
 
             //第二页
-            Point picbPreviewPoint = this.picbPreview.Location;           
+            Point picbPreviewPoint = this.picbPreview.Location;
             this.picbPreview.Width = (int)(cameraSetingPermissionsPanel.Width * 0.48);
             this.picbPreview.Height = (int)(cameraSetingPermissionsPanel.Height / 3 * 2);
             picbPreviewPoint.X = (int)(this.cameraSetingPermissionsPanel.Width * 0.02);
@@ -1605,7 +1607,7 @@ namespace RF_TestSystem
             this.hWindowControl1.Height = (int)(cameraSetingPermissionsPanel.Height / 3 * 2);
 
             //第三页
-                //左
+            //左
             Point ftpManualPanel = this.ftpManualPanel.Location;
             this.ftpManualPanel.Width = (int)(uploadTabPage.Width * 0.4);
             this.ftpManualPanel.Height = (int)(uploadTabPage.Height * 0.093);
@@ -1626,7 +1628,7 @@ namespace RF_TestSystem
             oracleUploadRecordsPanelPoint.X = (int)(uploadTabPage.Width * 0.066);
             oracleUploadRecordsPanelPoint.Y = (int)(uploadTabPage.Height * 0.027) + ftpUploadRecordsPanelPoint.Y + this.ftpUploadRecordsPanel.Height;
             this.oracleUploadRecordsPanel.Location = oracleUploadRecordsPanelPoint;
-               //右
+            //右
             Point checkCameraPanelPoint = this.checkCameraPanel.Location;
             this.checkCameraPanel.Width = (int)(uploadTabPage.Width * 0.42);
             this.checkCameraPanel.Height = (int)(uploadTabPage.Height * 0.33);
@@ -1651,7 +1653,7 @@ namespace RF_TestSystem
 
             //设置页
             this.tabControlExt1.Width = this.settingTabPage.Width;
-            this.tabControlExt1.Height = (int)(this.settingTabPage.Height*4/5);
+            this.tabControlExt1.Height = (int)(this.settingTabPage.Height * 4 / 5);
 
             //Point saveInitButtonPoint = this.saveInitButton.Location;
             //this.saveInitButton.Width = (int)(settingTabPage.Width * (this.saveInitButton.Width/(float)settingTabPage.Width));
@@ -1672,15 +1674,15 @@ namespace RF_TestSystem
 
         private void mainTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            if(tabResizeFlag[this.mainTabControl.SelectedIndex] == true)
+
+            if (tabResizeFlag[this.mainTabControl.SelectedIndex] == true)
             {
                 Console.WriteLine("强制刷新界面");
                 rePaint();
                 this.Refresh();
                 tabResizeFlag[this.mainTabControl.SelectedIndex] = false;
             }
-           
+
 
 
             if (Gloable.cameraInfo.cameraModel != Gloable.cameraInfo.cameraAutoModelString)
@@ -1765,43 +1767,46 @@ namespace RF_TestSystem
 
         public void startTestThread()
         {
-            if(testThreadEntry == true)
+            testThreadMutex.WaitOne();
+            if (testThreadEntry == true)
             {
+                testThreadMutex.ReleaseMutex();
                 return;
             }
             testThreadEntry = true;
+            testThreadMutex.ReleaseMutex();
             if (systemStart == true)
             {
                 if ((Gloable.runningState.AnalyzerState == Gloable.sateHead.connect) && systemTesting == false)
                 {
-                    
+
                     Gloable.dataFilePath = this.dataPathTextBox.Text;
                     if ((Gloable.runningState.SystemSate != Gloable.sateHead.free) || systemTesting == true)
                     {
                         testThreadEntry = false;
                         return;
                     }
-                    
-                    if(manualTest == false)
+
+                    if (manualTest == false)
                     {
                         if (checkProbeLife() == false)
                         {
                             testThreadEntry = false;
                             return;
                         }
-                        if(checkYeild() == false)
+                        if (checkYeild() == false)
                         {
                             testThreadEntry = false;
                             return;
                         }
-                        
+
                     }
-                    if (Gloable.cameraInfo.cameraModel == Gloable.cameraInfo.cameramManualModelString || 
+                    if (Gloable.cameraInfo.cameraModel == Gloable.cameraInfo.cameramManualModelString ||
                         Gloable.cameraInfo.cameraModel == Gloable.cameraInfo.cameraAutoModelString)
                     {
                         if (manualTest == false && barcodeChecked == false)
-                        {                           
-                            if(checkBarcode(this.barcodeTextBox.Text, Gloable.loginInfo.barcodeFormat.Length) == false)
+                        {
+                            if (checkBarcode(this.barcodeTextBox.Text, Gloable.loginInfo.barcodeFormat.Length) == false)
                             {
                                 this.Invoke(new Action(() =>
                                 {
@@ -1811,20 +1816,20 @@ namespace RF_TestSystem
                                 testThreadEntry = false;
                                 return;
                             }
-                        }                                                                                         
+                        }
                     }
-                    
+
                     percentValue = continuouTest * Gloable.myTraces.Count;
                     this.Invoke(new Action(() =>
                     {
                         this.progressBar1.Maximum = percentValue;
                     }));
-                    
+
                     // 执行后台操作
-                    TestBackgroundWork.RunWorkerAsync();                 
-                
+                    TestBackgroundWork.RunWorkerAsync();
+
                 }
-                
+
             }
             else
             {
@@ -1837,7 +1842,7 @@ namespace RF_TestSystem
                 writeInfoTextBox("网分仪未连接！");
 
             }
-            testThreadEntry = false; 
+            testThreadEntry = false;
 
         }
 
@@ -1846,7 +1851,7 @@ namespace RF_TestSystem
         {
             Gloable.mutex.WaitOne();
             systemTesting = true;
-            
+
             string totalFail = Gloable.sateHead.pass;
             bool manual = manualTest;
             manualTest = false;
@@ -1858,6 +1863,12 @@ namespace RF_TestSystem
             }));
             for (int i = 0; i < continuouTest; i++)
             {
+
+                if (Gloable.testInfo.currentModel == Gloable.testInfo.developerModelString)
+                {
+                    totalFail = Gloable.sateHead.pass;
+                }
+
                 Gloable.testInfo.startTime = DateTime.Now.ToLocalTime().ToString();
                 Gloable.testInfo.failing = "";
                 Gloable.testInfo.failingValue = "";
@@ -1873,7 +1884,7 @@ namespace RF_TestSystem
                 {
                     clearChartData();
                     setSystemStateLabel(Gloable.sateHead.testing); //忙的测试状态  
-                   
+
                 }));
 
 
@@ -1894,7 +1905,7 @@ namespace RF_TestSystem
                     {
                         myTCPClient.clientSendMessge(Gloable.sateHead.fail);
                     }
-                       
+
                     systemTesting = false;
                     return;
                 }
@@ -1908,7 +1919,7 @@ namespace RF_TestSystem
                 {
                     Gloable.testInfo.overallResult = Gloable.sateHead.fail;
                 }
-                if (manual == true)
+                if (manual == true || Gloable.cameraInfo.cameraModel == Gloable.cameraInfo.cameramOffModelString)
                 {
                     Gloable.myBarcode.Clear();
                     Gloable.myBarcode.Add(this.barcodeTextBox.Text.Trim());
@@ -1929,15 +1940,15 @@ namespace RF_TestSystem
                     getHistoryTrace();
                     UpdateAnalysisTabPageEvent();
                 }
-                catch(Exception getHisErr)
+                catch (Exception getHisErr)
                 {
                     this.Invoke(new Action(() =>
                     {
                         writeInfoTextBox(getHisErr.Message);
                     }));
                 }
-                
-                if(OracleUploadFlag == true && manual == false)
+
+                if (OracleUploadFlag == true && manual == false)
                 {
                     this.Invoke(new Action(() =>
                     {
@@ -1947,10 +1958,10 @@ namespace RF_TestSystem
                     if (uploadOracle() == false)
                     {
                         totalFail = Gloable.runningState.TesterState;
-                        Gloable.runningState.TesterState = Gloable.sateHead.OracleFail;                       
+                        Gloable.runningState.TesterState = Gloable.sateHead.OracleFail;
                     }
                 }
-               
+
                 if (Gloable.runningState.TesterState == Gloable.sateHead.fail)
                 {
                     totalFail = Gloable.sateHead.fail;
@@ -1960,7 +1971,7 @@ namespace RF_TestSystem
                 {
                     updateTestInfo(totalFail);
                 }
-               
+
                 t.Enabled = false;
                 Thread.Sleep(50);
 
@@ -1971,7 +1982,7 @@ namespace RF_TestSystem
             {
                 myTCPClient.clientSendMessge(totalFail);
             }
-                         
+
             this.Invoke(new Action(() =>
             {
                 this.barcodeTextBox.Text = "";
@@ -2005,7 +2016,7 @@ namespace RF_TestSystem
         private void updateTestInfo(string result)
         {
             //计数+1
-            if(result == Gloable.sateHead.fail)
+            if (result == Gloable.sateHead.fail)
             {
                 if (Gloable.testInfo.currentModel == Gloable.testInfo.productionModelString)
                 {
@@ -2239,31 +2250,31 @@ namespace RF_TestSystem
 
         public void scanBarcodeEvent()
         {
-                scanning = true;
-                this.Invoke(new Action(() =>
-                {
-                    Console.WriteLine("开始扫码");
-                    writeInfoTextBox("开始扫码");
-                }));
-                
-                scanBarcode();
-               
-                this.Invoke(new Action(() =>
-                {
-                    Console.WriteLine("扫码完成");
-                    writeInfoTextBox("扫码完成");
-                }));
-                scanning = false;          
+            scanning = true;
+            this.Invoke(new Action(() =>
+            {
+                Console.WriteLine("开始扫码");
+                writeInfoTextBox("开始扫码");
+            }));
+
+            scanBarcode();
+
+            this.Invoke(new Action(() =>
+            {
+                Console.WriteLine("扫码完成");
+                writeInfoTextBox("扫码完成");
+            }));
+            scanning = false;
         }
 
         public void scanThread()
         {
-            if(scanning == false && systemTesting == false && systemStart == true)
+            if (scanning == false && systemTesting == false && systemStart == true)
             {
                 Thread scanThread = new Thread(scanBarcodeEvent);
                 scanThread.Start();
             }
-           
+
             //scanBarcode();
         }
 
@@ -2328,17 +2339,17 @@ namespace RF_TestSystem
                         if (shieldMCU == false)
                         {
                             myTCPClient.clientSendMessge("Barcode_NG");
-                        }                         
+                        }
                         successful = false;
                         scanBarcodeMutex.ReleaseMutex();
                         Thread.Sleep(30);
                         return successful;
 
-                    }                  
+                    }
                     this.Invoke(new Action(() =>
                     {
                         this.barcodeTextBox.Text = Gloable.myBarcode[0];
-                        this.barcodeTextBox.Text = this.barcodeTextBox.Text ;
+                        this.barcodeTextBox.Text = this.barcodeTextBox.Text;
                     }));
                     scanBarcodeMutex.ReleaseMutex();
                 }
@@ -2392,7 +2403,7 @@ namespace RF_TestSystem
                     if (checkBarcode(Gloable.myBarcode.First(), Gloable.loginInfo.barcodeFormat.Length) == false)
                     {
                         checkBarcodeErrorTimes++;
-                        if(checkBarcodeErrorTimes>10)
+                        if (checkBarcodeErrorTimes > 10)
                         {
                             t.Stop();
                             scanTime = false;
@@ -2441,7 +2452,7 @@ namespace RF_TestSystem
         }
         private void getBarcode(string barcode)
         {
-            if(Gloable.cameraInfo.cameraModel != Gloable.cameraInfo.cameramManualModelString)
+            if (Gloable.cameraInfo.cameraModel != Gloable.cameraInfo.cameramManualModelString)
             {
                 return;
             }
@@ -2483,9 +2494,9 @@ namespace RF_TestSystem
                     }
                 }));
             }
-            
+
         }
-      
+
         private bool checkABB(string barcode)
         {
             AvaCheckABB avaCheckABB = new AvaCheckABB("", Gloable.upLoadInfo.oracleID, Gloable.upLoadInfo.oraclePW, Gloable.upLoadInfo.oracleDB);
@@ -2593,15 +2604,15 @@ namespace RF_TestSystem
 
         }
 
-        private bool checkABB2(string barcode,ref string errCode)
+        private bool checkABB2(string barcode, ref string errCode)
         {
             AvaCheckBarcode2 avaCheckBarcode = new AvaCheckBarcode2(Gloable.upLoadInfo.oracleIP, Gloable.upLoadInfo.oracleID, Gloable.upLoadInfo.oraclePW, Gloable.upLoadInfo.oracleDB);
-    
+
             AvaCheckBarcodeABBConfig2 avaCheckBarcodeABBConfig2 = new AvaCheckBarcodeABBConfig2
             {
                 m_chk_tagABB = AVA_CHK_TAGABB2.tag_abb
             };
-            if (Convert.ToBoolean( Gloable.modelSetting.enableABBCheck) == true)
+            if (Convert.ToBoolean(Gloable.modelSetting.enableABBCheck) == true)
             {
                 avaCheckBarcodeABBConfig2.m_chk_useABB = true;
             }
@@ -2609,7 +2620,7 @@ namespace RF_TestSystem
             {
                 avaCheckBarcodeABBConfig2.m_chk_useABB = false;
             }
-            if(Convert.ToBoolean(Gloable.modelSetting.enableCPPCheck) == true)
+            if (Convert.ToBoolean(Gloable.modelSetting.enableCPPCheck) == true)
             {
                 avaCheckBarcodeABBConfig2.m_chk_useStopFail = true;
             }
@@ -2638,8 +2649,8 @@ namespace RF_TestSystem
             avaCheckBarcodeConfig2.m_testMode = getAbbTestModel();
 
             AvaCheckBarcodeErrorCode2 err = avaCheckBarcode.checkBarcode(avaCheckBarcodeConfig2,
-                                                                         Gloable.loginInfo.partNumber,Gloable.modelSetting.ABBLastStation, 
-                                                                         "RF", barcode,Gloable.loginInfo.machineName,Gloable.loginInfo.workOrder);
+                                                                         Gloable.loginInfo.partNumber, Gloable.modelSetting.ABBLastStation,
+                                                                         "RF", barcode, Gloable.loginInfo.machineName, Gloable.loginInfo.workOrder);
 
             switch (err.m_error_code)
             {
@@ -2765,7 +2776,7 @@ namespace RF_TestSystem
                     }
                 default:
                     {
-                        string text = "条码:{" + barcode + "} \r\nErrorCode:"+ err.m_error_code.ToString()+ " 检查异常";
+                        string text = "条码:{" + barcode + "} \r\nErrorCode:" + err.m_error_code.ToString() + " 检查异常";
                         Warning warning = new Warning();
                         warning.setWarning(text, WarningLevel.normal);
                         barcodeChecked = false;
@@ -2781,11 +2792,11 @@ namespace RF_TestSystem
             {
                 return AVA_CHK_TESTER2.type_inline;
             }
-            else if(Gloable.loginInfo.machineClass == Gloable.machineClassString.RetestMachine)
+            else if (Gloable.loginInfo.machineClass == Gloable.machineClassString.RetestMachine)
             {
                 return AVA_CHK_TESTER2.type_retest;
             }
-            else if((Gloable.loginInfo.machineClass == Gloable.machineClassString.OQCMechine))
+            else if ((Gloable.loginInfo.machineClass == Gloable.machineClassString.OQCMechine))
             {
                 return AVA_CHK_TESTER2.type_oqc;
             }
@@ -2797,11 +2808,11 @@ namespace RF_TestSystem
             {
                 return AVA_CHK_TESTMODE2.mode_go_no_go;
             }
-           else if (Gloable.testInfo.currentModel == Gloable.testInfo.productionModelString)
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.productionModelString)
             {
                 return AVA_CHK_TESTMODE2.mode_inline;
             }
-            else if(Gloable.testInfo.currentModel == Gloable.testInfo.retestModelString)
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.retestModelString)
             {
                 return AVA_CHK_TESTMODE2.mode_retest;
             }
@@ -2825,7 +2836,7 @@ namespace RF_TestSystem
             {
                 return AVA_CHK_TESTMODE2.mode_sorting;
             }
-            
+
             return AVA_CHK_TESTMODE2.mode_inline;
         }
         private bool checkBarcode(string barcode, int length)
@@ -2836,9 +2847,9 @@ namespace RF_TestSystem
             bool passiveSampleTest = false; //被动样本测试，未到样本测试时间传入样本条码
             if (barcode.Length == length)
             {
-                if(checkSampleBarcode(barcode) == true) //如果收到的条码是样本库的条码，则启动被动样本模式
+                if (checkSampleBarcode(barcode) == true) //如果收到的条码是样本库的条码，则启动被动样本模式
                 {
-                    if(sampleTestFlag == false)
+                    if (sampleTestFlag == false)
                     {
                         sampleTestFlag = true;
                         passiveSampleTest = true;
@@ -2847,9 +2858,9 @@ namespace RF_TestSystem
                             this.setModelButton.Text = "样本模式";
                             this.setModelButton.BackColor = Color.Crimson;
                         }));
-                    }                                     
+                    }
                 }
-                else if(sampleTestFlag == true)
+                else if (sampleTestFlag == true)
                 {
                     this.Invoke(new Action(() =>
                     {
@@ -2869,11 +2880,11 @@ namespace RF_TestSystem
                     {
                         this.Invoke(new Action(() =>
                         {
-                            writeInfoTextBox("条码ABB检测" );
+                            writeInfoTextBox("条码ABB检测");
                         }));
                         successful = checkABB2(barcode, ref abbErrCode);
                     }
-                    catch(Exception checkErr)
+                    catch (Exception checkErr)
                     {
                         this.Invoke(new Action(() =>
                         {
@@ -2883,9 +2894,9 @@ namespace RF_TestSystem
                                 setCurrentModel(Gloable.testInfo);
                             }
                         }));
-                                                                   
+
                         barcodeChecked = false;
-                        successful = false;                  
+                        successful = false;
                         return successful;
                     }
 
@@ -2895,13 +2906,13 @@ namespace RF_TestSystem
                         successful = false;
                         this.Invoke(new Action(() =>
                         {
-                            writeInfoTextBox("ABB检查失败!错误代码： "+ abbErrCode);
+                            writeInfoTextBox("ABB检查失败!错误代码： " + abbErrCode);
                             if (passiveSampleTest == true)
-                            {                             
+                            {
                                 setCurrentModel(Gloable.testInfo);
                             }
                         }));
-                        
+
                         return successful;
                     }
                 }
@@ -2926,7 +2937,7 @@ namespace RF_TestSystem
                 if (this.mainTabControl.SelectedIndex == 0)
                 {
                     halconDecoding = new halconDecoding(this.hWindowControl2);
-                }                  
+                }
                 else if (this.mainTabControl.SelectedIndex == 1)
                 {
                     halconDecoding = new halconDecoding(this.hWindowControl1);
@@ -2987,7 +2998,7 @@ namespace RF_TestSystem
                 rectNew = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
             }
             Bitmap bitmap2 = bitmap.Clone(rectNew, bitmap.PixelFormat);
-            if(bitmap2 != null && halconDecoding !=null)
+            if (bitmap2 != null && halconDecoding != null)
             {
                 string halconResult = halconDecoding.halconDecode(bitmap2);
                 Console.WriteLine("条码上锁");
@@ -3001,7 +3012,7 @@ namespace RF_TestSystem
                 Console.WriteLine("条码解锁");
             }
             //halcon解码模块------------------>
-            
+
             //<---------------------------------
 
             /*   // ZXing解码模块
@@ -3475,13 +3486,13 @@ namespace RF_TestSystem
 
         private void clearTestInfo()
         {
-           
 
-            if(Gloable.testInfo.currentModel == Gloable.testInfo.productionModelString)
+
+            if (Gloable.testInfo.currentModel == Gloable.testInfo.productionModelString)
             {
                 clearTestInfo(ref Gloable.testInfo.productionModel);
             }
-            else if(Gloable.testInfo.currentModel == Gloable.testInfo.retestModelString)
+            else if (Gloable.testInfo.currentModel == Gloable.testInfo.retestModelString)
             {
                 clearTestInfo(ref Gloable.testInfo.retestModel);
             }
@@ -3521,11 +3532,11 @@ namespace RF_TestSystem
             Model.scanTotalNumber = "0";
             Model.scanYield = "0";
 
-            if(Model.modelHistoryTraces != null)
+            if (Model.modelHistoryTraces != null)
             {
                 Model.modelHistoryTraces.Clear();
             }
-           
+
             this.testPassNumberTextBox.Text = "0";
             this.testFailNumberTextBox.Text = "0";
             this.testTotalNumberTextBox.Text = "0";
@@ -3553,7 +3564,7 @@ namespace RF_TestSystem
             {
                 Chart setChart = new Chart();
                 setChart.Name = "图表控件";
-                setChart.ChartAreas.Add("曲线图");          
+                setChart.ChartAreas.Add("曲线图");
 
                 setChart.Width = (this.chartPanel.Width);
                 setChart.Height = (this.chartPanel.Height / 2);
@@ -3659,8 +3670,8 @@ namespace RF_TestSystem
                 }
                 this.chartPanel.ScrollControlIntoView(charts[currentCurve]);
                 TestBackgroundWork.ReportProgress(currentCurve + (testLoop * charts.Count) + 1);
-               
-               
+
+
             }));
 
 
@@ -3903,7 +3914,7 @@ namespace RF_TestSystem
 
             uploadInfo.fixtureIP = this.fixtrueIPTextBox.Text;
             uploadInfo.fixturePort = this.fixtruePortTextBox.Text;
-            
+
             return uploadInfo;
         }
 
@@ -3919,7 +3930,7 @@ namespace RF_TestSystem
 
             modelSetting.FtpUpload = this.FTPucSwitch.Checked.ToString();
             modelSetting.OracleUpload = this.OracleucSwitch.Checked.ToString();
-            
+
             modelSetting.pcbEnable = this.pcbEnablrSwitch.Checked.ToString();
             modelSetting.testDelay = this.testDelaytextBox.Text.Trim();
             modelSetting.mandatorySample = this.sampleSwitch.Checked.ToString();
@@ -3951,14 +3962,14 @@ namespace RF_TestSystem
 
             this.FTPucSwitch.Checked = Convert.ToBoolean(modelSetting.FtpUpload);
             this.OracleucSwitch.Checked = Convert.ToBoolean(modelSetting.OracleUpload);
-            
+
             this.pcbEnablrSwitch.Checked = Convert.ToBoolean(modelSetting.pcbEnable);
-            this.testDelaytextBox.Text = modelSetting.testDelay; 
+            this.testDelaytextBox.Text = modelSetting.testDelay;
             this.sampleSwitch.Checked = Convert.ToBoolean(modelSetting.mandatorySample);
             this.sampleIntervalTimeTextBox.Text = modelSetting.sampleIntervalTime;
             this.lastSampleTimeTextBox.Text = modelSetting.sampleTestTime;
 
-            this.yieldEnableSwitch.Checked = Convert.ToBoolean( modelSetting.yieldManageEnable);
+            this.yieldEnableSwitch.Checked = Convert.ToBoolean(modelSetting.yieldManageEnable);
             this.warnYieldTextBox.Text = modelSetting.warnYield;
             this.stopTestYieldTextBox.Text = modelSetting.stopYield;
             this.baseYieldTextBox.Text = modelSetting.baseYield;
@@ -3968,16 +3979,17 @@ namespace RF_TestSystem
             this.probeResetWarnTextBox.Text = modelSetting.probeWarnTime;
 
             this.heartbeatSwitch.Checked = Convert.ToBoolean(modelSetting.heartbeatEnable);
-            try 
+            try
             {
                 int uper = Convert.ToInt32(modelSetting.probeUperTime);
                 int use = Convert.ToInt32(modelSetting.probeUseTime);
                 this.probeRemainingTextBox.Text = (uper - use).ToString();
-            }catch(Exception)
-            {
-                
             }
-            
+            catch (Exception)
+            {
+
+            }
+
         }
 
         public void setLoginInfoToDataTable(LoginInfo LoginInfo)
@@ -3996,7 +4008,7 @@ namespace RF_TestSystem
         public void setCameraInfoToDataTable(CameraInfo cameraInfo)
         {
 
-            
+
             this.scanModelComboBox.SelectedItem = Gloable.cameraInfo.cameraModel;
 
             searchCamera();//设置摄像头
@@ -4042,7 +4054,7 @@ namespace RF_TestSystem
         {
 
             List<string> rawLimit = Gloable.myOutPutStream.getlimitStringFromFile(agilentConfig.limitPath + currentLimitName);
-            if(rawLimit.Count==0)
+            if (rawLimit.Count == 0)
             {
                 return;
             }
@@ -4090,7 +4102,7 @@ namespace RF_TestSystem
                     string realPartDownLimit = "Lower Limits----->,,,,,," + Gloable.myOutPutStream.joinData(realLimit, ",");
                     string realPartPCB = "PCB Enable----->,,,,,," + Gloable.myOutPutStream.joinData(realLimit, ",");
                     string realPartMeasurement = "Measurement Unit----->";
-                    
+
 
                     string imaginaryPartHead = "Trace" + (i + 1).ToString() + " Imaginary Part";
                     string imaginaryPartUplimit = "Upper Limits----->,,,,,," + Gloable.myOutPutStream.joinData(imaginaryUpLimit, ",");
@@ -4104,7 +4116,7 @@ namespace RF_TestSystem
                     Gloable.myOutPutStream.saveToCsv(agilentConfig.limitPath + currentLimitName, realPartDownLimit, false);
                     Gloable.myOutPutStream.saveToCsv(agilentConfig.limitPath + currentLimitName, realPartPCB, false);
                     Gloable.myOutPutStream.saveToCsv(agilentConfig.limitPath + currentLimitName, realPartMeasurement, false);
-                    
+
                     Gloable.myOutPutStream.saveToCsv(agilentConfig.limitPath + currentLimitName, newLine, false);
                     Gloable.myOutPutStream.saveToCsv(agilentConfig.limitPath + currentLimitName, imaginaryPartHead, false);
                     Gloable.myOutPutStream.saveToCsv(agilentConfig.limitPath + currentLimitName, imaginaryPartUplimit, false);
@@ -4182,7 +4194,7 @@ namespace RF_TestSystem
                 getlimit.rawImaginaryPartDownLimit = imaginaryPartLimitString[i];
                 getlimit.tracesImaginaryPartDownLimitStringType = Gloable.myOutPutStream.splitData(getlimit.rawImaginaryPartDownLimit, ',');
                 getlimit.tracesImaginaryPartDownLimitDoubleType = Gloable.myOutPutStream.stringToDouble(getlimit.tracesImaginaryPartDownLimitStringType);
-                
+
                 i++;
                 getlimit.rawRealPartPcpEnable = realPartLimitString[i];
                 getlimit.tracesRealPartPcbEnableStringType = Gloable.myOutPutStream.splitData(getlimit.rawRealPartPcpEnable, ',');
@@ -4250,17 +4262,17 @@ namespace RF_TestSystem
                     return checkOK = false;
                 if (OriginTraces[i].formate != TableTrace[i].formate)
                     return checkOK = false;
-            }           
+            }
             return checkOK;
 
         }
-       
+
         public bool checkModelSettingChange(ModelSetting OriginModelSetting, ModelSetting TableModelSetting)
         {
-            if(OriginModelSetting.Equals(TableModelSetting))
+            if (OriginModelSetting.Equals(TableModelSetting))
             {
                 return true;
-            }          
+            }
             else
             {
                 return false;
@@ -4269,7 +4281,7 @@ namespace RF_TestSystem
 
         public bool checkUploadInfoConfigChange(UpLoadInfo OriginUpLoadInfo, UpLoadInfo TableUpLoadInfo)
         {
-            if(OriginUpLoadInfo.Equals(TableUpLoadInfo))
+            if (OriginUpLoadInfo.Equals(TableUpLoadInfo))
             {
                 return true;
             }
@@ -4277,7 +4289,7 @@ namespace RF_TestSystem
             {
                 return false;
             }
-            
+
         }
         public void setAnalyzerConfigToTable(AnalyzerConfig agilentConfig)
         {
@@ -4368,8 +4380,8 @@ namespace RF_TestSystem
                 {
                     Directory.CreateDirectory(path);
                 }
-                
-                if (File.Exists(fullPath + "_OracleUploadLog.txt")==false)
+
+                if (File.Exists(fullPath + "_OracleUploadLog.txt") == false)
                 {
                     File.Create(fullPath + "_OracleUploadLog.txt").Close();//创建该文件，如果路径文件夹不存在，则报错
                 }
@@ -4433,7 +4445,7 @@ namespace RF_TestSystem
                 {
                     MessageBox.Show(e.Message);
                     path = Application.StartupPath;
-                    
+
                 }
 
             }
@@ -4455,7 +4467,7 @@ namespace RF_TestSystem
             //            return successful = false;
             //        }
             //}
-            
+
             successful = myIniFile.writeAnalyzerConfigToInitFile(getAnalyzerFromConfigTable());
             string tracesInfoConifgFilePath = Gloable.configPath + Gloable.tracesInfoConifgFileName;
             string upLoadInfoConifgFilePath = Gloable.configPath + Gloable.upLoadInfoConifgFileName;
@@ -4649,7 +4661,7 @@ namespace RF_TestSystem
             {
                 this.simpleDataGridView.DataSource = dt;
             }
-                
+
         }
 
         private void updateAnalysisTabComboBox()
@@ -4687,7 +4699,7 @@ namespace RF_TestSystem
             this.analysisDataComboBox.Items.Add("Pass");
             this.analysisDataComboBox.Items.Add("Fail");
 
-            foreach(TracesInfo trace in  Gloable.myTraces)
+            foreach (TracesInfo trace in Gloable.myTraces)
             {
                 this.analysisSeriesComboBox.Items.Add(trace.meas + trace.note);
             }
@@ -4701,7 +4713,7 @@ namespace RF_TestSystem
         private void set1Series2AnalysisChart(ModeInfo modeInfo)
         {
             int seriesTypeIndex = this.analysisSeriesComboBox.SelectedIndex;
-           
+
             if (modeInfo.modelHistoryTraces.Count < seriesTypeIndex)
             {
                 return;
@@ -4723,7 +4735,7 @@ namespace RF_TestSystem
                 {
                     series.Points.DataBindY(modeInfo.modelHistoryTraces[this.analysisSeriesComboBox.SelectedIndex].seriesTypeFail.Last());
                     this.testHistorychart.Series.Add(series);
-                    
+
                 }
             }
             else
@@ -4744,7 +4756,7 @@ namespace RF_TestSystem
                 }
             }
 
-            
+
         }
         private void update1Series2AnalysisChart()
         {
@@ -4786,11 +4798,11 @@ namespace RF_TestSystem
         private void setALLSeries2AnalysisChart(ModeInfo modeInfo)
         {
             int seriesTypeIndex = this.analysisSeriesComboBox.SelectedIndex;
-            if(modeInfo.modelHistoryTraces == null)
+            if (modeInfo.modelHistoryTraces == null)
             {
                 return;
             }
-            if (modeInfo.modelHistoryTraces.Count ==0)
+            if (modeInfo.modelHistoryTraces.Count == 0)
             {
                 return;
             }
@@ -4798,32 +4810,32 @@ namespace RF_TestSystem
             {
                 return;
             }
-            if(this.testHistorychart.Series.Count()<100)
+            if (this.testHistorychart.Series.Count() < 100)
             {
                 this.testHistorychart.Series.Clear();
-                for(int i=0;i<100;i++)
+                for (int i = 0; i < 100; i++)
                 {
                     Series series = new Series();
                     series.ChartType = SeriesChartType.Spline;
                     series.Name = this.testHistorychart.Series.Count().ToString();
                     this.testHistorychart.Series.Add(series);
                 }
-                
+
             }
             if (this.analysisDataComboBox.SelectedIndex == 1)
             {
                 if (modeInfo.modelHistoryTraces[this.analysisSeriesComboBox.SelectedIndex].seriesTypePass.Count > 0)
                 {
                     for (int i = 0; i < modeInfo.modelHistoryTraces[this.analysisSeriesComboBox.SelectedIndex].seriesTypePass.Count; i++)
-                    {                    
-                        if(i<100)
+                    {
+                        if (i < 100)
                         {
                             this.testHistorychart.Series[i].Points.DataBindY(modeInfo.modelHistoryTraces[this.analysisSeriesComboBox.SelectedIndex].seriesTypePass[i]);
                         }
-                                            
+
                     }
                 }
-               
+
             }
             else if (this.analysisDataComboBox.SelectedIndex == 2)
             {
@@ -4863,12 +4875,12 @@ namespace RF_TestSystem
                     }
                 }
             }
-            
+
         }
         private void updateALLHistoryTrace()
         {
             this.testHistorychart.Series.Clear();
-            
+
             if (this.analysisModelComboBox.SelectedItem.ToString() == Gloable.testInfo.productionModelString)
             {
                 this.testHistorychart.Titles[0].Text = "测试历史（InlineModel）";
@@ -4914,53 +4926,53 @@ namespace RF_TestSystem
         }
 
         private void setTop3FailChart(ModeInfo modeInfo)
-        {           
+        {
             if (modeInfo.modelHistoryTraces == null)
             {
                 return;
             }
             List<int> failNum = new List<int>();
-            for(int i =0;i< modeInfo.modelHistoryTraces.Count;i++)
+            for (int i = 0; i < modeInfo.modelHistoryTraces.Count; i++)
             {
                 failNum.Add(modeInfo.modelHistoryTraces[i].failStatistical);
             }
-            int[,] failMap = new int[3,2];
+            int[,] failMap = new int[3, 2];
             for (int top = 0; top < 3; top++)
             {
                 failMap[top, 0] = top;
                 failMap[top, 1] = failNum[top];
             }
-            if(this.failTop3Chart.Series.Count==0)
-            {           
+            if (this.failTop3Chart.Series.Count == 0)
+            {
                 Series series = new Series();
                 series.Name = this.failTop3Chart.Series.Count.ToString();
                 series.ChartType = SeriesChartType.Column;
                 series.Color = Color.Red;
-                this.failTop3Chart.Series.Add(series);              
+                this.failTop3Chart.Series.Add(series);
             }
             this.failTop3Chart.Series[0].Points.Clear();
-            for (int top =0;top<3;top++)
+            for (int top = 0; top < 3; top++)
             {
                 for (int i = 0; i < failNum.Count; i++)
                 {
-                    if(failMap[top, 1]< failNum[i])
+                    if (failMap[top, 1] < failNum[i])
                     {
                         failMap[top, 0] = i;
                         failMap[top, 1] = failNum[i];
-                    }                 
-                    
+                    }
+
                 }
                 failNum[failMap[top, 0]] = 0;
-                
+
                 this.failTop3Chart.Series[0].Points.AddXY(Gloable.myTraces[failMap[top, 0]].meas, failMap[top, 1]);
-            }          
+            }
 
         }
         private void updateTop3FailChart()
         {
             this.Invoke(new Action(() =>
             {
-                this.failTop3Chart.Series.Clear();               
+                this.failTop3Chart.Series.Clear();
                 if (this.analysisModelComboBox.SelectedItem.ToString() == Gloable.testInfo.productionModelString)
                 {
                     setTop3FailChart(Gloable.testInfo.productionModel);
@@ -4993,7 +5005,7 @@ namespace RF_TestSystem
         }
         private void getHistoryTrace()
         {
-            
+
             if (Gloable.testInfo.currentModel == Gloable.testInfo.productionModelString)
             {
                 getModelTypeHistoryTrace(ref Gloable.testInfo.productionModel);
@@ -5036,7 +5048,7 @@ namespace RF_TestSystem
             if (modeInfo.modelHistoryTraces.Count != myTraces.Count)
             {
                 modeInfo.modelHistoryTraces.Clear();
-                
+
                 for (int i = 0; i < myTraces.Count; i++)
                 {
                     HistoryTraces historyTraces = new HistoryTraces();
@@ -5046,8 +5058,8 @@ namespace RF_TestSystem
             for (int i = 0; i < modeInfo.modelHistoryTraces.Count; i++)
             {
                 if (myTraces[i].state == Gloable.sateHead.pass)
-                {  
-                    if (modeInfo.modelHistoryTraces[i].seriesTypePass.Count>99)
+                {
+                    if (modeInfo.modelHistoryTraces[i].seriesTypePass.Count > 99)
                     {
                         modeInfo.modelHistoryTraces[i].seriesTypePass.RemoveAt(0);
                     }
@@ -5111,8 +5123,8 @@ namespace RF_TestSystem
                     setCurrentModel(Gloable.testInfo);
                 }
             }
-            
-        }      
+
+        }
 
         public bool deployTestSystem()
         {
@@ -5180,10 +5192,10 @@ namespace RF_TestSystem
             {
                 list = (List<BarsamInfo>)dt;
             }
-               
+
             list.Add(barsamInfo);
             string json = JsonHelper.ObjectToJson(list);//list集合转json字符串
-            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\"+Gloable.loginInfo.partNumber+"_SampleDB.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加                    
+            StreamWriter sw = new StreamWriter(Application.StartupPath + "\\" + Gloable.loginInfo.partNumber + "_SampleDB.txt", false, System.Text.Encoding.UTF8);//参数2：false覆盖;true追加                    
             sw.WriteLine(json);//写入文件
             sw.Close();
         }
@@ -5321,7 +5333,7 @@ namespace RF_TestSystem
                         }
                         Gloable.tcpAliveFlag = true;
                         myTCPClient.clientSendMessge("READY?\r\n");
-                        if(Gloable.modelSetting.heartbeatEnable == true.ToString())
+                        if (Gloable.modelSetting.heartbeatEnable == true.ToString())
                         {
                             heartBeatTimer.Start();
                         }
@@ -5382,7 +5394,7 @@ namespace RF_TestSystem
                                 writeInfoTextBox("网分仪连接失败！");
                             }));
                             //MessageBox.Show("连接失败！");
-                           
+
                             return false;
                         }
                         connMsg = Gloable.myAnalyzer.Connect(addrss);
@@ -5399,7 +5411,7 @@ namespace RF_TestSystem
                 {
                     writeInfoTextBox("网分仪已连接！");
                     setSystemStateLabel(Gloable.sateHead.connect);
-                
+
                     analyzerConnect = true;
                     this.connectButton.Enabled = true;
                     this.connectButton.Text = "   断开";
@@ -5413,16 +5425,15 @@ namespace RF_TestSystem
             }
             if (shieldMCU == false)
             {
-               
+
                 if (tcpClientConnect == false)
                 {
-                    
+
                     myTCPClient = new TCPClient();
                     myTCPClient.commandComingEvent += tcpCommandComming;
                     myTCPClient.TcpClientDisconnectEven += MyTCPClient_TcpClientDisconnectEven;
-
                     myTCPClient.TcpMessageEvent += MyTCPClient_TcpMessageEvent;
-                    
+
                     this.Invoke(new Action(() =>
                     {
                         writeInfoTextBox("正在连接下位机");
@@ -5430,36 +5441,37 @@ namespace RF_TestSystem
                     Thread.Sleep(20);
                     if (myTCPClient.clientConncet(this.fixtrueIPTextBox.Text.Trim(), Convert.ToInt32(this.fixtruePortTextBox.Text.Trim())) == true)
                     {
-                        
+
                         this.Invoke(new Action(() =>
                         {
                             writeInfoTextBox("下位机连接成功！");
                         }));
                         Thread.Sleep(20);
-                      
-                    }                   
+
+                    }
                     else
                     {
                         myTCPClient.clientshutdowm();
+                        myTCPClient = null;
                         if (analyzerConnect == true)
                         {
                             Gloable.myAnalyzer.disConnect();
                         }
-                    this.Invoke(new Action(() =>
-                    {
-                        this.connectButton.Enabled = true;
-                        this.connectButton.Text = "   连接";
-                        this.connectButton.ImageIndex = 0;
-                        analyzerConnect = false;
-                        setSystemStateLabel(Gloable.sateHead.disconnect);
-                        writeInfoTextBox("下位机连接失败！");
-                    }));
-                    Thread.Sleep(20);
-                    //MessageBox.Show("下位机连接失败");
-                    return false;
+                        this.Invoke(new Action(() =>
+                        {
+                            this.connectButton.Enabled = true;
+                            this.connectButton.Text = "   连接";
+                            this.connectButton.ImageIndex = 0;
+                            analyzerConnect = false;
+                            setSystemStateLabel(Gloable.sateHead.disconnect);
+                            writeInfoTextBox("下位机连接失败！");
+                        }));
+                        Thread.Sleep(20);
+                        //MessageBox.Show("下位机连接失败");
+                        return false;
                     }
-                 }
-               
+                }
+
             }
 
             return true;
@@ -5470,13 +5482,13 @@ namespace RF_TestSystem
         {
             heartBeatTimer.Stop();
             Console.WriteLine("tcp断开连接");
-            
-            while (systemTesting == true);
+
+            while (systemTesting == true) ;
             this.Invoke(new Action(() =>
             {
                 if (systemStart == true)
                 {
-                   // MessageBox.Show("与下位机连接断开！");
+                    // MessageBox.Show("与下位机连接断开！");
                     //if (Gloable.runningState.SystemSate != Gloable.sateHead.free)
                     //{
                     //    //string systemStartMesg = MessageBox.Show("测试仍在运行，强制关闭可能会引发不可预估的后果！", "测试系统仍在运行", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk).ToString();
@@ -5493,7 +5505,7 @@ namespace RF_TestSystem
                     //    DisConnectCamera();
                     //    //}
                     //    return;
- 
+
                     //}
                     DisConnectCamera();
                     setSystemStateLabel(Gloable.sateHead.free);
@@ -5504,9 +5516,9 @@ namespace RF_TestSystem
                     this.systemStartButton.ImageIndex = 0;
                     this.startButton.Enabled = false;
                 }
-               
-                    systemDisconnect();
-                
+
+                systemDisconnect();
+
             }));
             Thread.Sleep(20);
         }
@@ -5516,7 +5528,7 @@ namespace RF_TestSystem
             heartBeatTimer.Stop();
             //if (analyzerConnect == true)
             //{
-                Gloable.myAnalyzer.disConnect();
+            Gloable.myAnalyzer.disConnect();
             //}
             analyzerConnect = false;
             this.connectButton.Text = "   连接";
@@ -5528,9 +5540,10 @@ namespace RF_TestSystem
             {
                 myTCPClient.clientshutdowm();
                 tcpClientConnect = false;
+                myTCPClient = null;
 
             }
-           // oracleHelper.CloseOracleConnection();
+            // oracleHelper.CloseOracleConnection();
         }
 
         private bool checkProbeLife()
@@ -5540,7 +5553,7 @@ namespace RF_TestSystem
                 int uper = Convert.ToInt32(Gloable.modelSetting.probeUperTime);
                 int use = Convert.ToInt32(Gloable.modelSetting.probeUseTime);
                 int warn = Convert.ToInt32(Gloable.modelSetting.probeWarnTime);
-                
+
                 use++;
                 int remain = uper - use;
                 this.Invoke(new Action(() =>
@@ -5548,16 +5561,16 @@ namespace RF_TestSystem
                     this.probeRemainingTextBox.Text = remain.ToString();
                     this.probeUseTextBox.Text = use.ToString();
                 }));
-               
+
                 Gloable.modelSetting.probeUseTime = use.ToString();
                 string modelSettingConifgFilePath = Gloable.configPath + Gloable.modelSettingConfigFileName;
-                IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime",  Gloable.modelSetting.probeUseTime);
+                IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeUseTime", Gloable.modelSetting.probeUseTime);
                 IniOP.INIWriteValue(modelSettingConifgFilePath, "modelSetting", "probeWarnTime", Gloable.modelSetting.probeWarnTime);
-               
-                if (remain < warn && remain>0)
+
+                if (remain < warn && remain > 0)
                 {
                     Warning warning = new Warning();
-                    warning.setWarningString("探针使用寿命小于"+Gloable.modelSetting.probeWarnTime + "！", WarningLevel.normal);
+                    warning.setWarningString("探针使用寿命小于" + Gloable.modelSetting.probeWarnTime + "！", WarningLevel.normal);
                     warning.timerShow(3);
                     return true;
                 }
@@ -5569,7 +5582,7 @@ namespace RF_TestSystem
                     return false;
                 }
             }
-            catch(Exception error)
+            catch (Exception error)
             {
                 Console.WriteLine(error.Message);
             }
@@ -5595,11 +5608,11 @@ namespace RF_TestSystem
                 this.probeUseTextBox.Text = Gloable.modelSetting.probeUseTime;
                 this.probeRemainingTextBox.Text = remain.ToString();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
-           
+
         }
 
         private bool checkYeild()
@@ -5613,7 +5626,7 @@ namespace RF_TestSystem
 
                 int currentTesrNumber = Convert.ToInt32(this.testTotalNumberTextBox.Text);
                 int baseYield = Convert.ToInt32(Gloable.modelSetting.baseYield);
-                if(currentTesrNumber< baseYield)
+                if (currentTesrNumber < baseYield)
                 {
                     if (yeildTextBoxFlashTimer.Enabled == true)
                     {
@@ -5623,11 +5636,11 @@ namespace RF_TestSystem
                     this.TestYieldTextBox.BackColor = Color.LightSeaGreen;
                     return true;
                 }
-                if (currentYeild< warnYeild && currentYeild>= stopYield)
+                if (currentYeild < warnYeild && currentYeild >= stopYield)
                 {
                     flashYeildTextBox(Color.Yellow);
                 }
-                else if(currentYeild< stopYield)
+                else if (currentYeild < stopYield)
                 {
                     flashYeildTextBox(Color.Red);
                     if (Gloable.modelSetting.yieldManageEnable == true.ToString())
@@ -5635,12 +5648,12 @@ namespace RF_TestSystem
                         Warning warning = new Warning();
                         warning.setWarning("良率低于" + stopYield + "%，已停机！", WarningLevel.normal);
                         return false;
-                    }   
+                    }
 
                 }
                 else
                 {
-                   
+
                     if (yeildTextBoxFlashTimer.Enabled == true)
                     {
                         yeildTextBoxFlashTimer.Enabled = false;
@@ -5652,7 +5665,7 @@ namespace RF_TestSystem
             }
             catch
             {
-                
+
             }
             return true;
         }
@@ -5679,7 +5692,7 @@ namespace RF_TestSystem
             {
                 DialogResult dialogResult = MessageBox.Show("是否录入数据库？", "样本录入", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (dialogResult != DialogResult.OK)
-                {                   
+                {
                     return false;
                 }
                 this.Invoke(new Action(() =>
@@ -5723,7 +5736,7 @@ namespace RF_TestSystem
 
                         }));
 
-                        
+
                         return false;
                     }
                 }
@@ -5736,7 +5749,7 @@ namespace RF_TestSystem
                     return false;
                 }
                 writeSample2Local(barsamInfo);
-                this.Invoke(new Action(()=> 
+                this.Invoke(new Action(() =>
                 {
                     var dt = readSampleFromLocal();
                     this.simplePartNumTextBox.Text = Gloable.loginInfo.partNumber;
@@ -5745,7 +5758,7 @@ namespace RF_TestSystem
                         this.simpleDataGridView.DataSource = dt;
                     }
                 }));
-               
+
                 return true;
             }
             #endregion
@@ -5777,9 +5790,9 @@ namespace RF_TestSystem
                 };
 
                 if (checkSampleResult(barsamrecPackage) != true)
-                {                   
+                {
                     this.Invoke(new Action(() =>
-                    {                        
+                    {
                         writeInfoTextBox("样本结果匹配失败！");
                         MessageBox.Show("样本结果匹配失败！");
                     }));
@@ -5789,7 +5802,7 @@ namespace RF_TestSystem
                 {
                     writeInfoTextBox("Oracle数据上传");
                 }));
-             
+
                 if (oracleHelper.loginOracle(Gloable.upLoadInfo.sampleDB, Gloable.upLoadInfo.sampleID, Gloable.upLoadInfo.samplePW))
                 {
                     if (!oracleHelper.insertData(Gloable.upLoadInfo.sampleTB, barsamrecPackage.getBaesamInfoComlumnPackge(), barsamrecPackage.getBarsamInfoPackge()))
@@ -5799,7 +5812,7 @@ namespace RF_TestSystem
                             writeInfoTextBox("Oracle上传失败！");
 
                         }));
-                        
+
                     }
                 }
                 else
@@ -5809,10 +5822,10 @@ namespace RF_TestSystem
                         writeInfoTextBox("Oracle连接失败！");
                         MessageBox.Show("Oracle连接失败！");
                     }));
-                }                               
+                }
                 this.Invoke(new Action(() =>
                 {
-                   
+
                     Gloable.modelSetting.sampleTestTime = DateTime.Now.ToString();
                     IniOP.INIWriteValue(Gloable.configPath + Gloable.modelSettingConfigFileName, "modelSetting", "sampleTestTime", Gloable.modelSetting.sampleTestTime);
                     this.lastSampleTimeTextBox.Text = Gloable.modelSetting.sampleTestTime;
@@ -5843,7 +5856,7 @@ namespace RF_TestSystem
                 NG_ITEM = Gloable.testInfo.failing,
                 NG_ITEM_VAL = Gloable.testInfo.failingValue
             };
-            #if false
+#if false
             #region --- 鹏鼎API方式上传 ---
                         string errMsg = "";
                         AvaCheckBarcode2 abb = new AvaCheckBarcode2(Gloable.upLoadInfo.oracleIP, Gloable.upLoadInfo.oracleID,
@@ -5921,23 +5934,23 @@ namespace RF_TestSystem
                             }));
                         }
             #endregion
-            #endif
+#endif
             #region --- 本地客户端方式上传 --
-                        if (oracleHelper.loginOracle(Gloable.upLoadInfo.oracleDB, Gloable.upLoadInfo.oracleID, Gloable.upLoadInfo.oraclePW))
-                        {
-                            if (oracleHelper.insertData(Gloable.upLoadInfo.oracleTB, oracleDataPackage.getOracleColumnPackege(), oracleDataPackage.getOraclePackege()))
-                            {
-                                uploadSuccessful = true;
-                            }
-                        }
-                        else
-                        {
-                            this.Invoke(new Action(() =>
-                            {
-                                writeInfoTextBox("Oracle连接失败！");
-                                MessageBox.Show("Oracle连接失败！");
-                            }));
-                        }
+            if (oracleHelper.loginOracle(Gloable.upLoadInfo.oracleDB, Gloable.upLoadInfo.oracleID, Gloable.upLoadInfo.oraclePW))
+            {
+                if (oracleHelper.insertData(Gloable.upLoadInfo.oracleTB, oracleDataPackage.getOracleColumnPackege(), oracleDataPackage.getOraclePackege()))
+                {
+                    uploadSuccessful = true;
+                }
+            }
+            else
+            {
+                this.Invoke(new Action(() =>
+                {
+                    writeInfoTextBox("Oracle连接失败！");
+                    MessageBox.Show("Oracle连接失败！");
+                }));
+            }
 
             #endregion
 
@@ -5948,7 +5961,7 @@ namespace RF_TestSystem
                     writeOracleUpdateRecordDateBase(oracleDataPackage.BARCODE, DateTime.Now, "false");
                     writeInfoTextBox("Oracle上传失败");
                 }));
-               
+
                 return false;
             }
             else
@@ -5960,7 +5973,7 @@ namespace RF_TestSystem
                 }));
                 return true;
             }
-#endregion
+            #endregion
         }
 
         private void reDeployTestSystem()
@@ -5975,7 +5988,7 @@ namespace RF_TestSystem
 
                     if (Gloable.cameraInfo.cameraModel == (Gloable.cameraInfo.cameraAutoModelString))
                     {
-                        connectCamera();                      
+                        connectCamera();
                     }
                     else
                     {
@@ -6001,9 +6014,9 @@ namespace RF_TestSystem
                 }
             }
         }
-#endregion
+        #endregion
 
-#region - 逻辑事件 -
+        #region - 逻辑事件 -
 
         public void tcpCommandComming(string comm)
         {
@@ -6031,10 +6044,10 @@ namespace RF_TestSystem
             {
                 if (Gloable.modelSetting.mandatorySample == true.ToString())
                 {
-                    if (((DateTime.Now - Convert.ToDateTime( Gloable.modelSetting.sampleTestTime))).TotalHours >= Convert.ToDouble( Gloable.modelSetting.sampleIntervalTime))
+                    if (((DateTime.Now - Convert.ToDateTime(Gloable.modelSetting.sampleTestTime))).TotalHours >= Convert.ToDouble(Gloable.modelSetting.sampleIntervalTime))
                     {
-                       
-                        if(systemTesting == false && sampleTestFlag == false)
+
+                        if (systemTesting == false && sampleTestFlag == false)
                         {
 
                             writeInfoTextBox("请进行样本测试");
@@ -6043,11 +6056,11 @@ namespace RF_TestSystem
                             {
                                 this.setModelButton.Text = "强制样本";
                                 this.setModelButton.BackColor = Color.Crimson;
-                            }                                                                          
+                            }
                         }
-                       
+
                     }
-                    if(Convert.ToDateTime(Gloable.modelSetting.sampleTestTime).AddHours(Convert.ToDouble(Gloable.modelSetting.sampleIntervalTime)) > DateTime.Now)
+                    if (Convert.ToDateTime(Gloable.modelSetting.sampleTestTime).AddHours(Convert.ToDouble(Gloable.modelSetting.sampleIntervalTime)) > DateTime.Now)
                     {
                         string sampleTime = (Convert.ToDateTime(Gloable.modelSetting.sampleTestTime).AddHours(Convert.ToDouble(Gloable.modelSetting.sampleIntervalTime)) - DateTime.Now).ToString().Substring(0, 8);
                         this.sampleTimeTextBox.Text = sampleTime;
@@ -6055,22 +6068,22 @@ namespace RF_TestSystem
                     else
                     {
                         this.sampleTimeTextBox.Text = "00:00:00";
-                    }                  
+                    }
                 }
                 else
                 {
-                    if(this.sampleTimeTextBox.Text != "样本关闭")
+                    if (this.sampleTimeTextBox.Text != "样本关闭")
                     {
                         this.sampleTimeTextBox.Text = "样本关闭";
                     }
-                    if(sampleTestFlag == true && systemTesting == false)
+                    if (sampleTestFlag == true && systemTesting == false)
                     {
                         sampleTestFlag = false;
                         setCurrentModel(Gloable.testInfo);
                     }
-                    
+
                 }
-                
+
             }));
 
 
@@ -6086,16 +6099,16 @@ namespace RF_TestSystem
                     updateTop3FailChart();
                 }));
             }
-            catch(Exception updateErr)
+            catch (Exception updateErr)
             {
                 Console.WriteLine(updateErr.Message);
             }
-          
+
         }
 
         private void YeildTextBoxFlashTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            if(yeildTextBoxFlash == false)
+            if (yeildTextBoxFlash == false)
             {
                 this.Invoke(new Action(() =>
                 {
@@ -6116,9 +6129,9 @@ namespace RF_TestSystem
         }
         private void MyTCPClient_TcpMessageEvent(string Msg)
         {
-            this.Invoke(new Action(()=>
+            this.Invoke(new Action(() =>
             {
-                if(this.TCPRecordTextBox.Text.Length>40960)
+                if (this.TCPRecordTextBox.Text.Length > 40960)
                 {
                     this.TCPRecordTextBox.Text = this.TCPRecordTextBox.Text.Remove(0, 20480);
                 }
@@ -6139,7 +6152,6 @@ namespace RF_TestSystem
             }
             else
             {
-
                 Warning warning = new Warning();
                 Thread.Sleep(20);
 
@@ -6148,28 +6160,26 @@ namespace RF_TestSystem
                     Thread.Sleep(1000);
                     Console.WriteLine("使用System.Threading.Tasks.Task执行异步操作.");
                     MyTCPClient_TcpClientDisconnectEven();
-                   
+
                     Thread.Sleep(20);
                     for (int i = 0; i < 30; i++)
                     {
                         if (systemReConnect())
-                        {                          
+                        {
                             tcpClientConnect = true;
                             Gloable.tcpAliveFlag = true;
                             myTCPClient.clientSendMessge("READY?\r\n");
                             heartBeatTimer.Start();
-                           
+
                             break;
                         }
-                        if(warning.IsDisposed)
+                        if (warning.IsDisposed)
                         {
                             break;
                         }
                         Thread.Sleep(100);
                     }
                 });
-
-               
 
                 //启动任务,并安排到当前任务队列线程中执行任务(System.Threading.Tasks.TaskScheduler)
                 task.Start();
@@ -6191,9 +6201,9 @@ namespace RF_TestSystem
 
             }
         }
-#endregion
+        #endregion
 
-#region - Oracle数据查询 -
+        #region - Oracle数据查询 -
 
         [Obsolete]
         private void inquireBarcodeThread()
@@ -6243,9 +6253,9 @@ namespace RF_TestSystem
             inquireDataGridView.DataSource = oracleHelper.queryData("TED_RF_DATA", "BARCODE", this.inquireBarcodeTextBox.Text.Trim());
         }
 
-#endregion
+        #endregion
 
-#region - FTP上传方法 -
+        #region - FTP上传方法 -
 
         private void doFTPUpLoad()
         {
@@ -6253,11 +6263,11 @@ namespace RF_TestSystem
                 if (FTPUpLoadingFlag == false)
                     FTPBackgroundWorker.RunWorkerAsync();
         }
-       
+
         private void FTPUpLoadThread(object sender, DoWorkEventArgs e)
         {
             FTPUpLoadingFlag = true;
-      
+
             FTP myFTP = new FTP(this.FTPDataGridView, this.FTPUploadProgressBar);
             myFTP.DataGridViewUpdate += BindUpdateRecord;
             myFTP.ProgressBarUpdate += ProgressBarUpdate;
@@ -6283,16 +6293,16 @@ namespace RF_TestSystem
 
             DirectoryInfo root = new DirectoryInfo(localPath);
 
-            foreach(DirectoryInfo subdirectories in root.GetDirectories())
-            {                       
+            foreach (DirectoryInfo subdirectories in root.GetDirectories())
+            {
                 string localPathCopy = subdirectories.FullName + "\\Temp\\";
-              Console.WriteLine(subdirectories.Name);
+                Console.WriteLine(subdirectories.Name);
                 if (!Directory.Exists(localPathCopy))
                 {
                     DirectoryInfo di = Directory.CreateDirectory(localPathCopy);//创建该文件夹
                     di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
                 }
-     
+
                 List<string> filelist = new List<string>();
                 FtpCopyFile.WaitOne();
                 this.Invoke(new Action(() =>
@@ -6303,9 +6313,9 @@ namespace RF_TestSystem
                 {
                     foreach (FileInfo fileName in subdirectories.GetFiles())
                     {
-                    
+
                         System.IO.File.Copy(fileName.FullName, localPathCopy + fileName.Name, true);//复制文件      
-                             
+
                     }
                 }
                 catch (Exception a)
@@ -6323,13 +6333,13 @@ namespace RF_TestSystem
                 FtpCopyFile.ReleaseMutex();
                 DirectoryInfo subdirectoriesTemp = new DirectoryInfo(localPathCopy);
                 fileLength = 0;
-            
+
                 foreach (FileInfo fileName in subdirectoriesTemp.GetFiles())
                 {
                     filelist.Add(fileName.Name);
                     fileLength += fileName.Length;
                 }
-                    fileLength = (long)Math.Ceiling(fileLength / 20480.0);
+                fileLength = (long)Math.Ceiling(fileLength / 20480.0);
 
                 if (fileLength == 0)
                 {
@@ -6351,18 +6361,18 @@ namespace RF_TestSystem
                     }
                     try
                     {
-                        
-                        myFTP.UpLoad(Gloable.upLoadInfo.ftpIP, Gloable.upLoadInfo.ftpID, Gloable.upLoadInfo.ftpID, localPathCopy  
-                            + file, Gloable.upLoadInfo.ftpPath + Gloable.loginInfo.partNumber + "/" + DateTime.Now.ToString("yyyy-MM-dd")+"/" + subdirectories.Name);
-                                                                     
+
+                        myFTP.UpLoad(Gloable.upLoadInfo.ftpIP, Gloable.upLoadInfo.ftpID, Gloable.upLoadInfo.ftpID, localPathCopy
+                            + file, Gloable.upLoadInfo.ftpPath + Gloable.loginInfo.partNumber + "/" + DateTime.Now.ToString("yyyy-MM-dd") + "/" + subdirectories.Name);
+
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         this.Invoke(new Action(() =>
                         {
-                            writeInfoTextBox(file+" 上传失败！");
+                            writeInfoTextBox(file + " 上传失败！");
                         }));
-                    }                       
+                    }
                 }
                 if (Directory.Exists(localPathCopy))
                 {
@@ -6370,11 +6380,11 @@ namespace RF_TestSystem
                     {
                         Directory.Delete(localPathCopy, true);//删除临时目录
                     }
-                    catch (Exception exception) 
+                    catch (Exception exception)
                     {
                         Console.WriteLine(exception.Message);
                     }
-                    
+
                 }
             }
             this.Invoke(new Action(() =>
@@ -6479,14 +6489,14 @@ namespace RF_TestSystem
         }
 
 
-#endregion
+        #endregion
 
-#region - 样本 -
+        #region - 样本 -
 
         private bool checkSampleBarcode(string sampleBarcode)
         {
             bool checkOK = false;
-            for(int i =0;i<this.simpleDataGridView.RowCount;i++)
+            for (int i = 0; i < this.simpleDataGridView.RowCount; i++)
             {
                 if (this.simpleDataGridView.Rows[i].Cells[3].Value.ToString().Contains(sampleBarcode))
                 {
@@ -6505,30 +6515,30 @@ namespace RF_TestSystem
             {
                 if (this.simpleDataGridView.Rows[i].Cells[3].Value.ToString().Contains(checkSample.BARCODE))
                 {
-                    if(checkSample.NGITEM.Contains(this.simpleDataGridView.Rows[i].Cells[4].Value.ToString()))
+                    if (checkSample.NGITEM.Contains(this.simpleDataGridView.Rows[i].Cells[4].Value.ToString()))
                     {
                         checkOK = true;
                         break;
                     }
-                    
+
                 }
             }
 
             return checkOK;
         }
 
-       
+
 
         private bool checkOracleSample(BarsamInfo barsamInfo)
         {
-            
+
             return false;
         }
-#endregion
+        #endregion
 
     }
 
-#region - 数据结构 -
+    #region - 数据结构 -
     public class OracleEntity
     {
         //编号
@@ -6668,9 +6678,9 @@ namespace RF_TestSystem
         public string uploadOralce;
 
     }
-#endregion
+    #endregion
 
-#region - 全局静态类 -
+    #region - 全局静态类 -
 
     static class Gloable  //静态类,类似于全局变量的效果
     {
@@ -6718,7 +6728,7 @@ namespace RF_TestSystem
 
         public static bool tcpAliveFlag = false;
     }
-#endregion
+    #endregion
 
 
 
