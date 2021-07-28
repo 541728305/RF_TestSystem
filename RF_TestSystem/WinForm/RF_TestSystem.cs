@@ -3227,11 +3227,18 @@ namespace RF_TestSystem
             {
                 rectNew = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
             }
-            Bitmap bitmap2 = bitmap.Clone(rectNew, bitmap.PixelFormat);
+            Bitmap bitmap2 = null;
+            try
+            {
+                bitmap2 = bitmap.Clone(rectNew, bitmap.PixelFormat);
+            }
+            catch (Exception cloneError)
+            {
+                Console.WriteLine(cloneError.Message);
+            }
             if (bitmap2 != null && halconDecoding != null)
             {
                 string halconResult = halconDecoding.halconDecode(bitmap2);
-                Console.WriteLine("条码上锁");
                 scanBarcodeMutex.WaitOne();//上锁
                 Gloable.halconResultPool.Clear();
                 if (halconResult != "")
@@ -3239,13 +3246,10 @@ namespace RF_TestSystem
                     Gloable.halconResultPool.Add(halconResult);
                 }
                 scanBarcodeMutex.ReleaseMutex();//解锁
-                Console.WriteLine("条码解锁");
             }
-            //halcon解码模块------------------>
-
-            //<---------------------------------
-
-            /*   // ZXing解码模块
+#if false
+        
+            #region- ZXing解码 -
                Result[] result = reader.DecodeMultiple(bitmap1);
                Gloable.mutex.WaitOne();//上锁
                Gloable.resultPool.Clear();
@@ -3281,9 +3285,16 @@ namespace RF_TestSystem
             else if (this.mainTabControl.SelectedIndex == 0)
                 // this.cameraPictureBox.Image = bitmap1.Clone(new Rectangle(0, 0, bitmap1.Width, bitmap1.Height), bitmap1.PixelFormat);
             */
-            img.Dispose();
-            bitmap.Dispose();
-            bitmap2.Dispose();
+            #endregion
+
+#endif
+            try
+            {
+                img.Dispose();
+                bitmap.Dispose();
+                bitmap2.Dispose();
+            }
+            catch { }
 
             //手动回收垃圾内存，不然内存很快爆满
             GC.Collect();

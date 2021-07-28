@@ -163,18 +163,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ivi.Visa.Interop.dll" size="81304">
-      <assemblyIdentity name="Ivi.Visa.Interop" version="5.12.0.0" publicKeyToken="A128C98F1D7717C1" language="neutral" processorArchitecture="x86" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>afiMZQNOvrKdj+Cdg+cVU8pGGe8=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="553384">
       <assemblyIdentity name="Newtonsoft.Json" version="12.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -199,14 +187,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RF_TestSystem_20210726_v1.0.exe" size="3520440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RF_TestSystem_20210726_v1.0.exe" size="3520952">
       <assemblyIdentity name="RF_TestSystem_20210726_v1.0" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>MhDhLuQXYIisAbPEtVBj4sDvC8k=</dsig:DigestValue>
+        <dsig:DigestValue>vLITUv//dgJ+mwr2flEwVFjseJw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

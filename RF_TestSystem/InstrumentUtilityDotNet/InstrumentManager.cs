@@ -1,9 +1,10 @@
-﻿using Ivi.Visa.Interop;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ivi.Visa.Interop;
 
 namespace InstrumentUtilityDotNet
 {
@@ -13,8 +14,9 @@ namespace InstrumentUtilityDotNet
     /// </summary>
     public class InstrumentManager
     {
-        private ResourceManagerClass m_IOResourceManager = new ResourceManagerClass();
-        private FormattedIO488Class m_IO488 = null;
+       
+        private ResourceManager m_IOResourceManager = new ResourceManager();
+        private FormattedIO488 m_IO488 = null;
         private string receive = string.Empty;
         private InstrumentCommunicationMode commMode;
         /// <summary>
@@ -69,7 +71,7 @@ namespace InstrumentUtilityDotNet
             {
                 //Close();
                 string m_Description = string.Empty;
-                m_IO488 = new FormattedIO488Class();
+                m_IO488 = new FormattedIO488();
                 // 初始化m_IOName指定的接口
                 m_IO488.IO = (IMessage)m_IOResourceManager.Open(m_IOName, AccessMode.NO_LOCK,3000); //TCPIP0::172.17.200.11::5000::SOCKET
                 return true;
