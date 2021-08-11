@@ -85,7 +85,7 @@ namespace RF_TestSystem
             Gloable.myAnalyzer.displayUpdate("OFF");
             foreach (TracesInfo trace in traces)
             {
-                Gloable.myAnalyzer.setContinuousStatus("1", "ON"); //防止被Hold住
+                Gloable.myAnalyzer.setContinuousStatus("1", "ON"); //连续测量
                 if (trace.channel == "2")
                 {
                     Gloable.myAnalyzer.setContinuousStatus("2", "ON");
@@ -214,25 +214,25 @@ namespace RF_TestSystem
             Gloable.tracesMutex.WaitOne();
             string delayMs = Gloable.modelSetting.testDelay;
             string pcbEnable = Gloable.modelSetting.pcbEnable;
-            Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs, pcbEnable);
 
-            if (Gloable.myTraces.Last().rawData == "ReadString error")
-            {
-                int reMeasurement = 0;
-                while (Gloable.myTraces.Last().rawData == "ReadString error")
-                {
-                    Gloable.myTraces = doMeasurement(Gloable.myTraces, delayMs, pcbEnable);
-                    reMeasurement++;
-                    if (reMeasurement > 3)
-                    {
-                        successFlag = false;
-                        MessageBox.Show("网络连接不稳定，从网分获取数据失败！");
-                        Gloable.tracesMutex.ReleaseMutex();
-                        return successFlag;
-                    }
-                }
+            TracesInfo[] tracesInfos = new TracesInfo[Gloable.myTraces.Count];
+            Gloable.myTraces.CopyTo(tracesInfos);
+
+            List<TracesInfo> tracesInfos1 = new List<TracesInfo>();
+
+            tracesInfos1 = tracesInfos.ToList();
+            tracesInfos1 = doMeasurement(tracesInfos1, delayMs, pcbEnable);
+
+            if (tracesInfos1.Last().rawData.Contains( "ReadString error"))
+            {            
+                successFlag = false;
+                MessageBox.Show("网络连接不稳定，从网分获取数据失败！");
+                Gloable.tracesMutex.ReleaseMutex();
+                return successFlag;        
             }
-
+            tracesInfos1.CopyTo(tracesInfos);
+            Gloable.myTraces  = tracesInfos.ToList();
+            
             Gloable.tracesMutex.ReleaseMutex();
 
             return successFlag;
