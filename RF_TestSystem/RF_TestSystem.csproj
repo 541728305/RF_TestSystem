@@ -7,7 +7,7 @@
     <ProjectGuid>{74B66FE3-1D01-4E4F-B796-852A777D21EB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>RF_TestSystem</RootNamespace>
-    <AssemblyName>RF_TestSystem_20210726_v1.0</AssemblyName>
+    <AssemblyName>RF_TestSystem_20210811_v1.0</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -176,16 +176,15 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalyzerHelper\Agilent_E5071C.cs" />
+    <Compile Include="AnalyzerHelper\AnalyzerManager.cs" />
+    <Compile Include="AnalyzerHelper\Enum.cs" />
+    <Compile Include="AnalyzerHelper\INetworkAnalyzer.cs" />
+    <Compile Include="AnalyzerHelper\Utility.cs" />
     <Compile Include="Analyzer\Analyzer.cs" />
     <Compile Include="DataProscess\DataClass.cs" />
     <Compile Include="DataProscess\ExceptionLog.cs" />
     <Compile Include="FTP\FTP.cs" />
-    <Compile Include="InstrumentUtilityDotNet\AddressConversion.cs" />
-    <Compile Include="InstrumentUtilityDotNet\Enum.cs" />
-    <Compile Include="InstrumentUtilityDotNet\InstrumentManager.cs" />
-    <Compile Include="InstrumentUtilityDotNet\NetworkAnalyzerManager\Agilent Technologies E5071C.cs" />
-    <Compile Include="InstrumentUtilityDotNet\INetworkAnalyzer.cs" />
-    <Compile Include="InstrumentUtilityDotNet\NetworkAnalyzer.cs" />
     <Compile Include="Oracle\DataLayer.cs" />
     <Compile Include="Oracle\OracleHelper.cs" />
     <Compile Include="Other\AutoSize.cs" />

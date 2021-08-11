@@ -12,11 +12,10 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using winform_ftp;
-using InstrumentUtilityDotNet.NetworkAnalyzerManager;
-using InstrumentUtilityDotNet;
 using AvaryAPI;
 using RF_TestSystem.WinForm;
 using System.Threading.Tasks;
+using AnalyzerHelper;
 
 namespace RF_TestSystem
 {
@@ -100,7 +99,6 @@ namespace RF_TestSystem
         bool yeildTextBoxFlash = false;//颜色反转；
         Color yeildTextBoxColor = new Color(); //良率文本框颜色
 
-        INetworkAnalyzer Analyzer = NetworkAnalyzer.GetInstance(NetworkAnalyzerType.Agilent_E5071C);
         int testLoop = 0;
 
         bool shieldMCU = false;
@@ -128,7 +126,7 @@ namespace RF_TestSystem
         private BackgroundWorker TestBackgroundWork = new BackgroundWorker();
 
         private BackgroundWorker FTPBackgroundWorker = new BackgroundWorker();
-    
+
 
         public delegate void UpdateAnalysisTabPageHandle();
 
@@ -138,6 +136,7 @@ namespace RF_TestSystem
         #endregion
 
         #region - 构造函数 -
+        [Obsolete]
         public RF_TestSystem()
         {
             InitializeComponent();
@@ -162,6 +161,7 @@ namespace RF_TestSystem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        [Obsolete]
         private void RF_TestSystem_Load(object sender, EventArgs e)
         {
             SystemInit();
@@ -170,6 +170,7 @@ namespace RF_TestSystem
         /// <summary>
         /// 系统初始化
         /// </summary>
+        [Obsolete]
         public void SystemInit()
         {
             Login login = new Login();
@@ -466,7 +467,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.productionModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -489,7 +490,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.retestModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -510,7 +511,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.buyoffModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -531,7 +532,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.ORTModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -552,7 +553,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.FAModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -573,7 +574,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.SortingModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -594,7 +595,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.sampleEntryModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -615,7 +616,7 @@ namespace RF_TestSystem
                         double testTotal = Convert.ToDouble(testInfo.developerModel.testTotalNumber);
                         this.TestYieldTextBox.Text = ((testPass / testTotal) * 100).ToString("0.0");
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
 
                     }
@@ -713,7 +714,7 @@ namespace RF_TestSystem
         private void connectButton_Click(object sender, EventArgs e)
         {
 
-            if (Gloable.myAnalyzer.isConnected() == false)
+            if (analyzerConnect == false)
             {
                 systemConnect();
             }
@@ -972,32 +973,21 @@ namespace RF_TestSystem
             }
             if (Gloable.runningState.AnalyzerState == Gloable.sateHead.connect)
             {
+                if (!checkAnalyzerAlive())
+                {
+                    return;
+                }
                 Gloable.myAnalyzer.saveStateFile(agilentConfig.calFilePath);
                 Gloable.myAnalyzer.reset();
                 Gloable.myAnalyzer.loadStateFile(agilentConfig.calFilePath);
 
-                Gloable.myAnalyzer.sendOPC();
-                for (int i = 0; i < 3; i++)
-                {
-                    if (Gloable.myAnalyzer.readData() != "ReadString error")
-                    {
-                        break;
-                    }
-                }
                 //配置写入网分仪
                 writeConfigToAnalyzer(agilentConfig);
 
                 Gloable.myAnalyzer.saveState();
                 Gloable.myAnalyzer.saveStateFile(agilentConfig.calFilePath);
                 Gloable.myAnalyzer.loadStateFile(agilentConfig.calFilePath);
-                Gloable.myAnalyzer.sendOPC();
-                for (int i = 0; i < 3; i++)
-                {
-                    if (Gloable.myAnalyzer.readData() != "ReadString error")
-                    {
-                        break;
-                    }
-                }
+
                 Gloable.myAnalyzer.setTriggerSource("INTernal");
                 writeInfoTextBox("配置写入网分仪成功");
                 MessageBox.Show("配置保存和写入成功");
@@ -1196,7 +1186,11 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugReadCommButton_Click(object sender, EventArgs e)
         {
-            this.deBugtextBox.Text += Analyzer.ReadString() + "\r\n";
+            if (!analyzerConnect)
+            {
+                return;
+            }
+            this.deBugtextBox.Text += Gloable.myAnalyzer.ReadString() + "\r\n";
         }
 
         /// <summary>
@@ -1206,20 +1200,23 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugSendCommALLButton_Click(object sender, EventArgs e)
         {
-
+            if (!analyzerConnect)
+            {
+                return;
+            }
             {
                 if (this.deBugSendComm1textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令1发送 " + Analyzer.WriteString(this.deBugSendComm1textBox.Text) + "\r\n";
+                    this.deBugtextBox.Text += "命令1发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm1textBox.Text) + "\r\n";
                 if (this.deBugSendComm2textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令2发送 " + Analyzer.WriteString(this.deBugSendComm2textBox.Text) + "\r\n";
+                    this.deBugtextBox.Text += "命令2发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm2textBox.Text) + "\r\n";
                 if (this.deBugSendComm3textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令3发送 " + Analyzer.WriteString(this.deBugSendComm3textBox.Text) + "\r\n";
+                    this.deBugtextBox.Text += "命令3发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm3textBox.Text) + "\r\n";
                 if (this.deBugSendComm4textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令4发送 " + Analyzer.WriteString(this.deBugSendComm4textBox.Text) + "\r\n";
+                    this.deBugtextBox.Text += "命令4发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm4textBox.Text) + "\r\n";
                 if (this.deBugSendComm5textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令5发送 " + Analyzer.WriteString(this.deBugSendComm5textBox.Text) + "\r\n";
+                    this.deBugtextBox.Text += "命令5发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm5textBox.Text) + "\r\n";
                 if (this.deBugSendComm6textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令6发送 " + Analyzer.WriteString(this.deBugSendComm6textBox.Text) + "\r\n";
+                    this.deBugtextBox.Text += "命令6发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm6textBox.Text) + "\r\n";
             }
 
         }
@@ -1231,10 +1228,13 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugSendComm3Button_Click(object sender, EventArgs e)
         {
-
+            if (!analyzerConnect)
+            {
+                return;
+            }
             {
                 if (this.deBugSendComm3textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令3发送 " + Analyzer.WriteString(this.deBugSendComm3textBox.Text) + "\r\n"; ;
+                    this.deBugtextBox.Text += "命令3发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm3textBox.Text) + "\r\n"; ;
             }
         }
 
@@ -1245,10 +1245,13 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugSendComm4Button_Click(object sender, EventArgs e)
         {
-
+            if (!analyzerConnect)
+            {
+                return;
+            }
             {
                 if (this.deBugSendComm4textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令4发送 " + Analyzer.WriteString(this.deBugSendComm4textBox.Text) + "\r\n"; ;
+                    this.deBugtextBox.Text += "命令4发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm4textBox.Text) + "\r\n"; ;
             }
         }
 
@@ -1259,11 +1262,14 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugSendComm5Button_Click(object sender, EventArgs e)
         {
-
+            if (!analyzerConnect)
+            {
+                return;
+            }
 
             {
                 if (this.deBugSendComm5textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令5发送 " + Analyzer.WriteString(this.deBugSendComm5textBox.Text) + "\r\n"; ;
+                    this.deBugtextBox.Text += "命令5发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm5textBox.Text) + "\r\n"; ;
             }
         }
 
@@ -1274,11 +1280,14 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugSendComm6Button_Click(object sender, EventArgs e)
         {
-
+            if (!analyzerConnect)
+            {
+                return;
+            }
 
             {
                 if (this.deBugSendComm6textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令6发送 " + Analyzer.WriteString(this.deBugSendComm6textBox.Text) + "\r\n"; ;
+                    this.deBugtextBox.Text += "命令6发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm6textBox.Text) + "\r\n"; ;
             }
         }
 
@@ -1289,10 +1298,13 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugSendComm1Button_Click(object sender, EventArgs e)
         {
-
+            if (!analyzerConnect)
+            {
+                return;
+            }
             {
                 if (this.deBugSendComm1textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令1发送 " + Analyzer
+                    this.deBugtextBox.Text += "命令1发送 " + Gloable.myAnalyzer
                         .WriteString(this.deBugSendComm1textBox.Text) + "\r\n";
             }
         }
@@ -1304,10 +1316,13 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void deBugSendComm2Button_Click(object sender, EventArgs e)
         {
-
+            if (!analyzerConnect)
+            {
+                return;
+            }
             {
                 if (this.deBugSendComm2textBox.Text.Trim() != "")
-                    this.deBugtextBox.Text += "命令2发送 " + Analyzer.WriteString(this.deBugSendComm2textBox.Text) + "\r\n"; ;
+                    this.deBugtextBox.Text += "命令2发送 " + Gloable.myAnalyzer.WriteString(this.deBugSendComm2textBox.Text) + "\r\n"; ;
             }
         }
 
@@ -1318,7 +1333,7 @@ namespace RF_TestSystem
         /// <param name="e"></param>
         private void debugButton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         /// <summary>
@@ -1466,16 +1481,7 @@ namespace RF_TestSystem
         private void deBugConnButton_Click(object sender, EventArgs e)
         {
 
-            string addrss = agilentConfig.IP.Trim();
-            addrss = "TCPIP0::" + addrss + "::inst0::INSTR";
-            if (Analyzer.Connect(addrss) == true)
-            {
-                this.deBugtextBox.Text += "连接成功\r\n";
-            }
-            else
-            {
-                this.deBugtextBox.Text += "连接失败\r\n";
-            }
+
         }
 
         /// <summary>
@@ -3906,7 +3912,7 @@ namespace RF_TestSystem
                 charts[i].Series.Clear();
                 charts[i].Series.Add(limitUpSeries);
                 charts[i].Series.Add(limitDownSeries);
-             
+
             }
         }
 
@@ -3991,31 +3997,31 @@ namespace RF_TestSystem
         /// <param name="myTraces"></param>
         public void setDataTochart(int currentCurve, TracesInfo myTraces)
         {
-            
-                Series setSeries = new Series();
-                for (int i = 0; i < myTraces.tracesDataDoubleType.realPart.Count; i++)
-                {
-                    try
-                    {
-                        double freq = Convert.ToDouble(myTraces.frequencyListString[i]);
-                        freq = Math.Round(freq, 2);
-                        setSeries.Points.AddXY(freq, myTraces.tracesDataDoubleType.realPart[i]);
-                    }
-                    catch
-                    { }
 
-                }
-                //setSeries.Points.DataBindY(myTraces.tracesDataDoubleType.realPart);
-                setSeries.ChartType = SeriesChartType.Line;
-                if (myTraces.state == "PASS")
+            Series setSeries = new Series();
+            for (int i = 0; i < myTraces.tracesDataDoubleType.realPart.Count; i++)
+            {
+                try
                 {
-                    setSeries.Color = Color.Green;
+                    double freq = Convert.ToDouble(myTraces.frequencyListString[i]);
+                    freq = Math.Round(freq, 2);
+                    setSeries.Points.AddXY(freq, myTraces.tracesDataDoubleType.realPart[i]);
                 }
-                  
-                else if (myTraces.state == "FAIL")
-                {
-                    setSeries.Color = Color.Red;
-                }
+                catch
+                { }
+
+            }
+            //setSeries.Points.DataBindY(myTraces.tracesDataDoubleType.realPart);
+            setSeries.ChartType = SeriesChartType.Line;
+            if (myTraces.state == "PASS")
+            {
+                setSeries.Color = Color.Green;
+            }
+
+            else if (myTraces.state == "FAIL")
+            {
+                setSeries.Color = Color.Red;
+            }
             this.Invoke(new Action(() =>
             {
                 setLimitToChart(currentCurve, myTraces);
@@ -5134,7 +5140,7 @@ namespace RF_TestSystem
         public void updateConfigFromAnalyzer()
         {
             AnalyzerConfig getAgilentConfig = new AnalyzerConfig();
-            getAgilentConfig = Gloable.myAnalyzer.getBasisConfig();
+            getAgilentConfig = getBasisConfig();
 
             agilentConfig.channelNumber = getAgilentConfig.channelNumber;
             agilentConfig.windows = getAgilentConfig.windows;
@@ -5146,7 +5152,7 @@ namespace RF_TestSystem
             agilentConfig.smooth = getAgilentConfig.smooth;
             agilentConfig.smoothValue = getAgilentConfig.smoothValue;
             setAnalyzerConfigToTable(agilentConfig);
-            Gloable.myTraces = Gloable.myAnalyzer.getTracesInfo();
+            Gloable.myTraces = getTracesInfo();
             setTraceInfoToDataTable(Gloable.myTraces);
         }
 
@@ -5616,6 +5622,26 @@ namespace RF_TestSystem
 
         #region - 系统逻辑方法 -
 
+        private bool checkAnalyzerAlive()
+        {
+            Warning warning = new Warning();
+            if (analyzerConnect)
+            {
+                if (Gloable.myAnalyzer.WriteAndReadString("*IDN?").Contains("ReadString error"))
+                {
+                    warning.setWarning("网分仪连接失败！\r\n请重新连接,必要时重启上位机", WarningLevel.normal);
+                    systemDisconnect();
+                    return false;
+                }
+                return true;
+            }
+            else
+            {
+                warning.setWarning("网分仪未连接！\r\n请连接网分仪", WarningLevel.normal);
+                return false;
+            }
+        }
+
         /// <summary>
         /// 更新机台类型
         /// </summary>
@@ -5674,23 +5700,20 @@ namespace RF_TestSystem
             bool successful = true;
             if (Gloable.runningState.AnalyzerState == Gloable.sateHead.connect)
             {
+                if (!checkAnalyzerAlive())
+                {
+                    return false;
+                }
                 Gloable.myAnalyzer.reset();
                 Thread.Sleep(30);
                 Gloable.myAnalyzer.loadStateFile(agilentConfig.calFilePath);
-                Gloable.myAnalyzer.sendOPC();
-                for (int i = 0; i < 3; i++)
-                {
-                    if (Gloable.myAnalyzer.readData() != "ReadString error")
-                    {
-                        break;
-                    }
-                }
+
                 AnalyzerConfig getAgilentConfig = new AnalyzerConfig();
 
-                getAgilentConfig = Gloable.myAnalyzer.getBasisConfig();
+                getAgilentConfig = getBasisConfig();
 
                 List<TracesInfo> getTraces = new List<TracesInfo>();
-                getTraces = Gloable.myAnalyzer.getTracesInfo();
+                getTraces = getTracesInfo();
 
                 getAgilentConfig.IP = agilentConfig.IP;
                 getAgilentConfig.dataPath = agilentConfig.dataPath;
@@ -5760,7 +5783,7 @@ namespace RF_TestSystem
         public object readSampleFromLocal()
         {
             string path = Application.StartupPath + "\\Sample\\";
-            string fileName = path +  Gloable.loginInfo.partNumber + "_SampleDB.txt";
+            string fileName = path + Gloable.loginInfo.partNumber + "_SampleDB.txt";
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -5828,46 +5851,61 @@ namespace RF_TestSystem
             {
                 this.Invoke(new Action(() =>
                 {
+                    writeInfoTextBox("正在连接网分仪");
                     this.connectButton.Text = "正在连接";
                     this.connectButton.Enabled = false;
                 }));
 
-                string connMsg = Gloable.myAnalyzer.Connect(addrss);
-                testInfoTextBox.Text += connMsg;
-
-                if (Gloable.myAnalyzer.isConnected() == false)
+                addrss = "TCPIP0::" + addrss + "::inst0::INSTR";
+                AnalyzerManager analyzerManager = new AnalyzerManager();
+                if (analyzerManager.GetInstance(addrss, ref Gloable.myAnalyzer))
                 {
-                    int reConnet = 1;
-
-                    while (Gloable.myAnalyzer.isConnected() == false)
+                    string errorMsg = string.Empty;
+                    if (Gloable.myAnalyzer.OpenResource(addrss, ref errorMsg))
                     {
-                        if (reConnet > 0)
+                        this.Invoke(new Action(() =>
                         {
-                            this.Invoke(new Action(() =>
-                            {
-                                this.connectButton.Enabled = true;
-                                this.connectButton.Text = "   连接";
-                                this.connectButton.ImageIndex = 0;
-                            }));
+                            writeInfoTextBox("网分仪已连接！");
+                            setSystemStateLabel(Gloable.sateHead.connect);
+                            analyzerConnect = true;
+                            this.connectButton.Enabled = true;
+                            this.connectButton.Text = "   断开";
+                            this.connectButton.ImageIndex = 1;
+                        }));
+                    }
+                    else
+                    {
+                        this.Invoke(new Action(() =>
+                        {
+                            this.connectButton.Enabled = true;
+                            this.connectButton.Text = "   连接";
+                            this.connectButton.ImageIndex = 0;
                             MessageBox.Show("连接失败！");
-                            writeInfoTextBox("网分仪连接失败！");
-                            return;
-                        }
-                        connMsg = Gloable.myAnalyzer.Connect(addrss);
-                        testInfoTextBox.Text += connMsg;
-                        reConnet++;
+                            writeInfoTextBox("网分仪连接失败！" + errorMsg);
+                        }));
+
+                        return;
                     }
                 }
-                writeInfoTextBox("网分仪已连接！");
-                setSystemStateLabel(Gloable.sateHead.connect);
-                analyzerConnect = true;
-                this.connectButton.Enabled = true;
-                this.connectButton.Text = "   断开";
-                this.connectButton.ImageIndex = 1;
+                else
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.connectButton.Enabled = true;
+                        this.connectButton.Text = "   连接";
+                        this.connectButton.ImageIndex = 0;
+                        MessageBox.Show("连接失败！");
+                        writeInfoTextBox("网分仪连接失败！");
+                    }));
+
+                    return;
+                }
+
             }
             else
             {
                 MessageBox.Show("Address can't be  null", "Information", MessageBoxButtons.OK);
+                return;
             }
             if (shieldMCU == false)
             {
@@ -5911,7 +5949,7 @@ namespace RF_TestSystem
                     {
                         if (analyzerConnect == true)
                         {
-                            Gloable.myAnalyzer.disConnect();
+                            Gloable.myAnalyzer.CloseResource();
                         }
                         this.connectButton.Enabled = true;
                         this.connectButton.Text = "   连接";
@@ -5939,56 +5977,54 @@ namespace RF_TestSystem
             {
                 this.Invoke(new Action(() =>
                 {
+                    writeInfoTextBox("正在连接网分仪");
                     this.connectButton.Text = "正在连接";
                     this.connectButton.Enabled = false;
                 }));
                 Thread.Sleep(20);
-                string connMsg = Gloable.myAnalyzer.Connect(addrss);
-
-                this.Invoke(new Action(() =>
+                addrss = "TCPIP0::" + addrss + "::inst0::INSTR";
+                AnalyzerManager analyzerManager = new AnalyzerManager();
+                if (analyzerManager.GetInstance(addrss, ref Gloable.myAnalyzer))
                 {
-                    testInfoTextBox.Text += connMsg;
-                }));
-                Thread.Sleep(20);
-                if (Gloable.myAnalyzer.isConnected() == false)
-                {
-                    int reConnet = 1;
-
-                    while (Gloable.myAnalyzer.isConnected() == false)
+                    string errorMsg = string.Empty;
+                    if (Gloable.myAnalyzer.OpenResource(addrss, ref errorMsg))
                     {
-                        if (reConnet > 0)
-                        {
-                            this.Invoke(new Action(() =>
-                            {
-                                this.connectButton.Enabled = true;
-                                this.connectButton.Text = "   连接";
-                                this.connectButton.ImageIndex = 0;
-                                writeInfoTextBox("网分仪连接失败！");
-                            }));
-                            //MessageBox.Show("连接失败！");
-
-                            return false;
-                        }
-                        connMsg = Gloable.myAnalyzer.Connect(addrss);
                         this.Invoke(new Action(() =>
                         {
-                            testInfoTextBox.Text += connMsg;
+                            writeInfoTextBox("网分仪已连接！");
+                            setSystemStateLabel(Gloable.sateHead.connect);
+                            analyzerConnect = true;
+                            this.connectButton.Enabled = true;
+                            this.connectButton.Text = "   断开";
+                            this.connectButton.ImageIndex = 1;
                         }));
-                        reConnet++;
-                        Thread.Sleep(20);
                     }
-                }
-                Thread.Sleep(20);
-                this.Invoke(new Action(() =>
-                {
-                    writeInfoTextBox("网分仪已连接！");
-                    setSystemStateLabel(Gloable.sateHead.connect);
+                    else
+                    {
+                        this.Invoke(new Action(() =>
+                        {
+                            this.connectButton.Enabled = true;
+                            this.connectButton.Text = "   连接";
+                            this.connectButton.ImageIndex = 0;
+                            writeInfoTextBox("网分仪连接失败！" + errorMsg);
+                        }));
 
-                    analyzerConnect = true;
-                    this.connectButton.Enabled = true;
-                    this.connectButton.Text = "   断开";
-                    this.connectButton.ImageIndex = 1;
-                }));
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.connectButton.Enabled = true;
+                        this.connectButton.Text = "   连接";
+                        this.connectButton.ImageIndex = 0;
+                        writeInfoTextBox("网分仪连接失败！");
+                    }));
+
+                    return false;
+                }
 
             }
             else
@@ -6027,7 +6063,7 @@ namespace RF_TestSystem
                         myTCPClient = null;
                         if (analyzerConnect == true)
                         {
-                            Gloable.myAnalyzer.disConnect();
+                            Gloable.myAnalyzer.CloseResource();
                         }
                         this.Invoke(new Action(() =>
                         {
@@ -6105,7 +6141,7 @@ namespace RF_TestSystem
             heartBeatTimer.Stop();
             //if (analyzerConnect == true)
             //{
-            Gloable.myAnalyzer.disConnect();
+            Gloable.myAnalyzer.CloseResource();
             //}
             analyzerConnect = false;
             this.connectButton.Text = "   连接";
@@ -6613,6 +6649,237 @@ namespace RF_TestSystem
                 }
             }
         }
+
+        /// <summary>
+        /// 获取基础配置
+        /// </summary>
+        /// <returns></returns>
+        public AnalyzerConfig getBasisConfig()
+        {
+            AnalyzerConfig analyzerConfig = new AnalyzerConfig();
+
+            analyzerConfig.channelNumber = Gloable.myAnalyzer.transFromAllocateID(Gloable.myAnalyzer.ackAllocateChannelst());
+
+            if (Gloable.myAnalyzer.ackAllocateTraces("1") == "D1\n")
+
+            {
+                analyzerConfig.windows = "曲线单窗口显示";
+            }
+            else
+            {
+                analyzerConfig.windows = "曲线多窗口显示";
+            }
+            double startfrequency = 0;
+            try
+            {
+                startfrequency = double.Parse(Gloable.myAnalyzer.ackFrequency("1", "START"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                try
+                {
+                    startfrequency = double.Parse(Gloable.myAnalyzer.ackFrequency("1", "START"));
+                }
+                catch (Exception e2)
+                {
+                    Console.WriteLine(e2.Message);
+                }
+            }
+
+            if (startfrequency > (1000 * 1000 * 1000))
+            {
+                analyzerConfig.startFrequency = (startfrequency / 1000 / 1000 / 1000).ToString();
+                analyzerConfig.startFrequencyUnit = "GHz";
+
+
+            }
+            else if (startfrequency > (1000 * 1000))
+            {
+                analyzerConfig.startFrequency = (startfrequency / 1000 / 1000).ToString();
+                analyzerConfig.startFrequencyUnit = "MHz";
+
+
+            }
+            else if (startfrequency > (1000))
+            {
+                analyzerConfig.startFrequency = (startfrequency / 1000).ToString();
+                analyzerConfig.startFrequencyUnit = "KHz";
+            }
+
+            double stopfrequency = 0;
+            try
+            {
+                stopfrequency = double.Parse(Gloable.myAnalyzer.ackFrequency("1", "STOP"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                try
+                {
+                    stopfrequency = double.Parse(Gloable.myAnalyzer.ackFrequency("1", "STOP"));
+                }
+                catch (Exception e2)
+                { Console.WriteLine(e2.Message); }
+            }
+
+            Gloable.myAnalyzer.ackFrequency("1", "STOP");
+
+            if (stopfrequency > (1000 * 1000 * 1000))
+            {
+                analyzerConfig.stopFrequency = (stopfrequency / 1000 / 1000 / 1000).ToString();
+                analyzerConfig.stopFrequencyUnit = "GHz";
+            }
+            else if (stopfrequency > (1000 * 1000))
+            {
+
+                analyzerConfig.stopFrequency = (stopfrequency / 1000 / 1000).ToString();
+                analyzerConfig.stopFrequencyUnit = "MHz";
+            }
+            else if (stopfrequency > (1000))
+            {
+                analyzerConfig.stopFrequency = (stopfrequency / 1000).ToString();
+                analyzerConfig.stopFrequencyUnit = "KHz";
+            }
+
+            analyzerConfig.sweepPion = Gloable.myAnalyzer.ackSweepPoint("1").Replace("+", "");
+            analyzerConfig.sweepPion = analyzerConfig.sweepPion.Replace("\n", "");
+
+            int tracesNumber = 0;
+            try
+            {
+                tracesNumber = Convert.ToInt32(Gloable.myAnalyzer.ackNumberOfTraces("1").Replace("\n", ""));
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                try
+                {
+                    tracesNumber = Convert.ToInt32(Gloable.myAnalyzer.ackNumberOfTraces("1").Replace("\n", ""));
+
+                }
+                catch (Exception e2)
+                {
+                    Console.WriteLine(e2.Message);
+                }
+            }
+            for (int i = 0; i < tracesNumber; i++)
+            {
+                Gloable.myAnalyzer.selectTrace("1", (i + 1).ToString());
+
+                int smoothON = 0;
+                try
+                {
+                    smoothON = Convert.ToInt32(Gloable.myAnalyzer.ackSmooth("1"));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    smoothON = Convert.ToInt32(Gloable.myAnalyzer.ackSmooth("1"));
+                }
+                if (smoothON == 1)
+                {
+                    analyzerConfig.smooth = "ON";
+                    string smoothValue = "";
+
+                    try
+                    {
+                        smoothValue = ((Convert.ToDouble(Gloable.myAnalyzer.ackSmoothValue("1").Replace("\n", "")))).ToString();
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        try
+                        {
+                            smoothValue = ((Convert.ToDouble(Gloable.myAnalyzer.ackSmoothValue("1").Replace("\n", "")))).ToString();
+
+                        }
+                        catch (Exception e1)
+                        { Console.WriteLine(e1.Message); }
+                    }
+
+                    analyzerConfig.smoothValue = smoothValue;
+                    break;
+                }
+                else
+                {
+                    analyzerConfig.smooth = "OFF";
+                    analyzerConfig.smoothValue = "0";
+                }
+            }
+            return analyzerConfig;
+
+        }
+
+        /// <summary>
+        /// 获取曲线信息
+        /// </summary>
+        /// <returns></returns>
+        public List<TracesInfo> getTracesInfo()
+        {
+            List<TracesInfo> tracesInfos = new List<TracesInfo>();
+            TracesInfo traces = new TracesInfo();
+
+            string taces1 = Gloable.myAnalyzer.ackNumberOfTraces("1");
+            int Taces1 = 0;
+            try
+            {
+                Taces1 = Convert.ToInt32(taces1);
+            }
+            catch
+            {
+                taces1 = Gloable.myAnalyzer.ackNumberOfTraces("1");
+                try
+                {
+                    Taces1 = Convert.ToInt32(taces1);
+                }
+                catch
+                { }
+            }
+
+            for (int i = 0; i < Taces1; i++)
+            {
+                Gloable.myAnalyzer.selectTrace("1", (i + 1).ToString());
+                traces.channel = "1";
+                traces.meas = Gloable.myAnalyzer.ackTracesMeas("1", (i + 1).ToString()).Replace("\n", "");
+                traces.formate = Gloable.myAnalyzer.ackTracesFormat("1", (i + 1).ToString()).Replace("\n", "");
+                traces.note = "";
+                tracesInfos.Add(traces);
+            }
+            if (Gloable.myAnalyzer.transFromAllocateID(Gloable.myAnalyzer.ackAllocateChannelst()) == "2")
+            {
+                string taces2 = Gloable.myAnalyzer.ackNumberOfTraces("2");
+                int Taces2 = 0;
+                try
+                {
+                    Taces2 = Convert.ToInt32(taces2);
+                }
+                catch
+                {
+                    taces2 = Gloable.myAnalyzer.ackNumberOfTraces("2");
+                    try
+                    {
+                        Taces2 = Convert.ToInt32(taces2);
+                    }
+                    catch
+                    { }
+                }
+
+                for (int i = 0; i < Taces2; i++)
+                {
+                    Gloable.myAnalyzer.selectTrace("2", (i + 1).ToString());
+                    traces.channel = "2";
+                    traces.meas = Gloable.myAnalyzer.ackTracesMeas("2", (i + 1).ToString()).Replace("\n", "");
+                    traces.formate = Gloable.myAnalyzer.ackTracesFormat("2", (i + 1).ToString()).Replace("\n", ""); ;
+                    traces.note = "";
+                    tracesInfos.Add(traces);
+                }
+            }
+
+            return tracesInfos;
+        }
         #endregion
 
         #region - 逻辑事件 -
@@ -6787,7 +7054,7 @@ namespace RF_TestSystem
             else
             {
                 tcpConnectMiss++;
-                if(tcpConnectMiss<3)
+                if (tcpConnectMiss < 3)
                 {
                     heartBeatTimer.Start();
                     return;
@@ -7374,7 +7641,7 @@ namespace RF_TestSystem
         //public static INetworkAnalyzer myAnalyzer = NetworkAnalyzer.GetInstance(NetworkAnalyzerType.Agilent_E5071C);
 
         //public static NetworkAnalyzer myAnalyzer = new NetworkAnalyzer();
-        public static Analyzer myAnalyzer = new Analyzer();
+        public static INetworkAnalyzer myAnalyzer;
         public static string today;
         public static string currentLimitName;
 

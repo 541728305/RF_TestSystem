@@ -24,6 +24,7 @@ namespace RF_TestSystem
             InitializeComponent();
             timer.Interval = (1000);
             timer.Tick += Timer_Tick;
+            this.TopMost = true;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -45,6 +46,7 @@ namespace RF_TestSystem
         public void setWarning(string warning, WarningLevel warningLevel)
         {
             this.textBox.Text = warning;
+            
             this.ShowDialog();
         }
         public void setWarningString(string warning, WarningLevel warningLevel)
