@@ -47,38 +47,20 @@ namespace RF_TestSystem.WinForm
 
             try
             {
-                Gloable.myAnalyzer.ECAL("1");
+               
                 this.Invoke(new Action(() =>
                 {
                     this.textBox1.Text = "正在校验通道1";
                 }));
-                Gloable.myAnalyzer.sendOPC();
-                waitEcalFlag = true;
-                while (waitEcalFlag)
-                {
-                    if (Gloable.myAnalyzer.readData() != "ReadString error")
-                    {
-                        waitEcalFlag = false;
-                        break;
-                    }
-                }
+                Gloable.myAnalyzer.ECAL("1");
                 if (allChannelNumber == "2")
                 {
-                    Gloable.myAnalyzer.ECAL("2");
+                    
                     this.Invoke(new Action(() =>
                     {
                         this.textBox1.Text = "正在校验通道2";
                     }));
-                    Gloable.myAnalyzer.sendOPC();
-                    waitEcalFlag = true;
-                    while (waitEcalFlag)
-                    {
-                        if (Gloable.myAnalyzer.readData() != "ReadString error")
-                        {
-                            waitEcalFlag = false;
-                            break;
-                        }
-                    }
+                    Gloable.myAnalyzer.ECAL("2");
                 }
             }
             catch (Exception calError)

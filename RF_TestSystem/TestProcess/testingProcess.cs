@@ -102,10 +102,10 @@ namespace RF_TestSystem
                     temp.frequency = Gloable.myAnalyzer.getFrequency(trace.channel);
                     if (temp.frequency.Contains("ReadString error"))
                     {
-                        temp.frequency = Gloable.myAnalyzer.readData();
+                        temp.frequency = Gloable.myAnalyzer.ReadString();
                         if (temp.frequency.Contains("ReadString error"))
                         {
-                            temp.frequency = Gloable.myAnalyzer.readData();
+                            temp.frequency = Gloable.myAnalyzer.ReadString();
                         }
                     }
 
@@ -226,7 +226,8 @@ namespace RF_TestSystem
             if (tracesInfos1.Last().rawData.Contains( "ReadString error"))
             {            
                 successFlag = false;
-                MessageBox.Show("网络连接不稳定，从网分获取数据失败！");
+                Warning warning = new Warning();
+                warning.setWarning("网络连接失败，请重新连接！",WarningLevel.normal);
                 Gloable.tracesMutex.ReleaseMutex();
                 return successFlag;        
             }

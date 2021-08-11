@@ -26,6 +26,7 @@
         /// 设计器支持所需的方法 - 不要修改
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
+        [System.Obsolete]
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -4314,7 +4315,7 @@
             this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RF_TestSystem_20210726_v1.0";
+            this.Text = "RF_TestSystem_20210811_v1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.Load += new System.EventHandler(this.RF_TestSystem_Load);
             this.Resize += new System.EventHandler(this.RF_TestSystem_Resize);
