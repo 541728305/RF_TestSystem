@@ -28,7 +28,7 @@ namespace AnalyzerHelper
             {
                 string AnalyzerType = utility.WriteAndReadString("*IDN?");
 
-                if(AnalyzerType.Contains("Keysight Technologies,E5071C"))
+                if(AnalyzerType.Contains("E5071C"))
                 {
                     networkAnalyzerType = NetworkAnalyzerType.Agilent_E5071C;
                 }

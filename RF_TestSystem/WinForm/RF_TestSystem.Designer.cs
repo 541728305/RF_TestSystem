@@ -4315,7 +4315,7 @@
             this.MaximizeBox = false;
             this.Name = "RF_TestSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RF_TestSystem_20210811_v1.0";
+            this.Text = "RF_TestSystem_20210817_v1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RF_TestSystem_FormClosing);
             this.Load += new System.EventHandler(this.RF_TestSystem_Load);
             this.Resize += new System.EventHandler(this.RF_TestSystem_Resize);
