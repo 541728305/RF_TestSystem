@@ -139,7 +139,7 @@ namespace RF_TestSystem
 
                     for (int readError = 0; readError < 3; readError++)
                     {
-                        temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch1TraceCount.ToString());//直接读活跃的数据
+                        temp.rawData = Gloable.myAnalyzer.getActiveTraceData(trace.channel, ch2TraceCount.ToString());//直接读活跃的数据
                         if (!temp.rawData.Contains("ReadString error"))
                         {
                             break;
