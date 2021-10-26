@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <assemblyIdentity name="RF_TestSystem_20211009_v1.1.application" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" />
-  <description asmv2:publisher="RF_TestSystem_20211009_v1.1" asmv2:product="RF_TestSystem_20211009_v1.1" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <assemblyIdentity name="RF_TestSystem_20211026_v1.2.application" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:publisher="RF_TestSystem_20211026_v1.2" asmv2:product="RF_TestSystem_20211026_v1.2" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RF_TestSystem_20211009_v1.1.exe.manifest" size="14883">
-      <assemblyIdentity name="RF_TestSystem_20211009_v1.1.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+    <dependentAssembly dependencyType="install" codebase="RF_TestSystem_20211026_v1.2.exe.manifest" size="14883">
+      <assemblyIdentity name="RF_TestSystem_20211026_v1.2.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>J5gYQ94crs3NI2lv8H8GdO12N3A=</dsig:DigestValue>
+        <dsig:DigestValue>3JiUnDR02CJcMUcmK/rzSWg/GIk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1999,6 +1999,11 @@ namespace RF_TestSystem
                         this.progressBar1.Maximum = percentValue;
                     }));
 
+                    if(TestBackgroundWork.IsBusy)
+                    {
+                        testThreadEntry = false;
+                        return;
+                    }
                     // 执行后台操作
                     TestBackgroundWork.RunWorkerAsync();
 
@@ -6139,6 +6144,7 @@ namespace RF_TestSystem
         private void systemDisconnect()
         {
             heartBeatTimer.Stop();
+            TestBackgroundWork.CancelAsync();
             //if (analyzerConnect == true)
             //{
             Gloable.myAnalyzer.CloseResource();
